@@ -1,0 +1,18 @@
+﻿{
+  "name": "helix-aeo-skills",
+  "owner": {
+    "name": "Helix GTM Consulting",
+    "email": "shashwat@hyperplays.in",
+    "url": "https://gtmhelix.com"
+  },
+  "description": "AEO skills for B2B teams selling into Europe — built by Optise and Helix GTM Consulting under the Optise EU AEO Playbook methodology.",
+  "plugins": [
+    {
+      "name": "optise-helix-aeo-toolkit",
+      "source": "./plugins/optise-helix-aeo-toolkit",
+      "category": "marketing-and-seo",
+      "tags": ["aeo", "ai-search", "europe", "gdpr", "b2b", "trust-centre"],
+      "strict": true
+    }
+  ]
+}

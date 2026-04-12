@@ -1,0 +1,13 @@
+﻿{
+  "name": "optise-helix-aeo-toolkit",
+  "version": "1.0.0",
+  "description": "Six-skill toolkit that helps B2B teams selling into Europe make their websites visible, citable, and evaluable to AI search engines (ChatGPT, Perplexity, Gemini, Claude). Built on the proprietary Optise FITq and RACE frameworks plus the 8 EU buyer questions.",
+  "authors": [
+    {"name": "Optise", "url": "https://optise.com"},
+    {"name": "Helix GTM Consulting", "url": "https://gtmhelix.com"}
+  ],
+  "license": "Proprietary",
+  "homepage": "https://github.com/shashwatgtm/optise-helix-aeo-skills",
+  "keywords": ["aeo", "ai-search", "gdpr", "europe", "b2b", "fitq", "race", "trust-centre"]
+}
+
