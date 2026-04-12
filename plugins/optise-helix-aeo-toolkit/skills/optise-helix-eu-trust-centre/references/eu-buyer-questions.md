@@ -33,7 +33,7 @@ A site missing answers to 4+ of these questions is functionally invisible to EU 
 
 ## Answer block templates
 
-Each question has a recommended answer block structure: a 1-sentence direct answer, a 1-paragraph plain-language expansion, and a "where to verify" link. Templates below — fill in `[Shashwat to add: …]` placeholders with actual company data, never invent.
+Each question has a recommended answer block structure: a 1-sentence direct answer, a 1-paragraph plain-language expansion, and a "where to verify" link. Templates below — fill in `[User to add: …]` placeholders with actual company data, never invent.
 
 ### Question 1 — Is [tool] GDPR compliant?
 
@@ -41,7 +41,7 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 > Yes. [Tool name] is GDPR-compliant and operates as both a Data Processor and (where applicable) a Data Controller under EU Regulation 2016/679.
 
 **Plain-language expansion (3-5 sentences):**
-> We comply with GDPR Articles 28 (processor obligations), 30 (records of processing), 32 (security of processing), and 33 (breach notification). Our Data Processing Agreement is available for any customer to sign before deployment. We maintain a record of all processing activities and can produce it on request from a supervisory authority. [Shashwat to add: name of DPO if appointed] is our designated Data Protection Officer.
+> We comply with GDPR Articles 28 (processor obligations), 30 (records of processing), 32 (security of processing), and 33 (breach notification). Our Data Processing Agreement is available for any customer to sign before deployment. We maintain a record of all processing activities and can produce it on request from a supervisory authority. [User to add: name of DPO if appointed] is our designated Data Protection Officer.
 
 **Where to verify:**
 > [link to DPA page] · [link to Records of Processing summary] · [link to GDPR compliance page]
@@ -51,10 +51,10 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 ### Question 2 — Is customer data stored in the EU?
 
 **Direct answer:**
-> [Yes, customer data is stored exclusively in the EU.] OR [Customer data is stored in [region], with EU-only options available on [plan name].] — DO NOT INVENT THIS. Use [Shashwat to add: actual data residency status].
+> [Yes, customer data is stored exclusively in the EU.] OR [Customer data is stored in [region], with EU-only options available on [plan name].] — DO NOT INVENT THIS. Use [User to add: actual data residency status].
 
 **Plain-language expansion:**
-> Our primary data centers are located in [Shashwat to add: city, country, region, e.g., "Frankfurt, Germany (AWS eu-central-1)"]. Customer content (defined in our DPA) is stored in those regions and does not leave them without explicit customer instruction. Backups are held in [Shashwat to add: backup region]. We do not transfer customer content to non-EU regions for routine operations.
+> Our primary data centers are located in [User to add: city, country, region, e.g., "Frankfurt, Germany (AWS eu-central-1)"]. Customer content (defined in our DPA) is stored in those regions and does not leave them without explicit customer instruction. Backups are held in [User to add: backup region]. We do not transfer customer content to non-EU regions for routine operations.
 
 **Where to verify:**
 > [link to data residency page] · [link to subprocessor list with regions]
@@ -66,10 +66,10 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 ### Question 3 — Does [tool] offer EU data residency?
 
 **Direct answer:**
-> [Yes, EU data residency is available on [plan tier] and is the default for [customer segment]. ] — Use [Shashwat to add: actual residency offering].
+> [Yes, EU data residency is available on [plan tier] and is the default for [customer segment]. ] — Use [User to add: actual residency offering].
 
 **Plain-language expansion:**
-> EU data residency means all customer content, processing, and backups stay within the EU. We offer this through [Shashwat to add: cloud provider + region, e.g., "AWS Frankfurt and AWS Dublin"]. Customers on [Shashwat to add: plan name] can request a residency-locked deployment during onboarding. We do not move data out of the elected region for support, analytics, or AI processing without prior written consent.
+> EU data residency means all customer content, processing, and backups stay within the EU. We offer this through [User to add: cloud provider + region, e.g., "AWS Frankfurt and AWS Dublin"]. Customers on [User to add: plan name] can request a residency-locked deployment during onboarding. We do not move data out of the elected region for support, analytics, or AI processing without prior written consent.
 
 **Where to verify:**
 > [link to data residency page] · [link to plan comparison page showing residency by tier]
@@ -82,10 +82,10 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 > Yes. Our standard Data Processing Agreement is available to all customers and can be signed before contract execution.
 
 **Plain-language expansion:**
-> The [Tool name] DPA incorporates the EU Standard Contractual Clauses (SCCs) where data transfers outside the EU are involved. It is pre-signed by [Tool name] and only requires the customer's countersignature. The DPA covers processing instructions, security measures (Annex II), subprocessor list (Annex III), and data subject rights handling. Negotiated DPAs are available for [Shashwat to add: enterprise tier or threshold].
+> The [Tool name] DPA incorporates the EU Standard Contractual Clauses (SCCs) where data transfers outside the EU are involved. It is pre-signed by [Tool name] and only requires the customer's countersignature. The DPA covers processing instructions, security measures (Annex II), subprocessor list (Annex III), and data subject rights handling. Negotiated DPAs are available for [User to add: enterprise tier or threshold].
 
 **Where to verify / how to get it:**
-> Email [Shashwat to add: DPA request email, e.g., "dpa@[tool].com"] OR [link to self-serve DPA download page]
+> Email [User to add: DPA request email, e.g., "dpa@[tool].com"] OR [link to self-serve DPA download page]
 
 **Optise note:** The DPA should be 1-click accessible, not hidden behind a sales call. EU buyers who can't get a DPA quickly assume the vendor doesn't have one.
 
@@ -94,10 +94,10 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 ### Question 5 — Who are the subprocessors and where?
 
 **Direct answer:**
-> We use [Shashwat to add: number] subprocessors, all listed below with their location and the data they process. We notify customers 30 days before adding any new subprocessor.
+> We use [User to add: number] subprocessors, all listed below with their location and the data they process. We notify customers 30 days before adding any new subprocessor.
 
 **Plain-language expansion:**
-> [Shashwat to add: full subprocessor table with: Subprocessor name | Service provided | Data type processed | Location of processing | Country of legal entity]
+> [User to add: full subprocessor table with: Subprocessor name | Service provided | Data type processed | Location of processing | Country of legal entity]
 >
 > Example row format:
 > | Subprocessor | Service | Data type | Region |
@@ -116,7 +116,7 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 ### Question 6 — What data is collected and for how long?
 
 **Direct answer:**
-> We collect [Shashwat to add: categories of data, e.g., "account information, usage telemetry, and customer-uploaded content"] and retain it for the duration of the contract plus [Shashwat to add: retention period, e.g., "30 days"] for backup purposes.
+> We collect [User to add: categories of data, e.g., "account information, usage telemetry, and customer-uploaded content"] and retain it for the duration of the contract plus [User to add: retention period, e.g., "30 days"] for backup purposes.
 
 **Plain-language expansion:**
 > | Data type | Purpose | Retention | Deletion |
@@ -126,7 +126,7 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 > | Customer content | Core service delivery | Customer-controlled | Customer-initiated, 30-day backup window |
 > | Support tickets | Issue resolution | 24 months | On request |
 >
-> Customers can export and delete their data through [Shashwat to add: self-service mechanism or email].
+> Customers can export and delete their data through [User to add: self-service mechanism or email].
 
 **Where to verify:**
 > [link to privacy policy] · [link to data deletion request flow]
@@ -136,10 +136,10 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 ### Question 7 — Does [tool] use third-party AI providers?
 
 **Direct answer:**
-> [Yes — we use [Shashwat to add: AI providers] for specific features, with the data flow described below. Customer content is [Shashwat to add: never sent / sent with anonymization / sent with opt-in consent].] — Use [Shashwat to add: actual AI usage].
+> [Yes — we use [User to add: AI providers] for specific features, with the data flow described below. Customer content is [User to add: never sent / sent with anonymization / sent with opt-in consent].] — Use [User to add: actual AI usage].
 
 **Plain-language expansion:**
-> Our product uses [Shashwat to add: e.g., "OpenAI GPT-4 via Azure OpenAI EU endpoint"] for [Shashwat to add: feature description]. When this feature is invoked, [Shashwat to add: exact data flow — what is sent, what is excluded, retention by the AI provider]. We have a Data Processing Agreement with each AI subprocessor and have verified their data handling commitments for EU customers. Customers can opt out of AI features at the workspace level [Shashwat to add: link to opt-out flow].
+> Our product uses [User to add: e.g., "OpenAI GPT-4 via Azure OpenAI EU endpoint"] for [User to add: feature description]. When this feature is invoked, [User to add: exact data flow — what is sent, what is excluded, retention by the AI provider]. We have a Data Processing Agreement with each AI subprocessor and have verified their data handling commitments for EU customers. Customers can opt out of AI features at the workspace level [User to add: link to opt-out flow].
 
 **Where to verify:**
 > [link to AI features page with data flow diagram] · [link to subprocessor list showing AI providers]
@@ -151,18 +151,18 @@ Each question has a recommended answer block structure: a 1-sentence direct answ
 ### Question 8 — What security standards does [tool] meet?
 
 **Direct answer:**
-> [Tool name] is certified [Shashwat to add: e.g., "SOC 2 Type II, ISO 27001"] and aligns with [Shashwat to add: e.g., "GDPR, the NIS2 Directive, and the EU Cyber Resilience Act"].
+> [Tool name] is certified [User to add: e.g., "SOC 2 Type II, ISO 27001"] and aligns with [User to add: e.g., "GDPR, the NIS2 Directive, and the EU Cyber Resilience Act"].
 
 **Plain-language expansion:**
 > | Standard | Status | Verification |
 > |---|---|---|
-> | SOC 2 Type II | [Shashwat to add: Certified / In progress] | Report available under NDA |
-> | ISO 27001 | [Shashwat to add: status] | Certificate available |
+> | SOC 2 Type II | [User to add: Certified / In progress] | Report available under NDA |
+> | ISO 27001 | [User to add: status] | Certificate available |
 > | GDPR | Compliant | DPA + Records of Processing |
-> | EU AI Act | [Shashwat to add: status] | Self-assessment available |
-> | NIS2 | [Shashwat to add: applicable / not applicable] | — |
+> | EU AI Act | [User to add: status] | Self-assessment available |
+> | NIS2 | [User to add: applicable / not applicable] | — |
 >
-> We undergo annual third-party penetration testing by [Shashwat to add: vendor]. Security incidents are disclosed within [Shashwat to add: hours, e.g., "72 hours"] per GDPR Article 33.
+> We undergo annual third-party penetration testing by [User to add: vendor]. Security incidents are disclosed within [User to add: hours, e.g., "72 hours"] per GDPR Article 33.
 
 **Where to verify:**
 > [link to security page] · [link to trust portal / compliance pack request]

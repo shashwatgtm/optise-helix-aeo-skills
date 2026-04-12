@@ -9,7 +9,7 @@
 
 1. **Never fabricate citation counts, share-of-voice numbers, conversion lifts, traffic figures, or industry benchmarks.** If asked for a benchmark, state what we know with sources, or say "no defensible benchmark exists for that question yet."
 
-2. **Never invent the user's data.** If the user hasn't supplied their pricing, subprocessors, security certifications, or company context, surface a `[Shashwat to add]` placeholder rather than guessing.
+2. **Never invent the user's data.** If the user hasn't supplied their pricing, subprocessors, security certifications, or company context, surface a `[User to add]` placeholder rather than guessing.
 
 3. **Never claim a webpage contains content the skill hasn't actually fetched and read.** If `fetch_page.py` failed or wasn't run, say so explicitly. Do not infer page content from the URL string or domain reputation.
 
@@ -32,12 +32,12 @@
 When a fact is missing and the user needs to fill it in, use:
 
 ```
-[Shashwat to add: <description of what's needed>]
+[User to add: <description of what's needed>]
 ```
 
 Example:
 ```
-Subprocessors: [Shashwat to add: full list of data processors with country of operation and DPA links]
+Subprocessors: [User to add: full list of data processors with country of operation and DPA links]
 ```
 
 Never use:

@@ -30,7 +30,7 @@ The 8 questions come from the Optise EU AEO Playbook, Section 7 (page 12). The o
 
 ## Section 1 — Golden Rule
 
-**Never invent the user's compliance data. If the user doesn't know their data residency, subprocessor list, AI provider stack, or security certifications, use `[Shashwat to add: ...]` placeholders. Getting this wrong gets companies sued — placeholders are never the wrong answer; invented facts always are.**
+**Never invent the user's compliance data. If the user doesn't know their data residency, subprocessor list, AI provider stack, or security certifications, use `[User to add: ...]` placeholders. Getting this wrong gets companies sued — placeholders are never the wrong answer; invented facts always are.**
 
 ---
 
@@ -62,7 +62,7 @@ Detect persona using `references/personas.md`. Adapt output:
 **Question priority order** (NOT the sequential order — this is what to fill first if the user has incomplete data):
 
 1. **Q1 (GDPR compliance)** — Must answer. If "no" or "unsure", halt and ask user to confirm before writing.
-2. **Q2 (Where is data stored)** — Must answer. If unknown, use `[Shashwat to add: exact region]` — never assume EU.
+2. **Q2 (Where is data stored)** — Must answer. If unknown, use `[User to add: exact region]` — never assume EU.
 3. **Q8 (Security standards)** — Highest-frequency follow-up question from EU procurement. Answer even if certifications are in-progress.
 4. **Q3 (EU data residency)** — Distinct from Q2. Q2 is where data IS, Q3 is what OPTIONS the buyer has.
 5. **Q4 (DPA availability)** — Near-universal requirement. If no DPA exists yet, flag as P0.
@@ -130,7 +130,7 @@ For each question, use the template from `references/eu-buyer-questions.md`. Eac
 - 1-sentence direct answer
 - 3-5 sentence plain-language expansion
 - "Where to verify" links
-- `[Shashwat to add: ...]` placeholders for any missing facts
+- `[User to add: ...]` placeholders for any missing facts
 
 **Failure mode:** If any required fact is missing, insert the placeholder rather than inventing. Never fill in "EU" when region is unknown. Never claim certifications that aren't actually held.
 
@@ -142,7 +142,7 @@ Build a `FAQPage` schema block with all 8 Q&A pairs. Each Answer's `text` field 
 
 Two options depending on user input:
 - **Self-serve DPA download available:** *"Download our pre-signed DPA: [link]. Countersign and return to complete."*
-- **DPA requires request:** *"Email [Shashwat to add: DPA email] to request a DPA. Standard turnaround: 48 hours for self-serve, 5 business days for negotiated versions."*
+- **DPA requires request:** *"Email [User to add: DPA email] to request a DPA. Standard turnaround: 48 hours for self-serve, 5 business days for negotiated versions."*
 
 ### Step 8: Add the "what your DPO should verify" section (Security persona) or skip (other personas)
 
@@ -235,31 +235,31 @@ Use Section 5 format.
 >
 > ## Trust & Compliance
 >
-> Optise is GDPR-compliant and currently pursuing SOC 2 Type II certification. Customer data is stored in [Shashwat to add: specific AWS/GCP region — do not publish "EU" without the exact region]. Our Data Processing Agreement is available on request at [Shashwat to add: DPA request email or URL]. Subprocessors and retention policies are published below.
+> Optise is GDPR-compliant and currently pursuing SOC 2 Type II certification. Customer data is stored in [User to add: specific AWS/GCP region — do not publish "EU" without the exact region]. Our Data Processing Agreement is available on request at [User to add: DPA request email or URL]. Subprocessors and retention policies are published below.
 >
 > ### Is Optise GDPR compliant?
 >
 > Yes. Optise is GDPR-compliant and operates as a Data Processor under EU Regulation 2016/679.
 >
-> We comply with GDPR Articles 28 (processor obligations), 30 (records of processing), 32 (security of processing), and 33 (breach notification). Our Data Processing Agreement is available to any customer before contract execution. We maintain a record of all processing activities. [Shashwat to add: name and contact of your DPO or Privacy Lead].
+> We comply with GDPR Articles 28 (processor obligations), 30 (records of processing), 32 (security of processing), and 33 (breach notification). Our Data Processing Agreement is available to any customer before contract execution. We maintain a record of all processing activities. [User to add: name and contact of your DPO or Privacy Lead].
 >
-> **Where to verify:** [Shashwat to add: link to DPA page] · [Shashwat to add: link to GDPR FAQ]
+> **Where to verify:** [User to add: link to DPA page] · [User to add: link to GDPR FAQ]
 >
 > ### Is customer data stored in the EU?
 >
-> `[Shashwat to add: direct answer — YES with exact region, or NO/partial with explanation. Do not leave this blank. Do not write "EU" without the specific region.]`
+> `[User to add: direct answer — YES with exact region, or NO/partial with explanation. Do not leave this blank. Do not write "EU" without the specific region.]`
 >
-> `[Shashwat to add: 3-5 sentence expansion describing the primary and backup regions, whether data leaves those regions for any operations, and who makes the decision if region changes.]`
+> `[User to add: 3-5 sentence expansion describing the primary and backup regions, whether data leaves those regions for any operations, and who makes the decision if region changes.]`
 >
-> **Where to verify:** `[Shashwat to add: link to data residency page]`
+> **Where to verify:** `[User to add: link to data residency page]`
 >
 > ### Does Optise offer EU data residency?
 >
-> `[Shashwat to add: YES/NO/on specific plans, with the plan name and how to request it]`
+> `[User to add: YES/NO/on specific plans, with the plan name and how to request it]`
 >
-> `[Shashwat to add: expansion describing what data stays in the region, any exceptions for support/analytics/AI processing, and who the customer notifies to elect residency]`
+> `[User to add: expansion describing what data stays in the region, any exceptions for support/analytics/AI processing, and who the customer notifies to elect residency]`
 >
-> **Where to verify:** `[Shashwat to add: link]`
+> **Where to verify:** `[User to add: link]`
 >
 > ### What security standards does Optise meet?
 >
@@ -268,23 +268,23 @@ Use Section 5 format.
 > | Standard | Status | Verification |
 > |---|---|---|
 > | SOC 2 Type II | In progress — target Q3 2026 | Attestation letter available on request |
-> | ISO 27001 | `[Shashwat to add: status or "not pursuing"]` | — |
+> | ISO 27001 | `[User to add: status or "not pursuing"]` | — |
 > | GDPR | Compliant | DPA available on request |
-> | EU AI Act | `[Shashwat to add: status or "self-assessment complete"]` | — |
+> | EU AI Act | `[User to add: status or "self-assessment complete"]` | — |
 >
-> `[Shashwat to add: annual pen test vendor and frequency, incident disclosure SLA, security team contact]`
+> `[User to add: annual pen test vendor and frequency, incident disclosure SLA, security team contact]`
 >
 > ### Can I get a DPA for Optise?
 >
 > Yes. Our Data Processing Agreement is available to all customers on request.
 >
-> `[Shashwat to add: Is it self-serve downloadable or request-based? Does it incorporate EU SCCs? Pre-signed or requiring your signature? Turnaround time for standard vs negotiated versions?]`
+> `[User to add: Is it self-serve downloadable or request-based? Does it incorporate EU SCCs? Pre-signed or requiring your signature? Turnaround time for standard vs negotiated versions?]`
 >
-> **Where to verify:** Email `[Shashwat to add: dpa@optise.com or equivalent]`
+> **Where to verify:** Email `[User to add: dpa@optise.com or equivalent]`
 >
 > ### Who are Optise's subprocessors?
 >
-> `[Shashwat to add: full subprocessor table with: Subprocessor | Service | Data type processed | Region]`
+> `[User to add: full subprocessor table with: Subprocessor | Service | Data type processed | Region]`
 >
 > **Example row format:**
 >
@@ -294,19 +294,19 @@ Use Section 5 format.
 >
 > We notify customers 30 days before adding any new subprocessor.
 >
-> **Where to verify:** `[Shashwat to add: link to live subprocessor page]`
+> **Where to verify:** `[User to add: link to live subprocessor page]`
 >
 > ### What data does Optise collect and how long is it retained?
 >
-> `[Shashwat to add: retention table covering account info, usage telemetry, customer content, support tickets, with purpose and retention period per row]`
+> `[User to add: retention table covering account info, usage telemetry, customer content, support tickets, with purpose and retention period per row]`
 >
 > ### Does Optise use third-party AI providers?
 >
-> `[Shashwat to add: YES/NO, which providers, what data flows to them, customer content scope, opt-out mechanism]`
+> `[User to add: YES/NO, which providers, what data flows to them, customer content scope, opt-out mechanism]`
 >
 > ---
 >
-> **Need a DPA now?** Email `[Shashwat to add: dpa@optise.com]` to request one. Standard turnaround: 48 hours for self-serve, 5 business days for negotiated versions.
+> **Need a DPA now?** Email `[User to add: dpa@optise.com]` to request one. Standard turnaround: 48 hours for self-serve, 5 business days for negotiated versions.
 >
 > ---
 >
@@ -330,7 +330,7 @@ Use Section 5 format.
 >       "name": "Is customer data stored in the EU?",
 >       "acceptedAnswer": {
 >         "@type": "Answer",
->         "text": "[Shashwat to add: direct answer with exact region before publishing this schema]"
+>         "text": "[User to add: direct answer with exact region before publishing this schema]"
 >       }
 >     }
 >     // ... 6 more Q&A pairs for Q3-Q7
@@ -340,7 +340,7 @@ Use Section 5 format.
 >
 > ## ⚠️ Before publishing
 >
-> This draft has 7 `[Shashwat to add: ...]` placeholders covering data residency, DPA mechanism, subprocessors, retention, AI providers, and security details. **Do not publish with placeholders visible.** Fill in each one with real facts from your infrastructure, legal, and security teams — or delay publishing until the facts are known. Publishing a Trust Centre with unfilled placeholders is worse than not publishing one at all (EU buyers will assume you're hiding something).
+> This draft has 7 `[User to add: ...]` placeholders covering data residency, DPA mechanism, subprocessors, retention, AI providers, and security details. **Do not publish with placeholders visible.** Fill in each one with real facts from your infrastructure, legal, and security teams — or delay publishing until the facts are known. Publishing a Trust Centre with unfilled placeholders is worse than not publishing one at all (EU buyers will assume you're hiding something).
 >
 > ## Suggested next step
 > Gather the 7 missing facts from Engineering, Legal, and Security. Once complete, re-run this skill with the full input set — or run `optise-helix-fitq-audit` on the published page to verify it scores well on FITq Trust signal.
@@ -353,9 +353,9 @@ Use Section 5 format.
 >
 > Yes. Our Data Processing Agreement is available to all customers and can be signed before contract execution.
 >
-> The [Company] DPA incorporates the EU Standard Contractual Clauses (SCCs) where data transfers outside the EU are involved. It is pre-signed by [Company] and only requires the customer's countersignature. The DPA covers processing instructions, security measures (Annex II), subprocessor list (Annex III), and data subject rights handling. Negotiated DPAs are available for [Shashwat to add: enterprise tier].
+> The [Company] DPA incorporates the EU Standard Contractual Clauses (SCCs) where data transfers outside the EU are involved. It is pre-signed by [Company] and only requires the customer's countersignature. The DPA covers processing instructions, security measures (Annex II), subprocessor list (Annex III), and data subject rights handling. Negotiated DPAs are available for [User to add: enterprise tier].
 >
-> **Where to verify / how to get it:** Email [Shashwat to add: DPA email] OR [link to self-serve DPA download page].
+> **Where to verify / how to get it:** Email [User to add: DPA email] OR [link to self-serve DPA download page].
 >
 > ## Partial JSON-LD (FAQPage fragment for just Q4)
 >
@@ -473,15 +473,15 @@ All 9 base rules from `references/anti-hallucination-base.md` apply. Additionall
 
 **Domain rule 1:** Never assume EU data residency. The moment the user says "EU-hosted" without specifying the region, push back. Writing "data stored in EU" when the real location is AWS us-east-1 gets companies sued for misrepresentation to EU customers.
 
-**Domain rule 2:** Never invent subprocessor names. If the user doesn't provide a list, use the template with `[Shashwat to add: ...]` placeholders in every row.
+**Domain rule 2:** Never invent subprocessor names. If the user doesn't provide a list, use the template with `[User to add: ...]` placeholders in every row.
 
 **Domain rule 3:** Never claim certifications the user hasn't verified. "SOC 2 Type II certified" and "SOC 2 Type II in progress" are legally distinct claims — use exactly what the user says.
 
-**Domain rule 4:** Never fabricate a DPO name or contact. If the user doesn't name one, use `[Shashwat to add: DPO name and contact]`.
+**Domain rule 4:** Never fabricate a DPO name or contact. If the user doesn't name one, use `[User to add: DPO name and contact]`.
 
 **Domain rule 5:** Never write an EU AI Act compliance claim without a user-provided risk classification. The Act has specific categories (minimal / limited / high / unacceptable risk) — claiming "compliant" without knowing your category is a legal risk.
 
-**Domain rule 6:** Never publish placeholders. If the output contains `[Shashwat to add: ...]` strings, the final output must include the pre-publish warning from Example 1 ("Do not publish with placeholders visible").
+**Domain rule 6:** Never publish placeholders. If the output contains `[User to add: ...]` strings, the final output must include the pre-publish warning from Example 1 ("Do not publish with placeholders visible").
 
 **Domain rule 7:** Never translate legal language to other EU languages. The project rule is English-only at v1. Legal translations require native legal review.
 

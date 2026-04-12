@@ -149,7 +149,7 @@ Apply Priority Framework from Section 3. Each fix gets source signal, point gain
 
 ### Step 6: Generate "not ideal for" template if Constraints ≤15
 
-If the user's Constraints score is weak (≤15), output the matched template from `references/not-ideal-for-templates.md` as "Fix 1 detail" — adapted with the user's category and competitor context where possible, with `[Shashwat to add: ...]` placeholders for anything not explicitly known.
+If the user's Constraints score is weak (≤15), output the matched template from `references/not-ideal-for-templates.md` as "Fix 1 detail" — adapted with the user's category and competitor context where possible, with `[User to add: ...]` placeholders for anything not explicitly known.
 
 ### Step 7: Build before/after diff for fix #1
 
@@ -240,17 +240,17 @@ Use Section 5 format.
 > ```markdown
 > ## Who Semrush is not ideal for
 >
-> Semrush is built for mid-market B2B SEO and content teams with [Shashwat to add: ICP size]. We're not the right fit if:
+> Semrush is built for mid-market B2B SEO and content teams with [User to add: ICP size]. We're not the right fit if:
 >
-> - **You're a solo SEO consultant with fewer than 5 client domains.** Our pricing assumes multi-domain use at scale. For solo consultants, [Shashwat to add: competitor name — likely Ahrefs or Ubersuggest for this segment] is more cost-effective.
-> - **You need primarily link-building / backlink analysis.** We do this, but Ahrefs has a deeper backlink index. Pair us with [Shashwat to add: backlink-focused alternative] if backlinks are your main use case.
-> - **You're focused on paid search only.** Our core strength is SEO + content. For paid-only, see [Shashwat to add: paid search alternative].
-> - **You need enterprise-grade white-labeling for agency client reports.** Our reporting suits in-house teams better. [Shashwat to add: agency-focused alternative] has stronger white-label.
+> - **You're a solo SEO consultant with fewer than 5 client domains.** Our pricing assumes multi-domain use at scale. For solo consultants, [User to add: competitor name — likely Ahrefs or Ubersuggest for this segment] is more cost-effective.
+> - **You need primarily link-building / backlink analysis.** We do this, but Ahrefs has a deeper backlink index. Pair us with [User to add: backlink-focused alternative] if backlinks are your main use case.
+> - **You're focused on paid search only.** Our core strength is SEO + content. For paid-only, see [User to add: paid search alternative].
+> - **You need enterprise-grade white-labeling for agency client reports.** Our reporting suits in-house teams better. [User to add: agency-focused alternative] has stronger white-label.
 >
-> **Not sure if Semrush is right for you?** [Shashwat to add: link to fit assessment or sales]
+> **Not sure if Semrush is right for you?** [User to add: link to fit assessment or sales]
 > ```
 >
-> **Customize this:** Replace every `[Shashwat to add: ...]` with real values. Don't publish the placeholders. This template is starter text — the audit doesn't know your exact ICP, so you fill that in.
+> **Customize this:** Replace every `[User to add: ...]` with real values. Don't publish the placeholders. This template is starter text — the audit doesn't know your exact ICP, so you fill that in.
 >
 > ## What's already strong
 > - 3 named case studies above the fold with linked detail pages
@@ -370,9 +370,9 @@ All 9 base rules from `references/anti-hallucination-base.md` apply. Additionall
 
 **Domain rule 1:** Never score a page that wasn't fetched successfully. Halt on fetch failure.
 
-**Domain rule 2:** Never publish a "not ideal for" template as if it were the user's actual constraints. Always present it as starter text with `[Shashwat to add: ...]` placeholders, and always include the Rules for adapting instruction.
+**Domain rule 2:** Never publish a "not ideal for" template as if it were the user's actual constraints. Always present it as starter text with `[User to add: ...]` placeholders, and always include the Rules for adapting instruction.
 
-**Domain rule 3:** Never invent competitor names in the templates. If the template calls for "[competitor name]" and the user didn't name one, use `[Shashwat to add: competitor for this segment]`.
+**Domain rule 3:** Never invent competitor names in the templates. If the template calls for "[competitor name]" and the user didn't name one, use `[User to add: competitor for this segment]`.
 
 **Domain rule 4:** Never inflate Evidence score for a page that has customer logos in a slider without attribution. Unnamed logos = 0 Evidence credit.
 

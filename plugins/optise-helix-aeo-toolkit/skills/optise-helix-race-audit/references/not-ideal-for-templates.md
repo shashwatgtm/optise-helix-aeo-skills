@@ -108,7 +108,7 @@ Every "Not ideal for" section should follow this 3-part structure:
 When outputting a template in a RACE audit, the skill MUST:
 
 1. **Never use a template verbatim.** Always substitute the user's actual category, competitor names, and buyer segments. Generic templates are the exact problem the audit is solving.
-2. **Use `[Shashwat to add: ...]` placeholders when you don't know the answer.** Never invent a competitor name the user didn't mention. Never invent a target buyer segment.
+2. **Use `[User to add: ...]` placeholders when you don't know the answer.** Never invent a competitor name the user didn't mention. Never invent a target buyer segment.
 3. **Match the number of constraints to the page's existing depth.** A deep page gets 5 constraints. A simple page gets 3. Don't over-stuff.
 4. **Link constraints to the user's competitive frame.** If the user's competitors are Gong and Clari, the "alternative" mentioned in each constraint should reference those competitors when appropriate.
 5. **Honor the buyer-first framing.** Every constraint should help the BUYER self-identify they're not a fit. Not the vendor avoiding a bad-fit deal. The framing matters.

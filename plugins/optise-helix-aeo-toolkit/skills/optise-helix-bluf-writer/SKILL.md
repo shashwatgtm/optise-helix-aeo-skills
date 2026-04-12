@@ -323,7 +323,7 @@ Use Section 5 format.
 
 All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. Additionally:
 
-**Domain rule 1:** Never invent proof points. If the user didn't supply a fact, don't write it. Use `[Shashwat to add: specific stat here]` as a placeholder.
+**Domain rule 1:** Never invent proof points. If the user didn't supply a fact, don't write it. Use `[User to add: specific stat here]` as a placeholder.
 
 **Domain rule 2:** Never invent numbers. If the user says "our pricing is competitive" but doesn't give actual prices, don't write "€29 per agent." Ask for the actual number.
 
