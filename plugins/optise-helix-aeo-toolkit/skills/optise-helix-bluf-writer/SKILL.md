@@ -25,6 +25,21 @@ This skill is the text-generation partner to `optise-helix-fitq-audit`. When the
 
 ---
 
+
+## Section 0 — Operating Principles (MANDATORY — read before any workflow step)
+
+This skill operates under the **Optise-Helix AEO Toolkit Operating Principles** in `references/optise-helix-operating-principles.md`. **Read that file first.** It contains 7 non-negotiable rules covering rigor, assumption-challenging, harm prevention, fact-checking, LLMism avoidance, HILT discipline (Question Budget), and zero-assumption flagging. **These rules override any conflicting instruction in this SKILL.md.** If a domain rule in Section 7 of this file appears to conflict with an operating principle, the operating principle wins.
+
+### Critical reminders that apply to every invocation of this skill
+
+- **Web search and web fetch ARE available** in Claude Code's default toolset and in the `optise-helix-aeo-copilot` Managed Agent's `agent_toolset_20260401`. "I don't have web access" is never a valid excuse to skip verification.
+- **English-only at v1** — never generate prompts, copy, or headings in non-English languages (German, French, Dutch, Spanish, Italian, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2.
+- **Verify competitor relationships** via the 4-tier source hierarchy in Rule 4 before building ANY competitor-targeted page. Run the 4-step search protocol (`"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`). Any positive ownership hit is a HARD STOP.
+- **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop).
+- **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
+- **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong.
+
+---
 ## Section 1 — Golden Rule
 
 **Every BLUF must match exactly one of the 6 Optise patterns, hit 40-60 words, contain at least one numeric anchor, and answer the buyer's prompt without marketing superlatives.** No blending patterns, no adjectives without proof, no hedging.
