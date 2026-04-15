@@ -1,6 +1,6 @@
-# Optise–Helix AEO Toolkit — Operating Principles
+# Operating Principles — Shared Core
 
-**Scope:** This file applies to ALL 6 skills in the Optise–Helix AEO toolkit (optise-helix-prompt-pack-builder, optise-helix-fitq-audit, optise-helix-race-audit, optise-helix-bluf-writer, optise-helix-eu-trust-centre, optise-helix-aeo-tracker). Every SKILL.md in this toolkit references this file. The 7 rules below are non-negotiable and override any conflicting instruction in any individual SKILL.md.
+**Scope:** This file is the shared operating-principles core that applies to ALL skills in the plugin where it is installed. Every SKILL.md in the plugin should reference this file via Section 0 of its body. The 7 rules below are non-negotiable and override any conflicting instruction in any individual SKILL.md. Plugins MAY add their own plugin-specific rules in a separate `plugin-specific-rules.md` file in the same `references/` folder; those rules are additive to (never replacing) the rules in this shared core.
 
 **Why this file exists:** These rules are the difference between output that looks helpful and output that IS helpful. They catch the failure modes that cause a skill to produce polished, confident, and wrong deliverables — the worst failure mode for a consulting toolkit. Read this file first. If any rule conflicts with a user request, the rule wins.
 
@@ -28,9 +28,9 @@ Skills MUST verify user-supplied facts about market structure, competitive relat
 
 **Specific verification triggers (HARD STOPS — skill must not proceed until verified):**
 
-1. **Competitor relationships.** Before generating any "alternatives to X" or "Y vs us" page, verify that competitor X is actually an independent company and not a subsidiary, acquisition, or merger product of the user's own company. If the relationship cannot be verified from current knowledge, ask: *"Is [competitor] a fully independent company, or part of your corporate group? I want to verify before building competitive pages."* Real-world example of the failure this prevents: Contentsquare acquired Hotjar in 2021. Building "/alternatives/hotjar" pages for Contentsquare would be a commercial own-goal.
+1. **Competitor relationships.** Before generating any "alternatives to X" or "Y vs us" page, verify that competitor X is actually an independent company and not a subsidiary, acquisition, or merger product of the user's own company. If the relationship cannot be verified from current knowledge, ask: *"Is [competitor] a fully independent company, or part of your corporate group? I want to verify before building competitive pages."* The full verification protocol with web search steps is documented in Rule 4. The failure this prevents: shipping competitor-comparison pages where the "competitor" is actually a product the user's company already owns — a commercial own-goal.
 
-2. **URL existence.** Before marking any URL as `[EXISTS]` or recommending an audit of a specific page, verify the URL actually exists. Use `scripts/fetch_page.py` if available in the skill, or explicitly label the claim as an assumption: *"Assumption: /pricing exists at [domain]. Confirm before I hand off to the audit skill."*
+2. **URL existence.** Before marking any URL as `[EXISTS]` or recommending an audit of a specific page, verify the URL actually exists. Use `web_fetch` to confirm a 200 OK response, or explicitly label the claim as an assumption: *"Assumption: /pricing exists at [domain]. Confirm before I hand off to the audit skill."*
 
 3. **Multi-country market scope.** Before generating deliverables scoped to multi-country regions ("DACH", "Nordics", "Benelux", "Southern Europe", "all EU"), ask the user to confirm which specific countries are in scope. Real consulting engagements are country-specific, not region-generic. Example: *"You said DACH. That usually means Germany + Austria + Switzerland. Do you actually sell into all three, or just Germany? The prompts and pages I generate will differ."*
 
@@ -47,7 +47,7 @@ Skills MUST verify user-supplied facts about market structure, competitive relat
 Skills MUST NOT produce output that would damage the user commercially, legally, or reputationally if shipped, even if the user explicitly requests it.
 
 **What counts as harmful output:**
-- Pages that target the user's own products as "competitors" (the Hotjar-for-Contentsquare failure mode)
+- Pages that target the user's own products as "competitors" (the M&A own-goal failure mode where the skill builds an "alternatives to X" page for an X that the user's own company actually owns)
 - Compliance claims the skill cannot verify (claiming ISO 27001 when the user hasn't provided certification evidence)
 - Promises of outcomes by specific dates ("you will be cited within 14 days" is forbidden; AI inclusion is probabilistic)
 - Invented statistics, benchmarks, or traffic figures
@@ -67,61 +67,104 @@ Skills MUST NOT produce output that would damage the user commercially, legally,
 
 Skills MUST verify every specific factual claim (dates, ownership, certifications, regulatory status, URL existence, market share, product capabilities, M&A relationships) via web search or by asking the user before including it in output. Verification is non-optional.
 
-**The tool is always available.** The skill DOES have access to `web_search` and `web_fetch` in every deployment mode of this toolkit. In Claude Code, these are part of the default toolset available to the underlying Claude when the skill activates. In the `optise-helix-aeo-copilot` Managed Agent, these are included in the configured `agent_toolset_20260401` toolset. "I don't have web access" is never a valid reason to skip verification — it is factually incorrect in both deployment modes. If the skill is about to write a specific factual claim and has not verified it, the skill has only three acceptable choices: verify it, ask the user to confirm it, or flag it explicitly as unverified.
+**The tool is always available.** Skills DO have access to `web_search` and `web_fetch` in every Claude Code deployment mode. These are part of Claude Code's default toolset and are available to the underlying Claude when any skill activates. "I don't have web access" is never a valid reason to skip verification — it is factually incorrect. If a skill is about to write a specific factual claim and has not verified it, the skill has only three acceptable choices: verify it, ask the user to confirm it, or flag it explicitly as unverified.
 
-**Claims vs knowledge.** "AI engines are changing B2B search" is a general statement skills can make without verification. "CNIL fined Google €100M in 2022 for cookie violations" is a specific factual claim that must be verified — the actual fine was in December 2020, and getting the date wrong undermines credibility and is a Rule 4 violation. "Contentsquare acquired Hotjar in 2021" is a specific factual claim that must be verified — getting the relationship wrong produces actively harmful output (a Rule 3 violation cascading from a Rule 4 violation).
+**Claims vs knowledge.** "AI engines are changing B2B search" is a general statement skills can make without verification. "CNIL fined Google €100M in 2022 for cookie violations" is a specific factual claim that must be verified — the actual fine was in December 2020, and getting the date wrong undermines credibility and is a Rule 4 violation. "Company X acquired Company Y in 2021" is a specific factual claim that must be verified — getting the relationship wrong produces actively harmful output (a Rule 3 violation cascading from a Rule 4 violation).
 
 **Verification methods in order of preference:**
 1. **Web search** — for any specific date, ownership claim, regulatory fact, competitor relationship, or market structure claim. Use it. It is available. Skipping it to save a few seconds is a violation.
-2. **Fetch the source** — if the claim concerns a specific URL, fetch the URL with `web_fetch` or `scripts/fetch_page.py` (if the skill has it) and read it directly.
+2. **Fetch the source** — if the claim concerns a specific URL, fetch the URL with `web_fetch` and read it directly.
 3. **Ask the user** — if search and fetch both fail to resolve the claim, ask the user to confirm the claim before it ships in the deliverable.
 4. **Flag and defer** — if none of the above can resolve the claim in the current session, flag it with `[fact-check needed: <claim>]` in the output as an explicit placeholder, never as an assertion.
 
-**Never assert what you cannot verify.** If the skill is about to write "CNIL has been enforcing cookie compliance since 2022" but is not certain of the date, the correct output is to run a web search first. If the search resolves the fact, use the verified version. If it doesn't, write: "CNIL has been enforcing cookie compliance for several years [fact-check needed: exact start date of active enforcement]." This is honest and still useful.
+**Never assert what you cannot verify.** If the skill is about to write "regulator X has been enforcing rule Y since 2022" but is not certain of the date, the correct output is to run a web search first. If the search resolves the fact, use the verified version. If it doesn't, write: "regulator X has been enforcing rule Y for several years [fact-check needed: exact start date of active enforcement]." This is honest and still useful.
 
-**Special case — competitor relationship verification.** Before generating ANY competitor-targeted page (alternatives/X, vs-X, compare/X), the skill MUST run a tiered verification protocol to confirm the named competitor is a genuinely independent company, not a subsidiary, acquisition, or merger product of the user's own company.
+---
 
-**The 4-tier source hierarchy (use in this order):**
+### The 4-tier source hierarchy
 
-**Tier 1 — Ground truth for M&A and ownership** (all free, all authoritative). Use for corporate relationship / ownership claims:
-- Official company press releases (acquirer's `/press/` or `/news/` section)
-- Crunchbase acquisition records (track every announced deal with dates and sources)
+Not every URL counts as a source. Skills MUST apply a strict source-quality hierarchy when verifying any factual claim. Sources fall into four tiers, used in priority order:
+
+**Tier 1 — Ground truth (always acceptable).** Primary sources where the entity speaks for itself. Use Tier 1 for ALL corporate relationship, ownership, M&A, financial, and product capability claims:
+
+- Official company press releases (newsroom, `/press/`, `/news/` sections)
+- Crunchbase acquisition records and company profiles
 - Wikipedia company articles (cross-referenced to primary sources)
-- SEC filings for US-listed acquirers (definitive for material acquisitions)
+- SEC filings for US-listed companies (S-1, 10-K, 10-Q, 8-K, DEF 14A, 13F)
+- Regulatory filings from FDA, FTC, CMA, BaFin, ESMA, CNIL, ICO, and equivalents
+- Earnings call transcripts
+- Investor presentations and investor day decks
+- Official product changelogs and product documentation
+- Court filings and legal documents (PACER, court records)
 
-**Tier 2 — Category and competitor landscape** (free, reliable for category taxonomy). Use for "are these products in the same category" and some ownership flagging:
-- G2 category pages and G2 comparison pages (G2 flags when one company owns another)
-- Capterra category pages
-- Gartner Peer Insights (free; reveals "same-category" relationships)
+Tier 1 is authoritative by definition: if the entity said it themselves in an official channel, the claim is grounded.
+
+**Tier 2 — Reputable research and analyst firms (always acceptable for their domains).** Use Tier 2 for category landscape, competitive positioning, and analyst-validated capability claims:
+
+- Gartner (Magic Quadrants, Hype Cycles, Peer Insights, named-analyst research notes)
+- Forrester (Wave reports, named-analyst research, blog posts under firm masthead)
+- IDC (MarketScapes, named-analyst research)
+- 451 Research / S&P Global Market Intelligence
+- HfS Research, Everest Group (PEAK Matrix), ISG, Zinnov Zones (stronger for services / GCC / BPO categories than pure software)
+- GigaOm (Radar reports, named-analyst research)
+- G2 (category pages, comparison pages, verified-user review aggregations)
+- Capterra (category pages, review aggregations)
+- TrustRadius (verified-user reviews and category data)
 - SoftwareReviews (crowdsourced enterprise software evaluations)
-- GigaOm Radar reports (when public summaries available)
+- Peerspot (formerly IT Central Station — verified-user enterprise reviews)
 
-*This list is illustrative, not exhaustive. New sources emerge; use equivalents that meet the "free, category-authoritative, cross-referenced" bar.*
+*This list is illustrative, not exhaustive. New analyst firms and review platforms emerge; use equivalents that meet the "named analyst, firm masthead, cross-referenced, free or paid-for-access" bar.*
 
-**Tier 3 — Paid analyst research** (high signal, usually paywalled). Cite when surfaced in free summaries or press releases:
-- Forrester Wave reports
-- Gartner Magic Quadrants
-- IDC MarketScape
-- HfS Blueprints, Everest Group PEAK Matrix, Zinnov Zones (stronger for services / GCC / BPO categories than pure software)
+**Tier 3 — Reputable business and trade press (acceptable with care).** Use Tier 3 as corroborating evidence or for context that doesn't have a Tier 1 or Tier 2 source. Skills should prefer Tier 1-2 when both are available:
 
-*Same caveat: this list is illustrative, not exhaustive. Skills should not assume these are the only legitimate analyst sources.*
+- Wall Street Journal, Financial Times, Reuters, Bloomberg, The Economist
+- Harvard Business Review, MIT Sloan Management Review
+- Fortune, Forbes (staff-written articles only — see Tier 4 for Contributor exclusion)
+- TechCrunch, The Information, Axios, Stratechery (Ben Thompson), Protocol
+- Crunchbase News, PitchBook News
+- SaaStr (first-party content from Jason Lemkin and named SaaStr staff only)
+- Top-tier VC firm content: a16z, Sequoia Capital, Y Combinator, First Round Review, Benchmark, Accel, Lightspeed, Greylock, Index Ventures, Bessemer, Kleiner Perkins
+- Named-founder blogs with public track records: Paul Graham, David Sacks, Marc Andreessen, Patrick Collison, Aaron Levie, Dharmesh Shah, Rand Fishkin, April Dunford, Tomasz Tunguz, Jason Cohen, and equivalents
+- Vertical trade press relevant to the domain: Modern Healthcare for healthtech, American Banker for fintech, Supply Chain Dive for logistics, Adweek for marketing tech, etc.
 
-**Tier 4 — Trade press and blog posts** (variable quality). Use only as corroboration of a Tier 1-3 finding, never as primary evidence. TechCrunch, VentureBeat, SaaStr, trade publications, and company blog posts fall here.
+*This list is illustrative, not exhaustive. The bar is "named-author publication with editorial standards from an organization with reputational stake in accuracy." Anonymous or pseudonymous publications do not qualify.*
 
-**The competitor verification search protocol:**
+**Tier 4 — Unacceptable sources (never cite, never rely on).** Skills MUST NOT use any of the following as evidence for factual claims. If the only available sources are Tier 4, the claim is unverified and MUST be flagged with `[Unverified — do not use without confirmation]`:
+
+- Random SEO affiliate blogs ("Top 10 X alternatives" listicles from unknown publishers)
+- Comparison aggregator sites built primarily for commercial keyword ranking
+- Influencer LinkedIn posts from accounts without verified domain expertise
+- Twitter/X threads from accounts without domain credentials
+- Medium posts from unknown authors (Medium posts from named experts on the Tier 3 list are acceptable)
+- Substack newsletters NOT written by named experts or VCs from Tier 3
+- Forbes Contributor posts (distinct from staff-written Forbes articles — Contributor is a pay-to-play channel with no editorial review)
+- Press release aggregators (PR Newswire, Business Wire, GlobeNewswire) cited without also citing the underlying release from the company itself
+- Forum posts (Reddit, Hacker News, Quora, Stack Exchange) as primary evidence — acceptable only as "one user reported..." anecdotal color, never as factual grounding
+- AI-generated comparison sites and AI-summarized review aggregators
+- Paid placements and sponsored content disguised as editorial reviews
+- Personal blogs from authors with no public track record in the domain
+- Wikipedia mirror sites and content farms
+
+*This list is illustrative, not exhaustive. The general rule: if the source has no editorial review, no named accountable author, no reputational stake in accuracy, and no incentive to be correct, it does not count as evidence.*
+
+---
+
+### The competitor verification search protocol
+
+Before generating ANY competitor-targeted content (alternatives/X, vs-X, compare/X pages, battle cards, comparison documents, "Why us vs them" narratives), the skill MUST run this verification protocol to confirm the named competitor is a genuinely independent company, not a subsidiary, acquisition, or merger product of the user's own company.
 
 For each named competitor, run these searches in order and stop at the first positive ownership hit:
 
-1. `"[user company] acquired [competitor]"` — catches direct acquisitions (Tier 1)
-2. `"[competitor] acquired by"` — catches inverse phrasing (Tier 1)
-3. `"[competitor] Crunchbase acquisition"` — catches Crunchbase records (Tier 1)
-4. `"[user company] vs [competitor]"` — catches G2/Capterra comparison pages, which sometimes flag ownership (Tier 2)
+1. `"[user company] acquired [competitor]"` — catches direct acquisitions (Tier 1 evidence)
+2. `"[competitor] acquired by"` — catches inverse phrasing (Tier 1 evidence)
+3. `"[competitor] Crunchbase acquisition"` — catches Crunchbase records (Tier 1 evidence)
+4. `"[user company] vs [competitor]"` — catches G2/Capterra comparison pages, which sometimes flag ownership relationships (Tier 2 evidence)
 
-If any of steps 1-4 return evidence of acquisition, merger, subsidiary status, or parent-company relationship between the user's company and the named competitor, STOP and invoke Rule 3's no-harmful-output protection. Present the finding to the user as a HARD STOP question (see Rule 6).
+**If any of steps 1-4 returns evidence of acquisition, merger, subsidiary status, or parent-company relationship** between the user's company and the named competitor, STOP immediately and invoke Rule 3's no-harmful-output protection. Present the finding to the user as a HARD STOP question (see Rule 6's Question Budget). Do not proceed with the original request until the user has explicitly confirmed how they want to handle the conflict.
 
-If all 4 searches return no ownership evidence, treat the competitor as independent and proceed. Record in the output (as an assumption flag per Rule 7) that the verification was performed and returned clean: *"Assumption: [competitor] verified as independent company via Tier 1 source check."*
+**If all 4 searches return no ownership evidence**, treat the competitor as independent and proceed. Record in the output (as an assumption flag per Rule 7) that the verification was performed and returned clean: *"Assumption: [competitor] verified as independent company via Tier 1 source check on [date]."*
 
-This protocol is the belt-and-suspenders fix that would have caught the Contentsquare-Hotjar failure in Test 3 on the very first search.
+This protocol is the belt-and-suspenders mechanism that catches M&A relationships between the user's company and named competitors before they show up as own-goal content in shipped deliverables. The protocol takes 4 web searches, runs in under 30 seconds, and prevents commercially harmful output that would otherwise damage the user's credibility.
 
 ---
 
@@ -199,7 +242,7 @@ Current HARD STOP gates (apply Question Budget rules above when selecting which 
 - Do NOT say "I'll go ahead and start on X while you confirm"
 - Wait for the user's reply before any further action
 
-**Why HARD STOPs instead of soft defaults:** The skill's default behavior should never be "assume the permissive interpretation and proceed." That's exactly the failure mode that produces Hotjar-as-competitor pages, invented German prompts, and assumed /pricing URLs. The HARD STOP forces the skill to be explicit about what it's about to do before doing it.
+**Why HARD STOPs instead of soft defaults:** The skill's default behavior should never be "assume the permissive interpretation and proceed." That's exactly the failure mode that produces own-goal competitor pages, invented non-English content, and assumed URL claims. The HARD STOP forces the skill to be explicit about what it's about to do before doing it.
 
 ---
 
@@ -216,7 +259,7 @@ Skills MUST flag every assumption they make in the output with an explicit `Assu
 
 > **Assumption:** You are selling into Germany, Austria, AND Switzerland. Reply "Germany only" (or your actual target) to correct.
 
-> **Assumption:** `/pricing` exists at personio.de. I haven't verified this — if it doesn't exist, mark it `[TO BUILD]` and move it to Sprint 1.
+> **Assumption:** `/pricing` exists at [domain]. I haven't verified this — if it doesn't exist, mark it `[TO BUILD]` and move it to a later sprint.
 
 > **Assumption:** Your ICP is mid-market HR teams at 200-2,000 employee companies. If you're targeting enterprise (5,000+) or SMB (<200), the prompts will need rescoring.
 
@@ -252,7 +295,7 @@ Never use:
 
 Every quantitative claim must follow one of three patterns:
 
-1. **Whitepaper-sourced:** *"Per the Optise EU AEO Playbook, page 12, the 8 EU buyer questions are…"*
+1. **Authoritative-source-sourced:** *"Per [name of authoritative source], page [N], [the specific claim]…"* (where the authoritative source is a Tier 1 or Tier 2 source per Rule 4)
 2. **Web-sourced:** *"Eurostat, December 2025: 20% of EU enterprises with 10+ employees use AI ([source](https://example.com))"*
 3. **Unsourced (flag explicitly):** *"[source needed: looking for a recent benchmark on this; not found in current research]"*
 
@@ -262,7 +305,7 @@ Every quantitative claim must follow one of three patterns:
 
 Each SKILL.md in the toolkit has its own Section 7 ("Anti-Hallucination Rules") with skill-specific domain rules. **This operating principles file takes precedence.** If a domain rule in a SKILL.md conflicts with a rule here, the rule here wins.
 
-Domain rules SHOULD add specific enforcement for their skill's failure modes (e.g., the FITq audit domain rule "never score a page that wasn't fetched" is a specific instance of Rule 3/Rule 4 for that skill). They should NOT weaken the operating principles.
+Domain rules SHOULD add specific enforcement for their skill's failure modes (e.g., a page-audit skill's domain rule "never score a page that wasn't fetched" is a specific instance of Rule 3/Rule 4 for that skill). They should NOT weaken the operating principles.
 
 ---
 
@@ -274,6 +317,6 @@ When in doubt, err toward asking the user a HARD STOP question rather than proce
 
 ---
 
-**File version:** 1.0 (2026-04-13)
-**Authorship:** Optise + Helix GTM Consulting
+**File version:** 1.2 (April 2026)
+**Authorship:** Shared operating-principles core, originated in the Optise-Helix AEO Toolkit build, generalized for cross-plugin reuse
 **License:** Proprietary
