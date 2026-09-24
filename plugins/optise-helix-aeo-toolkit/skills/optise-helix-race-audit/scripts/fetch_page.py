@@ -47,17 +47,23 @@ READ_TIMEOUT_SECONDS = 30
 # and the audit should report the failure honestly per anti-hallucination rule 3.
 MAX_RETRIES = 3
 
-# User-Agent strings to try in order. We start with a real Chrome UA because
-# some Cloudflare-protected sites block obvious bot UAs. If that fails we fall
-# back to the OpenAI/Anthropic crawler UAs to see whether the page is even
-# accessible to AI engines (which is itself a Findability data point).
-USER_AGENTS = [
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; "
-    "ChatGPT-User/1.0; +https://openai.com/bot",
-    "Mozilla/5.0 (compatible; ClaudeBot/1.0; +https://www.anthropic.com)",
-]
+# One honest User-Agent that names this tool. The script never pretends to be
+# a browser or an AI crawler (for example ChatGPT-User, GPTBot or ClaudeBot),
+# and never switches user agent to get past a block. If a site refuses this
+# user agent, that refusal is reported as it is. To check whether AI crawlers
+# are allowed, read the site's robots.txt rules for GPTBot, ChatGPT-User,
+# ClaudeBot and PerplexityBot instead of impersonating them.
+TOOL_VERSION = "1.4.0"
+USER_AGENT = (
+    f"optise-helix-aeo-toolkit/{TOOL_VERSION} fetch_page.py "
+    "(+https://github.com/shashwatgtm/optise-helix-aeo-skills)"
+)
+
+# Only web addresses are fetched. file://, ftp:// and other schemes are refused.
+ALLOWED_SCHEMES = ("http", "https")
+
+# Largest response body read, in bytes. Bigger pages are cut off and flagged.
+MAX_BODY_BYTES = 5 * 1024 * 1024
 
 # Date heuristics, in order of reliability. The first match wins.
 DATE_PATTERNS = [
@@ -78,8 +84,8 @@ DATE_PATTERNS = [
 ]
 
 
-def fetch_with_retries(url, user_agent_index=0, retry=0):
-    """Fetch a URL with retries and UA fallback. Returns dict or raises."""
+def fetch_with_retries(url, retry=0):
+    """Fetch a URL with retries on network errors. Returns dict or raises."""
     try:
         import urllib.request
         import urllib.error
@@ -88,13 +94,7 @@ def fetch_with_retries(url, user_agent_index=0, retry=0):
             f"urllib unavailable: {e}. fetch_page.py requires Python 3 stdlib only."
         )
 
-    if user_agent_index >= len(USER_AGENTS):
-        raise RuntimeError(
-            f"All {len(USER_AGENTS)} user-agent strategies failed for {url}. "
-            f"The page may be blocking all crawlers or unreachable."
-        )
-
-    ua = USER_AGENTS[user_agent_index]
+    ua = USER_AGENT
     request = urllib.request.Request(url, headers={
         "User-Agent": ua,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -108,7 +108,9 @@ def fetch_with_retries(url, user_agent_index=0, retry=0):
             timeout=READ_TIMEOUT_SECONDS,
         ) as response:
             ttfb_ms = int((time.time() - start_time) * 1000)
-            html_bytes = response.read()
+            html_bytes = response.read(MAX_BODY_BYTES + 1)
+            truncated = len(html_bytes) > MAX_BODY_BYTES
+            html_bytes = html_bytes[:MAX_BODY_BYTES]
             return {
                 "status": response.status,
                 "url_final": response.url,  # captures redirects
@@ -117,12 +119,12 @@ def fetch_with_retries(url, user_agent_index=0, retry=0):
                 "html_size_bytes": len(html_bytes),
                 "ttfb_ms": ttfb_ms,
                 "user_agent_used": ua,
+                "html_truncated": truncated,
             }
     except urllib.error.HTTPError as e:
-        # 4xx and 5xx — these are real responses, not retry candidates,
-        # unless they're 429 / 503 which sometimes resolve with a different UA
-        if e.code in (429, 503) and user_agent_index < len(USER_AGENTS) - 1:
-            return fetch_with_retries(url, user_agent_index + 1, retry)
+        # 4xx and 5xx are real responses. Report them as they are. A 401, 403
+        # or 429 can mean the site blocks automated tools; never retry with a
+        # different user agent to get around that.
         return {
             "status": e.code,
             "url_final": url,
@@ -136,12 +138,9 @@ def fetch_with_retries(url, user_agent_index=0, retry=0):
     except urllib.error.URLError as e:
         if retry < MAX_RETRIES:
             time.sleep(1 + retry)  # backoff: 1s, 2s, 3s
-            return fetch_with_retries(url, user_agent_index, retry + 1)
-        # Try fallback UA
-        if user_agent_index < len(USER_AGENTS) - 1:
-            return fetch_with_retries(url, user_agent_index + 1, 0)
+            return fetch_with_retries(url, retry + 1)
         raise RuntimeError(
-            f"URLError on {url} after {MAX_RETRIES} retries with all UAs: {e.reason}"
+            f"URLError on {url} after {MAX_RETRIES} retries: {e.reason}"
         )
 
 
@@ -281,6 +280,8 @@ def analyze(url):
     parsed = urlparse(url)
     if not parsed.scheme or not parsed.netloc:
         raise ValueError(f"Invalid URL (missing scheme or host): {url}")
+    if parsed.scheme.lower() not in ALLOWED_SCHEMES:
+        raise ValueError(f"Only http and https URLs are supported: {url}")
 
     fetch_result = fetch_with_retries(url)
 
@@ -293,6 +294,12 @@ def analyze(url):
             "http_status": fetch_result["status"],
             "error": fetch_result.get("error"),
             "ttfb_ms": fetch_result["ttfb_ms"],
+            "user_agent_used": fetch_result.get("user_agent_used"),
+            "blocked_note": (
+                "If the status is 401, 403 or 429, the site may be refusing "
+                "automated tools. That is a real result: report it, and do "
+                "not retry with a browser or AI-crawler user agent."
+            ) if fetch_result["status"] in (401, 403, 429) else None,
             "fetched_at": datetime.now(timezone.utc).isoformat(),
             "anti_hallucination_note": (
                 "fetch_page.py could not retrieve content for this URL. "
@@ -323,6 +330,7 @@ def analyze(url):
         "html_size_bytes": html_size,
         "html_size_kb": round(html_size / 1024, 1),
         "user_agent_used": fetch_result["user_agent_used"],
+        "html_truncated": fetch_result.get("html_truncated", False),
         "title": title,
         "headings": headings,
         "canonical": canonical,
@@ -332,6 +340,7 @@ def analyze(url):
         "js_gating": js_gating,
         "quoteability_features": quoteability,
         "fetched_at": datetime.now(timezone.utc).isoformat(),
+        "_raw_html": html,  # removed in main() before printing
     }
 
 
@@ -362,12 +371,12 @@ def main():
         print(json.dumps(error_result, indent=2))
         sys.exit(1)
 
+    raw_html = result.pop("_raw_html", None)
     if args.html_output and result.get("fetch_status") == "ok":
-        # Re-fetch HTML for saving (we don't keep it in the result by default)
+        # Save the HTML already fetched, so the site is not requested twice
         try:
             with open(args.html_output, "w", encoding="utf-8") as f:
-                fetched = fetch_with_retries(args.url)
-                f.write(fetched["html"])
+                f.write(raw_html or "")
         except Exception as e:
             print(f"Warning: failed to save HTML: {e}", file=sys.stderr)
 

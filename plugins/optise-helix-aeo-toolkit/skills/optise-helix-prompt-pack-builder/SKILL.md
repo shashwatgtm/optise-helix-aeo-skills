@@ -5,15 +5,14 @@ description: Build a 25-prompt AEO pack for a B2B company in Europe, ranked by
   implementation, EU privacy, integrations, role-based). Use whenever someone asks 
   for AEO prompts, AI search prompts, ChatGPT prompts buyers use, prompt research, 
   prompt pack, shortlist prompts, or wants to know what European B2B buyers ask AI 
-  engines about a category. Always trigger this skill for any "what should we rank 
-  for in ChatGPT" or "what do buyers ask AI about us" type question. Returns a 
+  engines about a category, including "what should we rank 
+  for in ChatGPT" or "what do buyers ask AI about us" type questions. Returns a 
   ranked markdown table plus a top-10 build order. Authored by Optise + Helix 
   GTM Consulting under the Optise EU AEO Playbook methodology.
-authors:
-  - Optise
-  - Helix GTM Consulting
-version: 1.0.0
 license: Proprietary
+metadata:
+  authors: "Optise; Helix GTM Consulting"
+  version: "1.4.0"
 ---
 
 # Optise–Helix Prompt Pack Builder
@@ -29,7 +28,7 @@ This is the entry point of the Optise–Helix AEO methodology. Most other skills
 
 This skill operates under TWO mandatory reference files that together define all operating rules. **Read both files first**, before executing any workflow step in this SKILL.md. The rules in both files are non-negotiable and override any conflicting instruction in this SKILL.md body.
 
-1. **`../../references/operating-principles.md`** — the shared core: 7 universal rules (rigor, challenge-assumptions, no-harmful-output, fact-check with 4-tier source hierarchy, no-LLMisms, HILT discipline with Question Budget, zero-assumption flagging) that apply to every skill in this plugin and every plugin using this pattern. This file is byte-identical across all plugins that use the shared-core pattern.
+1. **`../../references/operating-principles.md`** — the shared core: Rule 0 to Rule 10 (session hygiene, URL verification, source-tier discipline, code-content verification, Schema.org currency, legal-citation accuracy, verify-before-recommend, prediction discipline, claim tagging, verification order, verification log), plus the mandatory output disclaimer. They apply to every skill in this plugin.
 
 2. **`../../references/plugin-specific-rules.md`** — the plugin-specific tail: additional operational rules tailored to the skills in THIS plugin. Read this file AFTER the shared core, not instead of it. If this plugin currently has no plugin-specific rules, the file will be a stub explaining the architecture.
 
@@ -39,8 +38,8 @@ These are the highest-frequency rules from the two files above. Reading the full
 
 - **Web search and web fetch ARE available** in Claude Code's default toolset. "I don't have web access" is never a valid excuse to skip verification of a specific factual claim.
 - **English-only at v1** — never generate prompts, copy, headings, or client-facing text in non-English languages (German, French, Dutch, Spanish, Italian, Portuguese, Polish, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2 with native-speaker review.
-- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: NEVER cite (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements). If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
-- **Verify competitor relationships** via the 4-step search protocol in Rule 4 before building ANY competitor-targeted page or content. Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP — invoke Rule 3's no-harmful-output protection.
+- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: use only with the mandatory disclaimer `[Tier 4 — directional only, not authoritative]` (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements, vendor reseller content), as operating-principles Rule 2 requires. If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
+- **Verify competitor relationships** before building ANY competitor-targeted page or content (operating-principles Rule 9, step 2, and Plugin Rule 1 in `plugin-specific-rules.md`). Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP under Plugin Rule 1 (no harmful output about named companies).
 - **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop). Do not ask the user about every URL; that is endless interrogation, not verification.
 - **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
 - **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong. Use the `[User to add: <description>]` placeholder convention for any field where the user must supply specific information.
@@ -141,7 +140,7 @@ Walk through the 6 categories in `references/prompt-categories.md` in order. For
 
 1. Use the pattern templates as starting points.
 2. Substitute the user's category, ICP, competitors, and markets into the templates.
-3. For each EU market in scope, also generate the localised variants from `references/eu-buyer-language.md` (German, French, Dutch, Spanish, Italian, etc.).
+3. For each EU market in scope, use that market's English-language patterns from `references/eu-buyer-language.md`. Do not generate non-English prompts at v1 (Section 0 English-only rule). Local regulatory acronyms that buyers type as-is (for example BSI C5, CNIL, HDS) may appear inside an English prompt.
 4. Capture each candidate with: prompt text, category, suggested target page type, market.
 
 **Output of this step:** ~40-50 candidate prompts, unscored.
@@ -205,52 +204,54 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 [Hand-off to FITq audit / Trust Centre / Tracker, or "build the top 3 pages"]
 ```
 
-### Example 1 — Happy path (Marketing lead, Freshworks-style brief)
+### Example 1 — Happy path (Marketing lead, fictional ExampleCo brief)
+
+*ExampleCo, Tool Y and Tool Z are fictional; the pack below shows structure only (Plugin Rule 1). All prompts are in English, per the Section 0 English-only rule.*
 
 > **Built for:** Marketing / Growth Lead
-> **Inputs used:** Category: B2B service desk software · ICP: mid-market IT at 200-2000 employee companies · Competitors: ServiceNow, Zendesk · Markets: DACH, Nordics
+> **Inputs used:** Category: B2B service desk software · ICP: mid-market IT at 200-2000 employee companies · Competitors: Tool Y, Tool Z · Markets: DACH, Nordics
 >
 > ## The 25-prompt pack
 >
 > | # | Prompt | Category | Decides | Target page | Market |
 > |---|---|---|---|---|---|
-> | 1 | ServiceNow alternatives for mid-market | Shortlist | 5/5 | /alternatives/servicenow [TO BUILD] | DACH+Nordics |
-> | 2 | Zendesk vs Freshworks | Shortlist | 5/5 | /compare/zendesk [EXISTS] | DACH+Nordics |
-> | 3 | is Freshworks DSGVO konform | EU Privacy | 5/5 | /trust [TO BUILD] | DACH (DE) |
-> | 4 | does Freshworks offer EU data residency | EU Privacy | 5/5 | /trust/data-residency [TO BUILD] | DACH+Nordics |
-> | 5 | Freshworks AVV Vertrag download | EU Privacy | 5/5 | /trust/dpa [TO BUILD] | DACH (DE) |
-> | 6 | who are Freshworks subprocessors | EU Privacy | 5/5 | /trust/subprocessors [TO BUILD] | DACH+Nordics |
-> | 7 | Freshworks pricing for 500 agents | Pricing | 5/5 | /pricing [EXISTS] | DACH+Nordics |
-> | 8 | how long does Freshworks implementation take | Implementation | 4/5 | /implementation [TO BUILD] | DACH+Nordics |
-> | 9 | does Freshworks integrate with Slack | Integration | 4/5 | /integrations/slack [EXISTS] | DACH+Nordics |
-> | 10 | Freshworks for IT teams in DACH | Role-based | 4/5 | /it-teams [TO BUILD] | DACH (DE+EN) |
-> | 11 | beste service desk software für deutsche Unternehmen | Shortlist | 4/5 | /alternatives/servicenow [TO BUILD] | DACH (DE) |
-> | 12 | Zendesk Alternative für Mittelstand | Shortlist | 4/5 | /alternatives/zendesk [TO BUILD] | DACH (DE) |
-> | 13 | Freshworks SOC 2 ISO 27001 | EU Privacy | 4/5 | /trust [TO BUILD] | All EU |
-> | 14 | Freshworks data center Frankfurt | EU Privacy | 4/5 | /trust/data-residency [TO BUILD] | DACH (DE) |
-> | 15 | Freshworks vs ServiceNow für Sicherheitsteams | Shortlist | 4/5 | /compare/servicenow [TO BUILD] | DACH (DE) |
-> | 16 | Freshworks customer support time to value | Implementation | 3/5 | /implementation [TO BUILD] | DACH+Nordics |
-> | 17 | Freshworks API documentation | Integration | 3/5 | /developers [EXISTS] | All EU |
-> | 18 | Freshworks customer reviews 2026 | Shortlist | 3/5 | /reviews [TO BUILD] | DACH+Nordics |
+> | 1 | Tool Y alternatives for mid-market | Shortlist | 5/5 | /alternatives/tool-y [TO BUILD] | DACH+Nordics |
+> | 2 | Tool Z vs ExampleCo | Shortlist | 5/5 | /compare/tool-z [EXISTS] | DACH+Nordics |
+> | 3 | is ExampleCo GDPR compliant in Germany | EU Privacy | 5/5 | /trust [TO BUILD] | DACH |
+> | 4 | does ExampleCo offer EU data residency | EU Privacy | 5/5 | /trust/data-residency [TO BUILD] | DACH+Nordics |
+> | 5 | ExampleCo DPA download | EU Privacy | 5/5 | /trust/dpa [TO BUILD] | DACH |
+> | 6 | who are ExampleCo subprocessors | EU Privacy | 5/5 | /trust/subprocessors [TO BUILD] | DACH+Nordics |
+> | 7 | ExampleCo pricing for 500 agents | Pricing | 5/5 | /pricing [EXISTS] | DACH+Nordics |
+> | 8 | how long does ExampleCo implementation take | Implementation | 4/5 | /implementation [TO BUILD] | DACH+Nordics |
+> | 9 | does ExampleCo integrate with Slack | Integration | 4/5 | /integrations/slack [EXISTS] | DACH+Nordics |
+> | 10 | ExampleCo for IT teams in DACH | Role-based | 4/5 | /it-teams [TO BUILD] | DACH |
+> | 11 | best service desk software for German companies | Shortlist | 4/5 | /alternatives/tool-y [TO BUILD] | DACH |
+> | 12 | Tool Z alternative for Mittelstand | Shortlist | 4/5 | /alternatives/tool-z [TO BUILD] | DACH |
+> | 13 | ExampleCo SOC 2 ISO 27001 | EU Privacy | 4/5 | /trust [TO BUILD] | All EU |
+> | 14 | ExampleCo data center in Germany | EU Privacy | 4/5 | /trust/data-residency [TO BUILD] | DACH |
+> | 15 | ExampleCo vs Tool Y for security teams | Shortlist | 4/5 | /compare/tool-y [TO BUILD] | DACH |
+> | 16 | ExampleCo customer support time to value | Implementation | 3/5 | /implementation [TO BUILD] | DACH+Nordics |
+> | 17 | ExampleCo API documentation | Integration | 3/5 | /developers [EXISTS] | All EU |
+> | 18 | ExampleCo customer reviews 2026 | Shortlist | 3/5 | /reviews [TO BUILD] | DACH+Nordics |
 > | 19 | best service desk for Nordic IT teams | Role-based | 3/5 | /nordics [TO BUILD] | Nordics |
-> | 20 | Freshworks WCAG accessibility | EU Privacy | 3/5 | /trust/accessibility [TO BUILD] | Nordics |
-> | 21 | Freshworks SAML SSO setup | Integration | 3/5 | /sso [EXISTS] | All EU |
-> | 22 | Freshworks ticket automation | Implementation | 3/5 | /features/automation [EXISTS] | All EU |
-> | 23 | Freshworks for RevOps teams | Role-based | 2/5 | /revops [TO BUILD] | All EU |
-> | 24 | Freshworks history and founders | Shortlist | 2/5 | /about [EXISTS] | All EU |
+> | 20 | ExampleCo WCAG accessibility | EU Privacy | 3/5 | /trust/accessibility [TO BUILD] | Nordics |
+> | 21 | ExampleCo SAML SSO setup | Integration | 3/5 | /sso [EXISTS] | All EU |
+> | 22 | ExampleCo ticket automation | Implementation | 3/5 | /features/automation [EXISTS] | All EU |
+> | 23 | ExampleCo for RevOps teams | Role-based | 2/5 | /revops [TO BUILD] | All EU |
+> | 24 | ExampleCo history and founders | Shortlist | 2/5 | /about [EXISTS] | All EU |
 > | 25 | what is a service desk | Shortlist | 1/5 | /glossary/service-desk [TO BUILD] | All EU |
 >
 > ## Top 10 to ship (ordered by build priority)
 >
 > 1. **/trust** — Trust Centre — wins 4 disqualifier prompts (3, 5, 6, 13). Highest leverage page in this pack. → **Hand off to `optise-helix-eu-trust-centre`**
-> 2. **/alternatives/servicenow** — Alternatives page — wins prompt 1 (5/5) and 11. Competitor with the largest EU footprint.
+> 2. **/alternatives/tool-y** — Alternatives page — wins prompt 1 (5/5) and 11. Assumption: Tool Y is the competitor you meet most often in EU deals; confirm.
 > 3. **/trust/data-residency** — wins prompts 4 and 14. Standalone page so DACH buyers can verify in 10 seconds.
 > 4. **/trust/dpa** — wins prompt 5. Self-serve DPA download = procurement-ready.
-> 5. **/trust/subprocessors** — wins prompt 6. Live updated list with 30-day notice policy.
-> 6. **/compare/servicenow** — wins prompt 15. The German-language variant matters.
+> 5. **/trust/subprocessors** — wins prompt 6. Live updated list, with the change-notice policy you actually offer.
+> 6. **/compare/tool-y** — wins prompt 15. Security-team framing for DACH buyers.
 > 7. **/it-teams** — wins prompt 10. Role-based landing page for the highest-fit ICP.
 > 8. **/implementation** — wins prompts 8 and 16. Reduces sales cycle friction.
-> 9. **/alternatives/zendesk** — wins prompt 12. Mittelstand framing.
+> 9. **/alternatives/tool-z** — wins prompt 12. Mittelstand framing.
 > 10. **/nordics** — wins prompt 19. Standalone page for the Nordics market.
 >
 > ## What this pack is missing
@@ -268,7 +269,7 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 > - **Nordics** (SE, DK, NO, FI) — highest EU AI adoption, English-friendly
 > - **France** — French-language search dominates, sovereignty-conscious
 > - **Benelux** (NL, BE, LU) — multinational B2B, English-friendly
-> - **Southern Europe** (ES, IT, PT) — local-language only, price-sensitive
+> - **Southern Europe** (ES, IT, PT) — English prompts cover less of the intent here; price-sensitive
 > - **All EU**
 >
 > Once I have this I'll build the pack in one shot.
@@ -292,7 +293,7 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 | # | Prompt | Category | Decides | Target page | Market |
 |---|---|---|---|---|---|
 | 1 | Snowflake vs [you] | Shortlist | 5/5 | /compare/snowflake | DACH |
-| 2 | is [you] DSGVO konform | EU Privacy | 5/5 | /trust | DACH (DE) |
+| 2 | is [you] GDPR compliant in Germany | EU Privacy | 5/5 | /trust | DACH |
 ... 23 more rows ...
 ```
 
@@ -300,7 +301,7 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 {
   "pack": [
     {"prompt": "Snowflake vs [you]", "category": "shortlist", "score": 5, "target_page": "/compare/snowflake", "market": "DACH", "status": "TO_BUILD"},
-    {"prompt": "is [you] DSGVO konform", "category": "eu_privacy", "score": 5, "target_page": "/trust", "market": "DACH-DE", "status": "TO_BUILD"}
+    {"prompt": "is [you] GDPR compliant in Germany", "category": "eu_privacy", "score": 5, "target_page": "/trust", "market": "DACH", "status": "TO_BUILD"}
   ],
   "top_10_build_order": ["/trust", "/compare/snowflake", ...],
   "calibration": {"5/5": 7, "4/5": 9, "3/5": 6, "2/5": 2, "1/5": 1}
@@ -309,15 +310,15 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 
 ### Example 3 — Edge case (rushed user, 10 mins to a call)
 
-> **Top 10 (rushed). Built using sensible defaults: Gong, Clari as competitors; DACH + Nordics. Reply if these are wrong, otherwise this is your pack:**
+> **Top 10 (rushed). You didn't name competitors, so they stay as placeholders (Domain rule 2: never invent competitor names). Default markets: DACH + Nordics. Reply with your competitors and I'll fill them in:**
 >
-> 1. Gong vs [you] — Compare page — 5/5
-> 2. is [you] DSGVO konform — Trust Centre — 5/5 (DACH)
-> 3. Clari alternatives EU — Alternatives page — 5/5
+> 1. [Competitor 1] vs [you] — Compare page — 5/5
+> 2. is [you] GDPR compliant in Germany — Trust Centre — 5/5 (DACH)
+> 3. [Competitor 2] alternatives EU — Alternatives page — 5/5
 > 4. [you] EU data residency — Trust/Residency — 5/5
 > 5. [you] DPA download — Trust/DPA — 5/5
 > 6. [you] pricing for [ICP] — Pricing — 5/5
-> 7. [you] vs Gong vs Clari — Comparison — 4/5
+> 7. [you] vs [Competitor 1] vs [Competitor 2] — Comparison — 4/5
 > 8. how long to implement [you] — Implementation — 4/5
 > 9. does [you] integrate with HubSpot — Integration — 4/5
 > 10. [you] for RevOps in DACH — Role-based — 4/5
@@ -384,7 +385,7 @@ All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. In
 
 **Domain rule 3 (skill-specific):** Never invent EU market presence. If the user says "DACH" but there's no signal they sell into Austria or Switzerland specifically, default to Germany only and ask: *"DACH usually means Germany + Austria + Switzerland. Are you actually selling into all three, or just Germany?"*
 
-**Domain rule 4 (skill-specific):** Never generate a German, French, Dutch, Spanish, or Italian prompt that you cannot back-translate to English. If you're unsure of the local-language idiom, ask for confirmation: *"I'm generating a German variant. Want me to include native-language prompts or English-only?"*
+**Domain rule 4 (skill-specific):** Never generate a non-English prompt at v1 (Section 0 English-only rule). If the user asks for German, French, Dutch, Spanish, Italian, or other local-language prompts, decline and explain that multilingual prompts may ship in v2 with native-speaker review. Local regulatory acronyms that buyers type as-is (for example BSI C5) may appear inside an English prompt.
 
 **Domain rule 5 (skill-specific):** Never claim a prompt has search volume. The skill scores intent, not volume. Output that says "this prompt gets 1,000 searches/month" is fabrication.
 

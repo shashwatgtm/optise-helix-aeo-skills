@@ -74,7 +74,7 @@ Every skill, before any other logic, executes this check.
 2. Apply mandatory disclaimers inline next to the citation, not in a footnote.
 3. If a claim only has Tier 4 sources and no Tier 1-3 corroboration, flag the claim itself as `[CLAIM SUPPORTED ONLY BY TIER 4 SOURCES — verify independently before publishing]`.
 
-**Failure example (Test 5 — SF/HubSpot).** Skill cited 6 Tier 4 sources including 2 HubSpot reseller partners (avidlyagency, aptitude8) for biased TCO claims, with no disclaimer.
+**Failure example (Test 5 — SF/HubSpot).** Skill cited 6 Tier 4 sources, including 2 HubSpot reseller partners, for TCO claims without the Tier 4 disclaimer or the reseller bias note.
 
 ---
 

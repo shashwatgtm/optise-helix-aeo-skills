@@ -118,7 +118,7 @@ Use these regardless of which specific EU markets the user targets. They are uni
 1. **The "in Europe" qualifier** — Add `in Europe` or `for European companies` to any shortlist prompt. This signals the buyer is filtering for EU compliance and EU residency.
 2. **The "alternative to [US tool]" pattern** — EU buyers actively search for EU alternatives to dominant US tools. Always generate one of these if the user has a US competitor.
 3. **The DPA / data residency double** — Always include both "does [tool] offer a DPA" AND "where is [tool]'s data hosted". They are different searches with different intents.
-4. **The EU AI Act question** — As the EU AI Act becomes fully applicable in August 2026, prompts about "is [tool] EU AI Act compliant" are growing in volume. Include at least one.
+4. **The EU AI Act question**: the EU AI Act applies in stages (check the current dates on the official EU pages before citing any), and prompts about "is [tool] EU AI Act compliant" are growing in volume. Include at least one.
 5. **The subprocessor question** — "Who are [tool]'s subprocessors" is a uniquely European prompt — US buyers don't ask this. Include it.
 6. **The certification stack** — "[tool] SOC 2 ISO 27001" is a single combined prompt, not two separate ones. EU buyers expect to see both.
 

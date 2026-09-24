@@ -6,16 +6,15 @@ description: Audits a B2B webpage against the proprietary Optise FITq™ framewo
   URL, analyzes rendered HTML, and returns specific fixes ranked by impact — 
   not generic best practices. Use whenever the user asks for an AEO audit, FITq 
   audit, AI visibility check, ChatGPT citation readiness check, or wants to 
-  know why their page isn't being cited by AI engines. Always trigger for any 
-  URL audit request related to AI search visibility. Returns a 4-signal 
+  know why their page isn't being cited by AI engines, including URL audit 
+  requests related to AI search visibility. Returns a 4-signal 
   scorecard (0-100 total), top 5 fixes ranked by impact, and a before/after 
   diff for the highest-priority fix. Authored by Optise + Helix GTM Consulting 
   under the Optise EU AEO Playbook methodology.
-authors:
-  - Optise
-  - Helix GTM Consulting
-version: 1.0.0
 license: Proprietary
+metadata:
+  authors: "Optise; Helix GTM Consulting"
+  version: "1.4.0"
 ---
 
 # Optise–Helix FITq™ Audit
@@ -33,7 +32,7 @@ This skill is the headline FITq audit in the Optise-Helix AEO toolkit. It depend
 
 This skill operates under TWO mandatory reference files that together define all operating rules. **Read both files first**, before executing any workflow step in this SKILL.md. The rules in both files are non-negotiable and override any conflicting instruction in this SKILL.md body.
 
-1. **`../../references/operating-principles.md`** — the shared core: 7 universal rules (rigor, challenge-assumptions, no-harmful-output, fact-check with 4-tier source hierarchy, no-LLMisms, HILT discipline with Question Budget, zero-assumption flagging) that apply to every skill in this plugin and every plugin using this pattern. This file is byte-identical across all plugins that use the shared-core pattern.
+1. **`../../references/operating-principles.md`** — the shared core: Rule 0 to Rule 10 (session hygiene, URL verification, source-tier discipline, code-content verification, Schema.org currency, legal-citation accuracy, verify-before-recommend, prediction discipline, claim tagging, verification order, verification log), plus the mandatory output disclaimer. They apply to every skill in this plugin.
 
 2. **`../../references/plugin-specific-rules.md`** — the plugin-specific tail: additional operational rules tailored to the skills in THIS plugin. Read this file AFTER the shared core, not instead of it. If this plugin currently has no plugin-specific rules, the file will be a stub explaining the architecture.
 
@@ -43,8 +42,8 @@ These are the highest-frequency rules from the two files above. Reading the full
 
 - **Web search and web fetch ARE available** in Claude Code's default toolset. "I don't have web access" is never a valid excuse to skip verification of a specific factual claim.
 - **English-only at v1** — never generate prompts, copy, headings, or client-facing text in non-English languages (German, French, Dutch, Spanish, Italian, Portuguese, Polish, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2 with native-speaker review.
-- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: NEVER cite (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements). If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
-- **Verify competitor relationships** via the 4-step search protocol in Rule 4 before building ANY competitor-targeted page or content. Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP — invoke Rule 3's no-harmful-output protection.
+- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: use only with the mandatory disclaimer `[Tier 4 — directional only, not authoritative]` (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements, vendor reseller content), as operating-principles Rule 2 requires. If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
+- **Verify competitor relationships** before building ANY competitor-targeted page or content (operating-principles Rule 9, step 2, and Plugin Rule 1 in `plugin-specific-rules.md`). Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP under Plugin Rule 1 (no harmful output about named companies).
 - **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop). Do not ask the user about every URL; that is endless interrogation, not verification.
 - **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
 - **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong. Use the `[User to add: <description>]` placeholder convention for any field where the user must supply specific information.
@@ -142,7 +141,7 @@ Capture the JSON output. The schema you can rely on:
 | `meta_robots` | string or null | Findability (noindex = 0) |
 | `last_updated.found` | bool | Trust (true within 90d = +8, true stale = +4, false ≤+0) |
 | `last_updated.raw_value` | string or null | Trust (parse for recency check) |
-| `schema_markup` | dict of {type: count} | Quoteability (FAQPage = +6, Article/Org = +4) |
+| `schema_markup` | dict of {type: count} | Quoteability (FAQPage = +6, Article/Org = +4; see the Rule 4 note under Step 4) |
 | `js_gating.js_gated` | bool | Findability (true = cap at 5/25; other signals capped at "cannot score") |
 | `quoteability_features.tables` | int | Quoteability (≥2 = +4) |
 | `quoteability_features.uls + ols + dls` | int | Quoteability (≥5 = +4) |
@@ -184,6 +183,8 @@ Use `references/fitq-rubric.md`. For each signal, compute 0-25 based on the stru
 - Average paragraph length ≤ 4 sentences → +5
 - H2 headings are question-form → +4
 - BLUF is extractable as a single quote → +2
+
+**Rule 4 note (FAQ schema):** the FAQ schema credit measures how easily AI parsers can extract question-and-answer pairs. It is not a claim about Google rich results: Google no longer shows FAQ rich results for most sites (operating-principles Rule 4). Whenever a fix recommends adding FAQPage, include the Rule 4 disclosure note, and offer the eligible substitute for the page type.
 
 ### Step 5: Rank top 5 fixes
 
@@ -251,10 +252,12 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 [Hand off recommendation]
 ```
 
-### Example 1 — Happy path (Marketing lead, semrush.com)
+### Example 1 — Happy path (Marketing lead, fictional site)
+
+*ExampleCo and www.example.com are fictional. Every score and finding below is made up to show the output structure. A real audit reports only what fetch_page.py returned for the real URL (Plugin Rule 1).*
 
 > **Built for:** Marketing / Growth Lead
-> **URL audited:** https://www.semrush.com/features/site-audit/
+> **URL audited:** https://www.example.com/features/site-audit/
 > **Audit timestamp:** 2026-04-12T11:23:47Z
 >
 > ## FITq™ Score: 78/100 — Grade B
@@ -263,22 +266,22 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 > |---|---|---|
 > | Findability | 23/25 | Renders fully in HTML, TTFB 240ms, canonical present, no bot blocks. -2 for 2.1MB page weight. |
 > | Intent Match | 18/25 | H1 is "Site Audit Tool" — descriptive but not question-form. BLUF present in first 80 words. Stays on topic. |
-> | Trust | 17/25 | Last-updated date present (2026-03-14, within 90 days). No named author byline (uses "Semrush Team"). Stats sourced to internal Semrush data only — no third-party corroboration. |
+> | Trust | 17/25 | Last-updated date present (2026-03-14, within 90 days). No named author byline (uses "ExampleCo Team"). Stats sourced to internal ExampleCo data only — no third-party corroboration. |
 > | Quoteability | 20/25 | 4 tables, 12 lists, FAQ schema present. -3 for paragraph length: avg 6.2 sentences (target ≤4). -2 for H2s being descriptive not question-form. |
 >
 > ## Top 5 fixes (ranked by impact)
 >
 > ### Fix 1 — Add a named author byline [+5 to Trust] [ship this week]
-> Currently the page is bylined "Semrush Team" with no link. AI engines treat this as no byline at all. Replace with a real named person (e.g., your Director of SEO Research) and link to a bio page with their credentials.
+> Currently the page is bylined "ExampleCo Team" with no link. AI engines treat this as no byline at all. Replace with a real named person (e.g., your Director of SEO Research) and link to a bio page with their credentials.
 >
 > **Before:**
 > ```html
-> <p class="byline">By the Semrush Team</p>
+> <p class="byline">By the ExampleCo Team</p>
 > ```
 >
 > **After:**
 > ```html
-> <p class="byline">By <a href="/team/[real-name]" rel="author">[Real Name]</a>, Director of SEO Research at Semrush. Last reviewed by [VP Product] on 2026-03-14.</p>
+> <p class="byline">By <a href="/team/[real-name]" rel="author">[Real Name]</a>, Director of SEO Research at ExampleCo. Last reviewed by [VP Product] on [YYYY-MM-DD].</p>
 > ```
 >
 > ### Fix 2 — Restructure paragraphs into answer blocks [+5 to Quoteability] [ship this week]
@@ -288,14 +291,14 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 > Current H2s like "Key Features" → change to "What does Site Audit check for?" Current "Pricing" → "How much does Site Audit cost?" This single change adds extractable answer blocks for 4-6 buyer prompts.
 >
 > ### Fix 4 — Add 2-3 third-party stats with source links [+3 to Trust] [ship this month]
-> All stats on this page link to Semrush's own research. Add at least 2 stats from independent sources (Forrester, Gartner, BrightEdge) with linked sources to break the "we're our own only source" pattern.
+> All stats on this page link to ExampleCo's own research. Add at least 2 stats from independent sources (Forrester, Gartner, BrightEdge) with linked sources to break the "we're our own only source" pattern.
 >
 > ### Fix 5 — Reduce page weight from 2.1MB to <1.5MB [+2 to Findability] [ship this month]
 > Compress the hero video, lazy-load images below the fold, defer non-critical JS bundles. Lighter pages crawl faster.
 >
 > ## What's already strong (don't break these)
 > - Visible last-updated date in `<time datetime="">` format — keep updating it monthly
-> - FAQ schema is correctly implemented and matches visible content
+> - FAQ schema is correctly implemented and matches visible content (helps AI parsers; not eligible for Google FAQ rich results, per Rule 4)
 > - 4 tables with comparison data — exactly the format AI engines extract
 > - Canonical tag present and self-referential
 >
@@ -304,12 +307,12 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 
 ### Example 2 — Edge case (URL fetch fails)
 
-> **URL audited:** https://www.fxn.network
+> **URL audited:** https://www.example.net (fictional)
 > **Fetch status:** FAILED
 >
 > ## ⚠️ Cannot score this page
 >
-> `fetch_page.py` returned an error: `URLError on https://www.fxn.network after 3 retries with all UAs: [Errno 110] Connection timed out`
+> `fetch_page.py` returned an error: `URLError on https://www.example.net after 3 retries: [Errno 110] Connection timed out`
 >
 > Per the FITq audit anti-hallucination rule: I will not score a page I haven't actually fetched. Inventing a score from the URL string would be dishonest and harmful.
 >
@@ -322,14 +325,14 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 >
 > Reply with one of the above and I'll proceed.
 
-### Example 3 — Edge case (CEO persona, fxn.network — assume successful fetch and weak score)
+### Example 3 — Edge case (CEO persona, fictional site — assume successful fetch and weak score)
 
 > **Built for:** CEO / Founder
-> **URL audited:** https://www.fxn.network
+> **URL audited:** https://www.example.net (fictional)
 >
 > ## Your site scores 32/100 — Grade F (invisible)
 >
-> Today, ChatGPT, Perplexity, and Gemini almost never cite this page when European B2B buyers research your category. The reason isn't your product — it's that your site is structurally invisible to AI engines.
+> This page is structurally hard for ChatGPT, Perplexity, and Gemini to read and quote. The reason isn't your product; it's how the page is built. (This audit measures page structure. It does not measure how often AI engines cite you today; run `optise-helix-aeo-tracker` for that.)
 >
 > **The 3 things that are killing visibility:**
 >
@@ -337,7 +340,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 > 2. **No visible "last updated" date.** AI engines treat this as a freshness fail and downrank the page.
 > 3. **The H1 is your brand name, not a buyer question.** AI engines can't match your page to any specific search intent.
 >
-> **What to budget:** Fixes 2 and 3 are 30-minute changes. Fix 1 is 2-3 weeks of engineering work (server-side rendering or static pre-rendering). Total: ~3 weeks of focused effort to move from F to B grade.
+> **What to budget:** Fixes 2 and 3 are usually 30-minute changes. Fix 1 usually needs 2-3 weeks of engineering work (server-side rendering or static pre-rendering); confirm the estimate with your web team. Re-run this audit after the fixes ship to see the new grade.
 >
 > **Next step:** Run the same audit on your top 3 highest-value pages and ask me to compare. The pattern usually repeats — fixing 1 page is easy; fixing the template fixes them all.
 
@@ -346,7 +349,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 **Input:**
 ```json
 {
-  "url": "https://www.freshworks.com/freshservice/",
+  "url": "https://www.example.com/service-desk/",
   "target_prompt": "best service desk software for German Mittelstand",
   "mode": "manual"
 }
@@ -355,13 +358,14 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 **Output:**
 ```json
 {
-  "url": "https://www.freshworks.com/freshservice/",
+  "url": "https://www.example.com/service-desk/",
+  "example_note": "Fictional site and made-up scores, to show structure only.",
   "fitq_total": 64,
   "grade": "C",
   "signals": {
     "findability": {"score": 22, "notes": "renders in HTML, TTFB 380ms, canonical present"},
     "intent_match": {"score": 11, "notes": "H1 is brand-led, no BLUF in first 100 words"},
-    "trust": {"score": 14, "notes": "no last-updated date, 'Freshworks Team' byline, stats unsourced"},
+    "trust": {"score": 14, "notes": "no last-updated date, 'ExampleCo Team' byline, stats unsourced"},
     "quoteability": {"score": 17, "notes": "2 tables, FAQ schema present, paragraphs 5.8 avg"}
   },
   "top_fixes": [

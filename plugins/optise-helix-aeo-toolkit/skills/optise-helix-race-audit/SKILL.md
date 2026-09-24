@@ -12,11 +12,10 @@ description: Audits a B2B webpage against the proprietary Optise RACE™ framewo
   signal is weak, and a before/after diff for the highest-priority fix. 
   Authored by Optise + Helix GTM Consulting under the Optise EU AEO Playbook 
   methodology.
-authors:
-  - Optise
-  - Helix GTM Consulting
-version: 1.0.0
 license: Proprietary
+metadata:
+  authors: "Optise; Helix GTM Consulting"
+  version: "1.4.0"
 ---
 
 # Optise–Helix RACE™ Audit
@@ -32,7 +31,7 @@ RACE™ stands for Requirements, Actions, Constraints, Evidence. Each signal sco
 
 This skill operates under TWO mandatory reference files that together define all operating rules. **Read both files first**, before executing any workflow step in this SKILL.md. The rules in both files are non-negotiable and override any conflicting instruction in this SKILL.md body.
 
-1. **`../../references/operating-principles.md`** — the shared core: 7 universal rules (rigor, challenge-assumptions, no-harmful-output, fact-check with 4-tier source hierarchy, no-LLMisms, HILT discipline with Question Budget, zero-assumption flagging) that apply to every skill in this plugin and every plugin using this pattern. This file is byte-identical across all plugins that use the shared-core pattern.
+1. **`../../references/operating-principles.md`** — the shared core: Rule 0 to Rule 10 (session hygiene, URL verification, source-tier discipline, code-content verification, Schema.org currency, legal-citation accuracy, verify-before-recommend, prediction discipline, claim tagging, verification order, verification log), plus the mandatory output disclaimer. They apply to every skill in this plugin.
 
 2. **`../../references/plugin-specific-rules.md`** — the plugin-specific tail: additional operational rules tailored to the skills in THIS plugin. Read this file AFTER the shared core, not instead of it. If this plugin currently has no plugin-specific rules, the file will be a stub explaining the architecture.
 
@@ -42,8 +41,8 @@ These are the highest-frequency rules from the two files above. Reading the full
 
 - **Web search and web fetch ARE available** in Claude Code's default toolset. "I don't have web access" is never a valid excuse to skip verification of a specific factual claim.
 - **English-only at v1** — never generate prompts, copy, headings, or client-facing text in non-English languages (German, French, Dutch, Spanish, Italian, Portuguese, Polish, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2 with native-speaker review.
-- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: NEVER cite (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements). If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
-- **Verify competitor relationships** via the 4-step search protocol in Rule 4 before building ANY competitor-targeted page or content. Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP — invoke Rule 3's no-harmful-output protection.
+- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: use only with the mandatory disclaimer `[Tier 4 — directional only, not authoritative]` (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements, vendor reseller content), as operating-principles Rule 2 requires. If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
+- **Verify competitor relationships** before building ANY competitor-targeted page or content (operating-principles Rule 9, step 2, and Plugin Rule 1 in `plugin-specific-rules.md`). Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP under Plugin Rule 1 (no harmful output about named companies).
 - **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop). Do not ask the user about every URL; that is endless interrogation, not verification.
 - **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
 - **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong. Use the `[User to add: <description>]` placeholder convention for any field where the user must supply specific information.
@@ -168,6 +167,8 @@ Use `references/race-rubric.md`.
 - `Review` or `AggregateRating` schema → +3
 - Third-party consistency (matches G2/Reddit footprint) → +2
 
+**Rule 4 note (schema):** schema credit here measures how easily AI agents can parse the page. It is not a claim about Google rich results. Per operating-principles Rule 4, `HowTo` is not eligible for Google rich results for software or business processes, and `AggregateRating` is eligible only for first-party reviews. Whenever a fix recommends one of these types, include the Rule 4 disclosure note, and offer the eligible substitute (for example `Article` with `step` properties for a software workflow).
+
 ### Step 5: Rank top 5 fixes
 
 Apply Priority Framework from Section 3. Each fix gets source signal, point gain, effort estimate, and template match from `references/not-ideal-for-templates.md` if applicable.
@@ -236,14 +237,16 @@ Use Section 5 format.
 ### Example 1 — Happy path (Marketing lead, alternatives page)
 
 > **Built for:** Marketing / Growth Lead
-> **URL audited:** https://www.semrush.com/compare/semrush-vs-ahrefs
+> *(ExampleCo, Tool Y and www.example.com are fictional. Every score and finding below is made up to show the output structure; see Plugin Rule 1.)*
+>
+> **URL audited:** https://www.example.com/compare/exampleco-vs-tool-y
 > **Audit timestamp:** 2026-04-12T11:45:00Z
 >
 > ## RACE™ Score: 62/100 — Grade C
 >
 > | Signal | Score | What's driving it |
 > |---|---|---|
-> | Requirements | 18/25 | Semrush lists what you need (paid plan, domain access) but the list is buried in prose. No schema markup. |
+> | Requirements | 18/25 | ExampleCo lists what you need (paid plan, domain access) but the list is buried in prose. No schema markup. |
 > | Actions | 16/25 | Has a 3-step "how to switch" section but no time estimates or ownership. |
 > | Constraints | 8/25 | No "not ideal for" section. Page has universal positive framing. Biggest gap. |
 > | Evidence | 20/25 | 3 linked case studies above the fold, customer logos named. Strong. |
@@ -265,19 +268,19 @@ Use Section 5 format.
 > ## "Not ideal for" starter template
 >
 > ```markdown
-> ## Who Semrush is not ideal for
+> ## Who ExampleCo is not ideal for
 >
-> Semrush is built for mid-market B2B SEO and content teams with [User to add: ICP size]. We're not the right fit if:
+> ExampleCo is built for mid-market B2B SEO and content teams with [User to add: ICP size]. We're not the right fit if:
 >
-> - **You're a solo SEO consultant with fewer than 5 client domains.** Our pricing assumes multi-domain use at scale. For solo consultants, [User to add: competitor name — likely Ahrefs or Ubersuggest for this segment] is more cost-effective.
-> - **You need primarily link-building / backlink analysis.** We do this, but Ahrefs has a deeper backlink index. Pair us with [User to add: backlink-focused alternative] if backlinks are your main use case.
+> - **You're a solo SEO consultant with fewer than [User to add: number] client domains.** [User to add: the honest pricing reason]. For solo consultants, [User to add: competitor for this segment] may be a better fit.
+> - **You need primarily link-building / backlink analysis.** [User to add: what ExampleCo does and does not cover here]. Pair us with [User to add: backlink-focused alternative] if backlinks are your main use case.
 > - **You're focused on paid search only.** Our core strength is SEO + content. For paid-only, see [User to add: paid search alternative].
-> - **You need enterprise-grade white-labeling for agency client reports.** Our reporting suits in-house teams better. [User to add: agency-focused alternative] has stronger white-label.
+> - **You need white-labeling for agency client reports.** [User to add: the honest limit]. [User to add: agency-focused alternative] may suit you better.
 >
-> **Not sure if Semrush is right for you?** [User to add: link to fit assessment or sales]
+> **Not sure if ExampleCo is right for you?** [User to add: link to fit assessment or sales]
 > ```
 >
-> **Customize this:** Replace every `[User to add: ...]` with real values. Don't publish the placeholders. This template is starter text — the audit doesn't know your exact ICP, so you fill that in.
+> **Customize this:** Replace every `[User to add: ...]` with real values. Don't publish the placeholders. This template is starter text — the audit doesn't know your exact ICP, so you fill that in. Never add a claim about a named competitor (for example that its index, pricing, or features are better or worse) unless it is `[VERIFIED · source]` from a Tier 1 to 3 source (Plugin Rule 1).
 >
 > ## What's already strong
 > - 3 named case studies above the fold with linked detail pages
@@ -289,7 +292,7 @@ Use Section 5 format.
 
 ### Example 2 — Fetch failure
 
-> **URL audited:** https://www.fxn.network/compare
+> **URL audited:** https://www.example.net/compare (fictional)
 > **Fetch status:** FAILED
 >
 > ## Cannot score this page
@@ -303,11 +306,11 @@ Use Section 5 format.
 ### Example 3 — CEO persona, weak score
 
 > **Built for:** CEO / Founder
-> **URL audited:** https://www.fxn.network/
+> **URL audited:** https://www.example.net/ (fictional)
 >
 > ## Your site scores 34/100 — Grade F on agent readiness
 >
-> AI agents doing buyer evaluation will filter this page out. The reason: it reads as marketing, not as evaluation material. Agents need evidence, constraints, and process clarity — this page has none of them visible.
+> This page gives AI agents doing buyer evaluation very little to work with. The reason: it reads as marketing, not as evaluation material. Agents need evidence, constraints, and process clarity — this page has none of them visible.
 >
 > **The 3 things killing it:**
 >
@@ -315,7 +318,7 @@ Use Section 5 format.
 > 2. **Proof is buried below the fold.** Case studies and customer logos exist but agents see marketing copy first.
 > 3. **No process for evaluating the product.** "Get started" is a CTA, not a process.
 >
-> **Budget:** 2 weeks to ship fixes 1 and 2. Fix 3 is 1 week if you have a product manager writing it.
+> **Budget:** Fixes 1 and 2 usually take about 2 weeks. Fix 3 usually takes about 1 week if a product manager writes it. Confirm with your team; re-run this audit after they ship.
 >
 > **Next step:** Run the same audit on your top comparison page and compare. The pattern usually repeats.
 
@@ -323,13 +326,14 @@ Use Section 5 format.
 
 **Input:**
 ```json
-{"url": "https://www.tool.com/implementation", "mode": "manual"}
+{"url": "https://www.example.com/implementation", "mode": "manual"}
 ```
 
 **Output:**
 ```json
 {
-  "url": "https://www.tool.com/implementation",
+  "url": "https://www.example.com/implementation",
+  "example_note": "Fictional site and made-up scores, to show structure only.",
   "race_total": 58,
   "grade": "D",
   "signals": {
@@ -343,7 +347,7 @@ Use Section 5 format.
     {"rank": 2, "fix": "move_case_studies_above_fold", "points": 8, "signal": "evidence", "effort": "20min"},
     {"rank": 3, "fix": "add_ownership_column_to_process", "points": 5, "signal": "actions", "effort": "15min"},
     {"rank": 4, "fix": "convert_prerequisites_to_list", "points": 5, "signal": "requirements", "effort": "15min"},
-    {"rank": 5, "fix": "add_howto_schema", "points": 6, "signal": "actions", "effort": "30min"}
+    {"rank": 5, "fix": "add_howto_schema", "points": 6, "signal": "actions", "effort": "30min", "rule_4_note": "HowTo is not eligible for Google rich results for software workflows; included for AI-agent parsing. Eligible substitute: Article with step properties."}
   ],
   "handoffs": [],
   "audit_timestamp": "2026-04-12T11:46:30Z"

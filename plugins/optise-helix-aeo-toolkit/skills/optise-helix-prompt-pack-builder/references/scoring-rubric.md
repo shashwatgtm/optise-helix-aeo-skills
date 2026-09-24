@@ -87,8 +87,8 @@ When two prompts feel like the same score, apply in order:
 | Prompt | Category | Score | Why |
 |---|---|---|---|
 | `Gong vs [you]` | Shortlist | 5/5 | Competitor named, deal-deciding |
-| `is [you] DSGVO konform` | EU Privacy | 5/5 | Disqualifier in DACH, German term |
-| `[you] Auftragsverarbeitung` | EU Privacy | 5/5 | Disqualifier, DPA in German legal language |
+| `is [you] GDPR compliant in Germany` | EU Privacy | 5/5 | Disqualifier in DACH (English only at v1) |
+| `does [you] offer a DPA` | EU Privacy | 5/5 | Disqualifier, DPA availability |
 | `how long to implement [you]` | Implementation | 4/5 | Accelerator, not disqualifier |
 | `does [you] integrate with HubSpot` | Integration | 4/5 | Accelerator if HubSpot is the buyer's stack |
 | `best revenue intelligence tools 2026` | Shortlist | 3/5 | Confidence, no specific competitor |

@@ -1,13 +1,35 @@
 {
   "name": "optise-helix-aeo-toolkit",
-  "version": "1.0.0",
-  "description": "Six-skill toolkit that helps B2B teams selling into Europe make their websites visible, citable, and evaluable to AI search engines (ChatGPT, Perplexity, Gemini, Claude). Built on the proprietary Optise FITq and RACE frameworks plus the 8 EU buyer questions.",
-  "authors": [
-    {"name": "Optise", "url": "https://optise.com"},
-    {"name": "Helix GTM Consulting", "url": "https://gtmhelix.com"}
-  ],
-  "license": "Proprietary",
+  "displayName": "Optise and Helix AEO and GEO Toolkit",
+  "version": "1.4.0",
+  "description": "Six skills for AEO and GEO (answer engine and generative engine optimisation) that help B2B teams selling into Europe make their English-language websites visible, citable and evaluable to AI search engines and AI agents (ChatGPT, Perplexity, Gemini, Claude). By Optise and Helix GTM Consulting, built on the Optise FITq and RACE frameworks and the 8 EU buyer questions.",
+  "author": {
+    "name": "Optise and Helix GTM Consulting"
+  },
   "homepage": "https://github.com/shashwatgtm/optise-helix-aeo-skills",
-  "keywords": ["aeo", "ai-search", "gdpr", "europe", "b2b", "fitq", "race", "trust-centre"]
+  "repository": "https://github.com/shashwatgtm/optise-helix-aeo-skills",
+  "license": "LicenseRef-Optise-Helix",
+  "keywords": [
+    "aeo",
+    "geo",
+    "ai-search",
+    "gdpr",
+    "europe",
+    "b2b",
+    "fitq",
+    "race",
+    "trust-centre"
+  ],
+  "metadata": {
+    "coAuthors": [
+      {
+        "name": "Optise",
+        "url": "https://optise.com"
+      },
+      {
+        "name": "Helix GTM Consulting",
+        "url": "https://gtmhelix.com"
+      }
+    ]
+  }
 }
-

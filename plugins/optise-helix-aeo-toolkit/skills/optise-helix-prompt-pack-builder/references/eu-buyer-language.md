@@ -1,195 +1,170 @@
-# EU Buyer Language Patterns
+# EU Market Guide (English-language only)
 
-**Used by:** `optise-helix-prompt-pack-builder` (primary), `optise-helix-eu-trust-centre` (secondary).
-**Source:** Optise EU AEO Playbook, multilingual consistency section + EU buyer prompt examples (Section 10, Step 1).
+**Used by:** `optise-helix-prompt-pack-builder` (primary), `optise-helix-eu-trust-centre` (secondary), `optise-helix-fitq-audit` (tertiary).
+**Source:** Optise EU AEO Playbook, Section 7 (Europe-Specific Reality) + Section 10 Step 1.
+**Scope:** English-language prompts only. Multilingual variants are deferred to v2.
 
-European B2B buyers do NOT type prompts the same way US buyers do. The differences are linguistic, regulatory, and cultural. A prompt pack that's translated word-for-word from US English will miss real local search intent.
-
-This file gives the prompt-pack-builder the patterns to use when generating prompts for the 5 main European market clusters.
+## Contents
+- Why English-only at v1
+- The 5 EU market clusters (DACH, Nordics, France, Benelux, Southern Europe)
+- Cross-market English-language patterns
+- Regulated vertical terminology (health, fin, legal, energy, public sector)
+- Market-specific trust signals
 
 ---
 
-## DACH (Germany, Austria, Switzerland)
+## Why English-only at v1
 
-**Linguistic pattern:** Buyers prefer precise, compound-noun, formal-register prompts. They often include `DSGVO` (the German term for GDPR) instead of GDPR. They ask about subprocessors (Auftragsverarbeiter) and data residency more than any other European market.
+European B2B buyers — especially in DACH, Nordics, Benelux — search predominantly in English when researching tools. Local-language search dominates only in France, Spain, Italy, and Portugal. Building English-only at v1 covers the high-volume use cases without the maintenance cost of validating multilingual prompt quality. Multilingual ships in v2 if there is real demand.
 
-**English-language variations they search:**
+What this means for the prompt-pack-builder: every prompt is generated in English, even when the target market is DACH. The prompt format uses English regulatory terms (GDPR, not DSGVO) — but always includes the local regulatory acronym buyers actually use as a parenthetical anchor where it adds search value (e.g., "BSI C5 testat" stays as-is because that's how German buyers literally type it).
+
+---
+
+## The 5 EU market clusters
+
+### DACH (Germany, Austria, Switzerland)
+
+**Market characteristics:** Most rigorous compliance market in Europe. Buyers care about subprocessors, data residency, and named legal frameworks. German Mittelstand companies (200-2000 employees) are the highest-value B2B buyer segment in Europe.
+
+**English-language prompt patterns:**
 - `best [category] software for German companies`
-- `[tool] DSGVO compliance`
-- `is [tool] GDPR compliant Germany`
+- `[tool] GDPR compliance Germany`
 - `[tool] data centers in Frankfurt`
-- `[tool] BDSG compliance` (Bundesdatenschutzgesetz)
-- `[tool] for Mittelstand`
+- `[tool] BDSG compliance` (Bundesdatenschutzgesetz — Germany's federal data protection act)
+- `is [tool] used by German Mittelstand`
+- `[tool] for Mittelstand IT`
 - `[tool] SOC 2 ISO 27001 Germany`
+- `[tool] BSI C5 testat` (German federal cloud security catalogue)
 
-**German-language variations:**
-- `beste [Kategorie] Software für deutsche Unternehmen`
-- `[tool] DSGVO konform`
-- `[tool] Auftragsverarbeitung`
-- `[tool] AVV Vertrag` (Auftragsverarbeitungsvertrag = DPA)
+**Trust signals DACH buyers look for:** ISO 27001, BSI C5 (for regulated industries), hosting in Germany or EU, explicit DPA/AVV available, named subprocessors with locations.
 
-**Trust signals German buyers look for:** ISO 27001, BSI C5 compliance, hosting in EU (preferably Germany), explicit AVV/DPA, named subprocessors.
+**Decides-deal weighting:** Compliance prompts score 5/5 universally. ISO 27001 is table stakes — its absence is disqualifying.
 
----
+### Nordics (Sweden, Norway, Denmark, Finland)
 
-## Nordics (Sweden, Norway, Denmark, Finland)
+**Market characteristics:** Highest EU AI adoption per Eurostat 2025 (Denmark 42%, Finland 38%, Sweden 35%). English-language search is the norm. Buyers care about sustainability, accessibility, and public-sector references.
 
-**Linguistic pattern:** Nordic buyers search in English more than other European clusters. They lead the EU in AI adoption (Denmark 42%, Finland 38%, Sweden 35% per Eurostat Dec 2025). They ask sustainability and accessibility questions more than other markets.
-
-**English-language variations:**
+**English-language prompt patterns:**
 - `best [category] for Nordic B2B`
-- `[tool] used by Swedish companies`
-- `[tool] WCAG compliance`
+- `best [category] software used by Swedish companies`
+- `[tool] WCAG 2.1 AA compliance`
 - `[tool] sustainability report`
-- `[tool] EU data center`
+- `[tool] EU data center options`
 - `best AI tool for Danish startups`
+- `[tool] Nordic public sector references`
 
-**Local-language variations (rare but high-intent):**
-- Swedish: `bästa [kategori] för svenska företag`
-- Norwegian: `beste [kategori] for norske selskaper`
-- Danish: `bedste [kategori] til danske virksomheder`
-- Finnish: `paras [kategoria] suomalaisille yrityksille`
+**Trust signals Nordic buyers look for:** EU hosting, WCAG 2.1 AA accessibility compliance, sustainability disclosures, public-sector customer references, transparent pricing.
 
-**Trust signals Nordic buyers look for:** EU hosting, accessibility (WCAG 2.1 AA), sustainability disclosures, public-sector experience.
+**Decides-deal weighting:** Compliance prompts score 5/5 but accessibility (WCAG) is uniquely high-stakes here — score 4/5 minimum, often 5/5 for public-sector buyers.
 
----
+### France
 
-## France
+**Market characteristics:** Sovereignty-conscious. Buyers prefer hosting in France or in EU clouds with explicit data residency commitments. French regulatory framing (CNIL) is more salient than generic GDPR framing.
 
-**Linguistic pattern:** French buyers search predominantly in French. They have very specific regulatory triggers (CNIL, RGPD instead of GDPR). They are sensitive to data sovereignty and prefer hosting in France or EU.
-
-**French-language variations:**
-- `meilleur logiciel [catégorie] entreprise française`
-- `[tool] conforme RGPD`
-- `[tool] hébergement France`
-- `[tool] CNIL`
-- `[tool] souveraineté numérique`
-- `[tool] alternative française à [US competitor]`
-
-**English-language variations they also search:**
+**English-language prompt patterns:** French buyers search in English for technical comparisons:
+- `best [category] software French enterprise`
+- `[tool] CNIL compliance`
 - `[tool] hosted in France`
-- `[tool] French sovereignty cloud`
-- `[tool] HDS certification` (Hébergeur de Données de Santé — for health data)
+- `[tool] French data sovereignty`
+- `[tool] HDS certification` (Hébergeur de Données de Santé — mandatory for health data hosting in France)
+- `[tool] alternative to [US competitor]`
+- `[tool] ANSSI security visa`
 
-**Trust signals French buyers look for:** CNIL alignment, French or EU hosting, ANSSI security visa for sensitive industries, explicit "souveraineté numérique" framing.
+**Trust signals French buyers look for:** CNIL alignment statement, French or EU hosting, ANSSI visa for sensitive industries, explicit data sovereignty commitment, French-language customer support availability.
 
----
+**Decides-deal weighting:** Sovereignty prompts score 5/5 in France. The "is [tool] hosted in France" question is a hard filter for many French enterprises.
 
-## Benelux (Netherlands, Belgium, Luxembourg)
+### Benelux (Netherlands, Belgium, Luxembourg)
 
-**Linguistic pattern:** Highest English-language search rate in Europe (Netherlands especially). Heavily multinational B2B markets. Buyers care about cross-border data flows because their customers span multiple jurisdictions.
+**Market characteristics:** Highest English-language search rate in Europe (especially Netherlands). Heavily multinational B2B markets. Buyers care about cross-border data flows because their customers span multiple jurisdictions.
 
-**English-language variations:**
+**English-language prompt patterns:**
 - `best [category] for Dutch B2B`
-- `[tool] AVG compliance` (Dutch term for GDPR)
+- `[tool] GDPR compliance Netherlands`
 - `[tool] EU cross-border data transfer`
 - `[tool] multinational compliance`
 - `[tool] SCC implementation` (Standard Contractual Clauses)
+- `[tool] used by Belgian enterprises`
 
-**Dutch-language variations:**
-- `beste [categorie] voor Nederlandse bedrijven`
-- `[tool] AVG conform`
+**Trust signals Benelux buyers look for:** SCCs in DPA, data transfer impact assessments, EU hosting, multilingual customer support availability (English at minimum).
 
-**Trust signals Benelux buyers look for:** SCCs, data transfer impact assessments, EU hosting, multilingual customer support.
+**Decides-deal weighting:** SCC and DPA prompts score 5/5. Multinational deployment prompts score 4/5.
 
----
+### Southern Europe (Spain, Italy, Portugal)
 
-## Southern Europe (Spain, Italy, Portugal)
+**Market characteristics:** Lower AI adoption than Northern Europe but growing fast. Local-language search dominates more here than in DACH/Nordics — meaning English-language prompts cover a smaller share of total intent. Price sensitivity is higher than Northern Europe.
 
-**Linguistic pattern:** Lower AI adoption (Italy 19.9%, Spain higher) but growing fast. Local-language search dominates. Price sensitivity is higher than Northern Europe — pricing prompts score very high here.
+**English-language prompt patterns:**
+- `best [category] software for Spanish enterprises`
+- `[tool] pricing Europe in euros`
+- `[tool] EU hosting`
+- `[tool] used by Italian companies`
+- `[tool] GDPR compliance Spain`
+- `best [category] for Portuguese B2B`
 
-**Spanish:**
-- `mejor software de [categoría] para empresas españolas`
-- `[tool] cumplimiento RGPD`
-- `[tool] precio España`
-- `[tool] hospedaje en Europa`
+**Trust signals Southern European buyers look for:** Local-language support availability, EU pricing transparency in EUR, EU hosting, references from local market leaders.
 
-**Italian:**
-- `migliore software [categoria] per aziende italiane`
-- `[tool] GDPR conforme`
-- `[tool] prezzo Italia`
-- `[tool] hosting Europa`
+**Decides-deal weighting:** Pricing prompts score 5/5 here (price sensitivity higher than Northern Europe). Compliance prompts still 5/5 but secondary in importance.
 
-**Portuguese:**
-- `melhor software [categoria] para empresas portuguesas`
-- `[tool] RGPD conformidade`
-
-**Trust signals Southern European buyers look for:** Local-language support, EU pricing transparency in EUR, EU hosting, references from local market.
+**v2 note:** Southern Europe is the highest-value addition for v2 multilingual support, because English-language search captures less of the intent here than in other markets.
 
 ---
 
-## Cross-market patterns (use for any EU prompt pack)
+## Cross-market English-language patterns
 
-**Always include at least one prompt from each of these patterns regardless of target market:**
+Use these regardless of which specific EU markets the user targets. They are universally relevant across all 5 clusters.
 
-1. **The "in Europe" qualifier:** Add `in Europe` or `for European companies` to any shortlist prompt — it signals the buyer is filtering for EU compliance and EU residency.
-2. **The "alternative to [US tool]" pattern:** EU buyers actively search for EU alternatives to dominant US tools. If the user has a US competitor, generate a prompt around being the EU alternative.
-3. **The DPA / data residency double:** Always include both "does [tool] offer a DPA" and "where is [tool]'s data hosted" — they are different searches with different intents.
-4. **The EU AI Act question:** As the EU AI Act becomes fully applicable in August 2026, prompts about "is [tool] EU AI Act compliant" are growing in volume. Include at least one.
-5. **The subprocessor question:** "Who are [tool]'s subprocessors" is a uniquely European prompt — US buyers don't ask this.
+1. **The "in Europe" qualifier** — Add `in Europe` or `for European companies` to any shortlist prompt. This signals the buyer is filtering for EU compliance and EU residency.
+2. **The "alternative to [US tool]" pattern** — EU buyers actively search for EU alternatives to dominant US tools. Always generate one of these if the user has a US competitor.
+3. **The DPA / data residency double** — Always include both "does [tool] offer a DPA" AND "where is [tool]'s data hosted". They are different searches with different intents.
+4. **The EU AI Act question**: the EU AI Act applies in stages (check the current dates on the official EU pages before citing any), and prompts about "is [tool] EU AI Act compliant" are growing in volume. Include at least one.
+5. **The subprocessor question** — "Who are [tool]'s subprocessors" is a uniquely European prompt — US buyers don't ask this. Include it.
+6. **The certification stack** — "[tool] SOC 2 ISO 27001" is a single combined prompt, not two separate ones. EU buyers expect to see both.
 
 ---
 
-## Regulated vertical terminology (health-tech, fin-tech, legal-tech)
+## Regulated vertical terminology
 
-When the user is in a regulated vertical, generic GDPR/DPA prompts are necessary but not sufficient. The pack must include vertical-specific compliance prompts using the exact regulatory acronyms buyers in that vertical search for.
+When the user is in a regulated vertical, generic GDPR/DPA prompts are necessary but not sufficient. Include vertical-specific compliance prompts using the exact regulatory acronyms buyers in that vertical search for.
 
 ### Health-tech (DACH primary, all EU secondary)
 
-**DACH:**
-- `[tool] BfArM zertifiziert` — Federal Institute for Drugs and Medical Devices certification
-- `[tool] DiGA Verzeichnis` — Digital Health Applications directory (Germany)
-- `[tool] KHZG förderfähig` — Hospital Future Act funding eligibility (Germany)
-- `[tool] MDR Konformität` — Medical Device Regulation conformity
-- `[tool] IVDR konform` — In Vitro Diagnostic Regulation
-- `[tool] §75c SGB V` — German social code section on hospital IT security
-
-**France:**
-- `[tool] HDS certification` — Hébergeur de Données de Santé (mandatory for health data hosting in France)
-- `[tool] CNIL référentiel santé` — CNIL health data reference framework
-- `[tool] DMP compatible` — Dossier Médical Partagé compatibility
-
-**EU-wide:**
-- `[tool] EHDS compliant` — European Health Data Space (regulation effective 2026)
-- `[tool] MDR class IIa` — Medical Device Regulation class
+- `[tool] BfArM certification` — German Federal Institute for Drugs and Medical Devices
+- `[tool] DiGA approval` — German Digital Health Applications directory
+- `[tool] KHZG eligible` — German Hospital Future Act funding
+- `[tool] MDR conformity assessment` — EU Medical Device Regulation
+- `[tool] IVDR compliant` — EU In Vitro Diagnostic Regulation
+- `[tool] HDS certified` — French Hébergeur de Données de Santé
+- `[tool] EHDS compliant` — European Health Data Space (effective 2026)
 - `[tool] FHIR compatible` — health interoperability standard
 
 ### Fin-tech (all EU markets)
 
-**EU-wide:**
-- `[tool] DORA compliance` — Digital Operational Resilience Act (effective Jan 2025)
+- `[tool] DORA compliance` — Digital Operational Resilience Act
 - `[tool] MiCA compliance` — Markets in Crypto-Assets regulation
-- `[tool] PSD2 compliant` — Payment Services Directive 2
-- `[tool] PSD3 ready` — Payment Services Directive 3 (in development)
-- `[tool] AML5 / AML6` — Anti-Money Laundering directives
-- `[tool] EBA guidelines` — European Banking Authority
-
-**DACH:**
-- `[tool] BaFin lizenz` — German financial regulator licensing
-- `[tool] MaRisk konform` — Minimum Requirements for Risk Management
-
-**France:**
-- `[tool] ACPR agrément` — French banking authority approval
-- `[tool] AMF visa` — French market authority
+- `[tool] PSD2 compliant` / `[tool] PSD3 ready`
+- `[tool] AML5 / AML6 compliance`
+- `[tool] EBA guidelines alignment`
+- `[tool] BaFin licensed` — German financial regulator
+- `[tool] ACPR approved` — French banking authority
 
 ### Legal-tech / privacy-tech
 
-**EU-wide:**
 - `[tool] eIDAS qualified` — Electronic identification and trust services
-- `[tool] eIDAS 2.0 ready` — for the EU Digital Identity Wallet
-- `[tool] qualified electronic signature` — vs advanced vs simple
-- `[tool] EU AI Act high-risk` — for tools used in legal decision-making
+- `[tool] eIDAS 2.0 ready` — EU Digital Identity Wallet
+- `[tool] qualified electronic signature`
+- `[tool] EU AI Act high-risk classification`
 
-### Energy / utilities (Germany specifically)
+### Energy / utilities (DACH especially)
 
-- `[tool] BSI C5 testat` — German federal information security cloud catalogue (mandatory for critical infrastructure)
-- `[tool] KRITIS compliance` — Critical infrastructure regulation
-- `[tool] §8a BSIG` — German IT Security Act compliance
+- `[tool] BSI C5 testat`
+- `[tool] KRITIS compliance` — German critical infrastructure regulation
+- `[tool] §8a BSIG compliance`
 
 ### Public sector (all EU)
 
-- `[tool] EVB-IT konform` — German public sector IT contract framework
-- `[tool] G-Cloud framework` — UK (relevant for non-EU but UK-adjacent buyers)
+- `[tool] EVB-IT compliant` — German public sector IT contract framework
 - `[tool] OpenPEPPOL compliant` — EU public procurement
 
 ---
@@ -206,13 +181,14 @@ When the user's category indicates a regulated vertical (e.g., "EHR", "patient m
 
 ## Output formatting rule
 
-When the prompt-pack-builder outputs a prompt that includes a non-English variant, present it as:
+When the prompt-pack-builder generates a prompt for a specific EU market, present it with the Market column visible:
 
 ```
 | Prompt | Category | Decides | Target page | Market |
 |---|---|---|---|---|
-| [tool] DSGVO konform | EU Privacy | 5/5 | Trust Centre | DACH (DE) |
-| best [category] for Nordic B2B | Shortlist | 4/5 | Alternatives page | Nordics (EN) |
+| best [category] software for German companies | Shortlist | 4/5 | /alternatives | DACH |
+| [tool] BSI C5 testat | EU Privacy | 5/5 | /trust | DACH |
+| best [category] for Nordic B2B | Shortlist | 4/5 | /nordics | Nordics |
 ```
 
-Always include the market column when EU language variants are present, so the user knows which prompts are for which audience.
+Always include the Market column when the pack covers more than one EU market cluster.

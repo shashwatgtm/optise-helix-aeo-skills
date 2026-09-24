@@ -1,7 +1,9 @@
 # 12 Most Common FITq Failure Modes — Template Fixes
 
 **Used by:** `optise-helix-fitq-audit` exclusively.
-**Purpose:** When the audit identifies a common failure, the skill outputs the template fix verbatim — no inventing new fixes per page. Templates are validated against the Optise EU AEO Playbook, Sections 4-5.
+**Purpose:** When the audit identifies a common failure, the skill outputs the matching template fix, with no inventing new fixes per page. Templates are validated against the Optise EU AEO Playbook, Sections 4-5.
+
+**Template rule (mandatory):** keep the structure of each template, but never output its example values as facts. Every date, price, name, statistic, region, certification, and compliance statement in a template is an illustration. In the output, replace each one with a fact the user stated in this session or a `[User to add: ...]` placeholder. Company names in examples (ExampleCo, Tool A, Tool B, Tool C) are fictional (Plugin Rule 1).
 
 ## Contents
 - 1. No visible last-updated date
@@ -31,7 +33,7 @@ Add this immediately below the H1:
 
 ```html
 <p class="last-updated">
-  <time datetime="2026-04-12">Last updated: April 12, 2026</time>
+  <time datetime="[YYYY-MM-DD]">Last updated: [Month D, YYYY]</time>
 </p>
 ```
 
@@ -74,7 +76,7 @@ Replace generic H1 with a question-form H1 that mirrors the buyer prompt.
 
 **Before:**
 ```html
-<h1>Freshservice — IT Service Management</h1>
+<h1>ExampleCo — IT Service Management</h1>
 ```
 
 **After:**
@@ -108,7 +110,7 @@ Insert a 40-60 word BLUF immediately after the H1, before any marketing copy.
 **After:**
 ```
 [H1] Best service desk software for German Mittelstand IT teams
-[BLUF — 40-60 words] For German Mittelstand IT teams (200-2000 employees), the three best service desk options in 2026 are Freshservice (best for fast deployment, BSI C5 certified), ServiceNow (best for complex enterprise stacks, premium pricing), and OTRS (best for full data sovereignty, German vendor).
+[BLUF — 40-60 words] For German Mittelstand IT teams (200-2000 employees), the three best service desk options in 2026 are Tool A (best for [User to add: verified strength]), Tool B (best for [User to add: verified strength]), and Tool C (best for [User to add: verified strength]). [User to add: one verified qualifier sentence.]
 [Then the rest of the page]
 ```
 
@@ -154,7 +156,7 @@ Pricing starts at €X per agent per month for the Starter plan and scales to �
 | Pro | €Y | 50-200 agents |
 | Enterprise | €Z | 200+ agents, custom SLAs |
 
-All EU customers can request annual billing in EUR. Volume discounts available above 100 agents.
+[User to add: billing terms, for example currency, billing period, and volume discounts.]
 ```
 
 ---
@@ -171,8 +173,8 @@ Add a byline with a real named person and link to a bio:
 
 ```html
 <p class="byline">
-  By <a href="/team/alex-mueller" rel="author">Alex Müller</a>,
-  Head of IT Operations at [Company]
+  By <a href="/team/[author-slug]" rel="author">[Author name]</a>,
+  [Job title] at [Company]
 </p>
 ```
 
@@ -204,7 +206,7 @@ Every quantitative claim must link to its source. Pattern:
 **After:**
 ```
 85% of customers report faster ticket resolution
-(<a href="/case-studies/freshservice-2026-customer-survey">2026 Customer Survey, n=1,247</a>).
+(<a href="/research/[survey-page]">[Survey name and year], n=[sample size]</a>).
 ```
 
 If the source is internal, link to a named methodology page. If the source is external, link to the original (not an aggregator). If the stat has no defensible source, **drop the stat** rather than weaken it with vague attribution.
@@ -219,7 +221,9 @@ If the source is internal, link to a named methodology page. If the source is ex
 
 **Template fix:**
 
-Add JSON-LD `FAQPage` schema in the `<head>`:
+**Rule 4 check first (operating-principles.md).** Google no longer shows FAQ rich results for most sites (only well-known government and health sites since August 2023), so a corporate, marketing, compliance, or product page is not eligible. Either use an eligible substitute from Rule 4 (for example `Organization` + `hasCredential` + `WebPage` for a trust centre, or `Product` + `Offer` for pricing), or, if FAQPage is kept for other AI parsers, include the Rule 4 disclosure note in the output.
+
+If FAQPage is kept, add JSON-LD in the `<head>`. Every answer below is a placeholder: output only what the user stated, never these sample sentences as facts.
 
 ```html
 <script type="application/ld+json">
@@ -232,7 +236,7 @@ Add JSON-LD `FAQPage` schema in the `<head>`:
       "name": "Is [tool] GDPR compliant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. [Tool] is GDPR-compliant and operates as both a Data Processor and Data Controller under EU Regulation 2016/679. Our DPA is available at [URL]."
+        "text": "[User to add: GDPR status exactly as the user states it]. [Tool] acts as [User to add: Data Processor, Data Controller, or both] under EU Regulation 2016/679. [User to add: where the DPA is available, with URL]."
       }
     },
     {
@@ -240,7 +244,7 @@ Add JSON-LD `FAQPage` schema in the `<head>`:
       "name": "Where is customer data stored?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Customer data is stored in our EU regions: Frankfurt (primary) and Dublin (failover). Data does not leave the EU without explicit customer instruction."
+        "text": "Customer data is stored in [User to add: exact hosting regions, primary and failover]. [User to add: whether data ever leaves those regions, and under what conditions]."
       }
     }
   ]
@@ -248,7 +252,7 @@ Add JSON-LD `FAQPage` schema in the `<head>`:
 </script>
 ```
 
-The schema must mirror visible page content (don't add Q&A pairs only in the schema — Google penalizes this).
+The schema must mirror visible page content (don't add Q&A pairs only in the schema; Google's structured data guidelines require markup to match what the page shows).
 
 ---
 
@@ -279,9 +283,11 @@ Add a pricing comparison table. If you don't disclose your pricing publicly, at 
 ```markdown
 | Tool | Pricing model | Starting price | Free trial |
 |---|---|---|---|
-| [You] | Per agent/month | €29/agent/month | 14 days |
-| [Competitor 1] | Per agent/month + setup fee | €45/agent/month + €5,000 | 21 days |
-| [Competitor 2] | Tiered packages | "Contact sales" | None |
+| [You] | [User to add: pricing model] | [User to add: starting price] | [User to add: trial length or "None"] |
+| [Competitor 1] | [Verified: pricing model + source] | [Verified: starting price + source] | [Verified: trial + source] |
+| [Competitor 2] | [Verified: pricing model + source] | [Verified: starting price, or "Contact sales"] | [Verified: trial + source] |
+
+Competitor prices must come from the competitor's own pricing page, fetched in this session and tagged `[VERIFIED · source]` (Rule 8 and Plugin Rule 1). If a price cannot be verified, write "[User to confirm: ...]" instead of a number.
 ```
 
 **Why this matters:** Comparison pages without pricing get filtered out of AI engine citation chains. AI engines treat pricing as a structural completeness signal, not just user-relevant info.
@@ -301,9 +307,10 @@ Add a "Not ideal for" section near the bottom of decision pages:
 ```markdown
 ## Who [tool] is not ideal for
 
-- **Companies under 20 employees:** Our pricing model assumes 20+ agents. Smaller teams should look at [smaller competitor] instead.
-- **Healthcare providers needing on-prem deployment:** We're SaaS-only. For on-prem health-tech, [on-prem competitor] is a better fit.
-- **Companies that need real-time call recording:** We focus on tickets and chat. For voice-led support, [voice tool] is better.
+- **[User to add: customer type]:** [User to add: the honest reason, as the user states it]. [User to add: what fits them better, if the user wants to name it].
+- **[User to add: customer type]:** [User to add: reason]. [User to add: alternative].
+
+Illustration only (fictional ExampleCo, do not reuse): "**Companies under 20 employees:** ExampleCo's pricing assumes 20+ agents. Smaller teams may find a lighter tool a better fit."
 ```
 
 Honest constraints are a trust signal. AI engines and procurement teams trust products that admit their limits.
@@ -312,7 +319,7 @@ Honest constraints are a trust signal. AI engines and procurement teams trust pr
 
 ## Failure 12 — Bot-blocking via robots.txt or Cloudflare
 
-**Detection:** `fetch_page.py` returns 403 even with the ChatGPT-User UA, OR robots.txt blocks GPTBot/ClaudeBot/PerplexityBot.
+**Detection:** `fetch_page.py` returns 401, 403 or 429 for its own honest user agent (a possible sign of bot blocking; the script never impersonates AI crawlers, so confirm by reading robots.txt and asking the user), OR robots.txt blocks GPTBot/ClaudeBot/PerplexityBot.
 **Findability score impact:** 0/25 — page is invisible
 **Effort:** 5 minutes (robots.txt) to a few hours (Cloudflare config)
 

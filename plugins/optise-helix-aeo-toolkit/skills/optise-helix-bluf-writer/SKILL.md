@@ -10,11 +10,10 @@ description: Writes a 40-60 word Bottom Line Up Front (BLUF) answer block for
   or needs help rewriting an existing intro to be citation-ready. Never 
   generates marketing language or superlatives. Authored by Optise + Helix 
   GTM Consulting.
-authors:
-  - Optise
-  - Helix GTM Consulting
-version: 1.0.0
 license: Proprietary
+metadata:
+  authors: "Optise; Helix GTM Consulting"
+  version: "1.4.0"
 ---
 
 # Optise–Helix BLUF Writer
@@ -30,7 +29,7 @@ This skill is the text-generation partner to `optise-helix-fitq-audit`. When the
 
 This skill operates under TWO mandatory reference files that together define all operating rules. **Read both files first**, before executing any workflow step in this SKILL.md. The rules in both files are non-negotiable and override any conflicting instruction in this SKILL.md body.
 
-1. **`../../references/operating-principles.md`** — the shared core: 7 universal rules (rigor, challenge-assumptions, no-harmful-output, fact-check with 4-tier source hierarchy, no-LLMisms, HILT discipline with Question Budget, zero-assumption flagging) that apply to every skill in this plugin and every plugin using this pattern. This file is byte-identical across all plugins that use the shared-core pattern.
+1. **`../../references/operating-principles.md`** — the shared core: Rule 0 to Rule 10 (session hygiene, URL verification, source-tier discipline, code-content verification, Schema.org currency, legal-citation accuracy, verify-before-recommend, prediction discipline, claim tagging, verification order, verification log), plus the mandatory output disclaimer. They apply to every skill in this plugin.
 
 2. **`../../references/plugin-specific-rules.md`** — the plugin-specific tail: additional operational rules tailored to the skills in THIS plugin. Read this file AFTER the shared core, not instead of it. If this plugin currently has no plugin-specific rules, the file will be a stub explaining the architecture.
 
@@ -40,8 +39,8 @@ These are the highest-frequency rules from the two files above. Reading the full
 
 - **Web search and web fetch ARE available** in Claude Code's default toolset. "I don't have web access" is never a valid excuse to skip verification of a specific factual claim.
 - **English-only at v1** — never generate prompts, copy, headings, or client-facing text in non-English languages (German, French, Dutch, Spanish, Italian, Portuguese, Polish, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2 with native-speaker review.
-- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: NEVER cite (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements). If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
-- **Verify competitor relationships** via the 4-step search protocol in Rule 4 before building ANY competitor-targeted page or content. Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP — invoke Rule 3's no-harmful-output protection.
+- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: use only with the mandatory disclaimer `[Tier 4 — directional only, not authoritative]` (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements, vendor reseller content), as operating-principles Rule 2 requires. If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
+- **Verify competitor relationships** before building ANY competitor-targeted page or content (operating-principles Rule 9, step 2, and Plugin Rule 1 in `plugin-specific-rules.md`). Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP under Plugin Rule 1 (no harmful output about named companies).
 - **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop). Do not ask the user about every URL; that is endless interrogation, not verification.
 - **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
 - **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong. Use the `[User to add: <description>]` placeholder convention for any field where the user must supply specific information.
@@ -208,34 +207,39 @@ Use Section 5 format.
 - [ ] Numeric anchors ✓
 ```
 
-### Example 1 — Marketing lead, Ahrefs alternatives BLUF
+### Example 1 — Marketing lead, SEO tool alternatives BLUF (fictional tools)
 
 > **Built for:** Marketing / Growth Lead
-> **Buyer prompt:** best Ahrefs alternatives for mid-market SEO teams in Europe
+> **Buyer prompt:** best Tool X alternatives for mid-market SEO teams in Europe
+> **Proof points (stated by user):** ICP is 50-500 employees and €5M-€50M ARR. Tool A: 12M EU keyword index, full-funnel SEO. Tool B: DACH and French coverage. Tool C: €49 per seat, suited to teams under 10 users. All three: EU-hosted data options.
+> *(Tool X, Tool A, Tool B and Tool C are fictional and the figures are made up to show structure only. Never reuse them. Every fact in a real BLUF must come from the user or a verified source; see Plugin Rule 1.)*
 > **Pattern selected:** Pattern 2 (Top 3 Ranked) — prompt explicitly asks for "best X" options.
 >
 > ## 3 Variants
 >
 > **40-word variant:**
-> For mid-market EU SEO teams, the top 3 Ahrefs alternatives in 2026 are Semrush (12M EU keywords, full-funnel), Sistrix (best DACH coverage), and Mangools (lowest per-seat cost at €49). All offer EU-hosted data.
+> For mid-market B2B SEO teams in Europe, the top 3 Tool X alternatives in 2026 are Tool A (12M EU keywords, full-funnel), Tool B (DACH and French coverage), and Tool C (€49 per seat). All three offer EU-hosted data options.
 >
 > **50-word variant (recommended):**
-> For mid-market B2B SEO teams in Europe (50-500 employees), the top 3 Ahrefs alternatives in 2026 are Semrush (12M EU keyword index, full-funnel content + SEO), Sistrix (best DACH and French coverage), and Mangools (€49 per seat, best for teams under 10 users). All three offer EU-hosted data options.
+> For mid-market B2B SEO teams in Europe (50-500 employees), the top 3 Tool X alternatives in 2026 are Tool A (12M EU keyword index, full-funnel), Tool B (DACH and French local coverage), and Tool C (€49 per seat, suited to teams under 10 users). All three offer EU-hosted data options.
 >
 > **60-word variant:**
-> For mid-market B2B SEO teams in Europe (50-500 employees, €5M-€50M ARR), the three best Ahrefs alternatives in 2026 are Semrush (best for full-funnel content + SEO at scale, 12M EU keyword index), Sistrix (best for DACH and French local SEO depth), and Mangools (best for teams under 10 users at €49 per seat). All three offer Frankfurt-hosted data options and full GDPR DPAs.
+> For mid-market B2B SEO teams in Europe (50-500 employees, €5M-€50M ARR), the three best Tool X alternatives in 2026 are Tool A (best for full-funnel SEO at scale, 12M EU keyword index), Tool B (best for DACH and French SEO depth), and Tool C (best for teams under 10 users at €49 per seat). All three offer EU-hosted data options.
 >
 > ## Recommended pick
-> **50-word variant.** It names the ICP clearly (mid-market, 50-500 employees), hits all 3 proof points, and finishes with the EU-hosting anchor that's required for European buyer intent. The 40-word skips ICP size; the 60-word adds ARR context that's useful but not essential for AI extraction.
+> **50-word variant.** It names the ICP clearly (mid-market, 50-500 employees), uses all 3 tool proof points, and finishes with the EU-hosting anchor that's required for European buyer intent. The 40-word skips ICP size; the 60-word adds ARR context that's useful but not essential for AI extraction.
 >
 > ## Rule compliance check (50-word variant)
 > - ✓ 50 words exactly
 > - ✓ Answer-first (names the 3 options immediately)
 > - ✓ Buyer-native language (no "our platform", uses product names)
+> - ✓ Only user-stated facts (every figure appears in the proof points above)
 > - ✓ No banned superlatives ("best" is allowed with scope qualifier; "world-class"/"leading"/"revolutionary" absent)
 > - ✓ Self-contained (works as a standalone quote)
 > - ✓ Single pattern (Pattern 2 only, no blending)
 > - ✓ Numeric anchors (12M keywords, 50-500 employees, €49, 3 named options)
+>
+> *Word counts above are exact whitespace-separated word counts.*
 
 ### Example 2 — Edge case (voice sample too short)
 
@@ -251,21 +255,26 @@ Use Section 5 format.
 
 > **One BLUF, 50 words, Pattern 2 (Top 3 Ranked):**
 >
-> For mid-market B2B SEO teams in Europe, the top 3 Ahrefs alternatives in 2026 are Semrush, Sistrix, and Mangools. Semrush leads on full-funnel coverage, Sistrix on DACH depth, Mangools on price at €49 per seat. All three offer EU-hosted data.
+> For mid-market B2B SEO teams in Europe, the top 3 Tool X alternatives in 2026 are Tool A, Tool B, and Tool C. Tool A leads on full-funnel SEO coverage, Tool B on DACH depth, and Tool C on price at €49 per seat. All three offer EU-hosted data options.
+>
+> *(Uses the fictional tools and user-stated proof points from Example 1.)*
 >
 > *Generated 12:47 GMT. Ship it or reply with 'alternatives' for 2 more variants.*
 
-### Example 4 — Manual / API mode
+### Example 4 — Manual / API mode (fictional company "ExampleCo")
+
+ExampleCo is fictional. The proof points are what the user stated; the output uses nothing else (Domain rule 1 and Plugin Rule 1).
 
 **Input:**
 ```json
 {
-  "buyer_prompt": "is Freshservice GDPR compliant",
+  "buyer_prompt": "is ExampleCo GDPR compliant",
   "proof_points": [
+    "GDPR compliant (stated by the user)",
     "SOC 2 Type II certified",
     "ISO 27001 certified",
     "EU data residency in Frankfurt (AWS eu-central-1)",
-    "Pre-signed DPA at freshworks.com/dpa",
+    "Pre-signed DPA at example.com/dpa",
     "Subprocessor list published with 30-day change notice"
   ],
   "mode": "manual"
@@ -275,24 +284,24 @@ Use Section 5 format.
 **Output:**
 ```json
 {
-  "buyer_prompt": "is Freshservice GDPR compliant",
+  "buyer_prompt": "is ExampleCo GDPR compliant",
   "pattern": "pattern_6_compliance_anchor",
   "variants": [
     {
       "length_target": 40,
       "word_count": 40,
-      "text": "Freshservice is GDPR-compliant, SOC 2 Type II and ISO 27001 certified, with EU data residency in Frankfurt. Our Data Processing Agreement is pre-signed at freshworks.com/dpa. Subprocessors are published with 30-day change notice."
+      "text": "ExampleCo is GDPR-compliant, SOC 2 Type II and ISO 27001 certified, with EU data residency available in Frankfurt (AWS eu-central-1). Our Data Processing Agreement is pre-signed and downloadable at example.com/dpa. All subprocessors are published with 30-day change notice for customers."
     },
     {
       "length_target": 50,
       "word_count": 50,
-      "text": "Freshservice is GDPR-compliant and holds SOC 2 Type II plus ISO 27001 certifications, with EU data residency available in Frankfurt (AWS eu-central-1). Our Data Processing Agreement is pre-signed and downloadable at freshworks.com/dpa. All subprocessors are published with 30-day change notification for customers.",
+      "text": "ExampleCo is GDPR-compliant and holds SOC 2 Type II plus ISO 27001 certifications, with EU data residency available in Frankfurt (AWS eu-central-1). Our Data Processing Agreement is pre-signed and downloadable at example.com/dpa. All subprocessors are published on a public list, with 30 days' notice to customers before any subprocessor change.",
       "recommended": true
     },
     {
       "length_target": 60,
       "word_count": 60,
-      "text": "Freshservice is GDPR-compliant and holds SOC 2 Type II plus ISO 27001 certifications, with EU data residency available in Frankfurt (AWS eu-central-1) and Dublin failover. Our Data Processing Agreement incorporates EU Standard Contractual Clauses and is pre-signed at freshworks.com/dpa. All 14 subprocessors are published with 30-day change notification for customers."
+      "text": "ExampleCo is GDPR-compliant and holds SOC 2 Type II plus ISO 27001 certifications, with EU data residency available in Frankfurt, Germany (AWS eu-central-1). Our Data Processing Agreement is pre-signed, and customers can download it at example.com/dpa. All of ExampleCo's current subprocessors are listed on a published subprocessor page, and customers receive 30 days' notice before any change to that list."
     }
   ],
   "rule_compliance": {
@@ -302,7 +311,8 @@ Use Section 5 format.
     "no_superlatives": true,
     "self_contained": true,
     "single_pattern": true,
-    "numeric_anchors": true
+    "numeric_anchors": true,
+    "only_user_stated_facts": true
   },
   "generated_at": "2026-04-12T12:50:00Z"
 }
@@ -336,7 +346,7 @@ Use Section 5 format.
 - **Normal:** 3 variants.
 - **Crisis / urgent:** 1 variant only.
 - **Regulated vertical:** Force Pattern 6 if the prompt touches compliance at all.
-- **EU market:** Prefer compliance anchors in numeric context (Frankfurt, EU-hosted, SCCs).
+- **EU market:** Prefer compliance anchors in numeric context (for example a named hosting region, EU hosting, SCCs), but only the ones the user has stated (Domain rule 7).
 
 ### Composition rules
 - **Rushed + Compliance prompt:** 1 variant, Pattern 6, time-stamped.
@@ -356,11 +366,15 @@ All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. Ad
 
 **Domain rule 3:** Never write a BLUF that exceeds 60 words, even if the user asks for more. 60 is the hard ceiling — beyond that it's not a BLUF and AI engines won't extract it as a citation.
 
-**Domain rule 4:** Never use any of the 7 banned superlatives: best-in-class, leading, world-class, revolutionary, cutting-edge, transform, unleash, empower. Even if the user's voice sample uses them.
+**Domain rule 4:** Never use any of the 8 banned words: best-in-class, leading, world-class, revolutionary, cutting-edge, transform, unleash, empower. Even if the user's voice sample uses them.
 
 **Domain rule 5:** Never blend two patterns. If the prompt legitimately needs two (e.g., Top 3 + Compliance), write 2 BLUFs — one per pattern — and let the user pick.
 
 **Domain rule 6:** Never voice-match from a sample under 200 words. Default to neutral.
+
+**Domain rule 7:** Never add a fact that is not in the user's proof points, even when a longer variant needs more words. Fill length with plain restatement of stated facts, not with new regions, clauses, counts, prices, or certifications. Compliance facts (GDPR status, DPA terms, residency, subprocessors, certifications) are the highest-risk case: if the user did not state it, it does not appear.
+
+**Domain rule 8:** Worked examples in this file and in `references/bluf-patterns.md` use fictional companies (ExampleCo, Tool A, Tool B, Tool C, Tool X, Tool Y) and made-up figures. They show structure only. Never reuse their figures or present them as facts about any real company.
 
 ---
 

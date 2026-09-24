@@ -1,11 +1,13 @@
-# Optise–Helix AEO Toolkit
+# Optise and Helix AEO and GEO Toolkit
 
-**Authors:** Optise + Helix GTM Consulting
+**Authors:** Optise and Helix GTM Consulting
 **Released:** April 17, 2026 (alongside the Optise EU AEO Playbook 2026 Edition)
-**License:** Proprietary
-**Version:** 1.3
+**License:** Proprietary, free to use (see LICENSE)
+**Version:** 1.4 (skills and plugin manifest; the shared operating principles are v1.3)
 
-A toolkit of 6 Claude Skills that helps B2B teams selling into Europe make their websites visible, citable, and evaluable to AI search engines (ChatGPT, Perplexity, Gemini, Claude) and AI agents doing buyer evaluation.
+A toolkit of 6 Claude Skills for AEO and GEO (answer engine optimisation and generative engine optimisation). It helps B2B teams selling into Europe make their websites visible, citable, and evaluable to AI search engines (ChatGPT, Perplexity, Gemini, Claude) and AI agents doing buyer evaluation.
+
+**Designed for English-language websites.** The audits, scores and rewrites assume the page and the buyer prompts are in English.
 
 ---
 
@@ -105,7 +107,7 @@ This toolkit is built on the Optise EU AEO Playbook 2026 Edition. Key concepts:
 
 ## English only at v1
 
-All skills generate English-language output. Multilingual prompt and Trust Centre generation is deferred to a future release. The skills cover EU markets (DACH, Nordics, France, Benelux, Southern Europe) using English-language prompt patterns with local regulatory acronyms preserved where they add search value (BSI C5 testat, BfArM, DiGA, DORA stay in their original form because that is how local buyers actually type them).
+The toolkit is designed for English-language websites, and all skills generate English-language output. Multilingual prompt and Trust Centre generation is deferred to a future release. The skills cover EU markets (DACH, Nordics, France, Benelux, Southern Europe) using English-language prompt patterns with local regulatory acronyms preserved where they add search value (BSI C5 testat, BfArM, DiGA, DORA stay in their original form because that is how local buyers actually type them).
 
 ---
 
@@ -124,12 +126,24 @@ Both Optise and Helix GTM Consulting are credited as authors of every skill in t
 - **Optise** owns the methodology IP — the FITq and RACE frameworks, the 6 prompt categories, the 8 EU buyer questions, the 3 KPI tracker rubric, the 6 BLUF patterns, the not-ideal-for templates.
 - **Helix GTM Consulting** owns the consulting build order, the 30/60/90 plan, the persona detection rules, and the cross-skill chain logic.
 
-Both authors are required to be retained in the frontmatter of every SKILL.md if these skills are forked or extended. Commercial redistribution, white-labeling, or rebranding requires written permission from both organizations — see LICENSE.
+Both authors are required to be retained in the frontmatter of every SKILL.md if these skills are forked or extended.
+
+**Licence in brief (see LICENSE):** anyone, including companies, may install and use the toolkit free of charge. Plugin directories may list and distribute it. Reselling, redistributing it inside another product, white-labelling or rebranding needs written permission from both Optise and Helix GTM Consulting.
+
+---
+
+## Privacy
+
+This plugin sends no data to Optise or Helix GTM Consulting and runs no server. The skills run inside Claude. The page-fetch script used by fitq-audit and race-audit contacts only the web address you give it, identifies itself honestly as this toolkit, reads at most 5 MB, and stores nothing. What you type into Claude is handled under your own Claude account terms.
+
+## Security
+
+To report a security problem, see SECURITY.md.
 
 ---
 
 ## Support
 
-For methodology questions: Ómar Thor Ómarsson, CEO, Optise — omar@optise.com
+For methodology questions: Ómar Thor Ómarsson, CEO, Optise (omar@optise.com)
 
-For toolkit and build questions: Shashwat Ghosh, Cofounder and Fractional CMO, Helix GTM Consulting — shashwat@hyperplays.in
+For toolkit and build questions: Shashwat Ghosh, Cofounder and Fractional CMO, Helix GTM Consulting (shashwat@hyperplays.in)

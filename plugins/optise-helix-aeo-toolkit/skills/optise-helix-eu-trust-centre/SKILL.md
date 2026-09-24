@@ -4,18 +4,17 @@ description: Generates a complete EU Trust Centre page that answers the 8
   canonical EU buyer questions (GDPR compliance, data storage, residency, 
   DPA, subprocessors, data collection and retention, third-party AI 
   providers, security standards). Produces the full page in extractable 
-  format with BLUF, answer blocks, JSON-LD FAQPage schema, and a DPA 
+  format with BLUF, answer blocks, JSON-LD schema, and a DPA 
   request CTA. Uses proprietary Optise answer ordering (Q1→Q2→Q3→Q8→Q4→Q5→Q6→Q7) 
   optimized for European procurement review flows. Use whenever the user 
   needs to draft, audit, or expand a Trust Centre page, trust portal, 
   GDPR FAQ, security centre, or any page answering EU compliance questions. 
   Never invents data residency, certifications, or subprocessors. Authored 
   by Optise + Helix GTM Consulting.
-authors:
-  - Optise
-  - Helix GTM Consulting
-version: 1.0.0
 license: Proprietary
+metadata:
+  authors: "Optise; Helix GTM Consulting"
+  version: "1.4.0"
 ---
 
 # Optise–Helix EU Trust Centre Generator
@@ -33,7 +32,7 @@ The 8 questions come from the Optise EU AEO Playbook, Section 7 (page 12). The o
 
 This skill operates under TWO mandatory reference files that together define all operating rules. **Read both files first**, before executing any workflow step in this SKILL.md. The rules in both files are non-negotiable and override any conflicting instruction in this SKILL.md body.
 
-1. **`../../references/operating-principles.md`** — the shared core: 7 universal rules (rigor, challenge-assumptions, no-harmful-output, fact-check with 4-tier source hierarchy, no-LLMisms, HILT discipline with Question Budget, zero-assumption flagging) that apply to every skill in this plugin and every plugin using this pattern. This file is byte-identical across all plugins that use the shared-core pattern.
+1. **`../../references/operating-principles.md`** — the shared core: Rule 0 to Rule 10 (session hygiene, URL verification, source-tier discipline, code-content verification, Schema.org currency, legal-citation accuracy, verify-before-recommend, prediction discipline, claim tagging, verification order, verification log), plus the mandatory output disclaimer. They apply to every skill in this plugin.
 
 2. **`../../references/plugin-specific-rules.md`** — the plugin-specific tail: additional operational rules tailored to the skills in THIS plugin. Read this file AFTER the shared core, not instead of it. If this plugin currently has no plugin-specific rules, the file will be a stub explaining the architecture.
 
@@ -43,8 +42,8 @@ These are the highest-frequency rules from the two files above. Reading the full
 
 - **Web search and web fetch ARE available** in Claude Code's default toolset. "I don't have web access" is never a valid excuse to skip verification of a specific factual claim.
 - **English-only at v1** — never generate prompts, copy, headings, or client-facing text in non-English languages (German, French, Dutch, Spanish, Italian, Portuguese, Polish, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2 with native-speaker review.
-- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: NEVER cite (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements). If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
-- **Verify competitor relationships** via the 4-step search protocol in Rule 4 before building ANY competitor-targeted page or content. Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP — invoke Rule 3's no-harmful-output protection.
+- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: use only with the mandatory disclaimer `[Tier 4 — directional only, not authoritative]` (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements, vendor reseller content), as operating-principles Rule 2 requires. If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
+- **Verify competitor relationships** before building ANY competitor-targeted page or content (operating-principles Rule 9, step 2, and Plugin Rule 1 in `plugin-specific-rules.md`). Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP under Plugin Rule 1 (no harmful output about named companies).
 - **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop). Do not ask the user about every URL; that is endless interrogation, not verification.
 - **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
 - **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong. Use the `[User to add: <description>]` placeholder convention for any field where the user must supply specific information.
@@ -67,7 +66,7 @@ Detect persona using `references/personas.md`. Adapt output:
 
 | Persona | Output adaptation |
 |---|---|
-| **CEO / Founder** | Generate the page. Close with CFO-grade ask: "publishing this page costs nothing; not publishing costs [N] EU deals per quarter." |
+| **CEO / Founder** | Generate the page. Close with a CFO-grade ask. State a cost of not publishing only if the user supplies pipeline data; never estimate it (operating-principles Rule 7). |
 | **Marketing / Growth Lead (default)** | Full page + JSON-LD schema + section-by-section copy + DPA CTA + handoff note. |
 | **Web Team** | Full page as HTML file with JSON-LD in `<head>`. Skip marketing framing. Ready to paste into CMS. |
 | **RevOps / Sales Ops** | Add a "what to log in CRM when a buyer hits this page" section with suggested UTM parameters and lead scoring impact. |
@@ -95,10 +94,10 @@ Detect persona using `references/personas.md`. Adapt output:
 5. **Q4 (DPA availability)** — Near-universal requirement. If no DPA exists yet, flag as P0.
 6. **Q5 (Subprocessors)** — Publishing the list is the #1 trust signal for DACH Mittelstand buyers.
 7. **Q6 (Data collection and retention)** — Important but lower procurement-priority than Q1-Q5.
-8. **Q7 (Third-party AI providers)** — Growing in importance as EU AI Act kicks in August 2026.
+8. **Q7 (Third-party AI providers)** — Growing in importance as EU AI Act obligations phase in (many apply from August 2026; verify exact dates per Rule 5).
 
 **Tie-breakers:**
-1. **EU AI Act matters more in 2026.** As the EU AI Act becomes fully applicable August 2026, elevate Q7 from "lower priority" to "medium priority."
+1. **EU AI Act matters more in 2026.** As more EU AI Act obligations apply from August 2026, elevate Q7 from "lower priority" to "medium priority."
 2. **Regulated verticals change the order.** Health-tech adds BfArM/DiGA as Q8-adjacent. Fin-tech adds DORA as Q8-adjacent.
 3. **Never skip a question.** Even if the answer is "not applicable" or "we don't use third-party AI", the question must be present so procurement reviewers see a complete list.
 
@@ -147,8 +146,8 @@ Use Pattern 6 (Compliance Anchor) from the BLUF writer rules. The BLUF must:
 - Name 1-2 security certifications
 - Link to full page answers
 
-**Example BLUF:**
-> [Company name] is GDPR-compliant with SOC 2 Type II and ISO 27001 certifications. Customer data is stored in AWS eu-central-1 (Frankfurt) and AWS eu-west-1 (Dublin failover). Our pre-signed Data Processing Agreement is downloadable below, and our 14 subprocessors are published with 30-day change notice.
+**Example BLUF structure (every fact comes from the user or stays a placeholder):**
+> [Company name] is [User to add: GDPR status] with [User to add: certifications and their exact status]. Customer data is stored in [User to add: exact region(s)]. Our Data Processing Agreement is [User to add: how to get it], and our [User to add: number] subprocessors are published at [User to add: link] [User to add: change-notice policy, if any].
 
 ### Step 5: Write each of the 8 question sections
 
@@ -163,13 +162,13 @@ For each question, use the template from `references/eu-buyer-questions.md`. Eac
 
 ### Step 6: Generate JSON-LD FAQPage schema
 
-Build a `FAQPage` schema block with all 8 Q&A pairs. Each Answer's `text` field mirrors the visible 1-sentence direct answer from Step 5.
+Build a JSON-LD block with all 8 Q&A pairs. Each Answer's `text` field mirrors the visible 1-sentence direct answer from Step 5. Apply operating-principles Rule 4: FAQPage is not eligible for Google rich results on corporate compliance pages, so either use `Organization` + `hasCredential` + `WebPage`, or keep FAQPage for other AI parsers with the Rule 4 disclosure note.
 
 ### Step 7: Add DPA CTA block
 
 Two options depending on user input:
-- **Self-serve DPA download available:** *"Download our pre-signed DPA: [link]. Countersign and return to complete."*
-- **DPA requires request:** *"Email [User to add: DPA email] to request a DPA. Standard turnaround: 48 hours for self-serve, 5 business days for negotiated versions."*
+- **Self-serve DPA download available:** *"Download our DPA: [link]. [User to add: signing steps, for example pre-signed and needing only your countersignature, only if the user confirms]"*
+- **DPA requires request:** *"Email [User to add: DPA email] to request a DPA. [User to add: turnaround time, only if the user states one]"*
 
 ### Step 8: Add the "what your DPO should verify" section (Security persona) or skip (other personas)
 
@@ -251,36 +250,36 @@ Use Section 5 format.
 [Handoff]
 ```
 
-### Example 1 — Happy path (Marketing lead, partial data — Optise)
+### Example 1: Happy path (Marketing lead, partial data, fictional company "ExampleCo")
 
 > **Built for:** Marketing / Growth Lead
-> **Company:** Optise
-> **Inputs used:** GDPR compliant, SOC 2 Type II in progress
-> **Inputs missing:** Data residency region, DPA link, subprocessors, AI providers, retention periods
+> **Company:** ExampleCo (fictional example)
+> **Inputs used:** GDPR compliant (stated by user); SOC 2 Type II in progress (stated by user, no target date given)
+> **Inputs missing:** controller or processor role, data residency region, DPA availability and route, subprocessors and change-notice policy, AI providers, retention periods, DPO contact
 >
 > ---
 >
 > ## Trust & Compliance
 >
-> Optise is GDPR-compliant and currently pursuing SOC 2 Type II certification. Customer data is stored in [User to add: specific AWS/GCP region — do not publish "EU" without the exact region]. Our Data Processing Agreement is available on request at [User to add: DPA request email or URL]. Subprocessors and retention policies are published below.
+> ExampleCo is GDPR-compliant and is working towards SOC 2 Type II certification. Customer data is stored in [User to add: specific AWS/GCP/Azure region; do not publish "EU" without the exact region]. Our Data Processing Agreement is [User to add: availability and how to request it]. [User to add: where the subprocessor list and retention policy are published].
 >
-> ### Is Optise GDPR compliant?
+> ### Is ExampleCo GDPR compliant?
 >
-> Yes. Optise is GDPR-compliant and operates as a Data Processor under EU Regulation 2016/679.
+> Yes. ExampleCo is GDPR-compliant and acts as [User to add: Data Processor, Data Controller, or both] under EU Regulation 2016/679.
 >
-> We comply with GDPR Articles 28 (processor obligations), 30 (records of processing), 32 (security of processing), and 33 (breach notification). Our Data Processing Agreement is available to any customer before contract execution. We maintain a record of all processing activities. [User to add: name and contact of your DPO or Privacy Lead].
+> [User to add: which GDPR obligations to describe, for example processor obligations (Article 28), records of processing (Article 30), security of processing (Article 32), breach notification to the supervisory authority (Article 33), and whether a record of processing activities is maintained]. [User to add: name and contact of your DPO or Privacy Lead].
 >
 > **Where to verify:** [User to add: link to DPA page] · [User to add: link to GDPR FAQ]
 >
 > ### Is customer data stored in the EU?
 >
-> `[User to add: direct answer — YES with exact region, or NO/partial with explanation. Do not leave this blank. Do not write "EU" without the specific region.]`
+> `[User to add: direct answer: YES with exact region, or NO/partial with explanation. Do not leave this blank. Do not write "EU" without the specific region.]`
 >
 > `[User to add: 3-5 sentence expansion describing the primary and backup regions, whether data leaves those regions for any operations, and who makes the decision if region changes.]`
 >
 > **Where to verify:** `[User to add: link to data residency page]`
 >
-> ### Does Optise offer EU data residency?
+> ### Does ExampleCo offer EU data residency?
 >
 > `[User to add: YES/NO/on specific plans, with the plan name and how to request it]`
 >
@@ -288,28 +287,26 @@ Use Section 5 format.
 >
 > **Where to verify:** `[User to add: link]`
 >
-> ### What security standards does Optise meet?
+> ### What security standards does ExampleCo meet?
 >
-> Optise is currently pursuing SOC 2 Type II certification and aligns with GDPR requirements.
+> ExampleCo is working towards SOC 2 Type II certification.
 >
 > | Standard | Status | Verification |
 > |---|---|---|
-> | SOC 2 Type II | In progress — target Q3 2026 | Attestation letter available on request |
-> | ISO 27001 | `[User to add: status or "not pursuing"]` | — |
-> | GDPR | Compliant | DPA available on request |
-> | EU AI Act | `[User to add: status or "self-assessment complete"]` | — |
+> | SOC 2 Type II | In progress (stated by user) | `[User to add: target date and what evidence is available]` |
+> | ISO 27001 | `[User to add: status or "not pursuing"]` | `[User to add: evidence]` |
+> | GDPR | Compliant (stated by user) | `[User to add: evidence, for example DPA]` |
+> | EU AI Act | `[User to add: status and risk category, or "not applicable"]` | `[User to add: evidence]` |
 >
-> `[User to add: annual pen test vendor and frequency, incident disclosure SLA, security team contact]`
+> `[User to add: penetration testing frequency and vendor, incident notification commitment, security team contact]`
 >
-> ### Can I get a DPA for Optise?
+> ### Can I get a DPA for ExampleCo?
 >
-> Yes. Our Data Processing Agreement is available to all customers on request.
+> `[User to add: Yes / No / Enterprise only; how to get it; whether it incorporates the EU SCCs; pre-signed or signed by both parties; turnaround time for standard and negotiated versions]`
 >
-> `[User to add: Is it self-serve downloadable or request-based? Does it incorporate EU SCCs? Pre-signed or requiring your signature? Turnaround time for standard vs negotiated versions?]`
+> **Where to verify:** `[User to add: DPA request email or link]`
 >
-> **Where to verify:** Email `[User to add: dpa@optise.com or equivalent]`
->
-> ### Who are Optise's subprocessors?
+> ### Who are ExampleCo's subprocessors?
 >
 > `[User to add: full subprocessor table with: Subprocessor | Service | Data type processed | Region]`
 >
@@ -317,27 +314,29 @@ Use Section 5 format.
 >
 > | Subprocessor | Service | Data type | Region |
 > |---|---|---|---|
-> | [name] | [hosting/email/billing/LLM] | [customer content/metadata/anonymous] | [eu-central-1/etc] |
+> | [name] | [hosting/email/billing/LLM] | [customer content/metadata/anonymous] | [region] |
 >
-> We notify customers 30 days before adding any new subprocessor.
+> `[User to add: how and how far in advance customers are notified of new subprocessors, or "no notice commitment"]`
 >
 > **Where to verify:** `[User to add: link to live subprocessor page]`
 >
-> ### What data does Optise collect and how long is it retained?
+> ### What data does ExampleCo collect and how long is it retained?
 >
 > `[User to add: retention table covering account info, usage telemetry, customer content, support tickets, with purpose and retention period per row]`
 >
-> ### Does Optise use third-party AI providers?
+> ### Does ExampleCo use third-party AI providers?
 >
 > `[User to add: YES/NO, which providers, what data flows to them, customer content scope, opt-out mechanism]`
 >
 > ---
 >
-> **Need a DPA now?** Email `[User to add: dpa@optise.com]` to request one. Standard turnaround: 48 hours for self-serve, 5 business days for negotiated versions.
+> **Need a DPA now?** `[User to add: DPA request route and turnaround, only as the user states them]`
 >
 > ---
 >
-> ## JSON-LD FAQPage schema
+> ## JSON-LD schema
+>
+> [Rule 4 note: FAQPage is no longer eligible for Google rich results on corporate compliance pages. Included for AI parsers that read FAQ markup. For Google eligibility, use `Organization` + `hasCredential` + `WebPage` instead.]
 >
 > ```json
 > {
@@ -346,10 +345,10 @@ Use Section 5 format.
 >   "mainEntity": [
 >     {
 >       "@type": "Question",
->       "name": "Is Optise GDPR compliant?",
+>       "name": "Is ExampleCo GDPR compliant?",
 >       "acceptedAnswer": {
 >         "@type": "Answer",
->         "text": "Yes. Optise is GDPR-compliant and operates as a Data Processor under EU Regulation 2016/679. Our DPA is available on request."
+>         "text": "Yes. ExampleCo is GDPR-compliant."
 >       }
 >     },
 >     {
@@ -367,16 +366,18 @@ Use Section 5 format.
 >
 > ## ⚠️ Before publishing
 >
-> This draft has 7 `[User to add: ...]` placeholders covering data residency, DPA mechanism, subprocessors, retention, AI providers, and security details. **Do not publish with placeholders visible.** Fill in each one with real facts from your infrastructure, legal, and security teams — or delay publishing until the facts are known. Publishing a Trust Centre with unfilled placeholders is worse than not publishing one at all (EU buyers will assume you're hiding something).
+> This draft still contains `[User to add: ...]` placeholders covering the controller or processor role, data residency, DPA, subprocessors, retention, AI providers, and security details. **Do not publish with placeholders visible.** Fill in each one with real facts from your infrastructure, legal, and security teams, or delay publishing until the facts are known. Publishing a Trust Centre with unfilled placeholders is worse than not publishing one at all (EU buyers will assume you're hiding something).
 >
 > ## Suggested next step
-> Gather the 7 missing facts from Engineering, Legal, and Security. Once complete, re-run this skill with the full input set — or run `optise-helix-fitq-audit` on the published page to verify it scores well on FITq Trust signal.
+> Gather the missing facts from Engineering, Legal, and Security. Once complete, re-run this skill with the full input set, or run `optise-helix-fitq-audit` on the published page to verify it scores well on FITq Trust signal.
 
 ### Example 2 — Edge case (user wants just the DPA section)
 
 > **Section-only mode:** Q4 (DPA availability) only.
 >
 > ### Can I get a DPA for [Company]?
+>
+> **Inputs used (stated by user):** DPA available to all customers before contract execution; pre-signed; incorporates the 2021 EU SCCs; covers Annex II and Annex III; negotiated DPAs for enterprise.
 >
 > Yes. Our Data Processing Agreement is available to all customers and can be signed before contract execution.
 >
@@ -407,21 +408,21 @@ Use Section 5 format.
 >
 > [Full page content, generated from all provided facts]
 >
-> **Your CFO-grade ask:** Publishing this page costs ~4 hours of one person's time (mostly formatting for the CMS). Not publishing it costs approximately 20% of your EU outbound pipeline — EU procurement reviewers will silently disqualify you at the compliance checkpoint. Priority of all on-deck projects: top 3.
+> **Your CFO-grade ask:** Publishing this page is mostly formatting work for the CMS. EU procurement reviewers check compliance answers early, so a missing Trust Centre can stop deals at that checkpoint. [User to add: pipeline data if you want an estimate of the cost of not publishing; the skill does not estimate it without data (Rule 7).]
 
-### Example 4 — Manual / JSON mode
+### Example 4 — Manual / JSON mode (fictional company "ExampleCo")
 
 **Input:**
 ```json
 {
-  "company_name": "Freshworks",
+  "company_name": "ExampleCo",
   "gdpr_compliant": true,
   "data_residency": "AWS eu-central-1 (Frankfurt) + AWS eu-west-1 (Dublin failover)",
-  "dpa": {"available": true, "mechanism": "self_serve", "url": "https://www.freshworks.com/legal/dpa"},
+  "dpa": {"available": true, "mechanism": "self_serve", "url": "https://www.example.com/legal/dpa"},
   "certifications": ["SOC 2 Type II", "ISO 27001", "GDPR"],
-  "ai_providers": [{"provider": "OpenAI", "via": "Azure OpenAI EU", "data_flow": "anonymized prompts only"}],
-  "dpo_contact": "privacy@freshworks.com",
-  "subprocessor_page_url": "https://www.freshworks.com/legal/subprocessors",
+  "ai_providers": [{"provider": "[AI provider]", "via": "[endpoint and region]", "data_flow": "anonymized prompts only"}],
+  "dpo_contact": "privacy@example.com",
+  "subprocessor_page_url": "https://www.example.com/legal/subprocessors",
   "mode": "manual"
 }
 ```
@@ -429,10 +430,10 @@ Use Section 5 format.
 **Output:**
 ```json
 {
-  "page_title": "Trust & Compliance — Freshworks",
-  "bluf": "Freshworks is GDPR-compliant with SOC 2 Type II and ISO 27001 certifications. Customer data is stored in AWS eu-central-1 (Frankfurt) and AWS eu-west-1 (Dublin failover). Our pre-signed Data Processing Agreement is downloadable at freshworks.com/legal/dpa. Subprocessors are published with 30-day change notice.",
+  "page_title": "Trust & Compliance: ExampleCo",
+  "bluf": "ExampleCo is GDPR-compliant with SOC 2 Type II and ISO 27001 certifications. Customer data is stored in AWS eu-central-1 (Frankfurt) and AWS eu-west-1 (Dublin failover). Our Data Processing Agreement is available as a self-serve download at example.com/legal/dpa, and our subprocessors are listed at example.com/legal/subprocessors.",
   "sections": [
-    {"question": "Is Freshworks GDPR compliant?", "answer": "..."},
+    {"question": "Is ExampleCo GDPR compliant?", "answer": "..."},
     {"question": "Is customer data stored in the EU?", "answer": "Yes. Customer data is stored in..."}
     // ... all 8 sections
   ],
@@ -441,12 +442,13 @@ Use Section 5 format.
     "@type": "FAQPage",
     "mainEntity": []
   },
+  "schema_note": "Rule 4: FAQPage is not eligible for Google rich results on this page type; use Organization + hasCredential + WebPage for Google.",
   "dpa_cta": {
     "type": "self_serve",
-    "text": "Download our pre-signed DPA at https://www.freshworks.com/legal/dpa. Countersign and return to complete.",
-    "url": "https://www.freshworks.com/legal/dpa"
+    "text": "Download our Data Processing Agreement at https://www.example.com/legal/dpa. [User to add: signing and return steps]",
+    "url": "https://www.example.com/legal/dpa"
   },
-  "placeholders_remaining": [],
+  "placeholders_remaining": ["subprocessor change-notice policy", "retention periods", "DPA signing steps"],
   "generated_at": "2026-04-12T12:55:00Z"
 }
 ```
@@ -509,6 +511,8 @@ All 9 base rules from `references/anti-hallucination-base.md` apply. Additionall
 **Domain rule 5:** Never write an EU AI Act compliance claim without a user-provided risk classification. The Act has specific categories (minimal / limited / high / unacceptable risk) — claiming "compliant" without knowing your category is a legal risk.
 
 **Domain rule 6:** Never publish placeholders. If the output contains `[User to add: ...]` strings, the final output must include the pre-publish warning from Example 1 ("Do not publish with placeholders visible").
+
+**Domain rule 8:** Never let an example or template sentence become a claim. Worked examples in this file use the fictional company ExampleCo; every compliance fact in the output must come from the user in this session or stay a `[User to add: ...]` placeholder.
 
 **Domain rule 7:** Never translate legal language to other EU languages. The project rule is English-only at v1. Legal translations require native legal review.
 

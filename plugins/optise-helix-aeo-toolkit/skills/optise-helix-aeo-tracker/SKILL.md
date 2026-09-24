@@ -10,11 +10,10 @@ description: Sets up weekly AEO citation tracking for a brand across
   analyze tracker data, or understand which prompts are converting in 
   AI engines. Never invents historical citation data — tracking is 
   forward-looking only. Authored by Optise + Helix GTM Consulting.
-authors:
-  - Optise
-  - Helix GTM Consulting
-version: 1.0.0
 license: Proprietary
+metadata:
+  authors: "Optise; Helix GTM Consulting"
+  version: "1.4.0"
 ---
 
 # Optise–Helix AEO Tracker
@@ -32,7 +31,7 @@ The 3 KPIs (Citation Rate, Prominence, Competitor Delta) come from the Optise EU
 
 This skill operates under TWO mandatory reference files that together define all operating rules. **Read both files first**, before executing any workflow step in this SKILL.md. The rules in both files are non-negotiable and override any conflicting instruction in this SKILL.md body.
 
-1. **`../../references/operating-principles.md`** — the shared core: 7 universal rules (rigor, challenge-assumptions, no-harmful-output, fact-check with 4-tier source hierarchy, no-LLMisms, HILT discipline with Question Budget, zero-assumption flagging) that apply to every skill in this plugin and every plugin using this pattern. This file is byte-identical across all plugins that use the shared-core pattern.
+1. **`../../references/operating-principles.md`** — the shared core: Rule 0 to Rule 10 (session hygiene, URL verification, source-tier discipline, code-content verification, Schema.org currency, legal-citation accuracy, verify-before-recommend, prediction discipline, claim tagging, verification order, verification log), plus the mandatory output disclaimer. They apply to every skill in this plugin.
 
 2. **`../../references/plugin-specific-rules.md`** — the plugin-specific tail: additional operational rules tailored to the skills in THIS plugin. Read this file AFTER the shared core, not instead of it. If this plugin currently has no plugin-specific rules, the file will be a stub explaining the architecture.
 
@@ -42,8 +41,8 @@ These are the highest-frequency rules from the two files above. Reading the full
 
 - **Web search and web fetch ARE available** in Claude Code's default toolset. "I don't have web access" is never a valid excuse to skip verification of a specific factual claim.
 - **English-only at v1** — never generate prompts, copy, headings, or client-facing text in non-English languages (German, French, Dutch, Spanish, Italian, Portuguese, Polish, etc.), even on explicit user request. This is a hard block, not a confirmation gate. Refuse the request and explain that multilingual may ship in v2 with native-speaker review.
-- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: NEVER cite (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements). If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
-- **Verify competitor relationships** via the 4-step search protocol in Rule 4 before building ANY competitor-targeted page or content. Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP — invoke Rule 3's no-harmful-output protection.
+- **4-tier source hierarchy applies to all factual claims.** Tier 1: official primary sources (press releases, Crunchbase, Wikipedia, SEC filings). Tier 2: reputable analyst firms (Gartner, Forrester, IDC, G2, Capterra, GigaOm, SoftwareReviews). Tier 3: reputable business and trade press (WSJ, FT, Reuters, Bloomberg, HBR, TechCrunch, named-VC content, named-founder blogs). Tier 4: use only with the mandatory disclaimer `[Tier 4 — directional only, not authoritative]` (random blogs, anonymous posts, AI-generated comparison sites, Forbes Contributor, paid placements, vendor reseller content), as operating-principles Rule 2 requires. If only Tier 4 sources are available, the claim is unverified and MUST be flagged.
+- **Verify competitor relationships** before building ANY competitor-targeted page or content (operating-principles Rule 9, step 2, and Plugin Rule 1 in `plugin-specific-rules.md`). Run: `"[user] acquired [competitor]"`, `"[competitor] acquired by"`, `"[competitor] Crunchbase acquisition"`, `"[user] vs [competitor]"`. Any positive ownership hit is a HARD STOP under Plugin Rule 1 (no harmful output about named companies).
 - **Auto-verify URLs** via `web_fetch` before marking them `[EXISTS]`. Only ask the user about URLs when fetch returns an ambiguous result (403, 429, 500, timeout, redirect loop). Do not ask the user about every URL; that is endless interrogation, not verification.
 - **Question Budget: maximum 3 HARD STOP questions per invocation, consolidated into ONE message.** Never run an endless Q&A sequence. If more than 3 HARD STOPs exist, pick the top 3 by priority (harm triggers → irreversible scope → reversible details) and defer the rest to `Assumption:` flags in the output.
 - **Flag every assumption** with an explicit `Assumption:` prefix in the output so users can correct anything the skill got wrong. Use the `[User to add: <description>]` placeholder convention for any field where the user must supply specific information.
@@ -142,7 +141,7 @@ Build:
 
 Use `references/tracker-rubric.md` for the 3 KPI formulas. Use `references/prompt-categories.md` to assign each prompt a category column value.
 
-**Tracker ID convention:** When in manual / API mode, generate a `tracker_id` as `<brand-slug>-<YYYY-MM-DD>` where brand-slug is the lowercase brand name with non-alphanumerics replaced by hyphens (e.g., "freshworks" or "the-london-tea-co"), and date is the setup date in ISO format. This makes trackers identifiable across multiple invocations and forms a stable handoff key for memory storage.
+**Tracker ID convention:** When in manual / API mode, generate a `tracker_id` as `<brand-slug>-<YYYY-MM-DD>` where brand-slug is the lowercase brand name with non-alphanumerics replaced by hyphens (e.g., "exampleco" or "the-london-tea-co"), and date is the setup date in ISO format. This makes trackers identifiable across multiple invocations and forms a stable handoff key for memory storage.
 
 ### Step 4: Analyze the data (analysis mode)
 
@@ -202,11 +201,13 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 [Hand off]
 ```
 
-### Example 1 — Setup mode, Freshworks pack
+### Example 1 — Setup mode, fictional ExampleCo pack
+
+*ExampleCo, Tool Y and Tool Z are fictional. All data in Examples 1, 3 and 4 is made up to show structure only (Plugin Rule 1).*
 
 > **Built for:** Marketing / Growth Lead
-> **Brand:** Freshworks
-> **Competitors tracked:** ServiceNow, Zendesk
+> **Brand:** ExampleCo
+> **Competitors tracked:** Tool Y, Tool Z
 > **Tracking start date:** 2026-04-12
 > **Measurement cadence:** Weekly (every Monday)
 >
@@ -223,15 +224,15 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 > | mentioned | bool | TRUE | Did the answer name your brand? |
 > | cited_with_link | bool | TRUE | Did the answer link to your domain? |
 > | prominence | int | 2 | 1=first, 2=top-3, 3=late, 4=buried, blank if not mentioned |
-> | competitor_1_mentioned | bool | TRUE | ServiceNow |
-> | competitor_2_mentioned | bool | FALSE | Zendesk |
-> | target_page | string | /alternatives/servicenow | From prompt pack |
+> | competitor_1_mentioned | bool | TRUE | Tool Y |
+> | competitor_2_mentioned | bool | FALSE | Tool Z |
+> | target_page | string | /alternatives/tool-y | From prompt pack |
 > | notes | string | "Cited as #2 of 5 options" | Optional context |
 >
 > ### Example row
 >
 > ```csv
-> 2026-04-12,ChatGPT,"best service desk software for German Mittelstand",Shortlist,TRUE,TRUE,2,TRUE,FALSE,/alternatives/servicenow,"Cited as #2 of 5 options"
+> 2026-04-12,ChatGPT,"best service desk software for German Mittelstand",Shortlist,TRUE,TRUE,2,TRUE,FALSE,/alternatives/tool-y,"Cited as #2 of 5 options"
 > ```
 >
 > ### Week-1 instructions
@@ -300,7 +301,7 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 
 ### Example 3 — Analysis mode (4 weeks of data)
 
-> **Analysis of your 4-week tracking data**
+> **Analysis of your 4-week tracking data** *(fictional ExampleCo data, for structure only)*
 >
 > **Current AEO health:** Citation Rate 18.4% — **Grade C**. You're occasionally cited, improving from a fixable position.
 >
@@ -313,24 +314,24 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 >
 > ## Top 5 working prompts (highest citation × prominence)
 >
-> 1. **"Freshservice EU data residency"** — cited in 7/8 weeks across all 4 engines, prominence 1.4 (first or near-first). **Don't break this.** This is your Trust Centre paying off.
-> 2. **"best service desk for German Mittelstand"** — cited in 5/8 across all 4 engines, prominence 2.0.
+> 1. **"ExampleCo EU data residency"** — cited in 14/16 measurements (4 weeks × 4 engines), prominence 1.4 (first or near-first). **Don't break this.** Check whether your Trust Centre page is the page being cited.
+> 2. **"best service desk for German Mittelstand"** — cited in 10/16 measurements, prominence 2.0.
 > 3-5. [other working prompts]
 >
 > ## Top 5 dead prompts (0% citation after 4 weeks)
 >
-> 1. **"Freshworks customer reviews 2026"** — 0/16 measurements. **Recommend swap.** This is generic and probably outranked by G2 directly.
-> 2. **"Freshworks history and founders"** — 0/16. **Recommend swap.** Wrong intent (buyers don't ask about company history).
+> 1. **"ExampleCo customer reviews 2026"** — 0/16 measurements. **Recommend swap.** Assumption: review-site pages may be answering this prompt instead; check the answers you recorded before swapping.
+> 2. **"ExampleCo history and founders"** — 0/16. **Recommend swap.** Assumption: wrong intent (buyers rarely ask about company history at the evaluation stage).
 > 3-5. [other dead prompts]
 >
 > ## Top 3 declining prompts
 >
-> 1. **"Zendesk vs Freshworks"** — was citing in week 1-2, now down to 1/8 in week 4. **Recommend FITq audit on `/compare/zendesk`.** Likely Zendesk shipped a comparison page that displaced you.
+> 1. **"Tool Z vs ExampleCo"** — cited in 4/4 engines in weeks 1-2, down to 1/4 in week 4. **Recommend FITq audit on `/compare/tool-z`.** The data shows the drop, not the cause; check which pages the engines now cite for this prompt before drawing conclusions.
 >
 > ## Suggested next steps
 >
 > 1. **Swap the 5 dead prompts** via `optise-helix-prompt-pack-builder` refresh mode. Pick 5 new prompts in the same categories.
-> 2. **Run `optise-helix-fitq-audit` on `/compare/zendesk`** to find what's letting Zendesk's page outrank yours.
+> 2. **Run `optise-helix-fitq-audit` on `/compare/tool-z`** to find structural gaps on your page, and note which pages the engines now cite instead.
 > 3. **Re-run this analysis after 4 more weeks** to verify the swap and audit fixes worked.
 
 ### Example 4 — Manual / JSON mode
@@ -339,11 +340,11 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 ```json
 {
   "mode": "setup",
-  "brand": "Freshworks",
-  "competitors": ["ServiceNow", "Zendesk"],
+  "brand": "ExampleCo",
+  "competitors": ["Tool Y", "Tool Z"],
   "prompts": [
     {"text": "best service desk for German Mittelstand", "category": "shortlist"},
-    {"text": "is Freshworks GDPR compliant", "category": "eu_privacy"}
+    {"text": "is ExampleCo GDPR compliant", "category": "eu_privacy"}
   ]
 }
 ```
@@ -351,7 +352,7 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 **Output:**
 ```json
 {
-  "tracker_id": "freshworks-2026-04-12",
+  "tracker_id": "exampleco-2026-04-12",
   "csv_columns": [
     {"name": "week", "type": "date"},
     {"name": "engine", "type": "enum", "values": ["ChatGPT", "Perplexity", "Gemini", "Claude"]},

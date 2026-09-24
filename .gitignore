@@ -23,6 +23,6 @@ venv/
 *.key
 secrets/
 
-# Local patch staging � not for commit
+# Local patch staging, not for commit
 _patch-staging/
 recover-operating-principles.ps1

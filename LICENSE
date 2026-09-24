@@ -1,13 +1,32 @@
-Optise-Helix AEO Toolkit
-Copyright (c) 2026 Optise and Helix GTM Consulting
+Optise and Helix AEO and GEO Toolkit
+Copyright (c) 2026 Optise and Helix GTM Consulting. All rights reserved.
 
-All rights reserved. This software and the accompanying methodology
-(FITq, RACE, the 6 prompt categories, the 8 EU buyer questions) are
-proprietary to Optise and Helix GTM Consulting.
+This toolkit (the skills, reference files, scripts and documentation in this
+repository) and its methodology (FITq, RACE, the 6 prompt categories, the 8 EU
+buyer questions, the 3 KPI tracker rubric and the 6 BLUF patterns) are
+proprietary to Optise and Helix GTM Consulting. This licence is granted by both.
 
-Use is permitted for individual practitioners under the terms agreed
-at distribution time. Commercial redistribution, white-labeling, or
-rebranding requires written permission from both Optise and Helix
-GTM Consulting.
+1. Free use. Anyone, including individuals and companies, may install and use
+   this toolkit free of charge, for their own work and for work they do for
+   their clients, including through Claude, Claude Code, Cowork and any Claude
+   plugin directory or marketplace.
 
-For licensing inquiries: shashwat@hyperplays.in and omar@optise.com
+2. Directory listing. Anthropic, and any plugin directory or marketplace that
+   lists this toolkit, may copy, host, display and distribute the toolkit and
+   its name, description, documentation and branding so that users can find
+   and install it.
+
+3. Not permitted without written permission from both Optise and Helix GTM
+   Consulting: selling, sublicensing or redistributing the toolkit or any part
+   of it as or within another product or service; white-labelling or
+   rebranding it; removing the credit to both authors; presenting FITq, RACE
+   or the other methodology elements listed above as your own.
+
+4. Names. No right is granted to use the names Optise, Helix GTM Consulting,
+   FITq or RACE, except to refer to this toolkit and its authors.
+
+5. No warranty. The toolkit is provided "as is", without warranty of any kind.
+   Its outputs are AI-assisted drafts that need checking before use. The
+   authors are not liable for any claim or damage arising from its use.
+
+Licensing inquiries: shashwat@hyperplays.in and omar@optise.com

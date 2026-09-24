@@ -1,4 +1,6 @@
-# Getting Started with the Optise–Helix AEO Toolkit
+# Getting Started with the Optise and Helix AEO and GEO Toolkit
+
+The toolkit is designed for English-language websites: the page you audit and the buyer prompts should be in English.
 
 ## Access
 
@@ -29,8 +31,8 @@ Start here. Every other skill builds on this output.
 What you should see:
 - 25 AEO prompts ranked by "decides deals" 1-5
 - Coverage across 6 Optise categories (Shortlist, Pricing, Implementation, EU Privacy, Integration, Role-based)
-- A JTBD score showing how many of the 8 EU buyer compliance questions your category surfaces
-- A handoff suggestion to `aeo-tracker` for measurement
+- A top-10 list ordered by build priority, with each prompt mapped to a target page
+- A handoff suggestion to the next skill (for example `eu-trust-centre` if several prompts are EU Privacy prompts and you have no Trust Centre page)
 - A Verification Log appendix at the end
 - The mandatory disclaimer as the final block
 
@@ -40,7 +42,7 @@ What you should see:
 
 What you should see:
 - A 4-signal score: Findability, Intent match, Trust, Quoteability
-- An overall FITq score with band (A/B/C/D)
+- An overall FITq score with grade band (A/B/C/D/F)
 - Specific issues with line-item severity (e.g. "no BLUF in first 100 words", "no JSON-LD schema", "EU data residency not stated")
 - A Verification Log showing which page facts were extracted vs. inferred
 - A handoff suggestion to `bluf-writer` if quoteability is low
@@ -64,7 +66,7 @@ What you should see:
 
 ## Tips for best results
 
-**Name your competitors explicitly.** "Top 3 competitors" produces sharper scoring than "we have several competitors." The skill cross-references their public AEO posture against yours.
+**Name your competitors explicitly.** "Top 3 competitors" produces sharper prompts than "we have several competitors," because the pack includes competitor-named prompts (for example "[Competitor] alternatives"). The skill never invents competitor names you did not give it.
 
 **Specify the EU market.** "DACH" produces different prompt patterns than "France" or "Nordics" because regulatory acronyms (BSI C5, DiGA, DORA, ANSSI SecNumCloud) and buyer language differ.
 
