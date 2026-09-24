@@ -334,3 +334,4 @@ The disclaimer is non-removable. It travels with copy-pasted output. It sets hon
 **End of Operating Principles v1.3.**
 **File size target:** under 30KB. Actual size: see file metadata.
 **Next review trigger:** any production failure that doesn't map to Rules 0-10, OR the next Optise webinar quarter.
+**License:** this file is released under the MIT License by its co-authors, Optise and Helix GTM Consulting (see the exception in the LICENSE file at the root of this repository). The rest of the toolkit is under the Optise and Helix licence in that file.

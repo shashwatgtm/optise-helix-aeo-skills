@@ -128,7 +128,7 @@ Both Optise and Helix GTM Consulting are credited as authors of every skill in t
 
 Both authors are required to be retained in the frontmatter of every SKILL.md if these skills are forked or extended.
 
-**Licence in brief (see LICENSE):** anyone, including companies, may install and use the toolkit free of charge. Plugin directories may list and distribute it. Reselling, redistributing it inside another product, white-labelling or rebranding needs written permission from both Optise and Helix GTM Consulting.
+**Licence in brief (see LICENSE):** anyone, including companies, may install and use the toolkit free of charge. Plugin directories may list and distribute it. Reselling, redistributing it inside another product, white-labelling or rebranding needs written permission from both Optise and Helix GTM Consulting. One exception: the shared operating principles file (`plugins/optise-helix-aeo-toolkit/references/operating-principles.md`) is released under the MIT License.
 
 ---
 
@@ -146,4 +146,4 @@ To report a security problem, see SECURITY.md.
 
 For methodology questions: Ómar Thor Ómarsson, CEO, Optise (omar@optise.com)
 
-For toolkit and build questions: Shashwat Ghosh, Cofounder and Fractional CMO, Helix GTM Consulting (shashwat@hyperplays.in)
+For toolkit and build questions: Shashwat Ghosh, Founder and Fractional CMO, Helix GTM Consulting (shashwat@hyperplays.in)
