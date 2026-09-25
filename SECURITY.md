@@ -1,6 +1,6 @@
 # Security policy: Optise and Helix AEO and GEO Toolkit
 
-Please report security problems privately by email to shashwat@hyperplays.in with the subject "Security report: optise-helix-aeo-toolkit". Include the file and line, what could go wrong, and how to reproduce it. We aim to reply within 5 working days.
+Please report security problems privately by email to shashwat@gtmhelix.com with the subject "Security report: optise-helix-aeo-toolkit". Include the file and line, what could go wrong, and how to reproduce it. We aim to reply within 5 working days.
 
 Please do not open a public GitHub issue for a security problem.
 

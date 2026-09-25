@@ -148,4 +148,4 @@ To report a security problem, see SECURITY.md.
 
 For methodology questions: Ómar Thor Ómarsson, CEO, Optise (omar@optise.com)
 
-For toolkit and build questions: Shashwat Ghosh, Founder and Fractional CMO, Helix GTM Consulting (shashwat@hyperplays.in)
+For toolkit and build questions: Shashwat Ghosh, Co-Founder and Fractional CMO, Helix GTM Consulting (shashwat@gtmhelix.com)
