@@ -31,7 +31,11 @@ import json
 import re
 import time
 import argparse
-from urllib.parse import urlparse
+import http.client
+import ipaddress
+import socket
+import ssl
+from urllib.parse import quote, urljoin, urlsplit
 from datetime import datetime, timezone
 
 # These two timeouts are based on real-world observation of B2B SaaS pages.
@@ -53,14 +57,24 @@ MAX_RETRIES = 3
 # user agent, that refusal is reported as it is. To check whether AI crawlers
 # are allowed, read the site's robots.txt rules for GPTBot, ChatGPT-User,
 # ClaudeBot and PerplexityBot instead of impersonating them.
-TOOL_VERSION = "1.4.0"
+TOOL_VERSION = "1.4.1"
 USER_AGENT = (
     f"optise-helix-aeo-toolkit/{TOOL_VERSION} fetch_page.py "
     "(+https://github.com/shashwatgtm/optise-helix-aeo-skills)"
 )
 
-# Only web addresses are fetched. file://, ftp:// and other schemes are refused.
+# Destination rules. Only web addresses are fetched: file://, ftp:// and other
+# schemes are refused. The host name is resolved once, every address must be a
+# public internet address (no loopback, private, link-local, reserved, multicast
+# or unspecified ranges, no cloud metadata address), and the connection goes to
+# that checked address. Every redirect hop is checked the same way. User names
+# in the URL, ports other than 80 and 443, and responses that are not HTML are
+# refused. Each refusal is reported as an error that starts with "Refused".
 ALLOWED_SCHEMES = ("http", "https")
+ALLOWED_PORTS = (80, 443)
+MAX_REDIRECTS = 5
+REDIRECT_STATUSES = (301, 302, 303, 307, 308)
+ALLOWED_CONTENT_TYPES = ("text/html", "application/xhtml+xml")
 
 # Largest response body read, in bytes. Bigger pages are cut off and flagged.
 MAX_BODY_BYTES = 5 * 1024 * 1024
@@ -84,64 +98,261 @@ DATE_PATTERNS = [
 ]
 
 
-def fetch_with_retries(url, retry=0):
-    """Fetch a URL with retries on network errors. Returns dict or raises."""
-    try:
-        import urllib.request
-        import urllib.error
-    except ImportError as e:
-        raise RuntimeError(
-            f"urllib unavailable: {e}. fetch_page.py requires Python 3 stdlib only."
-        )
+class RefusedDestination(ValueError):
+    """The URL, or a redirect target, was refused by the destination checks."""
 
+
+def _refuse(message):
+    return RefusedDestination("Refused: " + message)
+
+
+_NUMERIC_HOST_LABEL = re.compile(r"^(0[xX][0-9a-fA-F]*|[0-9]+)$")
+_NAT64_PREFIX = ipaddress.ip_network("64:ff9b::/96")
+
+
+def build_ssl_context():
+    """TLS context that checks the certificate chain and the host name."""
+    return ssl.create_default_context()
+
+
+def _looks_like_numeric_host(host):
+    """True for host names made only of numbers, such as 2130706433, 0177.0.0.1,
+    0x7f.0.0.1 or 127.1. Some resolvers read these as IPv4 addresses."""
+    labels = host.rstrip(".").split(".")
+    return all(_NUMERIC_HOST_LABEL.match(label) for label in labels)
+
+
+def _check_public_ip(ip, host):
+    """Raise RefusedDestination unless ip is a public unicast address."""
+    candidates = [ip]
+    if ip.version == 6:
+        if ip.ipv4_mapped is not None:
+            candidates = [ip.ipv4_mapped]
+        else:
+            if ip.sixtofour is not None:
+                candidates.append(ip.sixtofour)
+            if ip in _NAT64_PREFIX:
+                candidates.append(ipaddress.IPv4Address(int(ip) & 0xFFFFFFFF))
+    for candidate in candidates:
+        if (not candidate.is_global
+                or candidate.is_private
+                or candidate.is_loopback
+                or candidate.is_link_local
+                or candidate.is_multicast
+                or candidate.is_reserved
+                or candidate.is_unspecified):
+            who = f"{host} resolves to {ip}, which" if host != str(ip) else f"{host}"
+            raise _refuse(
+                f"{who} is not a public internet address (loopback, private, "
+                "link-local, reserved, multicast or unspecified). Only public "
+                "web servers are fetched."
+            )
+
+
+def parse_destination(url):
+    """Check one URL (the first one or a redirect target) before any connection.
+    Returns (scheme, host, port, request_target)."""
+    if any(ord(ch) <= 0x20 or ord(ch) == 0x7F for ch in url):
+        raise _refuse("the URL contains spaces or control characters")
+    parts = urlsplit(url)
+    scheme = parts.scheme.lower()
+    if not scheme:
+        raise ValueError(f"Invalid URL (missing scheme or host): {url}")
+    if scheme not in ALLOWED_SCHEMES:
+        raise _refuse(f"only http and https URLs are supported, not {scheme}: {url}")
+    if not parts.netloc:
+        raise ValueError(f"Invalid URL (missing scheme or host): {url}")
+    if "@" in parts.netloc:
+        raise _refuse(
+            "URLs with a user name or password (user@host) are not allowed: "
+            f"{url}"
+        )
+    try:
+        port = parts.port
+    except ValueError:
+        raise _refuse(f"the port in the URL is not valid: {url}")
+    if port is None:
+        port = 443 if scheme == "https" else 80
+    elif port not in ALLOWED_PORTS:
+        raise _refuse(f"port {port} is not allowed, only 80 and 443: {url}")
+    host = parts.hostname
+    if not host:
+        raise ValueError(f"Invalid URL (missing scheme or host): {url}")
+    if "%" in host:
+        raise _refuse(f"host names with a zone or escape ('%') are not allowed: {url}")
+    target = parts.path or "/"
+    if parts.query:
+        target += "?" + parts.query
+    target = quote(target, safe="!#$%&'()*+,/:;=?@[]~")
+    return scheme, host, port, target
+
+
+def resolve_public_addresses(host):
+    """Resolve host once and return its addresses (as strings), all checked to be
+    public. Raises RefusedDestination if any address is not public."""
+    try:
+        literal = ipaddress.ip_address(host)
+    except ValueError:
+        literal = None
+    if literal is not None:
+        _check_public_ip(literal, host)
+        return [str(literal)]
+    if _looks_like_numeric_host(host):
+        raise _refuse(
+            f"{host} is a numeric host in a non-standard form (integer, octal, "
+            "hex or short). Use a normal host name or a dotted IPv4 address."
+        )
+    infos = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)
+    addresses = []
+    for info in infos:
+        text = info[4][0].split("%", 1)[0]
+        _check_public_ip(ipaddress.ip_address(text), host)
+        if text not in addresses:
+            addresses.append(text)
+    if not addresses:
+        raise socket.gaierror(-2, "Name or service not known")
+    return addresses
+
+
+def _connect_pinned(addresses, port):
+    """Connect to one of the already checked addresses. The host name is not
+    resolved again, so a changed DNS answer cannot redirect the connection."""
+    last_error = None
+    for address in addresses:
+        try:
+            sock = socket.create_connection((address, port), CONNECT_TIMEOUT_SECONDS)
+        except OSError as e:
+            last_error = e
+            continue
+        sock.settimeout(READ_TIMEOUT_SECONDS)
+        return sock
+    raise last_error
+
+
+class _PinnedHTTPConnection(http.client.HTTPConnection):
+    """Connects to a pinned address; the Host header keeps the host name."""
+
+    def __init__(self, host, port, addresses):
+        super().__init__(host, port, timeout=READ_TIMEOUT_SECONDS)
+        self._pinned_addresses = addresses
+
+    def connect(self):
+        self.sock = _connect_pinned(self._pinned_addresses, self.port)
+
+
+class _PinnedHTTPSConnection(http.client.HTTPSConnection):
+    """Connects to a pinned address; TLS SNI and the certificate check use the
+    host name from the URL, not the address."""
+
+    def __init__(self, host, port, addresses, context):
+        super().__init__(host, port, timeout=READ_TIMEOUT_SECONDS, context=context)
+        self._pinned_addresses = addresses
+        self._tls_context = context
+
+    def connect(self):
+        sock = _connect_pinned(self._pinned_addresses, self.port)
+        try:
+            self.sock = self._tls_context.wrap_socket(sock, server_hostname=self.host)
+        except BaseException:
+            sock.close()
+            raise
+
+
+def _fetch_following_redirects(url):
+    """One attempt: validate, resolve once, connect to the pinned address, and
+    follow at most MAX_REDIRECTS redirects, checking every hop the same way."""
     ua = USER_AGENT
-    request = urllib.request.Request(url, headers={
+    headers = {
         "User-Agent": ua,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-    })
-
+        "Accept-Encoding": "identity",
+        "Connection": "close",
+    }
     start_time = time.time()
-    try:
-        with urllib.request.urlopen(
-            request,
-            timeout=READ_TIMEOUT_SECONDS,
-        ) as response:
+    current = url
+    previous = None
+    redirects = 0
+    while True:
+        try:
+            scheme, host, port, target = parse_destination(current)
+            addresses = resolve_public_addresses(host)
+        except RefusedDestination as e:
+            if previous is None:
+                raise
+            raise RefusedDestination(f"{e} (reached by redirect from {previous})")
+        if scheme == "https":
+            conn = _PinnedHTTPSConnection(host, port, addresses, build_ssl_context())
+        else:
+            conn = _PinnedHTTPConnection(host, port, addresses)
+        try:
+            conn.request("GET", target, headers=headers)
+            response = conn.getresponse()
+            status = response.status
+            location = response.getheader("Location")
+            if status in REDIRECT_STATUSES and location and location.strip():
+                if redirects >= MAX_REDIRECTS:
+                    raise _refuse(
+                        f"more than {MAX_REDIRECTS} redirects, stopped at {current}"
+                    )
+                previous = current
+                current = urljoin(current, location.strip())
+                redirects += 1
+                continue
+            if status >= 300:
+                # 4xx and 5xx are real responses. Report them as they are. A 401,
+                # 403 or 429 can mean the site blocks automated tools; never retry
+                # with a different user agent to get around that.
+                return {
+                    "status": status,
+                    "url_final": current,
+                    "headers": dict(response.getheaders()),
+                    "html": "",
+                    "html_size_bytes": 0,
+                    "ttfb_ms": int((time.time() - start_time) * 1000),
+                    "error": f"HTTPError {status}: {response.reason}",
+                    "user_agent_used": ua,
+                }
+            content_type = response.getheader("Content-Type") or ""
+            media_type = content_type.split(";", 1)[0].strip().lower()
+            if media_type not in ALLOWED_CONTENT_TYPES:
+                shown = content_type if content_type else "missing"
+                raise _refuse(
+                    f"Content-Type is {shown}, not text/html or "
+                    f"application/xhtml+xml, so the response was not read: {current}"
+                )
             ttfb_ms = int((time.time() - start_time) * 1000)
             html_bytes = response.read(MAX_BODY_BYTES + 1)
             truncated = len(html_bytes) > MAX_BODY_BYTES
             html_bytes = html_bytes[:MAX_BODY_BYTES]
             return {
-                "status": response.status,
-                "url_final": response.url,  # captures redirects
-                "headers": dict(response.headers),
+                "status": status,
+                "url_final": current,  # captures redirects
+                "headers": dict(response.getheaders()),
                 "html": html_bytes.decode("utf-8", errors="replace"),
                 "html_size_bytes": len(html_bytes),
                 "ttfb_ms": ttfb_ms,
                 "user_agent_used": ua,
                 "html_truncated": truncated,
             }
-    except urllib.error.HTTPError as e:
-        # 4xx and 5xx are real responses. Report them as they are. A 401, 403
-        # or 429 can mean the site blocks automated tools; never retry with a
-        # different user agent to get around that.
-        return {
-            "status": e.code,
-            "url_final": url,
-            "headers": dict(e.headers) if e.headers else {},
-            "html": "",
-            "html_size_bytes": 0,
-            "ttfb_ms": int((time.time() - start_time) * 1000),
-            "error": f"HTTPError {e.code}: {e.reason}",
-            "user_agent_used": ua,
-        }
-    except urllib.error.URLError as e:
-        if retry < MAX_RETRIES:
-            time.sleep(1 + retry)  # backoff: 1s, 2s, 3s
-            return fetch_with_retries(url, retry + 1)
-        raise RuntimeError(
-            f"URLError on {url} after {MAX_RETRIES} retries: {e.reason}"
-        )
+        finally:
+            conn.close()
+
+
+def fetch_with_retries(url, retry=0):
+    """Fetch a URL with retries on network errors. Returns dict or raises.
+    A refused destination is never retried."""
+    while True:
+        try:
+            return _fetch_following_redirects(url)
+        except (OSError, http.client.HTTPException) as e:
+            if retry < MAX_RETRIES:
+                time.sleep(1 + retry)  # backoff: 1s, 2s, 3s
+                retry += 1
+                continue
+            raise RuntimeError(
+                f"URLError on {url} after {MAX_RETRIES} retries: {e}"
+            )
 
 
 def detect_last_updated(html):
@@ -277,12 +488,7 @@ def detect_meta_robots(html):
 
 def analyze(url):
     """Run the full analysis on a URL."""
-    parsed = urlparse(url)
-    if not parsed.scheme or not parsed.netloc:
-        raise ValueError(f"Invalid URL (missing scheme or host): {url}")
-    if parsed.scheme.lower() not in ALLOWED_SCHEMES:
-        raise ValueError(f"Only http and https URLs are supported: {url}")
-
+    # fetch_with_retries checks the URL and every redirect hop before connecting.
     fetch_result = fetch_with_retries(url)
 
     if "error" in fetch_result and fetch_result["html_size_bytes"] == 0:

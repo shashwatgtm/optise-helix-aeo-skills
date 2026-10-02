@@ -1,0 +1,29 @@
+name: Fetch safety tests
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/scripts/**"
+      - "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/scripts/**"
+      - ".github/workflows/fetch-safety-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mocked-fetch-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: FITq fetch safety
+        working-directory: plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/scripts
+        run: python -m unittest test_fetch_page -v
+      - name: RACE fetch safety
+        working-directory: plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/scripts
+        run: python -m unittest test_fetch_page -v
