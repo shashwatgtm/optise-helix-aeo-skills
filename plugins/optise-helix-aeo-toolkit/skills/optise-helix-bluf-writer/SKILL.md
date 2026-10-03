@@ -261,21 +261,19 @@ Use Section 5 format.
 >
 > *Generated 12:47 GMT. Ship it or reply with 'alternatives' for 2 more variants.*
 
-### Example 4 — Manual / API mode (fictional company "ExampleCo")
+### Example 4 — Manual / API mode (real company: Pipedrive)
 
-ExampleCo is fictional. The proof points are what the user stated; the output uses nothing else (Domain rule 1 and Plugin Rule 1).
+*Example only: Pipedrive is a real company used to show how this skill works, using public information from its own website. It is not a customer, partner or endorser of Helix GTM Consulting, and nothing here is advice to or about it.*
+
+The proof points are what the user stated, here copied from the company's own public pages (https://trustcenter.pipedrive.com/ and https://www.pipedrive.com/en/subprocessors, read on 3 October 2026). The output uses nothing else (Domain rule 1 and Plugin Rule 1). No residency, DPA or notice-period fact was stated, so none appears.
 
 **Input:**
 ```json
 {
-  "buyer_prompt": "is ExampleCo GDPR compliant",
+  "buyer_prompt": "is Pipedrive GDPR compliant",
   "proof_points": [
-    "GDPR compliant (stated by the user)",
-    "SOC 2 Type II certified",
-    "ISO 27001 certified",
-    "EU data residency in Frankfurt (AWS eu-central-1)",
-    "Pre-signed DPA at example.com/dpa",
-    "Subprocessor list published with 30-day change notice"
+    "The Trust Center lists GDPR, ISO/IEC 27001:2022, ISO/IEC 27701 and SOC 2 Type 2 under Compliance (source: https://trustcenter.pipedrive.com/)",
+    "A sub-processor list is published at https://www.pipedrive.com/en/subprocessors"
   ],
   "mode": "manual"
 }
@@ -284,24 +282,24 @@ ExampleCo is fictional. The proof points are what the user stated; the output us
 **Output:**
 ```json
 {
-  "buyer_prompt": "is ExampleCo GDPR compliant",
+  "buyer_prompt": "is Pipedrive GDPR compliant",
   "pattern": "pattern_6_compliance_anchor",
   "variants": [
     {
       "length_target": 40,
       "word_count": 40,
-      "text": "ExampleCo is GDPR-compliant, SOC 2 Type II and ISO 27001 certified, with EU data residency available in Frankfurt (AWS eu-central-1). Our Data Processing Agreement is pre-signed and downloadable at example.com/dpa. All subprocessors are published with 30-day change notice for customers."
+      "text": "Pipedrive's Trust Center lists GDPR, ISO/IEC 27001:2022, ISO/IEC 27701 and SOC 2 Type 2 under Compliance. Pipedrive also publishes its sub-processor list at pipedrive.com/en/subprocessors. Both pages are public. Buyers can start from trustcenter.pipedrive.com when they review the company's security posture."
     },
     {
       "length_target": 50,
       "word_count": 50,
-      "text": "ExampleCo is GDPR-compliant and holds SOC 2 Type II plus ISO 27001 certifications, with EU data residency available in Frankfurt (AWS eu-central-1). Our Data Processing Agreement is pre-signed and downloadable at example.com/dpa. All subprocessors are published on a public list, with 30 days' notice to customers before any subprocessor change.",
+      "text": "Pipedrive's Trust Center lists GDPR, ISO/IEC 27001:2022, ISO/IEC 27701 and SOC 2 Type 2 under Compliance, all on one public page. Pipedrive also publishes its sub-processor list at pipedrive.com/en/subprocessors, on a separate public page. Both pages are public. Buyers can start from trustcenter.pipedrive.com when they review the company's security posture.",
       "recommended": true
     },
     {
       "length_target": 60,
       "word_count": 60,
-      "text": "ExampleCo is GDPR-compliant and holds SOC 2 Type II plus ISO 27001 certifications, with EU data residency available in Frankfurt, Germany (AWS eu-central-1). Our Data Processing Agreement is pre-signed, and customers can download it at example.com/dpa. All of ExampleCo's current subprocessors are listed on a published subprocessor page, and customers receive 30 days' notice before any change to that list."
+      "text": "Pipedrive's Trust Center lists GDPR, ISO/IEC 27001:2022, ISO/IEC 27701 and SOC 2 Type 2 under Compliance, all together on one public page. Pipedrive also publishes its sub-processor list at pipedrive.com/en/subprocessors, on a separate public page. Buyers who review the company's security posture can start from trustcenter.pipedrive.com and use the sub-processor page as a second public source for the same review."
     }
   ],
   "rule_compliance": {
@@ -374,7 +372,7 @@ All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. Ad
 
 **Domain rule 7:** Never add a fact that is not in the user's proof points, even when a longer variant needs more words. Fill length with plain restatement of stated facts, not with new regions, clauses, counts, prices, or certifications. Compliance facts (GDPR status, DPA terms, residency, subprocessors, certifications) are the highest-risk case: if the user did not state it, it does not appear.
 
-**Domain rule 8:** Worked examples in this file and in `references/bluf-patterns.md` use fictional companies (ExampleCo, Tool A, Tool B, Tool C, Tool X, Tool Y) and made-up figures. They show structure only. Never reuse their figures or present them as facts about any real company.
+**Domain rule 8:** Worked examples in this file and in `references/bluf-patterns.md` use placeholder brands and tools ([Brand], Tool A, Tool B, Tool C, Tool X, Tool Y) and made-up figures, except Example 4, which names one real company (Pipedrive) and uses only facts copied from its own public pages, with the source address. They show structure only. Never reuse their figures or present them as facts about any real company.
 
 ---
 

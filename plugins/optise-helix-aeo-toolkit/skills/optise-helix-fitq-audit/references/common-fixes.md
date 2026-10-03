@@ -3,7 +3,7 @@
 **Used by:** `optise-helix-fitq-audit` exclusively.
 **Purpose:** When the audit identifies a common failure, the skill outputs the matching template fix, with no inventing new fixes per page. Templates are validated against the Optise EU AEO Playbook, Sections 4-5.
 
-**Template rule (mandatory):** keep the structure of each template, but never output its example values as facts. Every date, price, name, statistic, region, certification, and compliance statement in a template is an illustration. In the output, replace each one with a fact the user stated in this session or a `[User to add: ...]` placeholder. Company names in examples (ExampleCo, Tool A, Tool B, Tool C) are fictional (Plugin Rule 1).
+**Template rule (mandatory):** keep the structure of each template, but never output its example values as facts. Every date, price, name, statistic, region, certification, and compliance statement in a template is an illustration. In the output, replace each one with a fact the user stated in this session or a `[User to add: ...]` placeholder. Brand and tool names in examples ([Brand], Tool A, Tool B, Tool C) are placeholders, not real companies (Plugin Rule 1).
 
 ## Contents
 - 1. No visible last-updated date
@@ -76,7 +76,7 @@ Replace generic H1 with a question-form H1 that mirrors the buyer prompt.
 
 **Before:**
 ```html
-<h1>ExampleCo — IT Service Management</h1>
+<h1>[Brand] — IT Service Management</h1>
 ```
 
 **After:**
@@ -310,7 +310,7 @@ Add a "Not ideal for" section near the bottom of decision pages:
 - **[User to add: customer type]:** [User to add: the honest reason, as the user states it]. [User to add: what fits them better, if the user wants to name it].
 - **[User to add: customer type]:** [User to add: reason]. [User to add: alternative].
 
-Illustration only (fictional ExampleCo, do not reuse): "**Companies under 20 employees:** ExampleCo's pricing assumes 20+ agents. Smaller teams may find a lighter tool a better fit."
+Illustration only (placeholder [Brand], do not reuse): "**Companies under 20 employees:** [Brand]'s pricing assumes 20+ agents. Smaller teams may find a lighter tool a better fit."
 ```
 
 Honest constraints are a trust signal. AI engines and procurement teams trust products that admit their limits.

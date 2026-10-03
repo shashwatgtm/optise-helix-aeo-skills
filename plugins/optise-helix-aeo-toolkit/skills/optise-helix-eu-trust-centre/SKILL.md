@@ -250,22 +250,24 @@ Use Section 5 format.
 [Handoff]
 ```
 
-### Example 1: Happy path (Marketing lead, partial data, fictional company "ExampleCo")
+### Example 1: Happy path (Marketing lead, partial data, real company: Pipedrive)
+
+*Example only: Pipedrive is a real company used to show how this skill works, using public information from its own website. It is not a customer, partner or endorser of Helix GTM Consulting, and nothing here is advice to or about it.*
 
 > **Built for:** Marketing / Growth Lead
-> **Company:** ExampleCo (fictional example)
-> **Inputs used:** GDPR compliant (stated by user); SOC 2 Type II in progress (stated by user, no target date given)
-> **Inputs missing:** controller or processor role, data residency region, DPA availability and route, subprocessors and change-notice policy, AI providers, retention periods, DPO contact
+> **Company:** Pipedrive
+> **Inputs used:** GDPR and ISO/IEC 27001:2022 are listed under Compliance on the company's own Trust Center (stated by user, source https://trustcenter.pipedrive.com/, read on 3 October 2026)
+> **Inputs missing:** SOC 2 status, controller or processor role, data residency region, DPA availability and route, subprocessors and change-notice policy, AI providers, retention periods, DPO contact
 >
 > ---
 >
 > ## Trust & Compliance
 >
-> ExampleCo is GDPR-compliant and is working towards SOC 2 Type II certification. Customer data is stored in [User to add: specific AWS/GCP/Azure region; do not publish "EU" without the exact region]. Our Data Processing Agreement is [User to add: availability and how to request it]. [User to add: where the subprocessor list and retention policy are published].
+> Pipedrive's Trust Center lists GDPR and ISO/IEC 27001:2022 under Compliance. Customer data is stored in [User to add: specific AWS/GCP/Azure region; do not publish "EU" without the exact region]. Our Data Processing Agreement is [User to add: availability and how to request it]. [User to add: where the subprocessor list and retention policy are published].
 >
-> ### Is ExampleCo GDPR compliant?
+> ### Is Pipedrive GDPR compliant?
 >
-> Yes. ExampleCo is GDPR-compliant and acts as [User to add: Data Processor, Data Controller, or both] under EU Regulation 2016/679.
+> Pipedrive's Trust Center lists GDPR under Compliance. Pipedrive acts as [User to add: Data Processor, Data Controller, or both] under EU Regulation 2016/679.
 >
 > [User to add: which GDPR obligations to describe, for example processor obligations (Article 28), records of processing (Article 30), security of processing (Article 32), breach notification to the supervisory authority (Article 33), and whether a record of processing activities is maintained]. [User to add: name and contact of your DPO or Privacy Lead].
 >
@@ -279,7 +281,7 @@ Use Section 5 format.
 >
 > **Where to verify:** `[User to add: link to data residency page]`
 >
-> ### Does ExampleCo offer EU data residency?
+> ### Does Pipedrive offer EU data residency?
 >
 > `[User to add: YES/NO/on specific plans, with the plan name and how to request it]`
 >
@@ -287,26 +289,26 @@ Use Section 5 format.
 >
 > **Where to verify:** `[User to add: link]`
 >
-> ### What security standards does ExampleCo meet?
+> ### What security standards does Pipedrive meet?
 >
-> ExampleCo is working towards SOC 2 Type II certification.
+> Pipedrive's Trust Center lists ISO/IEC 27001:2022 under Compliance.
 >
 > | Standard | Status | Verification |
 > |---|---|---|
-> | SOC 2 Type II | In progress (stated by user) | `[User to add: target date and what evidence is available]` |
-> | ISO 27001 | `[User to add: status or "not pursuing"]` | `[User to add: evidence]` |
-> | GDPR | Compliant (stated by user) | `[User to add: evidence, for example DPA]` |
+> | SOC 2 Type 2 | `[User to add: status]` | `[User to add: evidence]` |
+> | ISO 27001 | Listed as ISO/IEC 27001:2022 on the Trust Center (stated by user) | https://trustcenter.pipedrive.com/ |
+> | GDPR | Listed on the Trust Center (stated by user) | `[User to add: evidence, for example DPA]` |
 > | EU AI Act | `[User to add: status and risk category, or "not applicable"]` | `[User to add: evidence]` |
 >
 > `[User to add: penetration testing frequency and vendor, incident notification commitment, security team contact]`
 >
-> ### Can I get a DPA for ExampleCo?
+> ### Can I get a DPA for Pipedrive?
 >
 > `[User to add: Yes / No / Enterprise only; how to get it; whether it incorporates the EU SCCs; pre-signed or signed by both parties; turnaround time for standard and negotiated versions]`
 >
 > **Where to verify:** `[User to add: DPA request email or link]`
 >
-> ### Who are ExampleCo's subprocessors?
+> ### Who are Pipedrive's subprocessors?
 >
 > `[User to add: full subprocessor table with: Subprocessor | Service | Data type processed | Region]`
 >
@@ -320,11 +322,11 @@ Use Section 5 format.
 >
 > **Where to verify:** `[User to add: link to live subprocessor page]`
 >
-> ### What data does ExampleCo collect and how long is it retained?
+> ### What data does Pipedrive collect and how long is it retained?
 >
 > `[User to add: retention table covering account info, usage telemetry, customer content, support tickets, with purpose and retention period per row]`
 >
-> ### Does ExampleCo use third-party AI providers?
+> ### Does Pipedrive use third-party AI providers?
 >
 > `[User to add: YES/NO, which providers, what data flows to them, customer content scope, opt-out mechanism]`
 >
@@ -345,10 +347,10 @@ Use Section 5 format.
 >   "mainEntity": [
 >     {
 >       "@type": "Question",
->       "name": "Is ExampleCo GDPR compliant?",
+>       "name": "Is Pipedrive GDPR compliant?",
 >       "acceptedAnswer": {
 >         "@type": "Answer",
->         "text": "Yes. ExampleCo is GDPR-compliant."
+>         "text": "Pipedrive's Trust Center lists GDPR under Compliance."
 >       }
 >     },
 >     {
@@ -410,19 +412,23 @@ Use Section 5 format.
 >
 > **Your CFO-grade ask:** Publishing this page is mostly formatting work for the CMS. EU procurement reviewers check compliance answers early, so a missing Trust Centre can stop deals at that checkpoint. [User to add: pipeline data if you want an estimate of the cost of not publishing; the skill does not estimate it without data (Rule 7).]
 
-### Example 4 — Manual / JSON mode (fictional company "ExampleCo")
+### Example 4 — Manual / JSON mode (real company: Pipedrive)
+
+*Example only: Pipedrive is a real company used to show how this skill works, using public information from its own website. It is not a customer, partner or endorser of Helix GTM Consulting, and nothing here is advice to or about it.*
+
+The inputs below are copied from the company's own public pages (https://trustcenter.pipedrive.com/ and https://www.pipedrive.com/en/subprocessors, read on 3 October 2026). Everything the user did not state stays a placeholder.
 
 **Input:**
 ```json
 {
-  "company_name": "ExampleCo",
-  "gdpr_compliant": true,
-  "data_residency": "AWS eu-central-1 (Frankfurt) + AWS eu-west-1 (Dublin failover)",
-  "dpa": {"available": true, "mechanism": "self_serve", "url": "https://www.example.com/legal/dpa"},
-  "certifications": ["SOC 2 Type II", "ISO 27001", "GDPR"],
-  "ai_providers": [{"provider": "[AI provider]", "via": "[endpoint and region]", "data_flow": "anonymized prompts only"}],
-  "dpo_contact": "privacy@example.com",
-  "subprocessor_page_url": "https://www.example.com/legal/subprocessors",
+  "company_name": "Pipedrive",
+  "gdpr_status": "listed under Compliance on the Trust Center",
+  "data_residency": "[User to add: exact region(s)]",
+  "dpa": {"available": "[User to add]", "mechanism": "[User to add]", "url": "[User to add]"},
+  "certifications": ["GDPR (listed)", "ISO/IEC 27001:2022 (listed)", "SOC 2 Type 2 (listed)"],
+  "ai_providers": [{"provider": "[AI provider]", "via": "[endpoint and region]", "data_flow": "[User to add]"}],
+  "dpo_contact": "[User to add]",
+  "subprocessor_page_url": "https://www.pipedrive.com/en/subprocessors",
   "mode": "manual"
 }
 ```
@@ -430,11 +436,11 @@ Use Section 5 format.
 **Output:**
 ```json
 {
-  "page_title": "Trust & Compliance: ExampleCo",
-  "bluf": "ExampleCo is GDPR-compliant with SOC 2 Type II and ISO 27001 certifications. Customer data is stored in AWS eu-central-1 (Frankfurt) and AWS eu-west-1 (Dublin failover). Our Data Processing Agreement is available as a self-serve download at example.com/legal/dpa, and our subprocessors are listed at example.com/legal/subprocessors.",
+  "page_title": "Trust & Compliance: Pipedrive",
+  "bluf": "Pipedrive's Trust Center lists GDPR, ISO/IEC 27001:2022 and SOC 2 Type 2 under Compliance, and its sub-processors are listed at pipedrive.com/en/subprocessors. Customer data is stored in [User to add: exact region(s)]. Our Data Processing Agreement is [User to add: how to get it]. [User to add: DPO contact].",
   "sections": [
-    {"question": "Is ExampleCo GDPR compliant?", "answer": "..."},
-    {"question": "Is customer data stored in the EU?", "answer": "Yes. Customer data is stored in..."}
+    {"question": "Is Pipedrive GDPR compliant?", "answer": "..."},
+    {"question": "Is customer data stored in the EU?", "answer": "[User to add: direct answer with exact region]"}
     // ... all 8 sections
   ],
   "json_ld_schema": {
@@ -444,11 +450,11 @@ Use Section 5 format.
   },
   "schema_note": "Rule 4: FAQPage is not eligible for Google rich results on this page type; use Organization + hasCredential + WebPage for Google.",
   "dpa_cta": {
-    "type": "self_serve",
-    "text": "Download our Data Processing Agreement at https://www.example.com/legal/dpa. [User to add: signing and return steps]",
-    "url": "https://www.example.com/legal/dpa"
+    "type": "request",
+    "text": "[User to add: DPA request route and turnaround, only as the user states them]",
+    "url": null
   },
-  "placeholders_remaining": ["subprocessor change-notice policy", "retention periods", "DPA signing steps"],
+  "placeholders_remaining": ["data residency region", "DPA availability and route", "DPO contact", "subprocessor change-notice policy", "retention periods", "AI providers"],
   "generated_at": "2026-04-12T12:55:00Z"
 }
 ```
@@ -512,7 +518,7 @@ All 9 base rules from `references/anti-hallucination-base.md` apply. Additionall
 
 **Domain rule 6:** Never publish placeholders. If the output contains `[User to add: ...]` strings, the final output must include the pre-publish warning from Example 1 ("Do not publish with placeholders visible").
 
-**Domain rule 8:** Never let an example or template sentence become a claim. Worked examples in this file use the fictional company ExampleCo; every compliance fact in the output must come from the user in this session or stay a `[User to add: ...]` placeholder.
+**Domain rule 8:** Never let an example or template sentence become a claim. Worked examples in this file name one real company (Pipedrive) and use only what its own public pages say, with the source address; every compliance fact in the output must come from the user in this session or stay a `[User to add: ...]` placeholder.
 
 **Domain rule 7:** Never translate legal language to other EU languages. The project rule is English-only at v1. Legal translations require native legal review.
 

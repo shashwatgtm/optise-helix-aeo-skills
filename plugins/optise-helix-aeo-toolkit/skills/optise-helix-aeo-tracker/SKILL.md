@@ -141,7 +141,7 @@ Build:
 
 Use `references/tracker-rubric.md` for the 3 KPI formulas. Use `references/prompt-categories.md` to assign each prompt a category column value.
 
-**Tracker ID convention:** When in manual / API mode, generate a `tracker_id` as `<brand-slug>-<YYYY-MM-DD>` where brand-slug is the lowercase brand name with non-alphanumerics replaced by hyphens (e.g., "exampleco" or "the-london-tea-co"), and date is the setup date in ISO format. This makes trackers identifiable across multiple invocations and forms a stable handoff key for memory storage.
+**Tracker ID convention:** When in manual / API mode, generate a `tracker_id` as `<brand-slug>-<YYYY-MM-DD>` where brand-slug is the lowercase brand name with non-alphanumerics replaced by hyphens (e.g., "my-brand" or "the-london-tea-co"), and date is the setup date in ISO format. This makes trackers identifiable across multiple invocations and forms a stable handoff key for memory storage.
 
 ### Step 4: Analyze the data (analysis mode)
 
@@ -201,12 +201,14 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 [Hand off]
 ```
 
-### Example 1 — Setup mode, fictional ExampleCo pack
+### Example 1 — Setup mode, Pipedrive pack
 
-*ExampleCo, Tool Y and Tool Z are fictional. All data in Examples 1, 3 and 4 is made up to show structure only (Plugin Rule 1).*
+*Example only: Pipedrive is a real company used to show how this skill works, using public information from its own website. It is not a customer, partner or endorser of Helix GTM Consulting, and nothing here is advice to or about it.*
+
+*Tool Y and Tool Z are placeholders for competitors. Every date and value in Examples 1, 3 and 4 is made up to show structure only and is not a measurement of any company or AI engine (Plugin Rule 1). The only fact about Pipedrive used is its category, "Sales CRM & Pipeline Management Software", the title of https://www.pipedrive.com/ read on 3 October 2026.*
 
 > **Built for:** Marketing / Growth Lead
-> **Brand:** ExampleCo
+> **Brand:** Pipedrive
 > **Competitors tracked:** Tool Y, Tool Z
 > **Tracking start date:** 2026-04-12
 > **Measurement cadence:** Weekly (every Monday)
@@ -219,7 +221,7 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 > |---|---|---|---|
 > | week | date | 2026-04-12 | Always Monday |
 > | engine | enum | ChatGPT / Perplexity / Gemini / Claude | All 4 mandatory per row group |
-> | prompt | string | "best service desk software for German Mittelstand" | Verbatim from pack |
+> | prompt | string | "best CRM for small sales teams in Germany" | Verbatim from pack |
 > | category | enum | Shortlist / Pricing / Implementation / EU Privacy / Integration / Role-based | Optise 6 categories |
 > | mentioned | bool | TRUE | Did the answer name your brand? |
 > | cited_with_link | bool | TRUE | Did the answer link to your domain? |
@@ -231,8 +233,10 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 >
 > ### Example row
 >
+> The row shows the format only. Its values are made up; it is not a measurement of Pipedrive or of any engine.
+>
 > ```csv
-> 2026-04-12,ChatGPT,"best service desk software for German Mittelstand",Shortlist,TRUE,TRUE,2,TRUE,FALSE,/alternatives/tool-y,"Cited as #2 of 5 options"
+> 2026-04-12,ChatGPT,"best CRM for small sales teams in Germany",Shortlist,TRUE,TRUE,2,TRUE,FALSE,/alternatives/tool-y,"Cited as #2 of 5 options"
 > ```
 >
 > ### Week-1 instructions
@@ -301,7 +305,7 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 
 ### Example 3 — Analysis mode (4 weeks of data)
 
-> **Analysis of your 4-week tracking data** *(fictional ExampleCo data, for structure only)*
+> **Analysis of your 4-week tracking data** *(made-up data for a placeholder brand, "[Brand]", for structure only; no real company is used in this example)*
 >
 > **Current AEO health:** Citation Rate 18.4% — **Grade C**. You're occasionally cited, improving from a fixable position.
 >
@@ -314,19 +318,19 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 >
 > ## Top 5 working prompts (highest citation × prominence)
 >
-> 1. **"ExampleCo EU data residency"** — cited in 14/16 measurements (4 weeks × 4 engines), prominence 1.4 (first or near-first). **Don't break this.** Check whether your Trust Centre page is the page being cited.
-> 2. **"best service desk for German Mittelstand"** — cited in 10/16 measurements, prominence 2.0.
+> 1. **"[Brand] EU data residency"** — cited in 14/16 measurements (4 weeks × 4 engines), prominence 1.4 (first or near-first). **Don't break this.** Check whether your Trust Centre page is the page being cited.
+> 2. **"best CRM for small sales teams in Germany"** — cited in 10/16 measurements, prominence 2.0.
 > 3-5. [other working prompts]
 >
 > ## Top 5 dead prompts (0% citation after 4 weeks)
 >
-> 1. **"ExampleCo customer reviews 2026"** — 0/16 measurements. **Recommend swap.** Assumption: review-site pages may be answering this prompt instead; check the answers you recorded before swapping.
-> 2. **"ExampleCo history and founders"** — 0/16. **Recommend swap.** Assumption: wrong intent (buyers rarely ask about company history at the evaluation stage).
+> 1. **"[Brand] customer reviews 2026"** — 0/16 measurements. **Recommend swap.** Assumption: review-site pages may be answering this prompt instead; check the answers you recorded before swapping.
+> 2. **"[Brand] history and founders"** — 0/16. **Recommend swap.** Assumption: wrong intent (buyers rarely ask about company history at the evaluation stage).
 > 3-5. [other dead prompts]
 >
 > ## Top 3 declining prompts
 >
-> 1. **"Tool Z vs ExampleCo"** — cited in 4/4 engines in weeks 1-2, down to 1/4 in week 4. **Recommend FITq audit on `/compare/tool-z`.** The data shows the drop, not the cause; check which pages the engines now cite for this prompt before drawing conclusions.
+> 1. **"Tool Z vs [Brand]"** — cited in 4/4 engines in weeks 1-2, down to 1/4 in week 4. **Recommend FITq audit on `/compare/tool-z`.** The data shows the drop, not the cause; check which pages the engines now cite for this prompt before drawing conclusions.
 >
 > ## Suggested next steps
 >
@@ -336,15 +340,17 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 
 ### Example 4 — Manual / JSON mode
 
+*Example only: Pipedrive is a real company used to show how this skill works, using public information from its own website. It is not a customer, partner or endorser of Helix GTM Consulting, and nothing here is advice to or about it.*
+
 **Input:**
 ```json
 {
   "mode": "setup",
-  "brand": "ExampleCo",
+  "brand": "Pipedrive",
   "competitors": ["Tool Y", "Tool Z"],
   "prompts": [
-    {"text": "best service desk for German Mittelstand", "category": "shortlist"},
-    {"text": "is ExampleCo GDPR compliant", "category": "eu_privacy"}
+    {"text": "best CRM for small sales teams in Germany", "category": "shortlist"},
+    {"text": "is Pipedrive GDPR compliant", "category": "eu_privacy"}
   ]
 }
 ```
@@ -352,7 +358,7 @@ Walk through the 6-step diagnostic from `references/tracker-rubric.md`. Ask the 
 **Output:**
 ```json
 {
-  "tracker_id": "exampleco-2026-04-12",
+  "tracker_id": "pipedrive-2026-04-12",
   "csv_columns": [
     {"name": "week", "type": "date"},
     {"name": "engine", "type": "enum", "values": ["ChatGPT", "Perplexity", "Gemini", "Claude"]},

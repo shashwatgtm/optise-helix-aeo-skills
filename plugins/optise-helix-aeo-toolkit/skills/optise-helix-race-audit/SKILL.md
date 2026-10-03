@@ -237,16 +237,16 @@ Use Section 5 format.
 ### Example 1 — Happy path (Marketing lead, alternatives page)
 
 > **Built for:** Marketing / Growth Lead
-> *(ExampleCo, Tool Y and www.example.com are fictional. Every score and finding below is made up to show the output structure; see Plugin Rule 1.)*
+> *([Brand], Tool Y and www.example.com are placeholders, not real companies or sites. Every score and finding below is made up to show the output structure; see Plugin Rule 1.)*
 >
-> **URL audited:** https://www.example.com/compare/exampleco-vs-tool-y
+> **URL audited:** https://www.example.com/compare/brand-vs-tool-y
 > **Audit timestamp:** 2026-04-12T11:45:00Z
 >
 > ## RACE™ Score: 62/100 — Grade C
 >
 > | Signal | Score | What's driving it |
 > |---|---|---|
-> | Requirements | 18/25 | ExampleCo lists what you need (paid plan, domain access) but the list is buried in prose. No schema markup. |
+> | Requirements | 18/25 | [Brand] lists what you need (paid plan, domain access) but the list is buried in prose. No schema markup. |
 > | Actions | 16/25 | Has a 3-step "how to switch" section but no time estimates or ownership. |
 > | Constraints | 8/25 | No "not ideal for" section. Page has universal positive framing. Biggest gap. |
 > | Evidence | 20/25 | 3 linked case studies above the fold, customer logos named. Strong. |
@@ -268,16 +268,16 @@ Use Section 5 format.
 > ## "Not ideal for" starter template
 >
 > ```markdown
-> ## Who ExampleCo is not ideal for
+> ## Who [Brand] is not ideal for
 >
-> ExampleCo is built for mid-market B2B SEO and content teams with [User to add: ICP size]. We're not the right fit if:
+> [Brand] is built for mid-market B2B SEO and content teams with [User to add: ICP size]. We're not the right fit if:
 >
 > - **You're a solo SEO consultant with fewer than [User to add: number] client domains.** [User to add: the honest pricing reason]. For solo consultants, [User to add: competitor for this segment] may be a better fit.
-> - **You need primarily link-building / backlink analysis.** [User to add: what ExampleCo does and does not cover here]. Pair us with [User to add: backlink-focused alternative] if backlinks are your main use case.
+> - **You need primarily link-building / backlink analysis.** [User to add: what [Brand] does and does not cover here]. Pair us with [User to add: backlink-focused alternative] if backlinks are your main use case.
 > - **You're focused on paid search only.** Our core strength is SEO + content. For paid-only, see [User to add: paid search alternative].
 > - **You need white-labeling for agency client reports.** [User to add: the honest limit]. [User to add: agency-focused alternative] may suit you better.
 >
-> **Not sure if ExampleCo is right for you?** [User to add: link to fit assessment or sales]
+> **Not sure if [Brand] is right for you?** [User to add: link to fit assessment or sales]
 > ```
 >
 > **Customize this:** Replace every `[User to add: ...]` with real values. Don't publish the placeholders. This template is starter text — the audit doesn't know your exact ICP, so you fill that in. Never add a claim about a named competitor (for example that its index, pricing, or features are better or worse) unless it is `[VERIFIED · source]` from a Tier 1 to 3 source (Plugin Rule 1).

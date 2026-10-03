@@ -254,7 +254,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 
 ### Example 1 — Happy path (Marketing lead, fictional site)
 
-*ExampleCo and www.example.com are fictional. Every score and finding below is made up to show the output structure. A real audit reports only what fetch_page.py returned for the real URL (Plugin Rule 1).*
+*[Brand] and www.example.com are placeholders, not real sites or companies. Every score and finding below is made up to show the output structure. A real audit reports only what fetch_page.py returned for the real URL (Plugin Rule 1).*
 
 > **Built for:** Marketing / Growth Lead
 > **URL audited:** https://www.example.com/features/site-audit/
@@ -266,22 +266,22 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 > |---|---|---|
 > | Findability | 23/25 | Renders fully in HTML, TTFB 240ms, canonical present, no bot blocks. -2 for 2.1MB page weight. |
 > | Intent Match | 18/25 | H1 is "Site Audit Tool" — descriptive but not question-form. BLUF present in first 80 words. Stays on topic. |
-> | Trust | 17/25 | Last-updated date present (2026-03-14, within 90 days). No named author byline (uses "ExampleCo Team"). Stats sourced to internal ExampleCo data only — no third-party corroboration. |
+> | Trust | 17/25 | Last-updated date present (2026-03-14, within 90 days). No named author byline (uses "[Brand] Team"). Stats sourced to internal [Brand] data only — no third-party corroboration. |
 > | Quoteability | 20/25 | 4 tables, 12 lists, FAQ schema present. -3 for paragraph length: avg 6.2 sentences (target ≤4). -2 for H2s being descriptive not question-form. |
 >
 > ## Top 5 fixes (ranked by impact)
 >
 > ### Fix 1 — Add a named author byline [+5 to Trust] [ship this week]
-> Currently the page is bylined "ExampleCo Team" with no link. AI engines treat this as no byline at all. Replace with a real named person (e.g., your Director of SEO Research) and link to a bio page with their credentials.
+> Currently the page is bylined "[Brand] Team" with no link. AI engines treat this as no byline at all. Replace with a real named person (e.g., your Director of SEO Research) and link to a bio page with their credentials.
 >
 > **Before:**
 > ```html
-> <p class="byline">By the ExampleCo Team</p>
+> <p class="byline">By the [Brand] Team</p>
 > ```
 >
 > **After:**
 > ```html
-> <p class="byline">By <a href="/team/[real-name]" rel="author">[Real Name]</a>, Director of SEO Research at ExampleCo. Last reviewed by [VP Product] on [YYYY-MM-DD].</p>
+> <p class="byline">By <a href="/team/[real-name]" rel="author">[Real Name]</a>, Director of SEO Research at [Brand]. Last reviewed by [VP Product] on [YYYY-MM-DD].</p>
 > ```
 >
 > ### Fix 2 — Restructure paragraphs into answer blocks [+5 to Quoteability] [ship this week]
@@ -291,7 +291,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 > Current H2s like "Key Features" → change to "What does Site Audit check for?" Current "Pricing" → "How much does Site Audit cost?" This single change adds extractable answer blocks for 4-6 buyer prompts.
 >
 > ### Fix 4 — Add 2-3 third-party stats with source links [+3 to Trust] [ship this month]
-> All stats on this page link to ExampleCo's own research. Add at least 2 stats from independent sources (Forrester, Gartner, BrightEdge) with linked sources to break the "we're our own only source" pattern.
+> All stats on this page link to [Brand]'s own research. Add at least 2 stats from independent sources (Forrester, Gartner, BrightEdge) with linked sources to break the "we're our own only source" pattern.
 >
 > ### Fix 5 — Reduce page weight from 2.1MB to <1.5MB [+2 to Findability] [ship this month]
 > Compress the hero video, lazy-load images below the fold, defer non-critical JS bundles. Lighter pages crawl faster.
@@ -365,7 +365,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
   "signals": {
     "findability": {"score": 22, "notes": "renders in HTML, TTFB 380ms, canonical present"},
     "intent_match": {"score": 11, "notes": "H1 is brand-led, no BLUF in first 100 words"},
-    "trust": {"score": 14, "notes": "no last-updated date, 'ExampleCo Team' byline, stats unsourced"},
+    "trust": {"score": 14, "notes": "no last-updated date, '[Brand] Team' byline, stats unsourced"},
     "quoteability": {"score": 17, "notes": "2 tables, FAQ schema present, paragraphs 5.8 avg"}
   },
   "top_fixes": [

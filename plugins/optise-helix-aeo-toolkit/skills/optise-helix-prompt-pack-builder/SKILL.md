@@ -204,61 +204,63 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 [Hand-off to FITq audit / Trust Centre / Tracker, or "build the top 3 pages"]
 ```
 
-### Example 1 — Happy path (Marketing lead, fictional ExampleCo brief)
+### Example 1 — Happy path (Marketing lead, Pipedrive brief)
 
-*ExampleCo, Tool Y and Tool Z are fictional; the pack below shows structure only (Plugin Rule 1). All prompts are in English, per the Section 0 English-only rule.*
+*Example only: Pipedrive is a real company used to show how this skill works, using public information from its own website. It is not a customer, partner or endorser of Helix GTM Consulting, and nothing here is advice to or about it.*
+
+*Tool Y and Tool Z are placeholders for competitors. The pack below shows structure only (Plugin Rule 1): the prompts are questions a buyer might type, not claims about any company. The only fact about Pipedrive used is its category, "Sales CRM & Pipeline Management Software", the title of https://www.pipedrive.com/ read on 3 October 2026. The target page column names page types only: the [EXISTS] / [TO BUILD] tags come from what the user says about their own site, and this example says nothing about which pages Pipedrive has. All prompts are in English, per the Section 0 English-only rule.*
 
 > **Built for:** Marketing / Growth Lead
-> **Inputs used:** Category: B2B service desk software · ICP: mid-market IT at 200-2000 employee companies · Competitors: Tool Y, Tool Z · Markets: DACH, Nordics
+> **Inputs used:** Category: B2B sales CRM · ICP: small and mid-sized sales teams (stated by the user for this example) · Competitors: Tool Y, Tool Z · Markets: DACH, Nordics
 >
 > ## The 25-prompt pack
 >
 > | # | Prompt | Category | Decides | Target page | Market |
 > |---|---|---|---|---|---|
-> | 1 | Tool Y alternatives for mid-market | Shortlist | 5/5 | /alternatives/tool-y [TO BUILD] | DACH+Nordics |
-> | 2 | Tool Z vs ExampleCo | Shortlist | 5/5 | /compare/tool-z [EXISTS] | DACH+Nordics |
-> | 3 | is ExampleCo GDPR compliant in Germany | EU Privacy | 5/5 | /trust [TO BUILD] | DACH |
-> | 4 | does ExampleCo offer EU data residency | EU Privacy | 5/5 | /trust/data-residency [TO BUILD] | DACH+Nordics |
-> | 5 | ExampleCo DPA download | EU Privacy | 5/5 | /trust/dpa [TO BUILD] | DACH |
-> | 6 | who are ExampleCo subprocessors | EU Privacy | 5/5 | /trust/subprocessors [TO BUILD] | DACH+Nordics |
-> | 7 | ExampleCo pricing for 500 agents | Pricing | 5/5 | /pricing [EXISTS] | DACH+Nordics |
-> | 8 | how long does ExampleCo implementation take | Implementation | 4/5 | /implementation [TO BUILD] | DACH+Nordics |
-> | 9 | does ExampleCo integrate with Slack | Integration | 4/5 | /integrations/slack [EXISTS] | DACH+Nordics |
-> | 10 | ExampleCo for IT teams in DACH | Role-based | 4/5 | /it-teams [TO BUILD] | DACH |
-> | 11 | best service desk software for German companies | Shortlist | 4/5 | /alternatives/tool-y [TO BUILD] | DACH |
-> | 12 | Tool Z alternative for Mittelstand | Shortlist | 4/5 | /alternatives/tool-z [TO BUILD] | DACH |
-> | 13 | ExampleCo SOC 2 ISO 27001 | EU Privacy | 4/5 | /trust [TO BUILD] | All EU |
-> | 14 | ExampleCo data center in Germany | EU Privacy | 4/5 | /trust/data-residency [TO BUILD] | DACH |
-> | 15 | ExampleCo vs Tool Y for security teams | Shortlist | 4/5 | /compare/tool-y [TO BUILD] | DACH |
-> | 16 | ExampleCo customer support time to value | Implementation | 3/5 | /implementation [TO BUILD] | DACH+Nordics |
-> | 17 | ExampleCo API documentation | Integration | 3/5 | /developers [EXISTS] | All EU |
-> | 18 | ExampleCo customer reviews 2026 | Shortlist | 3/5 | /reviews [TO BUILD] | DACH+Nordics |
-> | 19 | best service desk for Nordic IT teams | Role-based | 3/5 | /nordics [TO BUILD] | Nordics |
-> | 20 | ExampleCo WCAG accessibility | EU Privacy | 3/5 | /trust/accessibility [TO BUILD] | Nordics |
-> | 21 | ExampleCo SAML SSO setup | Integration | 3/5 | /sso [EXISTS] | All EU |
-> | 22 | ExampleCo ticket automation | Implementation | 3/5 | /features/automation [EXISTS] | All EU |
-> | 23 | ExampleCo for RevOps teams | Role-based | 2/5 | /revops [TO BUILD] | All EU |
-> | 24 | ExampleCo history and founders | Shortlist | 2/5 | /about [EXISTS] | All EU |
-> | 25 | what is a service desk | Shortlist | 1/5 | /glossary/service-desk [TO BUILD] | All EU |
+> | 1 | Tool Y alternatives for small sales teams | Shortlist | 5/5 | Alternatives page | DACH+Nordics |
+> | 2 | best CRM for small sales teams in Germany | Shortlist | 5/5 | Product overview page | DACH |
+> | 3 | is Pipedrive GDPR compliant in Germany | EU Privacy | 5/5 | Trust page | DACH |
+> | 4 | does Pipedrive offer EU data residency | EU Privacy | 5/5 | Data residency page | DACH+Nordics |
+> | 5 | Pipedrive DPA download | EU Privacy | 5/5 | DPA page | DACH |
+> | 6 | who are Pipedrive subprocessors | EU Privacy | 5/5 | Subprocessors page | DACH+Nordics |
+> | 7 | Pipedrive pricing per user per month | Pricing | 5/5 | Pricing page | DACH+Nordics |
+> | 8 | how long does Pipedrive implementation take | Implementation | 4/5 | Implementation page | DACH+Nordics |
+> | 9 | does Pipedrive integrate with Slack | Integration | 4/5 | Integrations page | DACH+Nordics |
+> | 10 | Pipedrive for sales teams in DACH | Role-based | 4/5 | Role-based landing page | DACH |
+> | 11 | best CRM for German companies | Shortlist | 4/5 | Product overview page | DACH |
+> | 12 | Tool Z alternative for Mittelstand | Shortlist | 4/5 | Alternatives page | DACH |
+> | 13 | Pipedrive SOC 2 ISO 27001 | EU Privacy | 4/5 | Trust page | All EU |
+> | 14 | Pipedrive data center in Germany | EU Privacy | 4/5 | Data residency page | DACH |
+> | 15 | CRM security features for sales teams in DACH | Shortlist | 4/5 | Security page | DACH |
+> | 16 | Pipedrive time to value for a new sales team | Implementation | 3/5 | Implementation page | DACH+Nordics |
+> | 17 | Pipedrive API documentation | Integration | 3/5 | Developer page | All EU |
+> | 18 | Pipedrive case studies | Shortlist | 3/5 | Case studies page | DACH+Nordics |
+> | 19 | best CRM for Nordic sales teams | Role-based | 3/5 | Nordics page | Nordics |
+> | 20 | Pipedrive WCAG accessibility | EU Privacy | 3/5 | Accessibility page | Nordics |
+> | 21 | Pipedrive SAML SSO setup | Integration | 3/5 | SSO page | All EU |
+> | 22 | Pipedrive sales automation | Implementation | 3/5 | Features page | All EU |
+> | 23 | Pipedrive for RevOps teams | Role-based | 2/5 | RevOps page | All EU |
+> | 24 | Pipedrive history and founders | Shortlist | 2/5 | About page | All EU |
+> | 25 | what is a CRM | Shortlist | 1/5 | Glossary page | All EU |
 >
 > ## Top 10 to ship (ordered by build priority)
 >
-> 1. **/trust** — Trust Centre — wins 4 disqualifier prompts (3, 5, 6, 13). Highest leverage page in this pack. → **Hand off to `optise-helix-eu-trust-centre`**
-> 2. **/alternatives/tool-y** — Alternatives page — wins prompt 1 (5/5) and 11. Assumption: Tool Y is the competitor you meet most often in EU deals; confirm.
-> 3. **/trust/data-residency** — wins prompts 4 and 14. Standalone page so DACH buyers can verify in 10 seconds.
-> 4. **/trust/dpa** — wins prompt 5. Self-serve DPA download = procurement-ready.
-> 5. **/trust/subprocessors** — wins prompt 6. Live updated list, with the change-notice policy you actually offer.
-> 6. **/compare/tool-y** — wins prompt 15. Security-team framing for DACH buyers.
-> 7. **/it-teams** — wins prompt 10. Role-based landing page for the highest-fit ICP.
-> 8. **/implementation** — wins prompts 8 and 16. Reduces sales cycle friction.
-> 9. **/alternatives/tool-z** — wins prompt 12. Mittelstand framing.
-> 10. **/nordics** — wins prompt 19. Standalone page for the Nordics market.
+> 1. **Trust page** — wins 4 disqualifier prompts (3, 5, 6, 13). Highest leverage page in this pack. → **Hand off to `optise-helix-eu-trust-centre`** if the user's site has no such page; if it has one, hand off to `optise-helix-fitq-audit` instead.
+> 2. **Alternatives page for Tool Y** — wins prompt 1 (5/5). Assumption: Tool Y is the competitor you meet most often in EU deals; confirm.
+> 3. **Data residency page** — wins prompts 4 and 14. Standalone page so DACH buyers can verify in 10 seconds.
+> 4. **DPA page** — wins prompt 5. Self-serve DPA download = procurement-ready.
+> 5. **Subprocessors page** — wins prompt 6. Live updated list, with the change-notice policy you actually offer.
+> 6. **Security page** — wins prompt 15. Security-team framing for DACH buyers.
+> 7. **Role-based landing page** — wins prompt 10. Landing page for the highest-fit ICP.
+> 8. **Implementation page** — wins prompts 8 and 16. Reduces sales cycle friction.
+> 9. **Alternatives page for Tool Z** — wins prompt 12. Mittelstand framing.
+> 10. **Nordics page** — wins prompt 19. Standalone page for the Nordics market.
 >
 > ## What this pack is missing
 > No prompt for AI Act compliance yet. Add one once your AI features ship and you have a stance on EU AI Act risk classification.
 >
 > ## Suggested next step
-> Run `optise-helix-eu-trust-centre` to draft the Trust Centre page that answers prompts 3, 4, 5, 6, 13, 14, 20 in one shot. After that, run `optise-helix-fitq-audit` on `/pricing` and `/integrations/slack` since both are existing pages that probably need tightening to actually win their prompts.
+> Ask the user which of these pages already exist. For the missing ones, start with the Trust page (`optise-helix-eu-trust-centre`), which answers prompts 3, 4, 5, 6, 13, 14, 20 in one shot. For the pages that exist, run `optise-helix-fitq-audit` on the pricing and integrations pages to check that they answer their prompts.
 
 ### Example 2 — Partial data (founder, no markets specified)
 

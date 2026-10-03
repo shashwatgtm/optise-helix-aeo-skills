@@ -5,7 +5,7 @@
 
 A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the top of a decision page. It answers the page's implicit buyer question directly, in extractable form, so AI engines can cite it without needing to reach into the rest of the page.
 
-**About the examples in this file:** every example uses fictional companies (ExampleCo, Tool A, Tool B, Tool C, Tool X, Tool Y) and made-up figures. They show structure only. Never reuse their figures or present them as facts about any real company. In a real BLUF, every fact must come from the user's proof points or a verified source (Plugin Rule 1 in `../../../references/plugin-specific-rules.md`).
+**About the examples in this file:** every example uses placeholder brands and tools ([Brand], Tool A, Tool B, Tool C, Tool X, Tool Y) and made-up figures. No real company is named here, because the examples carry prices, timings and comparisons that must never be attributed to a real company. They show structure only. Never reuse their figures or present them as facts about any real company. In a real BLUF, every fact must come from the user's proof points or a verified source (Plugin Rule 1 in `../../../references/plugin-specific-rules.md`).
 
 ## Contents
 - Pattern 1: Direct Answer
@@ -24,7 +24,7 @@ A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the
 **Structure:** [Direct answer sentence]. [Key proof sentence with 1-2 numeric facts]. [Caveat or scope sentence].
 
 **Example:**
-> ExampleCo costs €29 per agent per month on the Starter plan, €49 on Growth, and €99 on Enterprise, with all plans billed annually in EUR. Pricing includes unlimited end users. Volume discounts apply above 100 agents.
+> [Brand] costs €29 per agent per month on the Starter plan, €49 on Growth, and €99 on Enterprise, with all plans billed annually in EUR. Pricing includes unlimited end users. Volume discounts apply above 100 agents.
 
 **Why it works:** Numbered and specific. No hedging. Directly extractable as a citation.
 
@@ -63,7 +63,7 @@ A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the
 **Structure:** [Winner sentence with scope]. [Key differentiator sentence]. [When the other tool wins sentence].
 
 **Example:**
-> For mid-market B2B teams selling into Germany, ExampleCo beats Tool Y on deployment speed (4 weeks vs 6 months) and European compliance (BSI C5 attestation, EU-hosted). Tool Y wins for complex enterprise IT stacks with 500+ customized workflows — in those cases, its flexibility justifies the 3-5x cost premium.
+> For mid-market B2B teams selling into Germany, [Brand] beats Tool Y on deployment speed (4 weeks vs 6 months) and European compliance (BSI C5 attestation, EU-hosted). Tool Y wins for complex enterprise IT stacks with 500+ customized workflows — in those cases, its flexibility justifies the 3-5x cost premium.
 
 **Why it works:** Names a winner with scope, gives the differentiator, honestly explains where the competitor wins. AI engines reward this pattern because it reads as buyer-led, not vendor-led.
 
@@ -76,7 +76,7 @@ A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the
 **Structure:** [Total time sentence]. [Phase breakdown sentence]. [Prerequisite or owner sentence].
 
 **Example:**
-> ExampleCo implementation takes 4-6 weeks for mid-market IT teams (200-2000 employees). Week 1 is data migration from the existing ticketing tool, weeks 2-3 are workflow configuration, and weeks 4-6 are agent training and pilot rollout. You need a named IT project owner on your side and a weekly 90-minute checkpoint call.
+> [Brand] implementation takes 4-6 weeks for mid-market IT teams (200-2000 employees). Week 1 is data migration from the existing ticketing tool, weeks 2-3 are workflow configuration, and weeks 4-6 are agent training and pilot rollout. You need a named IT project owner on your side and a weekly 90-minute checkpoint call.
 
 **Why it works:** Concrete duration, phase-level detail, named prerequisite. Answers the evaluation question directly without marketing language.
 
@@ -89,7 +89,7 @@ A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the
 **Structure:** [Direct compliance statement sentence]. [Specific framework / certification sentence]. [Where to verify sentence].
 
 **Example:**
-> ExampleCo is GDPR-compliant and SOC 2 Type II + ISO 27001 certified, with EU data residency available in Frankfurt (AWS eu-central-1) and Dublin (AWS eu-west-1). Our Data Processing Agreement is pre-signed and downloadable at example.com/dpa. Subprocessors are published and updated with 30-day customer notice.
+> [Brand] is GDPR-compliant and SOC 2 Type II + ISO 27001 certified, with EU data residency available in Frankfurt (AWS eu-central-1) and Dublin (AWS eu-west-1). Our Data Processing Agreement is pre-signed and downloadable at example.com/dpa. Subprocessors are published and updated with 30-day customer notice.
 
 **Why it works:** Plain language but legally precise. Names actual frameworks. Links to verification. Zero marketing. This is also the pattern where an invented fact does the most harm: every certification, region, DPA term, and notice period must be stated by the user, or it stays a `[User to add: ...]` placeholder.
 
@@ -99,7 +99,7 @@ A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the
 
 1. **40-60 words.** Not 30, not 80. Count exact whitespace-separated words. Under 40 isn't a BLUF — it's a headline. Over 60 is a paragraph and loses extractability.
 2. **Answer the buyer question first.** Never lead with "At [Company], we believe…" — that's marketing copy, not an answer.
-3. **Use buyer-native language.** "ExampleCo" not "our solution". "€29/agent/month" not "affordable pricing". "EU-hosted" not "enterprise-grade security".
+3. **Use buyer-native language.** "[Brand]" not "our solution". "€29/agent/month" not "affordable pricing". "EU-hosted" not "enterprise-grade security".
 4. **No superlatives without proof.** Ban these 8 words: best-in-class, leading, world-class, revolutionary, cutting-edge, transform, unleash, empower. If a claim can't be backed by a number or source, drop it.
 5. **Self-contained.** The BLUF must stand alone. AI engines often cite it without surrounding context — it has to make sense as a quote.
 6. **Pick exactly one pattern.** Blending patterns (Top 3 + Compliance + Process) produces unfocused text that doesn't match any AI extraction heuristic cleanly.
@@ -110,17 +110,17 @@ A BLUF (Bottom Line Up Front) is a 40-60 word self-contained answer block at the
 ## Anti-patterns to avoid
 
 **Bad BLUF 1:**
-> At ExampleCo, we believe every IT team deserves world-class service management. Our revolutionary platform empowers your team to transform ticket resolution and unleash productivity with cutting-edge AI features.
+> At [Brand], we believe every IT team deserves world-class service management. Our revolutionary platform empowers your team to transform ticket resolution and unleash productivity with cutting-edge AI features.
 
 This hits 0 of the 7 rules. Zero useful information.
 
 **Bad BLUF 2:**
-> ExampleCo is a service desk software.
+> [Brand] is a service desk software.
 
 Too short. Hits no pattern. No proof. No buyer-relevant framing.
 
 **Bad BLUF 3:**
-> ExampleCo offers pricing from €29 to €99 per month, has many integrations including Slack, Microsoft Teams, and HubSpot, implements quickly, is GDPR-compliant, and is trusted by thousands of customers worldwide including Fortune 500 companies.
+> [Brand] offers pricing from €29 to €99 per month, has many integrations including Slack, Microsoft Teams, and HubSpot, implements quickly, is GDPR-compliant, and is trusted by thousands of customers worldwide including Fortune 500 companies.
 
 Blends 4 patterns (Direct Answer, Process, Compliance, Social Proof). No AI engine will extract this as a clean citation because it doesn't match any single buyer question.
 
