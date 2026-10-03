@@ -245,16 +245,16 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 >
 > ## Top 10 to ship (ordered by build priority)
 >
-> 1. **Trust page** — wins 4 disqualifier prompts (3, 5, 6, 13). Highest leverage page in this pack. → **Hand off to `optise-helix-eu-trust-centre`** if the user's site has no such page; if it has one, hand off to `optise-helix-fitq-audit` instead.
-> 2. **Alternatives page for Tool Y** — wins prompt 1 (5/5). Assumption: Tool Y is the competitor you meet most often in EU deals; confirm.
-> 3. **Data residency page** — wins prompts 4 and 14. Standalone page so DACH buyers can verify in 10 seconds.
-> 4. **DPA page** — wins prompt 5. Self-serve DPA download = procurement-ready.
-> 5. **Subprocessors page** — wins prompt 6. Live updated list, with the change-notice policy you actually offer.
-> 6. **Security page** — wins prompt 15. Security-team framing for DACH buyers.
-> 7. **Role-based landing page** — wins prompt 10. Landing page for the highest-fit ICP.
-> 8. **Implementation page** — wins prompts 8 and 16. Reduces sales cycle friction.
-> 9. **Alternatives page for Tool Z** — wins prompt 12. Mittelstand framing.
-> 10. **Nordics page** — wins prompt 19. Standalone page for the Nordics market.
+> 1. **Trust page**: wins 4 disqualifier prompts (3, 5, 6, 13). Highest leverage page in this pack. → **Hand off to `optise-helix-eu-trust-centre`** if the user's site has no such page; if it has one, hand off to `optise-helix-fitq-audit` instead.
+> 2. **Alternatives page for Tool Y**: wins prompt 1 (5/5). Assumption: Tool Y is the competitor you meet most often in EU deals; confirm.
+> 3. **Data residency page**: wins prompts 4 and 14. Standalone page so DACH buyers can verify in 10 seconds.
+> 4. **DPA page**: wins prompt 5. Self-serve DPA download = procurement-ready.
+> 5. **Subprocessors page**: wins prompt 6. Live updated list, with the change-notice policy you actually offer.
+> 6. **Security page**: wins prompt 15. Security-team framing for DACH buyers.
+> 7. **Role-based landing page**: wins prompt 10. Landing page for the highest-fit ICP.
+> 8. **Implementation page**: wins prompts 8 and 16. Reduces sales cycle friction.
+> 9. **Alternatives page for Tool Z**: wins prompt 12. Mittelstand framing.
+> 10. **Nordics page**: wins prompt 19. Standalone page for the Nordics market.
 >
 > ## What this pack is missing
 > No prompt for AI Act compliance yet. Add one once your AI features ship and you have a stance on EU AI Act risk classification.
