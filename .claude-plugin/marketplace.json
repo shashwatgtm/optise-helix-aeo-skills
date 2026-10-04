@@ -5,22 +5,27 @@
     "email": "shashwat@gtmhelix.com",
     "url": "https://gtmhelix.com"
   },
-  "description": "AEO and GEO skills for B2B teams selling into Europe, designed for English-language websites. Built by Optise and Helix GTM Consulting on the Optise EU AEO Playbook methodology.",
+  "description": "AI search visibility (AEO and GEO) skills for B2B websites, by Optise and Helix GTM Consulting: page audits, answer blocks, buyer prompt packs, an EU trust page and citation tracking.",
   "plugins": [
     {
       "name": "optise-helix-aeo-toolkit",
       "source": "./plugins/optise-helix-aeo-toolkit",
       "category": "marketing-and-seo",
       "tags": [
+        "ai-search",
         "aeo",
         "geo",
-        "ai-search",
-        "europe",
-        "gdpr",
-        "b2b",
-        "trust-centre"
+        "ai-visibility",
+        "llm-seo",
+        "seo",
+        "answer-engine-optimization",
+        "citation-tracking",
+        "trust-centre",
+        "gdpr"
       ],
-      "strict": true
+      "strict": true,
+      "displayName": "AI Search Visibility (AEO/GEO)",
+      "description": "Get your B2B website found, quoted and recommended by ChatGPT, Perplexity, Gemini and Claude: page audits, answer blocks, buyer prompt packs, an EU trust page and citation tracking. By Optise and Helix."
     }
   ]
 }

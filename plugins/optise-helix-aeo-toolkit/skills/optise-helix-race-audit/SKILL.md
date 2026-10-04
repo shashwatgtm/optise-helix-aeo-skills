@@ -1,17 +1,16 @@
 ---
 name: optise-helix-race-audit
-description: Audits a B2B webpage against the proprietary Optise RACE™ framework 
-  (Requirements, Actions, Constraints, Evidence) to determine AI agent 
-  evaluation readiness — how well AI agents running multi-step buyer workflows 
-  can evaluate, recommend, or shortlist this page. Distinct from FITq (which 
-  scores AI search citation readiness) — RACE scores agent-readability. 
-  Fetches the URL, analyzes rendered HTML, and returns ranked fixes. Use when 
-  the user asks for a RACE audit, agent-readiness audit, AI agent evaluation 
-  check, or wants to know if AI agents will recommend their page. Returns a 
-  4-signal scorecard (0-100), top 5 fixes, a "not ideal for" template if that 
-  signal is weak, and a before/after diff for the highest-priority fix. 
-  Authored by Optise + Helix GTM Consulting under the Optise EU AEO Playbook 
-  methodology.
+description: >
+  Check whether AI agents doing buyer research can evaluate, shortlist and
+  recommend a B2B webpage, and get the fixes ranked by impact. Fetches the URL,
+  analyzes the rendered HTML, and returns a 4-signal scorecard (0 to 100), the
+  top 5 fixes, a "not ideal for" template if that signal is weak, and a before
+  and after for the highest-priority fix. Use when the user asks for a RACE
+  audit, agent-readiness audit, AI agent evaluation check, or wants to know if
+  AI agents will recommend their page. The FITq audit scores AI search citation
+  instead. Method: the Optise RACE™ framework (Requirements, Actions,
+  Constraints, Evidence). Authored by Optise + Helix GTM Consulting under the
+  Optise EU AEO Playbook methodology.
 license: Proprietary
 metadata:
   authors: "Optise; Helix GTM Consulting"

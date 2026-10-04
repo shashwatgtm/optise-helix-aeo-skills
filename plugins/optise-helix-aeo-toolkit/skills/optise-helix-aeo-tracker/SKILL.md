@@ -1,15 +1,15 @@
 ---
 name: optise-helix-aeo-tracker
-description: Sets up weekly AEO citation tracking for a brand across 
-  ChatGPT, Perplexity, Gemini, and Claude using the proprietary Optise 
-  3-KPI rubric (Citation Rate, Prominence, Competitor Delta). Generates 
-  CSV column spec, week-1 instructions, weekly cadence checklist, and 
-  scoring formulas. Analyzes tracking data after 4+ weeks to surface 
-  working prompts, dead prompts, and recommend refreshes. Use when the 
-  user wants to track AI search citations, set up AEO measurement, 
-  analyze tracker data, or understand which prompts are converting in 
-  AI engines. Never invents historical citation data — tracking is 
-  forward-looking only. Authored by Optise + Helix GTM Consulting.
+description: >
+  Track week by week how often ChatGPT, Perplexity, Gemini and Claude cite your
+  brand, and which prompts are working. Sets up the tracking sheet (CSV
+  columns), week-1 instructions, a weekly checklist and scoring formulas, and
+  after 4 or more weeks analyzes the data to surface working prompts, dead
+  prompts and refreshes. Use when the user wants to track AI search citations,
+  set up AEO measurement, analyze tracker data, or understand which prompts are
+  converting in AI engines. Never invents historical citation data: tracking is
+  forward-looking only. Method: the Optise 3-KPI rubric (Citation Rate,
+  Prominence, Competitor Delta). Authored by Optise + Helix GTM Consulting.
 license: Proprietary
 metadata:
   authors: "Optise; Helix GTM Consulting"

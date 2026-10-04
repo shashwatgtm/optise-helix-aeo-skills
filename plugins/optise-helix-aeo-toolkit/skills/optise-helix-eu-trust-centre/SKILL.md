@@ -1,16 +1,16 @@
 ---
 name: optise-helix-eu-trust-centre
-description: Generates a complete EU Trust Centre page that answers the 8 
-  canonical EU buyer questions (GDPR compliance, data storage, residency, 
-  DPA, subprocessors, data collection and retention, third-party AI 
-  providers, security standards). Produces the full page in extractable 
-  format with BLUF, answer blocks, JSON-LD schema, and a DPA 
-  request CTA. Uses proprietary Optise answer ordering (Q1→Q2→Q3→Q8→Q4→Q5→Q6→Q7) 
-  optimized for European procurement review flows. Use whenever the user 
-  needs to draft, audit, or expand a Trust Centre page, trust portal, 
-  GDPR FAQ, security centre, or any page answering EU compliance questions. 
-  Never invents data residency, certifications, or subprocessors. Authored 
-  by Optise + Helix GTM Consulting.
+description: >
+  Write or audit a Trust Centre page that answers the 8 questions European
+  buyers ask before they buy: GDPR compliance, data storage, residency, DPA,
+  subprocessors, data collection and retention, third-party AI providers and
+  security standards. Produces the full page in an extractable format with a
+  BLUF, answer blocks, JSON-LD schema and a DPA request call to action. Use
+  whenever the user needs to draft, audit, or expand a Trust Centre page, trust
+  portal, GDPR FAQ, security centre, or any page answering EU compliance
+  questions. Never invents data residency, certifications, or subprocessors.
+  Method: Optise answer ordering (Q1, Q2, Q3, Q8, Q4, Q5, Q6, Q7) for European
+  procurement reviews. Authored by Optise + Helix GTM Consulting.
 license: Proprietary
 metadata:
   authors: "Optise; Helix GTM Consulting"

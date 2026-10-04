@@ -1,14 +1,16 @@
 ---
 name: optise-helix-prompt-pack-builder
-description: Build a 25-prompt AEO pack for a B2B company in Europe, ranked by 
-  "decides deals" likelihood across the six Optise categories (shortlist, pricing, 
-  implementation, EU privacy, integrations, role-based). Use whenever someone asks 
-  for AEO prompts, AI search prompts, ChatGPT prompts buyers use, prompt research, 
-  prompt pack, shortlist prompts, or wants to know what European B2B buyers ask AI 
-  engines about a category, including "what should we rank 
-  for in ChatGPT" or "what do buyers ask AI about us" type questions. Returns a 
-  ranked markdown table plus a top-10 build order. Authored by Optise + Helix 
-  GTM Consulting under the Optise EU AEO Playbook methodology.
+description: >
+  Build a list of 25 prompts European B2B buyers would put to ChatGPT and other
+  AI engines about your category, ranked by how likely each is to decide a deal
+  across six categories (shortlist, pricing, implementation, EU privacy,
+  integrations, role-based). Use whenever someone asks for AEO prompts, AI
+  search prompts, ChatGPT prompts buyers use, prompt research, prompt pack,
+  shortlist prompts, or wants to know what European B2B buyers ask AI engines
+  about a category, including "what should we rank for in ChatGPT" or "what do
+  buyers ask AI about us" type questions. Returns a ranked markdown table plus a
+  top-10 build order. Authored by Optise + Helix GTM Consulting under the Optise
+  EU AEO Playbook methodology.
 license: Proprietary
 metadata:
   authors: "Optise; Helix GTM Consulting"

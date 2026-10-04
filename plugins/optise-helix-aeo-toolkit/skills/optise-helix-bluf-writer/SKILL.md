@@ -1,15 +1,15 @@
 ---
 name: optise-helix-bluf-writer
-description: Writes a 40-60 word Bottom Line Up Front (BLUF) answer block for 
-  a B2B webpage that AI search engines (ChatGPT, Perplexity, Gemini, Claude) 
-  can extract and cite. Uses 6 proprietary Optise patterns matched to the 
-  buyer's prompt type, produces 3 length variants (40/50/60 words), matches 
-  the page's existing voice when a sample is provided, and flags when a 
-  prompt is too broad for a 40-60 word answer. Use whenever the user asks 
-  for a BLUF, answer block, AI-citable introduction, page opener for AEO, 
-  or needs help rewriting an existing intro to be citation-ready. Never 
-  generates marketing language or superlatives. Authored by Optise + Helix 
-  GTM Consulting.
+description: >
+  Write the 40 to 60 word answer block at the top of a B2B webpage so ChatGPT,
+  Perplexity, Gemini and Claude can quote it. Produces 3 length variants (40, 50
+  and 60 words), matches the page's existing voice when a sample is given, and
+  flags a prompt that is too broad for a short answer. Use whenever the user
+  asks for a BLUF, answer block, AI-citable introduction, page opener for AEO,
+  or needs help rewriting an existing intro to be citation-ready. Never
+  generates marketing language or superlatives. Method: 6 Optise Bottom Line Up
+  Front (BLUF) patterns matched to the buyer's prompt type. Authored by Optise +
+  Helix GTM Consulting.
 license: Proprietary
 metadata:
   authors: "Optise; Helix GTM Consulting"

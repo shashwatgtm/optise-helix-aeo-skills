@@ -1,9 +1,9 @@
-# Optise and Helix AEO and GEO Toolkit
+# AI Search Visibility (AEO/GEO): the Optise and Helix toolkit
 
 **Authors:** Optise and Helix GTM Consulting
 **Released:** April 17, 2026 (alongside the Optise EU AEO Playbook 2026 Edition)
 **License:** Proprietary, free to use (see LICENSE)
-**Version:** 1.4 (skills and plugin manifest; the shared operating principles are v1.3)
+**Version:** 1.5 (skills and plugin manifest; the shared operating principles are v1.3)
 
 Plugin page with install steps for Claude Code and Cowork, and real example outputs from each skill: https://tools.gtmhelix.com/plugins/optise-helix-aeo-toolkit/
 

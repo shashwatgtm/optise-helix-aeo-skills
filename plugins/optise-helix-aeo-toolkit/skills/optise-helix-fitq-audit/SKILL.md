@@ -1,16 +1,16 @@
 ---
 name: optise-helix-fitq-audit
-description: Audits a B2B webpage against the proprietary Optise FITq™ framework 
-  (Findability, Intent match, Trust, Quoteability) to determine AI search 
-  citation readiness for ChatGPT, Perplexity, Gemini, and Claude. Fetches the 
-  URL, analyzes rendered HTML, and returns specific fixes ranked by impact — 
-  not generic best practices. Use whenever the user asks for an AEO audit, FITq 
-  audit, AI visibility check, ChatGPT citation readiness check, or wants to 
-  know why their page isn't being cited by AI engines, including URL audit 
-  requests related to AI search visibility. Returns a 4-signal 
-  scorecard (0-100 total), top 5 fixes ranked by impact, and a before/after 
-  diff for the highest-priority fix. Authored by Optise + Helix GTM Consulting 
-  under the Optise EU AEO Playbook methodology.
+description: >
+  Find out why a B2B webpage is or is not cited by ChatGPT, Perplexity, Gemini
+  and Claude, and get the fixes ranked by impact. Fetches the URL, analyzes the
+  rendered HTML, and returns a 4-signal scorecard (0 to 100 total), the top 5
+  fixes ranked by impact and a before and after for the highest-priority fix,
+  not generic best practices. Use whenever the user asks for an AEO audit, FITq
+  audit, AI visibility check, ChatGPT citation readiness check, or wants to know
+  why their page isn't being cited by AI engines, including URL audit requests
+  related to AI search visibility. Method: the Optise FITq™ framework
+  (Findability, Intent match, Trust, Quoteability). Authored by Optise + Helix
+  GTM Consulting under the Optise EU AEO Playbook methodology.
 license: Proprietary
 metadata:
   authors: "Optise; Helix GTM Consulting"
