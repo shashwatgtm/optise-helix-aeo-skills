@@ -80,20 +80,22 @@ ALLOWED_CONTENT_TYPES = ("text/html", "application/xhtml+xml")
 MAX_BODY_BYTES = 5 * 1024 * 1024
 
 # Date heuristics, in order of reliability. The first match wins.
+# Every gap in these patterns has an upper bound, so a hostile page (a long run of spaces or of unclosed tags) cannot make a
+# search run for minutes (run 24: a page of 200,000 characters is searched in well under a second).
 DATE_PATTERNS = [
     # ISO datetime in <time datetime="..."> tags — most reliable
-    (r'<time[^>]*datetime="([^"]+)"', "time-datetime-attr"),
+    (r'<time[^>]{0,300}datetime="([^"]{1,100})"', "time-datetime-attr"),
     # "Last updated: YYYY-MM-DD" or "Updated YYYY-MM-DD"
-    (r'(?:last\s*updated|updated\s*on?|last\s*reviewed)\s*[:\-]?\s*'
+    (r'(?:last\s{0,20}updated|updated\s{0,20}on?|last\s{0,20}reviewed)\s{0,20}[:\-]?\s{0,20}'
      r'(\d{4}-\d{2}-\d{2})', "last-updated-iso"),
     # "Last updated: Month DD, YYYY"
-    (r'(?:last\s*updated|updated\s*on?|last\s*reviewed)\s*[:\-]?\s*'
-     r'((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2},?\s+\d{4})',
+    (r'(?:last\s{0,20}updated|updated\s{0,20}on?|last\s{0,20}reviewed)\s{0,20}[:\-]?\s{0,20}'
+     r'((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w{0,12}\s{1,20}\d{1,2},?\s{1,20}\d{4})',
      "last-updated-month"),
     # JSON-LD dateModified field
-    (r'"dateModified"\s*:\s*"([^"]+)"', "jsonld-datemodified"),
+    (r'"dateModified"\s{0,20}:\s{0,20}"([^"]{1,100})"', "jsonld-datemodified"),
     # Open Graph article:modified_time
-    (r'<meta[^>]+property="article:modified_time"[^>]+content="([^"]+)"',
+    (r'<meta[^>]{1,500}property="article:modified_time"[^>]{1,500}content="([^"]{1,100})"',
      "og-modified-time"),
 ]
 
@@ -447,10 +449,40 @@ def count_quoteability_features(html):
     }
 
 
+# Longest tag attribute run and longest heading text the heading parser accepts. Anything longer is not a heading.
+MAX_TAG_ATTRIBUTES = 1000
+MAX_HEADING_CHARS = 2000
+
+
+def _tag_blocks(html, tag):
+    """Text between <tag ...> and the next </tag>, for every opening that has both within the bounds above.
+    Same answers as re.findall(r'<tag[^>]*>(.*?)</tag>', html, re.DOTALL) on an ordinary page, but each search looks at
+    a bounded stretch with str.find, so an opening with no closing tag costs at most a few thousand characters (run 24)."""
+    opening, closing = "<" + tag, "</" + tag + ">"
+    found = []
+    pos = 0
+    while True:
+        i = html.find(opening, pos)
+        if i < 0:
+            break
+        start = i + len(opening)
+        gt = html.find(">", start, start + MAX_TAG_ATTRIBUTES + 1)
+        if gt < 0:
+            pos = start
+            continue
+        end = html.find(closing, gt + 1, gt + 1 + MAX_HEADING_CHARS + len(closing))
+        if end < 0:
+            pos = start
+            continue
+        found.append(html[gt + 1:end])
+        pos = end + len(closing)
+    return found
+
+
 def extract_headings(html):
     """Extract H1 and H2 text content."""
-    h1_matches = re.findall(r'<h1[^>]*>(.*?)</h1>', html, re.DOTALL)
-    h2_matches = re.findall(r'<h2[^>]*>(.*?)</h2>', html, re.DOTALL)
+    h1_matches = _tag_blocks(html, "h1")
+    h2_matches = _tag_blocks(html, "h2")
     h1_text = [re.sub(r'<[^>]+>', '', h).strip() for h in h1_matches]
     h2_text = [re.sub(r'<[^>]+>', '', h).strip() for h in h2_matches]
     return {"h1": h1_text, "h2": h2_text}

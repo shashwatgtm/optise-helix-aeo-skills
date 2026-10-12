@@ -17,6 +17,7 @@ import json
 import os
 import socket
 import ssl
+import subprocess
 import sys
 import unittest
 from contextlib import redirect_stdout
@@ -601,6 +602,99 @@ class TestCommandLine(FetchTestCase):
         data = json.loads(output)
         self.assertEqual(data["fetch_status"], "ok")
         self.assertNotIn("_raw_html", data)
+
+
+class TestHostilePagesStayFast(unittest.TestCase):
+    """Run 24: a hostile or broken page must not stall the audit. Each case runs in its own process
+    and has to finish its parse in under one second; a runaway pattern is killed after six seconds and the test fails."""
+
+    HERE = os.path.dirname(os.path.abspath(__file__))
+    LIMIT_SECONDS = 1.0
+    KILL_SECONDS = 6
+
+    def _seconds(self, build, call):
+        code = (
+            "import sys, time\n"
+            f"sys.path.insert(0, {self.HERE!r})\n"
+            "import fetch_page\n"
+            f"page = {build}\n"
+            "assert 20000 <= len(page) <= 400000, len(page)\n"
+            "t = time.perf_counter()\n"
+            f"result = {call}\n"
+            "print(time.perf_counter() - t)\n"
+        )
+        try:
+            done = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=self.KILL_SECONDS)
+        except subprocess.TimeoutExpired:
+            self.fail(f"{call} on {build} took more than {self.KILL_SECONDS} seconds (killed)")
+        self.assertEqual(done.returncode, 0, done.stderr[-500:])
+        return float(done.stdout.strip().splitlines()[-1])
+
+    def _assert_fast(self, build, call):
+        seconds = self._seconds(build, call)
+        self.assertLess(seconds, self.LIMIT_SECONDS, f"{call} on {build} took {seconds:.2f} seconds")
+
+    def test_unclosed_h1_200k(self):
+        self._assert_fast('"<h1>" * 50000', "fetch_page.extract_headings(page)")
+
+    def test_unclosed_h2_200k(self):
+        self._assert_fast('"<h2>" * 50000', "fetch_page.extract_headings(page)")
+
+    def test_h1_opening_without_closing_bracket_200k(self):
+        self._assert_fast('"<h1" * 66666', "fetch_page.extract_headings(page)")
+
+    def test_last_updated_then_20000_spaces(self):
+        self._assert_fast('"Last updated" + " " * 20000', "fetch_page.detect_last_updated(page)")
+
+    def test_last_updated_then_200000_spaces(self):
+        self._assert_fast('"Last updated" + " " * 200000', "fetch_page.detect_last_updated(page)")
+
+    def test_updated_on_then_spaces_and_a_month(self):
+        self._assert_fast('"Updated on" + " " * 100000 + "Jan" + " " * 100000', "fetch_page.detect_last_updated(page)")
+
+    def test_unclosed_time_tags_200k(self):
+        self._assert_fast('"<time" * 40000', "fetch_page.detect_last_updated(page)")
+
+    def test_unclosed_meta_tags_200k(self):
+        self._assert_fast('"<meta " * 33333', "fetch_page.detect_last_updated(page)")
+
+
+class TestHeadingsAndDatesStillWork(unittest.TestCase):
+    """Run 24: the bounded patterns give the same answers on ordinary pages."""
+
+    def test_headings_with_attributes_and_nested_tags(self):
+        html = ('<h1 class="t" data-x="1">Main <em>title</em></h1><p>x</p>'
+                '<h2>First</h2><h2 id="b">Second\n line</h2><h3>No</h3>')
+        self.assertEqual(fetch_page.extract_headings(html),
+                         {"h1": ["Main title"], "h2": ["First", "Second\n line"]})
+
+    def test_unclosed_heading_followed_by_a_closed_one(self):
+        # same answer as the unbounded pattern gave: the first closing tag ends the first opening
+        self.assertEqual(fetch_page.extract_headings("<h1>Lost <h1>Kept</h1>")["h1"], ["Lost Kept"])
+
+    def test_no_headings(self):
+        self.assertEqual(fetch_page.extract_headings("<p>none</p>"), {"h1": [], "h2": []})
+
+    def test_last_updated_iso(self):
+        r = fetch_page.detect_last_updated("<p>Last updated: 2026-01-05</p>")
+        self.assertEqual((r["found"], r["raw_value"], r["source"]), (True, "2026-01-05", "last-updated-iso"))
+
+    def test_last_updated_with_newline_and_dash(self):
+        r = fetch_page.detect_last_updated("Last\n  reviewed -\n 2025-12-31")
+        self.assertEqual((r["raw_value"], r["source"]), ("2025-12-31", "last-updated-iso"))
+
+    def test_updated_on_month_name(self):
+        r = fetch_page.detect_last_updated("Updated on March 3, 2026")
+        self.assertEqual((r["raw_value"], r["source"]), ("March 3, 2026", "last-updated-month"))
+
+    def test_time_tag_and_jsonld_and_og(self):
+        self.assertEqual(fetch_page.detect_last_updated('<time class="d" datetime="2026-02-01T10:00:00Z">')["source"], "time-datetime-attr")
+        self.assertEqual(fetch_page.detect_last_updated('{"dateModified": "2026-02-02"}')["source"], "jsonld-datemodified")
+        og = '<meta data-a="1" property="article:modified_time" content="2026-02-03T00:00:00Z">'
+        self.assertEqual(fetch_page.detect_last_updated(og)["source"], "og-modified-time")
+
+    def test_nothing_found(self):
+        self.assertEqual(fetch_page.detect_last_updated("<p>hello</p>"), {"found": False, "raw_value": None, "source": None})
 
 
 if __name__ == "__main__":
