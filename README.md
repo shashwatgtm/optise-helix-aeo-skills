@@ -5,7 +5,7 @@
 **License:** Proprietary, free to use (see LICENSE)
 **Version:** 1.5 (skills and plugin manifest; the shared operating principles are v1.3)
 
-Plugin page with install steps for Claude Code and Cowork, and real example outputs from each skill: https://tools.gtmhelix.com/plugins/optise-helix-aeo-toolkit/
+Plugin page with install steps for Claude Code and Cowork: https://tools.gtmhelix.com/plugins/optise-helix-aeo-toolkit/
 
 A toolkit of 6 Claude Skills for AEO and GEO (answer engine optimisation and generative engine optimisation). It helps B2B teams selling into Europe make their websites visible, citable, and evaluable to AI search engines (ChatGPT, Perplexity, Gemini, Claude) and AI agents doing buyer evaluation.
 
