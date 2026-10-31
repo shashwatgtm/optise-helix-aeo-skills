@@ -1,0 +1,26 @@
+{
+  "repo": "optise-helix-aeo-skills",
+  "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-aeo-tracker/SKILL.md",
+  "commit": "ec239fa04df62fcdb0fd9bb79a3d20f6dfd4c26e",
+  "source_sha256": "1956db4e1d62868e05e4e410cb2dc8325587305780ba6520e73ede9f43c02bbb",
+  "sha": "80b2873041f125b4883c9abfdac59fc7d40fd0d1",
+  "name": "optise-helix-aeo-tracker",
+  "references": [
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-aeo-tracker/references/anti-hallucination-base.md",
+      "sha256": "01a42dc27e301d9b3ab303c973de68ebb80151792cf092e9b992804c5d13f85d"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-aeo-tracker/references/personas.md",
+      "sha256": "d382dc30976bb088a8e0150d1e29117f3b2d34139c17eba8993c69963318cd09"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-aeo-tracker/references/prompt-categories.md",
+      "sha256": "df72116226afd32ae4b585a0cbd74302747e5b6a746e491691fc02f44f80e7ce"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-aeo-tracker/references/tracker-rubric.md",
+      "sha256": "e1631aa74987edc975b7c64d4b0b28b54f860497d429d812ef17a3357120d688"
+    }
+  ]
+}

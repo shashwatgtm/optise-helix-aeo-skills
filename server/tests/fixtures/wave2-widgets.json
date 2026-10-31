@@ -1,0 +1,254 @@
+{
+  "aeo_tracker": {
+    "normal": {
+      "tracker_id": "tracker-a",
+      "setup_date": "2026-10-01",
+      "as_of": "2026-10-31",
+      "prompts": [
+        {
+          "id": "P1",
+          "text": "How should a team compare workflow options?",
+          "category": "Shortlist"
+        }
+      ],
+      "competitor_ids": [
+        "Alternative A",
+        "Alternative B"
+      ],
+      "observations": [
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-05",
+          "engine": "ChatGPT",
+          "mentioned": true,
+          "cited_with_link": true,
+          "prominence": 1,
+          "competitor_mentions": [
+            true,
+            true
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-05",
+          "engine": "Perplexity",
+          "mentioned": true,
+          "cited_with_link": false,
+          "prominence": 2,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-05",
+          "engine": "Gemini",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-05",
+          "engine": "Claude",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-12",
+          "engine": "ChatGPT",
+          "mentioned": true,
+          "cited_with_link": true,
+          "prominence": 1,
+          "competitor_mentions": [
+            true,
+            true
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-12",
+          "engine": "Perplexity",
+          "mentioned": true,
+          "cited_with_link": false,
+          "prominence": 2,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-12",
+          "engine": "Gemini",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-12",
+          "engine": "Claude",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-19",
+          "engine": "ChatGPT",
+          "mentioned": true,
+          "cited_with_link": true,
+          "prominence": 1,
+          "competitor_mentions": [
+            true,
+            true
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-19",
+          "engine": "Perplexity",
+          "mentioned": true,
+          "cited_with_link": false,
+          "prominence": 2,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-19",
+          "engine": "Gemini",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-19",
+          "engine": "Claude",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-26",
+          "engine": "ChatGPT",
+          "mentioned": true,
+          "cited_with_link": true,
+          "prominence": 1,
+          "competitor_mentions": [
+            true,
+            true
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-26",
+          "engine": "Perplexity",
+          "mentioned": true,
+          "cited_with_link": false,
+          "prominence": 2,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-26",
+          "engine": "Gemini",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        },
+        {
+          "prompt_id": "P1",
+          "prompt_text": "How should a team compare workflow options?",
+          "week": "2026-10-26",
+          "engine": "Claude",
+          "mentioned": false,
+          "cited_with_link": false,
+          "competitor_mentions": [
+            true,
+            false
+          ],
+          "answer_excerpt": "A supplied answer excerpt for measurement."
+        }
+      ]
+    },
+    "weak": {
+      "tracker_id": "tracker-a",
+      "setup_date": "2026-10-01",
+      "as_of": "2026-10-31",
+      "prompts": [
+        {
+          "id": "P1",
+          "text": "How should a team compare workflow options?",
+          "category": "Shortlist"
+        }
+      ],
+      "competitor_ids": [
+        "Alternative A"
+      ],
+      "observations": []
+    }
+  }
+}
