@@ -1,0 +1,38 @@
+{
+  "repo": "optise-helix-aeo-skills",
+  "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/SKILL.md",
+  "commit": "ec239fa04df62fcdb0fd9bb79a3d20f6dfd4c26e",
+  "source_sha256": "29d497c0ca99b1a04e622161e40673aa08e65de0af275dcc401a0473ccb582f7",
+  "sha": "6be6477794af776ceec1ee124624b2e3e7b7e3a1",
+  "name": "optise-helix-race-audit",
+  "references": [
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/references/anti-hallucination-base.md",
+      "sha256": "01a42dc27e301d9b3ab303c973de68ebb80151792cf092e9b992804c5d13f85d"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/references/eu-buyer-language.md",
+      "sha256": "227bb65b4ce8ac052c02fb79ff26d7c1a8fc42397ac29d633d9fd863ca2ed816"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/references/not-ideal-for-templates.md",
+      "sha256": "79cdcdec8de98d606a6dd0d39f63f285d317ef36a960cf742290d0c38124c898"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/references/personas.md",
+      "sha256": "d382dc30976bb088a8e0150d1e29117f3b2d34139c17eba8993c69963318cd09"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/references/race-rubric.md",
+      "sha256": "06eb010698146118ac69e607ca7370399fc12069cff5b3f6b6d5ced09d63ef1b"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/scripts/fetch_page.py",
+      "sha256": "f06fd65042a1aaad6556cc9c7c5ff59758a1b36f0a14d6e1410e2508c8712caf"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/scripts/test_fetch_page.py",
+      "sha256": "2e26c7acebf50d4cb55fd929437c236e1aa797c0582601b2c456b12b44023220"
+    }
+  ]
+}

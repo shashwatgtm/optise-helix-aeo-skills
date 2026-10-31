@@ -274,5 +274,76 @@
       "as_of": "2026-10-31",
       "html": "<html><body><script>loadContent()</script></body></html>"
     }
+  },
+  "race_html_audit": {
+    "normal": {
+      "as_of": "2026-10-31",
+      "page_type": "implementation",
+      "html": "<main><h1>Implementation</h1><h2>Prerequisites</h2><ul><li>You need an owner and an input file.</li></ul><p>Set aside one hour.</p><h2>Steps</h2><ol><li>The owner imports the file.</li><li>Done means the review is signed.</li></ol><h2>Not ideal for</h2><p>Offline-only teams need a local workflow. Teams without an owner need ownership first. Unsupported file formats require conversion.</p></main>",
+      "assessments": [
+        {
+          "criterion": "explicit_requirements",
+          "state": "yes",
+          "quote": "You need an owner and an input file."
+        },
+        {
+          "criterion": "requirements_structured",
+          "state": "yes",
+          "quote": "You need an owner and an input file."
+        },
+        {
+          "criterion": "time_investment",
+          "state": "yes",
+          "quote": "Set aside one hour."
+        },
+        {
+          "criterion": "roles_needed",
+          "state": "yes",
+          "quote": "an owner"
+        },
+        {
+          "criterion": "sequenced_process",
+          "state": "yes",
+          "quote": "The owner imports the file."
+        },
+        {
+          "criterion": "step_owners",
+          "state": "yes",
+          "quote": "The owner imports the file."
+        },
+        {
+          "criterion": "done_state",
+          "state": "yes",
+          "quote": "Done means the review is signed."
+        },
+        {
+          "criterion": "not_ideal_section",
+          "state": "yes",
+          "quote": "Not ideal for"
+        }
+      ],
+      "constraints": [
+        {
+          "quote": "Offline-only teams need a local workflow.",
+          "buyer_type": "offline-only teams",
+          "reason": "local workflow required"
+        },
+        {
+          "quote": "Teams without an owner need ownership first.",
+          "buyer_type": "no owner",
+          "reason": "ownership required"
+        },
+        {
+          "quote": "Unsupported file formats require conversion.",
+          "buyer_type": "unsupported formats",
+          "reason": "conversion required"
+        }
+      ]
+    },
+    "weak": {
+      "as_of": "2026-10-31",
+      "html": "<main><p>Get started.</p></main>",
+      "page_type": "product"
+    }
   }
 }
