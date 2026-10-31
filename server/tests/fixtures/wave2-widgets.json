@@ -250,5 +250,29 @@
       ],
       "observations": []
     }
+  },
+  "fitq_html_audit": {
+    "normal": {
+      "as_of": "2026-10-31",
+      "url": "https://example.invalid/page",
+      "target_prompt": "How does the process work?",
+      "html": "<html><head><link rel=\"canonical\" href=\"https://example.invalid/page\"><script type=\"application/ld+json\">{\"@type\":\"Article\"}</script></head><body><main><h1>How does the process work?</h1><p>The process has three stages.</p><p>Updated on <time datetime=\"2026-10-01\">2026-10-01</time></p><a rel=\"author\">Reviewer</a><h2>What comes next?</h2><p>Review the supplied evidence.</p></main></body></html>",
+      "assessments": [
+        {
+          "criterion": "bluf_first100",
+          "state": "yes",
+          "quote": "The process has three stages."
+        },
+        {
+          "criterion": "single_topic",
+          "state": "yes",
+          "quote": "The process has three stages."
+        }
+      ]
+    },
+    "weak": {
+      "as_of": "2026-10-31",
+      "html": "<html><body><script>loadContent()</script></body></html>"
+    }
   }
 }

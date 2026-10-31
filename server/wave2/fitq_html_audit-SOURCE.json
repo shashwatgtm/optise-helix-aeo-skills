@@ -1,0 +1,38 @@
+{
+  "repo": "optise-helix-aeo-skills",
+  "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/SKILL.md",
+  "commit": "ec239fa04df62fcdb0fd9bb79a3d20f6dfd4c26e",
+  "source_sha256": "108e4016d5b62e1f58858378c398f6b2e8b9c1ac820c883000d0cb1ef1b3333c",
+  "sha": "1e3eab2eb26a36260c21646ce747b623b5d00fb0",
+  "name": "optise-helix-fitq-audit",
+  "references": [
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/references/anti-hallucination-base.md",
+      "sha256": "01a42dc27e301d9b3ab303c973de68ebb80151792cf092e9b992804c5d13f85d"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/references/common-fixes.md",
+      "sha256": "7feb3ef0520a64773a0ad954e49bfae30b7f2f82d1662e314a8f61858ff9f324"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/references/eu-buyer-language.md",
+      "sha256": "227bb65b4ce8ac052c02fb79ff26d7c1a8fc42397ac29d633d9fd863ca2ed816"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/references/fitq-rubric.md",
+      "sha256": "3be4a4976dfaffd79341fc3982a8ff50dd0046beae229b4c53eef5f777119b50"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/references/personas.md",
+      "sha256": "d382dc30976bb088a8e0150d1e29117f3b2d34139c17eba8993c69963318cd09"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/scripts/fetch_page.py",
+      "sha256": "f06fd65042a1aaad6556cc9c7c5ff59758a1b36f0a14d6e1410e2508c8712caf"
+    },
+    {
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/scripts/test_fetch_page.py",
+      "sha256": "2e26c7acebf50d4cb55fd929437c236e1aa797c0582601b2c456b12b44023220"
+    }
+  ]
+}
