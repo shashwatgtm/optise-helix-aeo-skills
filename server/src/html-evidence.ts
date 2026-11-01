@@ -19,3 +19,7 @@ export function htmlEvidence(html:string,asOf:string,url?:string){if(url&&!safeU
 }
 export function assessments(rows:Row[],e:ReturnType<typeof htmlEvidence>){requireUnique(rows,'criterion');const result=new Map<string,Row>();for(const r of rows){if(r.state==='yes'&&(!r.quote?.trim()||!e.body.toLowerCase().includes(normalize(r.quote).toLowerCase())))throw new Error('A positive assessment needs a quote present in the supplied visible HTML.');result.set(r.criterion,r);}return result;}
 export const grade=(score:number)=>score>=90?'A':score>=75?'B':score>=60?'C':score>=40?'D':'F';
+
+export function coverageSummary(criteria:string[],review:Map<string,Row>,external:string[]) {
+ return {observed:criteria.filter(k=>review.has(k)&&review.get(k)?.state!=='unknown').map(k=>({criterion:k,state:review.get(k)!.state,quote:review.get(k)!.quote||'',basis:'Supplied reviewer assessment; not independently verified'})),unknown:criteria.filter(k=>!review.has(k)||review.get(k)?.state==='unknown'),externallyUntested:external,pointsScope:'Points describe supplied HTML structure and quoted reviewer assessments only. Unknown and external checks are not verified; this is a partial rubric, not a complete quality grade.'};
+}
