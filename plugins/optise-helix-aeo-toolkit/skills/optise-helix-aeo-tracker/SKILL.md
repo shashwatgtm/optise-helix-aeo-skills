@@ -16,6 +16,11 @@ metadata:
   version: "1.4.0"
 ---
 
+## Required region and industry context
+
+Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Use the user's own selling market, the matching country, vertical and subtype, with sourced conditions. Keep multiple markets separate. If the region or country is missing, ask the short question in that reference and omit unsupported jurisdiction advice. Never infer a market from a competitor, company name, quote or negated place. Preserve existing evidence limits, refusals and calculations.
+
+
 # Optise–Helix AEO Tracker
 
 A skill that sets up weekly AEO citation tracking for a brand across 4 AI engines (ChatGPT, Perplexity, Gemini, Claude) using the Optise 3-KPI rubric and analyzes tracking data to surface working vs dead prompts.
