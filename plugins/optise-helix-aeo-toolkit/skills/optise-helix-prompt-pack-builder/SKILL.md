@@ -17,6 +17,11 @@ metadata:
   version: "1.4.0"
 ---
 
+## Required region and industry context
+
+Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Use the user's own selling market, the matching country, vertical and subtype, with sourced conditions. Keep multiple markets separate. If the region or country is missing, ask the short question in that reference and omit unsupported jurisdiction advice. Never infer a market from a competitor, company name, quote or negated place. Preserve existing evidence limits, refusals and calculations.
+
+
 # Optise–Helix Prompt Pack Builder
 
 A skill that produces a defensible 25-prompt AEO pack for a B2B company in Europe, ranked by how directly each prompt converts to pipeline. Uses the proprietary Optise 6-category prompt taxonomy and the Helix GTM build-order discipline.
