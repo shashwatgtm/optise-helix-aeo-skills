@@ -17,7 +17,7 @@ Draft for owner review. Use this reference on every invocation before applying s
 
 India: IN. Southeast Asia: read the exact countries in that section. Middle East: read the exact countries in that section. UK: GB. Western Europe: EU membership is listed per country. North America: country and state scopes remain separate.
 
-Data SHA256: 0aced487a60275f9f99305cc012ca3620e287acc8689f71aae39b4fd097a2107
+Data SHA256: 32f2bd844f6ef72fa2909a21e2b36a9f877070a0dcc69252de4863823f85b100
 
 ## Taxonomy
 
@@ -95,8 +95,9 @@ Source I:IN-RBI-OUTSOURCE: Reserve Bank of India (Commercial Banks: Managing Ris
 proof | scope IN | question: Ask the bank to confirm whether the proposed IT service is material outsourcing and which risk review and approval evidence it requires.
 Applies only: For the proposed bank service only.
 
-### vertical-saas | inherited | inherits defaults
-Reviewed: no validated sector override beyond the country defaults. This is not a finding that no sector law applies.
+### vertical-saas | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### ai-native | specific | inherits defaults
 Inherit applicable parent notes, then add only the sourced country and activity specific notes below.
@@ -130,29 +131,37 @@ proof | scope IN | operating: Ask for a demonstration of relevant event logs, re
 Applies only: Only where the customer and service fall within the directions; this is suggested evidence, not a compliance certificate.
 Source I:IN-CERT: Frequently Asked Questions on Cyber Security Directions of 28 April 2022 <https://www.cert-in.org.in/PDF/FAQs_on_CyberSecurityDirections_May2022.pdf>. Checked 2026-11-03. FAQ publication date confirmed by PIB release of 18 May 2022. Read with directions; do not infer that every incident or every security product is within each provision.
 
-### software | inherited | inherits defaults
-Reviewed: no validated sector override beyond the country defaults. This is not a finding that no sector law applies.
+### software | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### saas | inherited | inherits defaults
-Reviewed: no validated sector override beyond the country defaults. This is not a finding that no sector law applies.
+### saas | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### freight-visibility | inherited | inherits logistics-tech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### freight-visibility | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### freight-marketplace | inherited | inherits logistics-tech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### freight-marketplace | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### seller-shipping | inherited | inherits logistics-tech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### seller-shipping | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### last-mile | inherited | inherits logistics-tech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### last-mile | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### warehousing | inherited | inherits logistics-tech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### warehousing | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### transport-management | inherited | inherits logistics-tech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### transport-management | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### payments-banking | specific | inherits fintech
 Inherit applicable parent notes, then add only the sourced country and activity specific notes below.
@@ -161,8 +170,9 @@ sector_regulator | scope IN | legal: India: the Payment and Settlement Systems A
 Applies only: For operating a payment system in the Act's scope. IFSC activities require the separate statutory boundary check.
 Source I:IN-PSS: Payment and Settlement Systems Act, 2007 <https://financialservices.gov.in/sites/default/files/Act-Policies/2026-01/Payment-and-Settlement-Systems-Act_2007.pdf>. Checked 2026-11-03. Check statutory exceptions and IFSC scope. Does not establish that selling payment software is operating a payment system.
 
-### core-banking | inherited | inherits fintech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### core-banking | waiting_for_source | inherits fintech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### lending | waiting_for_source | inherits fintech
 Keep the parent notes only within their scope. Do not extend commercial bank directions to every lender.
@@ -175,8 +185,9 @@ sector_regulator | scope IN | legal: India: SEBI lists distinct regulations for 
 Applies only: For securities activity within SEBI scope. A software vendor is not automatically a licensed financial intermediary.
 Source I:IN-SEBI: Updated list of SEBI regulations <https://sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=2&smid=0&ssid=3>. Checked 2026-11-03. Live index has no single publication date. Identifies instruments only; does not validate licensing requirements or every underlying rule.
 
-### spend-expense | inherited | inherits fintech
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### spend-expense | waiting_for_source | inherits fintech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### insurance | specific | inherits fintech
 Inherit applicable parent notes, then add only the sourced country and activity specific notes below.
@@ -185,62 +196,81 @@ sector_regulator | scope IN | legal: India: the Insurance Regulatory and Develop
 Applies only: For insurance activities in scope; check the IFSC exclusion and the current product specific instrument.
 Source I:IN-IRDAI: Insurance Regulatory and Development Authority Act, 1999 <https://www.indiacode.nic.in/bitstream/123456789/1893/1/A1999_41.pdf>. Checked 2026-11-03. Used only for regulator boundary. Product specific current regulations require separate checks.
 
-### customer-service | inherited | inherits saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### customer-service | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### crm-marketing | inherited | inherits saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### crm-marketing | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### collaboration | inherited | inherits saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### collaboration | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### product-growth | inherited | inherits saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### product-growth | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### construction | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### construction | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### property-management | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### property-management | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### field-services | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### field-services | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### fmcg-retail-execution | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### fmcg-retail-execution | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### industry-hr-payroll | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### industry-hr-payroll | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### hotel-lodging | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### hotel-lodging | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### retail-restaurant-ops | inherited | inherits vertical-saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### retail-restaurant-ops | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### agents-copilots | inherited | inherits ai-native
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### agents-copilots | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### voice-language-models | inherited | inherits ai-native
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### voice-language-models | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### enterprise-search | inherited | inherits ai-native
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### enterprise-search | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### it-services | inherited | inherits ites
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### it-services | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### bpo-cx | inherited | inherits ites
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### bpo-cx | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### digital-engineering | inherited | inherits ites
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### digital-engineering | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### data-services | inherited | inherits ites
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### data-services | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### operators-connectivity | inherited | inherits telecom
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### operators-connectivity | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### cpaas-messaging | specific | inherits telecom
 Inherit applicable parent notes, then add only the sourced country and activity specific notes below.
@@ -249,84 +279,109 @@ sector_regulator | scope IN | legal: India: TRAI's Telecom Commercial Communicat
 Applies only: For commercial communications within the telecom framework; verify the current consolidated rules and amendments.
 Source I:IN-TRAI: TRAI strengthens consumer protection with amendments to TCCCPR, 2018 <https://www.pib.gov.in/PressReleasePage.aspx?PRID=2102413&lang=2&reg=48>. Checked 2026-11-03. Announcement rather than consolidated regulations. No detailed number series or timing requirement asserted.
 
-### telecom-software | inherited | inherits telecom
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### telecom-software | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### business-voice-ucaas | inherited | inherits telecom
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### business-voice-ucaas | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### developer-platform | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### developer-platform | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### data-infrastructure | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### data-infrastructure | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### observability | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### observability | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### testing | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### testing | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### dev-tools | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### dev-tools | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### cloud-security | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### cloud-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### identity-security | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### identity-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### email-security | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### email-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### awareness-training | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### awareness-training | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### appsec | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### appsec | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### mobile-appsec | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### mobile-appsec | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### soc-services | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### soc-services | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### endpoint-network | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### endpoint-network | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### document-ai | inherited | inherits ai-native
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### document-ai | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### ai-video | inherited | inherits ai-native
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### ai-video | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### engineering-talent | inherited | inherits ites
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### engineering-talent | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### product-management | inherited | inherits saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### product-management | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### digital-adoption | inherited | inherits saas
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### digital-adoption | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### pentest | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### pentest | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### attack-surface-dast | inherited | inherits cybersecurity
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### attack-surface-dast | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### process-orchestration | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### process-orchestration | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### open-source-support | inherited | inherits software
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### open-source-support | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### iot-connectivity | inherited | inherits telecom
-Reviewed: no validated country difference beyond the parent cell for this subtype. Inherit the parent; this is not a finding that no additional law applies.
+### iot-connectivity | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: India: check I:IN-DPDP, I:IN-RBI-OUTSOURCE, I:IN-PSS, I:IN-IRDAI, I:IN-SEBI, I:IN-CERT, I:IN-DOT, I:IN-TRAI, I:IN-EWB, I:IN-AI, I:IN-OSP against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ## Southeast Asia
 
-Draft for owner review. Country notes currently cover Singapore, Indonesia, Malaysia, Thailand, Viet Nam and the Philippines to the extent sourced below. They do not establish complete legal coverage. Brunei, Cambodia, Laos, Myanmar and Timor Leste are recognised but await country sources. A broad regional request needs a country before country law can be selected. Questions do not assert local buying habits.
+Draft for owner review. Every listed country has at least one sourced topic, but legal and industry coverage is incomplete. Privacy notes currently cover Singapore, Indonesia, Malaysia, Thailand, Viet Nam, the Philippines and Brunei. Cambodia, Laos, Myanmar and Timor Leste have only limited financial sector source notes. A broad regional request needs a country before country law can be selected. Questions do not assert local buying habits.
 Countries: SG = Singapore; ID = Indonesia; MY = Malaysia; TH = Thailand; VN = Viet Nam; PH = Philippines; BN = Brunei; KH = Cambodia; LA = Laos; MM = Myanmar; TL = Timor Leste
 Clues, only in selling context: {"aliases":["Southeast Asia","South East Asia"],"countries":[{"code":"SG","name":"Singapore","aliases":[],"cities":[],"currencies":["SGD","Singapore dollar"],"regulators":["Monetary Authority of Singapore"]},{"code":"ID","name":"Indonesia","aliases":[],"cities":["Jakarta","Surabaya"],"currencies":["IDR","Indonesian rupiah"],"regulators":["Bank Indonesia","Otoritas Jasa Keuangan"]},{"code":"MY","name":"Malaysia","aliases":[],"cities":["Kuala Lumpur"],"currencies":["MYR","Malaysian ringgit"],"regulators":["Bank Negara Malaysia"]},{"code":"TH","name":"Thailand","aliases":[],"cities":["Bangkok"],"currencies":["THB","Thai baht"],"regulators":["Bank of Thailand"]},{"code":"VN","name":"Viet Nam","aliases":["Vietnam"],"cities":["Hanoi","Ho Chi Minh City"],"currencies":["VND","Vietnamese dong"],"regulators":[]},{"code":"PH","name":"Philippines","aliases":["the Philippines"],"cities":["Manila","Cebu"],"currencies":["PHP","Philippine peso"],"regulators":["Bangko Sentral ng Pilipinas"]},{"code":"BN","name":"Brunei","aliases":["Brunei Darussalam"],"cities":["Bandar Seri Begawan"],"currencies":["BND"],"regulators":[]},{"code":"KH","name":"Cambodia","aliases":[],"cities":["Phnom Penh"],"currencies":["KHR"],"regulators":[]},{"code":"LA","name":"Laos","aliases":["Lao PDR"],"cities":["Vientiane"],"currencies":["LAK"],"regulators":[]},{"code":"MM","name":"Myanmar","aliases":[],"cities":["Yangon","Naypyidaw"],"currencies":["MMK"],"regulators":[]},{"code":"TL","name":"Timor Leste","aliases":["Timor-Leste","East Timor"],"cities":["Dili"],"currencies":[],"regulators":[]}]}
 
@@ -359,6 +414,11 @@ Source I:TH-PDPA: Personal Data Protection Act B.E. 2562 (2019) <https://mdes.go
 data_privacy | scope VN | legal: Viet Nam: the Law on Personal Data Protection took effect on 1 January 2026. Review the current law and implementing rules before finalising data handling terms.
 Applies only: For processing in scope of the Vietnamese regime. An older decree alone is not a complete current review.
 Source I:VN-PDP: Presidential Office announces new laws <https://en.baochinhphu.vn/presidential-office-announces-18-new-laws-111250711204559004.htm>. Checked 2026-11-03. Announcement used for commencement only. No penalties or detailed transfer rules reproduced.
+
+data_privacy | scope BN | legal: Brunei's Personal Data Protection Order 2025 has commenced its organisation obligations. Confirm the entity's role and section 3 exceptions, then identify the person responsible for compliance and the data processing safeguards.
+Applies only: Organisation and processing within the Order's scope; public agencies and processors have different treatment
+Source I:BN-PDP: Personal Data Protection Order 2025 <https://pdp.aiti.gov.bn/media/tndpduml/s-1_2025-e.pdf>. Checked 2026-11-03. Read with commencement notification S 11 of 2025. Private organisation obligations must not be transferred wholesale to public agencies or data processors.
+Source I:BN-PDP-COMMENCEMENT: Personal Data Protection Order 2025 notification S 11 <https://www.agc.gov.bn/wp-content/uploads/2026/07/S-11-2025-PERSONAL-DATA-PROTECTION-ORDER-2025-NOTIFICATION-OF-COMMENCEMENT-1.pdf>. Checked 2026-11-03. Notification dated 8 January 2025; URL upload date is not enactment date. Other parts commenced under S 10.
 
 buyer_language | scope COMMON | question: Which languages do the buying team, users and required notices need?
 
@@ -403,8 +463,29 @@ sector_regulator | scope TH | legal: Thailand: the Bank of Thailand supervises f
 Applies only: Only for the Bank of Thailand's actual supervisory scope.
 Source I:TH-BOT: Our Roles <https://www.bot.or.th/en/our-roles.html>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Does not establish oversight of every finance or insurance business.
 
-### vertical-saas | inherited | inherits defaults
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+sector_regulator | scope BN | legal: For Brunei financial services, identify the BDCB category covering the buyer and activity. Banking, finance providers, payments, insurance and capital markets use separate regulatory requirements.
+Applies only: Activity within Brunei Darussalam Central Bank's regulatory remit
+Source I:BN-BDCB: Regulatory sectors and instruments <https://www.bdcb.gov.bn/regulatory>. Checked 2026-11-03. Undated official current index. It establishes categories, not a licence conclusion for a particular product.
+
+sector_regulator | scope KH | legal: For a Cambodia banking or financial institution supervised by the National Bank of Cambodia, confirm its regulated category. The NBC supervision framework distinguishes banks, microfinance, financial leasing and payment service institutions.
+Applies only: Institution within NBC supervision; this does not establish the insurance or securities regulator
+Source I:KH-NBC: Banking supervision overview <https://www.nbc.gov.kh/english/supervision/overview.php>. Checked 2026-11-03. Official publisher search extract read; live page returned 403. No current detailed banking or payment licence condition asserted.
+
+sector_regulator | scope LA | legal: For Laos, check the applicable banking or payment framework listed by the Bank of the Lao PDR. The index lists the amended Commercial Bank Law 39/NA of 2023 and amended Payment System Law 45/NA of 2023. Confirm the activity and current implementing requirements.
+Applies only: Banking or payment activity governed by the relevant Lao law; no licence condition is inferred from the index
+Source I:LA-BOL: Bank of the Lao PDR laws index <https://bol.gov.la/en/law>. Checked 2026-11-03. Official publisher index read; live page returned 502. Only legal names and dates used. Licence conditions and current subordinate instructions remain unverified.
+
+sector_regulator | scope TL | legal: In Timor Leste, BCTL's licensing remit under Law No. 5/2011 covers regulated financial institutions. Its published framework separates banks, insurance, money transfer and currency exchange. Confirm the relevant activity before choosing the licence and evidence checklist.
+Applies only: Institution or activity within BCTL's licensing remit
+Source I:TL-BCTL: Licence application framework <https://bancocentral.tl/stats/lic_app/>. Checked 2026-11-03. Undated current official page. No provider count or company fact copied. Specific licence and current instruction details require review.
+
+sector_regulator | scope MM | legal: Myanmar's Financial Institutions Law 2016 gives the Central Bank licensing, registration and supervisory powers for covered banks and nonbank financial institutions. Confirm the buyer's legal category and current directives before defining approval evidence.
+Applies only: Institution covered by this law; separate insurance, microfinance and securities regimes require their own checks
+Source I:MM-BANK: Financial Institutions Law 2016 <https://www.mfiu.gov.mm/sites/default/files/document/files/The%20Financial%20Institutions%20Law%202016.pdf>. Checked 2026-11-03. Official government hosted English law. Detailed current directives and separate microfinance insurance or securities frameworks not verified.
+
+### vertical-saas | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### ai-native | specific | inherits defaults
 Inherit only applicable parent notes, then add these country and activity specific differences.
@@ -413,8 +494,9 @@ proof | scope SG | operating: Singapore's Model AI Governance Framework for Agen
 Applies only: Guidance for agentic AI deployment, not a certification or general software licence.
 Source I:SG-AI: Updated Model AI Governance Framework for Agentic AI <https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/factsheets/2026/updated-model-ai-governance-framework-for-agentic-ai>. Checked 2026-11-03. Primary indexed extract read; live open returned a script challenge. Guidance, not a mandatory certification.
 
-### ites | inherited | inherits defaults
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### ites | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### telecom | waiting_for_source | inherits defaults
 Inherit only applicable parent notes, then add these country and activity specific differences.
@@ -432,29 +514,37 @@ sector_regulator | scope SG | legal: Singapore: the Cybersecurity Act licensing 
 Applies only: For licensable services under the Act. Do not classify every cybersecurity product as a licensed service.
 Source I:SG-CYBER: Cybersecurity Act <https://www.csa.gov.sg/legislation/cybersecurity-act/>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Live page used for service scope only. Other cybersecurity obligations and amended designation regimes require separate applicability review.
 
-### software | inherited | inherits defaults
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### software | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### saas | inherited | inherits defaults
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### saas | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### freight-visibility | inherited | inherits logistics-tech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### freight-visibility | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### freight-marketplace | inherited | inherits logistics-tech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### freight-marketplace | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### seller-shipping | inherited | inherits logistics-tech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### seller-shipping | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### last-mile | inherited | inherits logistics-tech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### last-mile | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### warehousing | inherited | inherits logistics-tech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### warehousing | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### transport-management | inherited | inherits logistics-tech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### transport-management | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### payments-banking | waiting_for_source | inherits fintech
 Inherit only applicable parent notes, then add these country and activity specific differences.
@@ -468,8 +558,13 @@ sector_regulator | scope ID | legal: Indonesia: Bank Indonesia's PBI 10 of 2025 
 Applies only: For the payment activity and entities in scope; no licence or exemption is inferred.
 Source I:ID-PAYMENTS: Bank Indonesia strengthens structure of payment system industry <https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_281626.aspx>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Announcement used to identify the current framework and third party risk focus. No financial projection or statistic used.
 
-### core-banking | inherited | inherits fintech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+sector_regulator | scope BN | legal: Brunei payment services fall within BDCB's payment oversight framework, including the Payment and Settlement Systems (Oversight) Act, Cap 251. Confirm the service category, such as account issuance, electronic money or merchant acquiring, before preparing the approval evidence.
+Applies only: Payment service or system within BDCB's regulatory perimeter
+Source I:BN-PAYMENTS: Payment Services and Payment and Settlement Systems Oversight Act Cap 251 <https://www.bdcb.gov.bn/regulatory/payment-services>. Checked 2026-11-03. Undated current regulator overview. Detailed service authorisation requirements require separate review.
+
+### core-banking | waiting_for_source | inherits fintech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### lending | waiting_for_source | inherits fintech
 Inherit only applicable parent notes, then add these country and activity specific differences.
@@ -507,8 +602,13 @@ sector_regulator | scope TH | legal: Thailand: the Securities and Exchange Commi
 Applies only: For capital market activities within the Thai SEC's remit.
 Source I:TH-SEC: Enforcement <https://www.sec.or.th/EN/pages/lawandregulations/enforcement.aspx>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Not every wealth related software activity needs the same authorisation.
 
-### spend-expense | inherited | inherits fintech
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+sector_regulator | scope BN | legal: Brunei capital market activity is governed by BDCB's Securities Markets Order 2013 and Securities Markets Regulations 2014 framework. Confirm the dealing, management, advice or custody permission for the actual activity.
+Applies only: Capital market intermediary or other activity within the named framework
+Source I:BN-WEALTH: Capital market regulatory framework <https://www.bdcb.gov.bn/regulatory/capital-market>. Checked 2026-11-03. Undated current regulator overview; confirm current licence permissions and supplementary requirements.
+
+### spend-expense | waiting_for_source | inherits fintech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### insurance | waiting_for_source | inherits fintech
 Inherit only applicable parent notes, then add these country and activity specific differences.
@@ -530,144 +630,193 @@ sector_regulator | scope PH | legal: Philippines: the Insurance Commission super
 Applies only: For insurance activity within the Commission's remit.
 Source I:PH-INSURANCE: Mandate, objectives and functions <https://site.insurance.gov.ph/about/>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Not a licence determination for a software provider.
 
-### customer-service | inherited | inherits saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+sector_regulator | scope BN | legal: In Brunei, BDCB supervises insurance and takaful. Distinguish the Insurance Order 2006 and Takaful Order 2008, and confirm whether the buyer is an insurer, operator or intermediary.
+Applies only: Insurance or takaful activity within BDCB supervision; check any international regime separately
+Source I:BN-INSURANCE: Takaful and insurance regulatory framework <https://www.bdcb.gov.bn/index.php/regulatory/takaful-insurance>. Checked 2026-11-03. Undated current regulator overview. International insurance and intermediary regimes may differ; no detailed licence requirement inferred.
 
-### crm-marketing | inherited | inherits saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### customer-service | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### collaboration | inherited | inherits saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### crm-marketing | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### product-growth | inherited | inherits saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### collaboration | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### construction | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### product-growth | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### property-management | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### construction | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### field-services | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### property-management | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### fmcg-retail-execution | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### field-services | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### industry-hr-payroll | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### fmcg-retail-execution | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### hotel-lodging | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### industry-hr-payroll | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### retail-restaurant-ops | inherited | inherits vertical-saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### hotel-lodging | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### agents-copilots | inherited | inherits ai-native
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### retail-restaurant-ops | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### voice-language-models | inherited | inherits ai-native
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### agents-copilots | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### enterprise-search | inherited | inherits ai-native
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### voice-language-models | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### it-services | inherited | inherits ites
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### enterprise-search | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### bpo-cx | inherited | inherits ites
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### it-services | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### digital-engineering | inherited | inherits ites
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### bpo-cx | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### data-services | inherited | inherits ites
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### digital-engineering | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### operators-connectivity | inherited | inherits telecom
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### data-services | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### cpaas-messaging | inherited | inherits telecom
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### operators-connectivity | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### telecom-software | inherited | inherits telecom
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### cpaas-messaging | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### business-voice-ucaas | inherited | inherits telecom
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### telecom-software | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### developer-platform | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### business-voice-ucaas | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### data-infrastructure | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### developer-platform | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### observability | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### data-infrastructure | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### testing | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### observability | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### dev-tools | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### testing | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### cloud-security | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### dev-tools | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### identity-security | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### cloud-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### email-security | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### identity-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### awareness-training | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### email-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### appsec | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### awareness-training | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### mobile-appsec | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### appsec | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### soc-services | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### mobile-appsec | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### endpoint-network | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### soc-services | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### document-ai | inherited | inherits ai-native
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### endpoint-network | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### ai-video | inherited | inherits ai-native
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### document-ai | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### engineering-talent | inherited | inherits ites
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### ai-video | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### product-management | inherited | inherits saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### engineering-talent | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### digital-adoption | inherited | inherits saas
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### product-management | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### pentest | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### digital-adoption | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### attack-surface-dast | inherited | inherits cybersecurity
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### pentest | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### process-orchestration | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### attack-surface-dast | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### open-source-support | inherited | inherits software
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### process-orchestration | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### iot-connectivity | inherited | inherits telecom
-No validated additional subtype or sector override was established in the sourced countries. Inherit only notes for the named country. Unsourced countries remain outside factual coverage.
+### open-source-support | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
+
+### iot-connectivity | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: Singapore: check I:SG-PDPA, I:SG-OUTSOURCE, I:SG-PAYMENTS, I:SG-ADVISERS, I:SG-INSURANCE, I:SG-LENDING, I:SG-CYBER, I:SG-TELECOM, I:SG-CUSTOMS, I:SG-AI against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Indonesia: check I:ID-PDP, I:ID-OJK, I:ID-PAYMENTS, I:ID-LENDING against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Malaysia: check I:MY-PDPA, I:MY-BNM, I:MY-SC against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Thailand: check I:TH-PDPA, I:TH-BOT, I:TH-SEC against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Viet Nam: check I:VN-PDP against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Philippines: check I:PH-DPA, I:PH-BSP, I:PH-LENDING, I:PH-INSURANCE against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Brunei: check I:BN-PDP, I:BN-PDP-COMMENCEMENT, I:BN-BDCB, I:BN-PAYMENTS, I:BN-INSURANCE, I:BN-WEALTH against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Cambodia: check I:KH-NBC against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Laos: check I:LA-BOL against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Myanmar: check I:MM-BANK against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Timor Leste: check I:TL-BCTL against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ## Middle East
 
-Draft for owner review. Sourced notes currently cover the UAE and Saudi Arabia only. Qatar, Bahrain, Oman and Kuwait are recognised but awaiting local sources. No Gulf wide regulatory or buying habit claim is made. UAE federal, DIFC and ADGM scopes must be distinguished; a city alone does not select a financial free zone. Other Middle East jurisdictions are not covered by this draft and must never inherit either country's law.
+Draft for owner review. Country scoped notes cover the UAE, Saudi Arabia, Qatar, Bahrain, Oman and Kuwait, with activity specific gaps still marked. No Gulf wide regulatory or buying habit claim is made. UAE federal, DIFC and ADGM scopes, and Qatar QCB and QFC scopes, must be distinguished. A city alone does not select a special financial regime. Other Middle East jurisdictions are not covered and must never inherit a neighbouring country's law.
 Countries: AE = United Arab Emirates; SA = Saudi Arabia; QA = Qatar; BH = Bahrain; OM = Oman; KW = Kuwait
 Clues, only in selling context: {"aliases":["Middle East","Gulf","GCC"],"countries":[{"code":"AE","name":"United Arab Emirates","aliases":["UAE"],"cities":["Dubai","Abu Dhabi","Sharjah"],"currencies":["AED","UAE dirham"],"regulators":["Central Bank of the United Arab Emirates","CBUAE","Dubai Financial Services Authority","DFSA","Financial Services Regulatory Authority","FSRA","Telecommunications and Digital Government Regulatory Authority","TDRA"]},{"code":"SA","name":"Saudi Arabia","aliases":["Kingdom of Saudi Arabia","KSA"],"cities":["Riyadh","Jeddah","Dammam"],"currencies":["SAR","Saudi riyal"],"regulators":["Saudi Central Bank","SAMA","Saudi Data and AI Authority","SDAIA","Zakat Tax and Customs Authority","ZATCA"]},{"code":"QA","name":"Qatar","aliases":[],"cities":["Doha"],"currencies":["QAR","Qatari riyal"],"regulators":[]},{"code":"BH","name":"Bahrain","aliases":[],"cities":["Manama"],"currencies":["BHD","Bahraini dinar"],"regulators":[]},{"code":"OM","name":"Oman","aliases":[],"cities":["Muscat"],"currencies":["OMR","Omani rial"],"regulators":[]},{"code":"KW","name":"Kuwait","aliases":[],"cities":["Kuwait City"],"currencies":["KWD","Kuwaiti dinar"],"regulators":[]}]}
 
@@ -691,6 +840,22 @@ data_privacy | scope SA | legal: Saudi Arabia: the Personal Data Protection Law 
 Applies only: For personal data transfers within the Saudi regime. This is not a blanket requirement to keep every type of data in Saudi Arabia.
 Source I:SA-TRANSFER: Regulation on Personal Data Transfer outside the Kingdom <https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziPR1dzTwMgw2MDMOcTA3MjH39TE29jY0MQsz1g1Pz9L30o_ArAppiVOTr7JuuH1WQWJKhm5mXlq8fEeAS4GOkX5DtHg4A45XaIQ!!/>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Read with Personal Data Protection Law and implementing regulations; no blanket local hosting requirement inferred.
 
+data_privacy | scope QA | legal: For Qatar, identify whether Law No. 13 of 2016 on Protecting Personal Data Privacy governs the planned electronic processing. Record the controller, processor and purpose before selecting the contract and access checks.
+Applies only: Processing within this law's scope; confirm the entity's legal regime before applying it
+Source I:QA-PDP: Law No. 13 of 2016 on Protecting Personal Data Privacy <https://ncsa.gov.qa/shared/document_library/94787172324409/33000/8821/1.0~735ebb9c-e29e-4acb-a7ed-96449884a20b?filename=Law+No.+%2813%29+of+2016+on+Protecting+Personal+Data+Privacy.pdf&mimetype=application%2Fpdf>. Checked 2026-11-03. Regulator hosted English translation expressly says it is not the official Gazette text. Confirm Arabic law and the entity's regime, including whether separate QFC rules apply.
+
+data_privacy | scope BH | legal: Bahrain has Law No. 30 of 2018 with Respect to Personal Data Protection Law. Identify the controller and processor and have the privacy reviewer confirm the current processing and transfer conditions for the proposed workflow.
+Applies only: Personal data processing governed by Bahrain's law; current implementing decisions must be checked
+Source I:BH-PDP: Law No. 30 of 2018 with Respect to Personal Data Protection Law <https://www.bahrain.bh/wps/wcm/connect/ab8b334e-8c6f-4ff9-90b6-94135da559ca/Law%2BNo.%2B%2830%29%2Bof%2B2018%2BDPL.pdf?CVID=oFapPNI&MOD=AJPERES>. Checked 2026-11-03. Government hosted EDB translation reflects provisions through January 2019 and is unofficial. Arabic prevails. Current implementing decisions and amendments need checking for a specific workflow.
+
+data_privacy | scope OM | legal: In Oman, use the Personal Data Protection Law with the amendments in Royal Decree 68/2026. The amendments affect scope, exemptions and automated processing. Ask the privacy reviewer to confirm which provisions govern the data flow before using an older permit or consent checklist.
+Applies only: Oman personal data processing within the amended law's scope
+Source I:OM-PDP: Royal Decree 68/2026 amending the Personal Data Protection Law <https://www.mtcit.gov.om/library-3/legislations-policies-8/laws-75/royal-decree-68-2026-amending-some-provisions-of-the-personal-data-protection-law-1481>. Checked 2026-11-03. Official ministry summary and linked Arabic decree checked. No specific permit or consent requirement inferred from the summary.
+
+data_privacy | scope KW | legal: For Kuwait, check the applicable scope of CITRA's Data Privacy Protection Regulation issued by Decision 26 of 2024. That decision replaced the regulation under Decision 42 of 2021, so an old 2021 checklist is not a sufficient basis for the review.
+Applies only: Only where the current CITRA regulation covers the entity and service; scope requires confirmation
+Source I:KW-PDP: Decision 26 of 2024 issuing the Data Privacy Protection Regulation <https://www.citra.gov.kw/sites/ar/Pages/DecisionsDetails.aspx?id=6>. Checked 2026-11-03. Arabic official decision read. Attached regulation's activity and entity scope still needs checking. Do not infer an economy wide obligation from the old 2021 English PDF.
+
 buyer_language | scope COMMON | question: Which languages must the buying team, users, contract and notices support?
 
 proof | scope COMMON | question: What sample workflow and acceptance evidence will the buyer approve?
@@ -699,8 +864,9 @@ objections | scope COMMON | question: Which hosting, access, integration, suppor
 
 sales_motion | scope COMMON | question: Who owns the evaluation, acceptance decision and next purchase step?
 
-### logistics-tech | inherited | inherits defaults
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### logistics-tech | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the logistics-tech activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the logistics-tech activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the logistics-tech activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the logistics-tech activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the logistics-tech activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the logistics-tech activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### fintech | waiting_for_source | inherits defaults
 Inherit only applicable parent notes and add the country and activity specific differences below.
@@ -722,14 +888,33 @@ sector_regulator | scope SA | legal: Saudi Arabia: the Saudi Central Bank Law gi
 Applies only: For financial institutions in SAMA's remit. Insurance and securities activities have separate subtype checks.
 Source I:SA-SAMA: Saudi Central Bank Law <https://sama.gov.sa/en-US/About/Pages/bank-law.aspx>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Relevant sector laws determine the entity scope. Insurance remit is separately mapped to the Insurance Authority.
 
-### vertical-saas | inherited | inherits defaults
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope QA | legal: For a Qatar institution supervised by Qatar Central Bank, confirm its regulated activity and licence category under Law No. 13 of 2012. QCB's supervision remit includes banks, insurance and relevant financial technology institutions.
+Applies only: Institution subject to QCB supervision; do not infer this regime solely from a Doha address
+Source I:QA-QCB: Supervision Sector <https://www.qcb.gov.qa/en/Supervision/pages/supervision-sector.aspx>. Checked 2026-11-03. Primary publisher search extract read; direct page fetch timed out. QFC authorisation is separately sourced. No detailed outsourcing or licence conditions asserted.
 
-### ai-native | inherited | inherits defaults
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope QA | legal: For financial services conducted in or from the Qatar Financial Centre, check QFCRA authorisation under the framework established by Law No. 7 of 2005. Confirm the entity and authorised activity before choosing its regulatory checklist.
+Applies only: Only financial services in or from the Qatar Financial Centre
+Source I:QA-QFCRA: About Us <https://www.qfcra.com/about-us/>. Checked 2026-11-03. Official publisher search extract read; live fetch returned a server error. Does not establish which regime a named company uses.
 
-### ites | inherited | inherits defaults
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope BH | legal: Bahrain's Central Bank and Financial Institutions Law places regulated financial services under CBB licensing and supervision. Confirm the buyer's licence category and applicable current Rulebook volume before defining approval evidence.
+Applies only: Financial services regulated by the Central Bank of Bahrain
+Source I:BH-CBB: Central Bank of Bahrain and Financial Institutions Law <https://www.cbb.gov.bh/wp-content/uploads/2018/12/THE_CENTRAL_BANK_OF_BAHRAIN_AND_FINANCIAL_INSTITUTIONS_LAW_ENGLISH.pdf>. Checked 2026-11-03. Official English text provides foundational remit. The legislation index lists amendments. Use the current activity specific CBB Rulebook for detailed obligations.
+
+sector_regulator | scope OM | legal: For an Oman institution supervised by the Central Bank of Oman, use the Banking Law issued by Royal Decree 2/2025 and applicable current instructions. Confirm whether the buyer is a bank, finance or leasing company, exchange business or payment provider.
+Applies only: Institution within Central Bank of Oman supervision
+Source I:OM-BANK: Circular BM 1211 on Banking Law under Royal Decree 2/2025 <https://cbo.gov.om/sites/assets/Documents/Global/Circulars/2025/2025-01-20%20BM%201211%20-%20Issue%20of%20Banking%20Law%20%28Royal%20Decree%20No.%202-2025%29.pdf>. Checked 2026-11-03. Circular confirms new law and continuing compatible instructions. It does not itself establish detailed authorisation requirements for every fintech activity.
+
+### vertical-saas | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the vertical-saas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
+
+### ai-native | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the ai-native activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the ai-native activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the ai-native activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the ai-native activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the ai-native activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the ai-native activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
+
+### ites | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the ites activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### telecom | waiting_for_source | inherits defaults
 Inherit only applicable parent notes and add the country and activity specific differences below.
@@ -739,6 +924,10 @@ sector_regulator | scope AE | legal: UAE: TDRA issues licences for public teleco
 Applies only: For activities requiring TDRA authorisation, not every telecom software supplier.
 Source I:AE-TELECOM: Issue licences to provide telecommunication services <https://tdra.gov.ae/en/Services/issue-licences-to-provide-telecommunication-services>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Not a requirement for every software vendor supplying an operator.
 
+sector_regulator | scope SA | legal: Saudi Arabia's Telecommunications and Information Technology Bylaw gives CST service classification and authorisation responsibilities. Confirm the required licence, registration or permit for the actual service and which entity holds it.
+Applies only: Telecommunications or information technology activity within CST's regulatory scope
+Source I:SA-TELECOM: Telecommunications and Information Technology Bylaw <https://www.cst.gov.sa/en/regulations-and-licenses/acts-and-bylaws/bylaws/telecommunications-and-information-technology-bylaw>. Checked 2026-11-03. Undated current regulator text accessed on review date. Exact service classification and subordinate rules require separate checking.
+
 ### cybersecurity | waiting_for_source | inherits defaults
 Inherit only applicable parent notes and add the country and activity specific differences below.
 Waiting for a source: Complete country source coverage outside the explicitly sourced notes.
@@ -747,8 +936,9 @@ sector_regulator | scope SA | legal: Saudi Arabia: NCA publishes Essential Cyber
 Applies only: For an entity and system within the controls' scope. This note does not claim every private buyer is subject to every NCA control.
 Source I:SA-ECC: Essential Cybersecurity Controls ECC 2 2024 <https://nca.gov.sa/en/regulatory-documents/controls-list/ecc/>. Checked 2026-11-03. Date is official page publication. No blanket all private business mandate or detailed control asserted; scope must be established.
 
-### software | inherited | inherits defaults
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### software | waiting_for_source | inherits defaults
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### saas | specific | inherits defaults
 Inherit only applicable parent notes and add the country and activity specific differences below.
@@ -757,27 +947,33 @@ sector_regulator | scope SA | legal: Saudi Arabia: CST's Cloud Computing Service
 Applies only: Only if the actual service is covered by the cloud regulations; do not infer registration solely from the SaaS label.
 Source I:SA-CLOUD: Cloud Computing Service Provisioning Regulations and guides decision 506/1445 <https://www.cst.gov.sa/en/regulations-and-licenses/decisions/Regulation-1482>. Checked 2026-11-03. Used for current instrument naming only. Cloud service classification and registration require separate review.
 
-### freight-visibility | inherited | inherits logistics-tech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### freight-visibility | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the freight-visibility activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### freight-marketplace | inherited | inherits logistics-tech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### freight-marketplace | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the freight-marketplace activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### seller-shipping | inherited | inherits logistics-tech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### seller-shipping | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the seller-shipping activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### last-mile | inherited | inherits logistics-tech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### last-mile | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the last-mile activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### warehousing | inherited | inherits logistics-tech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### warehousing | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the warehousing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### transport-management | inherited | inherits logistics-tech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### transport-management | waiting_for_source | inherits logistics-tech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the transport-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### payments-banking | waiting_for_source | inherits fintech
 Inherit only applicable parent notes and add the country and activity specific differences below.
-Waiting for a source: Complete this activity's sources for Qatar, Bahrain, Oman and Kuwait.
+Waiting for a source: Complete activity specific licence and workflow checks beyond the sourced country notes; a general regulator remit does not settle every licence condition
 
 sector_regulator | scope AE | legal: UAE: the CBUAE law lists payment, stored value and related licensed financial activities. Map the money flow and provider role before selecting the licensing route.
 Applies only: For activities within Article 61 and applicable regulations, subject to financial free zone scope.
@@ -787,12 +983,17 @@ sector_regulator | scope SA | legal: Saudi Arabia: Article 7 of the Law of Payme
 Applies only: For payment systems and services in the law's scope.
 Source I:SA-PAYMENTS: Law of Payments and Payment Services: Article 7 <https://www.rulebook.sama.gov.sa/en/article-7-24>. Checked 2026-11-03. Use with current implementing regulations; no assertion that every software supplier is a payment provider.
 
-### core-banking | inherited | inherits fintech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope KW | legal: Kuwait electronic payment providers are subject to CBK's Instructions for Regulating the Electronic Payment of Funds under Law No. 20 of 2014. Confirm the licence category and the required governance, security and continuity evidence for the proposed service.
+Applies only: Electronic payment activity within CBK's instructions
+Source I:KW-PAYMENTS: Instructions for Regulating the Electronic Payment of Funds <https://www.cbk.gov.kw/en/supervision/e-payment-services>. Checked 2026-11-03. Undated current official overview specifies May 2023 issuance. Detailed licence type and subsequent instructions require checking.
+
+### core-banking | waiting_for_source | inherits fintech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the core-banking activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### lending | waiting_for_source | inherits fintech
 Inherit only applicable parent notes and add the country and activity specific differences below.
-Waiting for a source: Complete this activity's sources for Qatar, Bahrain, Oman and Kuwait.
+Waiting for a source: Complete activity specific licence and workflow checks beyond the sourced country notes; a general regulator remit does not settle every licence condition
 
 decision_approvers | scope SA | legal: Saudi Arabia: SAMA's finance company compliance and internal audit principles address board and executive responsibilities. Ask the finance company to name its accountable reviewers.
 Applies only: For finance and real estate refinance companies within the named principles.
@@ -804,7 +1005,7 @@ Source I:AE-CBUAE: Federal Decree Law 6 of 2025 regarding the Central Bank, Regu
 
 ### wealth-investment | waiting_for_source | inherits fintech
 Inherit only applicable parent notes and add the country and activity specific differences below.
-Waiting for a source: Complete this activity's sources for Qatar, Bahrain, Oman and Kuwait.
+Waiting for a source: Complete activity specific licence and workflow checks beyond the sourced country notes; a general regulator remit does not settle every licence condition
 
 sector_regulator | scope AE | legal: UAE: Federal Decree Law 32 of 2025 establishes the Capital Market Authority framework. Confirm whether the activity is under this regime or a financial free zone regulator.
 Applies only: For UAE capital market activities in the federal authority's remit; separate DIFC and ADGM scope must be checked.
@@ -814,12 +1015,21 @@ sector_regulator | scope SA | legal: Saudi Arabia: the Capital Market Authority 
 Applies only: For Saudi capital market activity. This is the Saudi authority.
 Source I:SA-CMA: Frequently asked questions for implementing regulations <https://cma.gov.sa/en/RulesRegulations/FAQ/Pages/FAQs.aspx>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Do not confuse with the UAE Capital Market Authority.
 
-### spend-expense | inherited | inherits fintech
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope OM | legal: In Oman, the Financial Services Authority established under Royal Decree 20/2024 regulates capital markets. Confirm the entity's authorised activity and applicable sector rules.
+Applies only: Capital market activity within the Oman FSA remit
+Source I:OM-FSA: Establishment of the Financial Services Authority under Royal Decree 20/2024 <https://fsa.gov.om/Home/News/9631>. Checked 2026-11-03. Regulator press release on remit. Detailed licensing rules and subsequent changes must be checked for the activity.
+
+sector_regulator | scope KW | legal: For Kuwait securities activity, check the Capital Markets Authority framework under Law No. 7 of 2010 and its current amendments. Confirm the specific advisory, dealing or management activity before choosing the review requirements.
+Applies only: Securities activity within Kuwait CMA's remit
+Source I:KW-CMA: Law 7 of 2010 establishing the Capital Markets Authority and regulating securities activities <https://www.cma.gov.kw/en/web/cma/cma-handbook>. Checked 2026-11-03. Current consolidated page includes amendments with future commencement. No future amendment is presented as already effective and no detailed obligation is inferred.
+
+### spend-expense | waiting_for_source | inherits fintech
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the spend-expense activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ### insurance | waiting_for_source | inherits fintech
 Inherit only applicable parent notes and add the country and activity specific differences below.
-Waiting for a source: Complete this activity's sources for Qatar, Bahrain, Oman and Kuwait.
+Waiting for a source: Complete activity specific licence and workflow checks beyond the sourced country notes; a general regulator remit does not settle every licence condition
 
 sector_regulator | scope AE | legal: UAE: the CBUAE law includes insurance and reinsurance activities. Establish whether the insurer is under the federal regime or a financial free zone regime.
 Applies only: For the insurance activity and entity in scope; separate DIFC and ADGM conditions remain conditional.
@@ -829,144 +1039,197 @@ sector_regulator | scope SA | legal: Saudi Arabia: the Insurance Authority is th
 Applies only: For insurance activity in Saudi Arabia within the Authority's remit.
 Source I:SA-INSURANCE: About the Insurance Authority <https://www.ia.gov.sa/en/about-ia/about>. Checked 2026-11-03. No reliable full publication date on the retrieved page. Do not use the older SAMA insurance supervision attribution. Current product regulations still need scope checks.
 
-### customer-service | inherited | inherits saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope OM | legal: In Oman, the Financial Services Authority established under Royal Decree 20/2024 regulates the insurance sector. Confirm the entity's authorised activity and applicable sector rules.
+Applies only: Insurance activity within the Oman FSA remit
+Source I:OM-FSA: Establishment of the Financial Services Authority under Royal Decree 20/2024 <https://fsa.gov.om/Home/News/9631>. Checked 2026-11-03. Regulator press release on remit. Detailed licensing rules and subsequent changes must be checked for the activity.
 
-### crm-marketing | inherited | inherits saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+sector_regulator | scope KW | legal: Kuwait's Insurance Regulatory Unit supervises insurance under Law No. 125 of 2019 and its executive bylaws. Confirm the insurer, intermediary or service role before defining approval evidence.
+Applies only: Insurance activity within Kuwait Insurance Regulatory Unit's remit
+Source I:KW-INSURANCE: Executive bylaws of Law 125 of 2019 regulating insurance <https://www.iru.gov.kw/ByLaws>. Checked 2026-11-03. Current Arabic regulator text read. No translation treated as authoritative and no specific licence condition asserted.
 
-### collaboration | inherited | inherits saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### customer-service | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the customer-service activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### product-growth | inherited | inherits saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### crm-marketing | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the crm-marketing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### construction | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### collaboration | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the collaboration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### property-management | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### product-growth | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the product-growth activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### field-services | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### construction | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the construction activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### fmcg-retail-execution | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### property-management | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the property-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### industry-hr-payroll | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### field-services | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the field-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### hotel-lodging | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### fmcg-retail-execution | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the fmcg-retail-execution activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### retail-restaurant-ops | inherited | inherits vertical-saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### industry-hr-payroll | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the industry-hr-payroll activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### agents-copilots | inherited | inherits ai-native
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### hotel-lodging | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the hotel-lodging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### voice-language-models | inherited | inherits ai-native
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### retail-restaurant-ops | waiting_for_source | inherits vertical-saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the retail-restaurant-ops activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### enterprise-search | inherited | inherits ai-native
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### agents-copilots | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the agents-copilots activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### it-services | inherited | inherits ites
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### voice-language-models | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the voice-language-models activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### bpo-cx | inherited | inherits ites
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### enterprise-search | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the enterprise-search activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### digital-engineering | inherited | inherits ites
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### it-services | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the it-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### data-services | inherited | inherits ites
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### bpo-cx | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the bpo-cx activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### operators-connectivity | inherited | inherits telecom
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### digital-engineering | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the digital-engineering activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### cpaas-messaging | inherited | inherits telecom
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### data-services | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the data-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### telecom-software | inherited | inherits telecom
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### operators-connectivity | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the operators-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### business-voice-ucaas | inherited | inherits telecom
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### cpaas-messaging | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the cpaas-messaging activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### developer-platform | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### telecom-software | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the telecom-software activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### data-infrastructure | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### business-voice-ucaas | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the business-voice-ucaas activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### observability | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### developer-platform | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the developer-platform activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### testing | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### data-infrastructure | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the data-infrastructure activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### dev-tools | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### observability | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the observability activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### cloud-security | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### testing | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the testing activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### identity-security | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### dev-tools | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the dev-tools activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### email-security | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### cloud-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the cloud-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### awareness-training | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### identity-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the identity-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### appsec | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### email-security | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the email-security activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### mobile-appsec | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### awareness-training | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the awareness-training activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### soc-services | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### appsec | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### endpoint-network | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### mobile-appsec | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the mobile-appsec activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### document-ai | inherited | inherits ai-native
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### soc-services | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the soc-services activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### ai-video | inherited | inherits ai-native
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### endpoint-network | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the endpoint-network activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### engineering-talent | inherited | inherits ites
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### document-ai | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the document-ai activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### product-management | inherited | inherits saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### ai-video | waiting_for_source | inherits ai-native
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the ai-video activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### digital-adoption | inherited | inherits saas
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### engineering-talent | waiting_for_source | inherits ites
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the engineering-talent activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### pentest | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### product-management | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the product-management activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### attack-surface-dast | inherited | inherits cybersecurity
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### digital-adoption | waiting_for_source | inherits saas
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the digital-adoption activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### process-orchestration | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### pentest | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the pentest activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### open-source-support | inherited | inherits software
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### attack-surface-dast | waiting_for_source | inherits cybersecurity
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the attack-surface-dast activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
-### iot-connectivity | inherited | inherits telecom
-No validated additional override was established for this cell in the sourced countries. Inherit only notes for the named country; other countries remain outside factual coverage.
+### process-orchestration | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the process-orchestration activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
+
+### open-source-support | waiting_for_source | inherits software
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the open-source-support activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
+
+### iot-connectivity | waiting_for_source | inherits telecom
+Parent notes remain useful context. A source check proving that this cell needs no additional country or activity detail is not complete.
+Waiting for a source: United Arab Emirates: check I:AE-PDPL, I:AE-CBUAE, I:AE-DFSA, I:AE-FSRA, I:AE-CMA, I:AE-TELECOM, I:AE-INVOICE against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Saudi Arabia: check I:SA-TRANSFER, I:SA-SAMA, I:SA-PAYMENTS, I:SA-FINANCE, I:SA-INSURANCE, I:SA-CMA, I:SA-ECC, I:SA-CLOUD, I:SA-INVOICE, I:SA-TELECOM against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Qatar: check I:QA-PDP, I:QA-QCB, I:QA-QFCRA against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Bahrain: check I:BH-PDP, I:BH-CBB against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Oman: check I:OM-PDP, I:OM-BANK, I:OM-FSA against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient; Kuwait: check I:KW-PDP, I:KW-PAYMENTS, I:KW-CMA, I:KW-INSURANCE against the iot-connectivity activity; source its authorisation route, data duties, approval owner and required evidence before treating parent context as sufficient
 
 ## UK
 
-United Kingdom only. Check the relevant UK nation for devolved procurement and transport rules. Country selection does not establish that a buyer or product is regulated. Draft for owner review.
+United Kingdom only. Check the relevant UK nation for devolved procurement and transport rules. Country selection does not establish that a buyer or product is regulated. Draft for owner review. Depth review follows REGIONS-DEPTH.md. Waiting cells identify unfinished source checks and must not be counted as proven inheritance.
 Countries: GB = United Kingdom
 Clues, only in selling context: {"aliases":["UK","United Kingdom"],"countries":[{"code":"GB","name":"United Kingdom","aliases":["UK","United Kingdom","Britain","Great Britain","England","Scotland","Wales","Northern Ireland"],"cities":["London","Manchester","Birmingham","Edinburgh","Cardiff","Belfast"],"currencies":["GBP","pound sterling"],"regulators":["Financial Conduct Authority","Prudential Regulation Authority","Ofcom","Information Commissioner's Office"]}]}
 
@@ -1006,8 +1269,9 @@ proof | scope GB | legal: Where the service is outsourced, show the buyer its de
 Applies only: For arrangements within the buyer's applicable FCA outsourcing and risk management obligations.
 Source J:UK-FCA-OUTSOURCE: Outsourcing and operational resilience <https://www.fca.org.uk/firms/outsourcing-and-operational-resilience>. Checked 2026-11-03. Updated 2026-07-14. Future reporting rules from 2027 are not treated as current. Buying standard software is not automatically outsourcing.
 
-### vertical-saas | inherited | inherits defaults
-Reviewed against the sourced UK defaults. No distinct sector override has been validated; use defaults. This is not a finding that the sector has no additional obligations.
+### vertical-saas | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: vertical-saas: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### ai-native | specific | inherits defaults
 Parent context remains. The following sourced UK addition applies only within its stated scope.
@@ -1016,8 +1280,9 @@ data_privacy | scope GB | legal: Use the ICO AI guidance to examine risks to ind
 Applies only: For AI processing within UK data protection scope; verify current guidance before relying on a particular automated decision rule.
 Source J:UK-ICO-AI: About this guidance: AI and data protection <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/about-this-guidance/>. Checked 2026-11-03. No reliable publication date shown. Guidance is under review following the Data (Use and Access) Act; it is not a statutory code.
 
-### ites | inherited | inherits defaults
-Reviewed against the sourced UK defaults. No distinct sector override has been validated; use defaults. This is not a finding that the sector has no additional obligations.
+### ites | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: ites: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### telecom | specific | inherits defaults
 Parent context remains. The following sourced UK addition applies only within its stated scope.
@@ -1033,96 +1298,189 @@ procurement_payment | scope GB | legal: For a qualifying public contract, map th
 Applies only: Only for the bodies and contract risks identified in PPN 014. Confirm the actual tender and procurement commencement date.
 Source J:UK-CABINET-CYBER: PPN 014: Cyber essentials scheme <https://www.gov.uk/government/publications/ppn-014-cyber-essentials-scheme/ppn-014-cyber-essentials-scheme-html>. Checked 2026-11-03. Applies to stated central government and NHS bodies and qualifying contracts, not all UK procurement. No blanket certification requirement.
 
-### software | inherited | inherits defaults
-Reviewed against the sourced UK defaults. No distinct sector override has been validated; use defaults. This is not a finding that the sector has no additional obligations.
+### software | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: software: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### saas | inherited | inherits defaults
-Reviewed against the sourced UK defaults. No distinct sector override has been validated; use defaults. This is not a finding that the sector has no additional obligations.
+### saas | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: saas: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### freight-visibility | inherited | inherits logistics-tech
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### freight-visibility | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: freight-visibility: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### freight-marketplace | inherited | inherits logistics-tech
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### freight-marketplace | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: freight-marketplace: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### seller-shipping | inherited | inherits logistics-tech
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### seller-shipping | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: seller-shipping: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### last-mile | inherited | inherits logistics-tech
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### last-mile | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: last-mile: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### warehousing | inherited | inherits logistics-tech
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### warehousing | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: warehousing: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### transport-management | inherited | inherits logistics-tech
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### transport-management | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: transport-management: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### payments-banking | specific | inherits fintech
-Parent context remains. The following sourced UK addition applies only within its stated scope.
+Specific UK subtype requirements are sourced below; applicable UK default and fintech notes also apply. Regulatory accountability does not identify a buyer's commercial budget holder.
+
+decision_approvers | scope GB | legal: For safeguarding, CASS 15.2.4 assigns oversight to a director or sufficiently senior manager reporting to the governing body.
+Applies only: Only for a safeguarding institution subject to CASS 15; identify the actual appointed person.
+Source J:UK-CASS15: CASS 15 Payment services and electronic money: relevant funds <https://handbook.fca.org.uk/handbook/cass15>. Checked 2026-11-03. Rules effective 2026-05-07. Official search text read; direct HTML requires JavaScript. Check safeguarding institution scope and insolvency exceptions.
 
 sector_regulator | scope GB | legal: Separate payment services from electronic money issuance. The FCA explains authorisation and registration under the Payment Services Regulations 2017 and Electronic Money Regulations 2011, with exclusions and existing provider exceptions.
 Applies only: Where the firm's own activities fall within UK payment or electronic money regulation; an API supplier is not automatically a regulated provider.
 Source J:UK-FCA-PAYMENTS: Payment Services Regulations 2017 and Electronic Money Regulations 2011 <https://www.fca.org.uk/firms/payment-services-regulations-e-money-regulations>. Checked 2026-11-03. Updated 2025-12-17. Technical suppliers are not automatically payment institutions.
 
+data_privacy | scope GB | legal: The FCA payment institution application requires procedures for sensitive payment data and incident reporting. Demonstrate these controls for the proposed payment workflow.
+Applies only: For the relevant payment institution application and service, alongside UK GDPR where personal data is processed.
+Source J:UK-PI-APPLY: Payment institution applicants <https://www.fca.org.uk/firms/apply-emoney-payment-institution/pi>. Checked 2026-11-03. Primary text read in current official search result. Application requirements vary by authorised or small institution and services.
+
+proof | scope GB | legal: Demonstrate the safeguarding reconciliation, recorded reconciliation point and exception resolution under CASS 15.8.
+Applies only: For covered safeguarding institutions; apply the relevant reconciliation day and insolvency provisions.
+Source J:UK-CASS15: CASS 15 Payment services and electronic money: relevant funds <https://handbook.fca.org.uk/handbook/cass15>. Checked 2026-11-03. Rules effective 2026-05-07. Official search text read; direct HTML requires JavaScript. Check safeguarding institution scope and insolvency exceptions.
+
 ### core-banking | specific | inherits fintech
-Parent context remains. The following sourced UK addition applies only within its stated scope.
+Specific UK subtype requirements are sourced below; applicable UK default and fintech notes also apply. Regulatory accountability does not identify a buyer's commercial budget holder.
+
+decision_approvers | scope GB | legal: Under PRA SS2/21, identify the senior manager assigned outsourcing responsibility and the owner authorised to sign off continuity and exit plans.
+Applies only: For a bank and arrangement within the statement's scope; the vendor does not acquire the bank's accountability.
+Source J:UK-PRA-SS221: SS2/21 Outsourcing and third party risk management November 2024 <https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/ss221-november-2024-update.pdf>. Checked 2026-11-03. Current version confirmed on PRA landing page; effective 2024-12-31. March 2026 future version takes effect in March 2027 and is not used.
 
 sector_regulator | scope GB | legal: A new UK bank applies to the Prudential Regulation Authority. Establish whether the prospect is the regulated institution or its technology supplier before assigning banking approval work.
 Applies only: Where the activity involves establishing a bank; this is not a licence requirement for ordinary core banking software supply.
 Source J:UK-PRA-AUTH: New firm authorisation <https://www.bankofengland.co.uk/prudential-regulation/Authorisations/new-firm-authorisation>. Checked 2026-11-03. Publication date not shown. Not a claim that software providers need a banking or insurance authorisation.
 
+data_privacy | scope GB | legal: For material core banking outsourcing, SS2/21 expects data classification and agreed availability, confidentiality and integrity controls.
+Applies only: Where the agreement transfers data; assess processing locations and access risks.
+Source J:UK-PRA-SS221: SS2/21 Outsourcing and third party risk management November 2024 <https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/ss221-november-2024-update.pdf>. Checked 2026-11-03. Current version confirmed on PRA landing page; effective 2024-12-31. March 2026 future version takes effect in March 2027 and is not used.
+
+proof | scope GB | legal: Show a tested core banking continuity plan and a documented stressed exit, including recoverable data and measurable success criteria.
+Applies only: For material outsourcing under SS2/21 Chapter 10, with proportionate testing.
+Source J:UK-PRA-SS221: SS2/21 Outsourcing and third party risk management November 2024 <https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/supervisory-statement/2024/ss221-november-2024-update.pdf>. Checked 2026-11-03. Current version confirmed on PRA landing page; effective 2024-12-31. March 2026 future version takes effect in March 2027 and is not used.
+
 ### lending | specific | inherits fintech
-Parent context remains. The following sourced UK addition applies only within its stated scope.
+Specific UK subtype requirements are sourced below; applicable UK default and fintech notes also apply. Regulatory accountability does not identify a buyer's commercial budget holder.
+
+decision_approvers | scope GB | legal: CONC 5.2A.33 requires written creditworthiness policies to be approved by the governing body or senior personnel, except for a sole trader.
+Applies only: For the covered lender's creditworthiness policies, not every individual loan or technology purchase.
+Source J:UK-CONC52A: CONC 5 Responsible lending <https://handbook.fca.org.uk/handbook/conc5>. Checked 2026-11-03. Current official text read through search. Direct HTML requires JavaScript. Consumer credit scope and exceptions apply.
+
+sector_regulator | scope GB | legal: Consumer lending permissions and CONC 5.2A govern the covered creditworthiness assessment. Separate credit risk from affordability risk.
+Applies only: For regulated consumer credit lending within CONC 5.2A, after checking exclusions.
+Source J:UK-FCA-CREDIT: Apply to become a consumer credit lender or hirer <https://www.fca.org.uk/firms/authorisation/consumer-credit-lenders-hirers>. Checked 2026-11-03. Updated 2024-09-17. Consumer activity scope; do not apply automatically to commercial lending.
+Source J:UK-CONC52A: CONC 5 Responsible lending <https://handbook.fca.org.uk/handbook/conc5>. Checked 2026-11-03. Current official text read through search. Direct HTML requires JavaScript. Consumer credit scope and exceptions apply.
+
+data_privacy | scope GB | legal: Demonstrate what customer and credit reference information supports the assessment and why it is sufficient and proportionate under CONC 5.2A.
+Applies only: For covered lending decisions; lawful processing and processor contracts still require a separate UK GDPR check.
+Source J:UK-CONC52A: CONC 5 Responsible lending <https://handbook.fca.org.uk/handbook/conc5>. Checked 2026-11-03. Current official text read through search. Direct HTML requires JavaScript. Consumer credit scope and exceptions apply.
 
 proof | scope GB | legal: For regulated consumer lending, the FCA expects evidence showing how credit risk, affordability and customers in financial difficulty are handled. Demonstrate the relevant decision and escalation workflow.
 Applies only: For consumer credit activities within the FCA's authorisation scope; do not extend automatically to all commercial credit or software vendors.
 Source J:UK-FCA-CREDIT: Apply to become a consumer credit lender or hirer <https://www.fca.org.uk/firms/authorisation/consumer-credit-lenders-hirers>. Checked 2026-11-03. Updated 2024-09-17. Consumer activity scope; do not apply automatically to commercial lending.
 
+proof | scope GB | legal: Show how the assessment records both repayment risk and customer affordability, and how policy changes reach the approving body.
+Applies only: For the applicable CONC assessment; do not infer the same workflow for exempt lending.
+Source J:UK-CONC52A: CONC 5 Responsible lending <https://handbook.fca.org.uk/handbook/conc5>. Checked 2026-11-03. Current official text read through search. Direct HTML requires JavaScript. Consumer credit scope and exceptions apply.
+
 ### wealth-investment | specific | inherits fintech
-Parent context remains. The following sourced UK addition applies only within its stated scope.
+Specific UK subtype requirements are sourced below; applicable UK default and fintech notes also apply. Regulatory accountability does not identify a buyer's commercial budget holder.
+
+decision_approvers | scope GB | legal: The investment firm remains responsible for suitability when its recommendation or portfolio decision uses an automated system. Identify its accountable service approver.
+Applies only: For advice or portfolio management subject to COBS 9A, not every execution only service.
+Source J:UK-COBS9A: COBS 9A Suitability <https://handbook.fca.org.uk/handbook/cobs9a>. Checked 2026-11-03. Current official chapter search text read. Do not assume all execution only services require the same suitability assessment.
 
 sector_regulator | scope GB | legal: Use the FCA application category for the actual consumer investment activity, such as financial advice, wealth management, stockbroking or operating an investment platform.
 Applies only: Where the firm's own UK investment activity requires authorisation; a software product label does not determine permission.
 Source J:UK-FCA-WEALTH: Authorisation <https://www.fca.org.uk/firms/authorisation>. Checked 2026-11-03. Publication date not established. Directory supports regulator routing, not a complete account of permissions or exemptions.
 
+data_privacy | scope GB | legal: COBS 9A requires sufficient, reliable client information about investment objectives, financial circumstances and relevant knowledge and experience.
+Applies only: For the service's suitability assessment; retain UK GDPR role and access controls.
+Source J:UK-COBS9A: COBS 9A Suitability <https://handbook.fca.org.uk/handbook/cobs9a>. Checked 2026-11-03. Current official chapter search text read. Do not assume all execution only services require the same suitability assessment.
+
+proof | scope GB | legal: Demonstrate a suitability decision with reliable inputs, visible profiling limitations and evidence that ongoing client information stays current.
+Applies only: For advice or portfolio management within COBS 9A; match the actual service and client.
+Source J:UK-COBS9A: COBS 9A Suitability <https://handbook.fca.org.uk/handbook/cobs9a>. Checked 2026-11-03. Current official chapter search text read. Do not assume all execution only services require the same suitability assessment.
+
 ### spend-expense | specific | inherits fintech
-Parent context remains. The following sourced UK addition applies only within its stated scope.
+Specific UK subtype requirements are sourced below; applicable UK default and fintech notes also apply. Regulatory accountability does not identify a buyer's commercial budget holder.
+
+decision_approvers | scope GB | operating: The employer owns the HMRC expense checking system. Identify its delegated payment approver and demonstrate the controls for bespoke subsistence claims.
+Applies only: For bespoke or industry wide rates; benchmark scale rates have a different checking rule.
+Source J:UK-HMRC-CHECK: EIM30275 Checking systems: models <https://www.gov.uk/hmrc-internal-manuals/employment-income-manual/eim30275>. Checked 2026-11-03. Publication date not reliably shown. Does not impose the same receipt check on benchmark scale rates after 2019.
 
 sector_regulator | scope GB | legal: If an expense product also executes payments or issues electronic money, assess those activities against the Payment Services Regulations 2017 or Electronic Money Regulations 2011 before promising a regulated service.
 Applies only: Only where the actual service includes an in scope payment or electronic money activity; expense record keeping alone does not establish that scope.
 Source J:UK-FCA-PAYMENTS: Payment Services Regulations 2017 and Electronic Money Regulations 2011 <https://www.fca.org.uk/firms/payment-services-regulations-e-money-regulations>. Checked 2026-11-03. Updated 2025-12-17. Technical suppliers are not automatically payment institutions.
 
+data_privacy | scope GB | legal: Restrict employee expense records to authorised users and preserve accuracy and recoverability under the ICO employment records guidance.
+Applies only: For personal employment records in UK GDPR scope, not a mandate that every buyer use an identical approval hierarchy.
+Source J:UK-ICO-EMPLOYMENT: Collecting and keeping employment records <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/employment/employment-practices-and-data-protection-keeping-employment-records/collecting-and-keeping-employment-records>. Checked 2026-11-03. Publication date not reliably shown. Applicable to personal employment records; no universal HR role or retention period inferred.
+
+proof | scope GB | legal: Demonstrate an expense trail linking date, purpose, amount and employee contribution to the employer's year end reporting evidence.
+Applies only: For employer expenses and benefits reported to HMRC.
+Source J:UK-HMRC-EXPENSE: Expenses and benefits for employers: Record keeping <https://www.gov.uk/employer-reporting-expenses-benefits/record-keeping>. Checked 2026-11-03. Publication date not shown. Scope is employer expense and benefit records, not all company accounting retention rules.
+
 ### insurance | specific | inherits fintech
-Parent context remains. The following sourced UK addition applies only within its stated scope.
+Specific UK subtype requirements are sourced below; applicable UK default and fintech notes also apply. Regulatory accountability does not identify a buyer's commercial budget holder.
+
+decision_approvers | scope GB | legal: For insurance manufacture, PROD 4.2.9 makes the manufacturer's governing body responsible for endorsing and reviewing the product approval process.
+Applies only: Only where the firm has the relevant manufacturing responsibility, including applicable lead firm arrangements.
+Source J:UK-PROD42: PROD 4.2 Manufacture of insurance products <https://handbook.fca.org.uk/handbook/prod4/prod4s2>. Checked 2026-11-03. Current official chapter as of 2026-11-02. Scope includes manufacturing and relevant lead firm exceptions; not every insurance distributor.
 
 sector_regulator | scope GB | legal: Distinguish an insurer from an insurance intermediary. New insurers apply to the Prudential Regulation Authority; the FCA lists a separate authorisation route for general insurance intermediaries.
 Applies only: For authorisation of the relevant UK insurance business; do not treat an insurer's software supplier as the insurer.
 Source J:UK-PRA-AUTH: New firm authorisation <https://www.bankofengland.co.uk/prudential-regulation/Authorisations/new-firm-authorisation>. Checked 2026-11-03. Publication date not shown. Not a claim that software providers need a banking or insurance authorisation.
 Source J:UK-FCA-WEALTH: Authorisation <https://www.fca.org.uk/firms/authorisation>. Checked 2026-11-03. Publication date not established. Directory supports regulator routing, not a complete account of permissions or exemptions.
 
-### customer-service | inherited | inherits saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+data_privacy | scope GB | legal: When underwriting or claims use health data, establish an Article 6 lawful basis and an Article 9 condition, plus applicable Data Protection Act conditions.
+Applies only: Only for special category processing; ordinary financial data is not automatically special category data.
+Source J:UK-ICO-SPECIAL: What are the rules on special category data <https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/>. Checked 2026-11-03. Publication date not reliably shown. Do not treat all financial data as special category data. Automated decision rules are not asserted here.
 
-### crm-marketing | inherited | inherits saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+proof | scope GB | legal: Show the insurance product approval record, target market review and corrective action history that PROD 4.2 requires to be documented for audit.
+Applies only: For insurance manufacturers and products within PROD 4.2.
+Source J:UK-PROD42: PROD 4.2 Manufacture of insurance products <https://handbook.fca.org.uk/handbook/prod4/prod4s2>. Checked 2026-11-03. Current official chapter as of 2026-11-02. Scope includes manufacturing and relevant lead firm exceptions; not every insurance distributor.
 
-### collaboration | inherited | inherits saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### customer-service | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: customer-service: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### product-growth | inherited | inherits saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### crm-marketing | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: crm-marketing: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### construction | inherited | inherits vertical-saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### collaboration | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: collaboration: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### property-management | inherited | inherits vertical-saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### product-growth | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: product-growth: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### field-services | inherited | inherits vertical-saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### construction | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: construction: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### fmcg-retail-execution | inherited | inherits vertical-saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### property-management | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: property-management: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
+
+### field-services | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: field-services: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
+
+### fmcg-retail-execution | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: fmcg-retail-execution: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### industry-hr-payroll | specific | inherits vertical-saas
 Parent context remains. The following sourced UK addition applies only within its stated scope.
@@ -1131,41 +1489,53 @@ proof | scope GB | legal: For UK PAYE payroll, demonstrate the Full Payment Subm
 Applies only: For employers reporting PAYE payroll; check permitted reporting exceptions for the actual circumstances.
 Source J:UK-HMRC-PAYROLL: Running payroll: Reporting to HMRC: FPS <https://www.gov.uk/running-payroll/reporting-to-hmrc>. Checked 2026-11-03. Publication date not shown. PAYE payroll and reporting exceptions must be checked for the employer.
 
-### hotel-lodging | inherited | inherits vertical-saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### hotel-lodging | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: hotel-lodging: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### retail-restaurant-ops | inherited | inherits vertical-saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### retail-restaurant-ops | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: retail-restaurant-ops: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### agents-copilots | inherited | inherits ai-native
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### agents-copilots | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: agents-copilots: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### voice-language-models | inherited | inherits ai-native
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### voice-language-models | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: voice-language-models: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### enterprise-search | inherited | inherits ai-native
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### enterprise-search | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: enterprise-search: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### it-services | inherited | inherits ites
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### it-services | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: it-services: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### bpo-cx | inherited | inherits ites
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### bpo-cx | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: bpo-cx: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### digital-engineering | inherited | inherits ites
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### digital-engineering | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: digital-engineering: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### data-services | inherited | inherits ites
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### data-services | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: data-services: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### operators-connectivity | inherited | inherits telecom
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### operators-connectivity | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: operators-connectivity: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### cpaas-messaging | inherited | inherits telecom
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### cpaas-messaging | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: cpaas-messaging: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### telecom-software | inherited | inherits telecom
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### telecom-software | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: telecom-software: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### business-voice-ucaas | specific | inherits telecom
 Parent context remains. The following sourced UK addition applies only within its stated scope.
@@ -1174,78 +1544,101 @@ proof | scope GB | legal: For a covered UK voice service, test emergency access 
 Applies only: Only for providers and services within the condition's scope; confirm the service classification.
 Source J:UK-OFCOM-GC: General Conditions of Entitlement <https://www.ofcom.org.uk/phones-and-broadband/accessibility/general-conditions-of-entitlement>. Checked 2026-11-03. Updated 2026-04-08. Each condition has its own regulated provider definition; not all software sellers are communications providers.
 
-### developer-platform | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### developer-platform | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: developer-platform: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### data-infrastructure | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### data-infrastructure | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: data-infrastructure: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### observability | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### observability | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: observability: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### testing | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### testing | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: testing: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### dev-tools | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### dev-tools | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: dev-tools: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### cloud-security | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### cloud-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: cloud-security: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### identity-security | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### identity-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: identity-security: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### email-security | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### email-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: email-security: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### awareness-training | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### awareness-training | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: awareness-training: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### appsec | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### appsec | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: appsec: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### mobile-appsec | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### mobile-appsec | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: mobile-appsec: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### soc-services | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### soc-services | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: soc-services: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### endpoint-network | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### endpoint-network | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: endpoint-network: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### document-ai | inherited | inherits ai-native
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### document-ai | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: document-ai: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### ai-video | inherited | inherits ai-native
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### ai-video | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: ai-video: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### engineering-talent | inherited | inherits ites
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### engineering-talent | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: engineering-talent: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### product-management | inherited | inherits saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### product-management | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: product-management: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### digital-adoption | inherited | inherits saas
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### digital-adoption | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: digital-adoption: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### pentest | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### pentest | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: pentest: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### attack-surface-dast | inherited | inherits cybersecurity
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### attack-surface-dast | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: attack-surface-dast: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### process-orchestration | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### process-orchestration | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: process-orchestration: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### open-source-support | inherited | inherits software
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### open-source-support | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: open-source-support: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### iot-connectivity | inherited | inherits telecom
-No validated UK difference beyond the parent vertical and defaults; inherit those notes. This is not a complete regulatory assessment of the buyer.
+### iot-connectivity | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: iot-connectivity: check FCA Handbook and authorisation guidance; PRA rules; ICO UK GDPR guidance; relevant UK sector authority for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ## Western Europe
 
-This draft covers Austria, Belgium, France, Germany, Liechtenstein, Luxembourg, Monaco, the Netherlands and Switzerland. The UK has its own file. This is a declared country scope, not a claim that all European markets are covered. EU provisions are attached only to the listed EU countries when that territorial scope is sourced. Liechtenstein, Monaco and Switzerland receive separately sourced notes. No country is a regional default. Draft for owner review.
+This draft covers Austria, Belgium, France, Germany, Liechtenstein, Luxembourg, Monaco, the Netherlands and Switzerland. The UK has its own file. This is a declared country scope, not a claim that all European markets are covered. EU provisions are attached only to the listed EU countries when that territorial scope is sourced. Liechtenstein, Monaco and Switzerland receive separately sourced notes. No country is a regional default. Draft for owner review. Depth review follows REGIONS-DEPTH.md. Waiting cells identify unfinished source checks and must not be counted as proven inheritance.
 Countries: AT = Austria (EU member); BE = Belgium (EU member); FR = France (EU member); DE = Germany (EU member); LI = Liechtenstein; LU = Luxembourg (EU member); MC = Monaco; NL = Netherlands (EU member); CH = Switzerland
 Clues, only in selling context: {"aliases":["Western Europe"],"countries":[{"code":"AT","name":"Austria","aliases":["Austria","Österreich"],"cities":["Vienna"],"currencies":[],"regulators":["Finanzmarktaufsicht"]},{"code":"BE","name":"Belgium","aliases":["Belgium","Belgique","België"],"cities":["Brussels"],"currencies":[],"regulators":["National Bank of Belgium"]},{"code":"FR","name":"France","aliases":["France"],"cities":["Paris","Lyon"],"currencies":[],"regulators":["Autorité de contrôle prudentiel et de résolution","Arcep"]},{"code":"DE","name":"Germany","aliases":["Germany","Deutschland"],"cities":["Berlin","Frankfurt","Munich"],"currencies":[],"regulators":["BaFin","Bundesnetzagentur"]},{"code":"LI","name":"Liechtenstein","aliases":["Liechtenstein"],"cities":["Vaduz"],"currencies":[],"regulators":["Financial Market Authority Liechtenstein"]},{"code":"LU","name":"Luxembourg","aliases":["Luxembourg"],"cities":[],"currencies":[],"regulators":["Commission de Surveillance du Secteur Financier"]},{"code":"MC","name":"Monaco","aliases":["Monaco"],"cities":[],"currencies":[],"regulators":["Commission de Contrôle des Activités Financières"]},{"code":"NL","name":"Netherlands","aliases":["Netherlands","Nederland"],"cities":["Amsterdam","Rotterdam"],"currencies":[],"regulators":["De Nederlandsche Bank"]},{"code":"CH","name":"Switzerland","aliases":["Switzerland","Schweiz","Suisse","Svizzera"],"cities":["Zurich","Geneva","Bern"],"currencies":[],"regulators":["FINMA","Federal Data Protection and Information Commissioner"]}]}
 
@@ -1309,8 +1702,9 @@ procurement_payment | scope AT,BE,FR,DE,LU,NL | legal: For an EU financial entit
 Applies only: For financial entities and ICT arrangements within DORA scope; identify whether a critical or important function is supported.
 Source J:EU-DORA: Regulation (EU) 2022/2554 on digital operational resilience for the financial sector <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2554>. Checked 2026-11-03. Read primary legal text in indexed search. Direct ELI view served a JavaScript challenge. Apply only to financial entities and arrangements within scope; not every technology supplier is directly supervised.
 
-### vertical-saas | inherited | inherits defaults
-Reviewed against the country scoped defaults. No separately validated sector addition; inherit only defaults applicable to the named country. This is not an exhaustive regulatory inventory.
+### vertical-saas | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: vertical-saas: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### ai-native | specific | inherits defaults
 Use applicable parent notes and these additions only for their named countries and activities.
@@ -1319,8 +1713,9 @@ proof | scope AT,BE,FR,DE,LU,NL | legal: For the listed EU markets, classify the
 Applies only: For AI systems within the Act's scope. Check the relevant paragraph, exceptions and transition before stating a duty or date.
 Source J:EU-AI: Transparency obligations under Article 50 of the AI Act <https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act>. Checked 2026-11-03. Publication date not shown. Check the exact paragraph and transition; do not treat all AI obligations as applying on one date.
 
-### ites | inherited | inherits defaults
-Reviewed against the country scoped defaults. No separately validated sector addition; inherit only defaults applicable to the named country. This is not an exhaustive regulatory inventory.
+### ites | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: ites: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### telecom | specific | inherits defaults
 Use applicable parent notes and these additions only for their named countries and activities.
@@ -1333,6 +1728,39 @@ sector_regulator | scope FR | legal: France: Ordonnance n° 2021-650 removed the
 Applies only: For the prior declaration addressed by Arcep; this does not remove numbering, emergency access or other applicable duties.
 Source J:FR-TELECOM: Questions fréquentes for communications operators <https://extranet.arcep.fr/communications-electroniques/questions-frequentes>. Checked 2026-11-03. Publication date not shown. Removal of this declaration does not remove other operator obligations.
 
+sector_regulator | scope AT | legal: Austria: section 6 Telekommunikationsgesetz 2021 requires the intended provision, change or cessation of a covered public network or communications service to be notified to RTR.
+Applies only: For networks or services within the notification scope; confirm the provider's actual role.
+Source J:AT-TELECOM: General Authorization <https://www.rtr.at/TKP/was_wir_tun/telekommunikation/anbieterservice/allgemeingenehmigung/Allgemeingenehmigung.en.html>. Checked 2026-11-03. Publication date not shown. Establish the actual public network or service before assigning notification.
+
+sector_regulator | scope BE | legal: Belgium: the Electronic Communications Act of 13 June 2005 and Royal Decree of 7 March 2007 govern BIPT notification before operator activity. Number independent interpersonal services are excluded from this notification.
+Applies only: For covered Belgian operator activity; the notification exception does not establish exemption from all telecom duties.
+Source J:BE-TELECOM: Notifying the BIPT <https://www.bipt.be/sectors/telecommunications/being-an-operator-in-belgium/notifying-the-bipt>. Checked 2026-11-03. Publication date not shown. Number independent interpersonal communications are excluded from this notification; other duties may remain.
+
+sector_regulator | scope LU | legal: Luxembourg: Article 15 of the Loi du 17 décembre 2021 requires an undertaking subject to general authorisation to notify the ILR before providing the covered electronic communications network or service.
+Applies only: Confirm the actual network, service and general authorisation scope.
+Source J:LU-TELECOM: Notification et autorisation <https://www.ilr.lu/secteurs-activites/communications-electroniques/devenir-operateur/notification-et-autorisation/>. Checked 2026-11-03. Publication date not shown. Applies to undertakings subject to general authorisation; service classification matters.
+
+sector_regulator | scope NL | legal: Netherlands: ACM's Telecommunicatiewet guidance requires notification for covered public electronic communications services, networks and associated facilities. Identify signal transport and the provider responsible to the customer.
+Applies only: For activities meeting ACM's stated provider criteria; content creation or ordinary hosting alone does not establish the same role.
+Source J:NL-TELECOM: Registratie telecomaanbieders <https://www.acm.nl/nl/telecom/telefonie-internet-tv-aanbieden/registratie-telecomaanbieders>. Checked 2026-11-03. Publication date not shown. Dutch primary guidance distinguishes signal transport from content and ordinary hosting.
+
+sector_regulator | scope CH | legal: Switzerland: under the Telecommunications Act, the Federal Office of Communications registers providers using the specified licensed radio frequencies or nationally managed addressing resources.
+Applies only: For the resources and provider relationships identified by Swiss OFCOM. Providers without those resources are not automatically on this register; other duties can still apply.
+Source J:CH-TELECOM: Registration and publication as a TSP <https://www.bakom.admin.ch/en/registration-and-publication-as-a-tsp>. Checked 2026-11-03. Do not confuse Swiss OFCOM with UK Ofcom. Registration scope does not exhaust surveillance or other obligations.
+
+sector_regulator | scope LI | legal: Liechtenstein: Article 19 Kommunikationsgesetz requires notification to the Amt für Kommunikation for covered electronic communications networks or services, excluding number independent interpersonal services.
+Applies only: For the provider's actual service in Liechtenstein; do not apply the Swiss registration route.
+Source J:LI-TELECOM: Melderegister, Meldepflicht und Meldung <https://www.llv.li/de/landesverwaltung/amt-fuer-kommunikation/elektronische-kommunikation/meldepflicht-meldung-und-melderegister>. Checked 2026-11-03. Publication date not shown. Liechtenstein source is llv.li; li.admin.ch is a Swiss surveillance authority and must not be used for Liechtenstein.
+
+sector_regulator | scope MC | legal: Monaco: Ordonnance Souveraine n° 7.997, as amended by n° 12.143 in 2026, assigns telecom resources and operator concession oversight to the Direction des Plateformes et des Ressources Numériques.
+Applies only: For Monaco telecom resources and operator activities within the retained remit; establish the required concession or authorisation for the actual activity.
+Source J:MC-TELECOM-AUTH: Ordonnance Souveraine n° 7.997 du 12 mars 2020 <https://journaldemonaco.gouv.mc/fr/Journaux/2020/Journal-8488/Ordonnance-Souveraine-n-7.997-du-12-mars-2020-portant-creation-de-la-Direction-des-Plateformes-et-des-Ressources-Numeriques>. Checked 2026-11-03. Read with the 2026 amendment. Do not reuse the obsolete Direction des Communications Électroniques name.
+Source J:MC-DIGITAL-2026: Ordonnance Souveraine n° 12.143 du 24 septembre 2026 <https://journaldemonaco.gouv.mc/Journaux/2026/Journal-8819/Ordonnance-Souveraine-n-12.143-du-24-septembre-2026-portant-creation-d-une-Delegation-Interministerielle-au-Numerique-et-des-Directions-la-composant>. Checked 2026-11-03. Only the retained telecommunications remit is used; do not infer broader licence procedures.
+
+data_privacy | scope MC | legal: Monaco: Article 28-7 of Loi n° 1.383 protects private electronic correspondence handled by covered communications operators and online correspondence services. Review access to message content and associated identity data.
+Applies only: For the operators and services within that article, subject to its statutory exceptions; not a blanket prohibition on authorised security processing.
+Source J:MC-CORRESPONDENCE: Loi n° 1.383 du 2 août 2011 pour une Principauté numérique <https://legimonaco.mc/tnc/loi/2011/08-02-1.383>. Checked 2026-11-03. Publication date not established from current consolidated text. Search retrieved version current 2026-10-01. Direct fetch timed out; read primary indexed Article 28-7. Specific legal exceptions remain.
+
 ### cybersecurity | specific | inherits defaults
 Use applicable parent notes and these additions only for their named countries and activities.
 
@@ -1344,32 +1772,41 @@ proof | scope CH | legal: Switzerland: the Information Security Act and Cybersec
 Applies only: Only for covered entities and incidents after checking ordinance exemptions; a security supplier is not automatically the reporting entity.
 Source J:CH-CYBER: Legal basis for the reporting obligation <https://www.bacs.admin.ch/en/legal-basis-for-the-reporting-obligation>. Checked 2026-11-03. Publication date not shown. Entity, incident and ordinance exemptions must be checked; not every Swiss company is covered.
 
-### software | inherited | inherits defaults
-Reviewed against the country scoped defaults. No separately validated sector addition; inherit only defaults applicable to the named country. This is not an exhaustive regulatory inventory.
+### software | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: software: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### saas | inherited | inherits defaults
-Reviewed against the country scoped defaults. No separately validated sector addition; inherit only defaults applicable to the named country. This is not an exhaustive regulatory inventory.
+### saas | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: saas: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### freight-visibility | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### freight-visibility | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: freight-visibility: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### freight-marketplace | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### freight-marketplace | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: freight-marketplace: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### seller-shipping | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### seller-shipping | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: seller-shipping: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### last-mile | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### last-mile | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: last-mile: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### warehousing | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### warehousing | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: warehousing: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### transport-management | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### transport-management | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: transport-management: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### payments-banking | specific | inherits fintech
+### payments-banking | waiting_for_source | inherits fintech
 Use applicable parent notes and these additions only for their named countries and activities.
+Waiting for a source: payments-banking: country specific source check incomplete for LI, MC, CH. Check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope AT,BE,FR,DE,LU,NL | legal: Under Directive (EU) 2015/2366, PSD2, national authorities authorise payment institutions. Use the EBA register to locate the entity and then verify the national authorisation and services.
 Applies only: For covered payment or electronic money institutions; the EBA register itself confers no legal rights.
@@ -1379,8 +1816,34 @@ sector_regulator | scope DE | legal: Germany: the Zahlungsdiensteaufsichtsgesetz
 Applies only: For the activities and institutions within ZAG; do not infer payment institution status from supplying an API.
 Source J:DE-PAYMENTS: Payment institutions and electronic money institutions <https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/payment-institutions-and-e-money-institutions-622962>. Checked 2026-11-03. Publication date not shown. Exclusions and actual service model must be checked.
 
-### core-banking | specific | inherits fintech
+sector_regulator | scope AT | legal: Austria: FMA licenses payment institutions under ZaDiG 2018 and registers account information service providers.
+Applies only: For the entity actually performing the regulated activity, after checking exclusions, existing permissions and cross border routes.
+Source J:AT-PAYMENTS: Licencing and Registration of Payment Services <https://www.fma.gv.at/en/financial-service-providers/payment-institutions/licencing-and-registration-of-payment-services/>. Checked 2026-11-03. No publication date shown. Check actual payment activity and exemptions.
+
+sector_regulator | scope BE | legal: Belgium: The Act of 11 March 2018 governs payment and electronic money institutions; verify the NBB authorisation category.
+Applies only: For the entity actually performing the regulated activity, after checking exclusions, existing permissions and cross border routes.
+Source J:BE-PAYMENTS: Act of 11 March 2018 on payment institutions and electronic money institutions <https://www.nbb.be/en/financial-supervision-and-resolution/cross-cutting-and-international-aspects/news-and/act-11-march>. Checked 2026-11-03. Act date is 11 March; publication date is 26 March. Do not conflate them.
+Source J:BE-AUTH: Information on authorisations <https://www.nbb.be/en/financial-oversight/general/authorisation-information>. Checked 2026-11-03. No publication date shown. Does not give NBB every FSMA conduct or investment adviser function.
+
+sector_regulator | scope FR | legal: France: Under the Code monetaire et financier, ACPR authorises payment institutions; account information only providers use registration.
+Applies only: For the entity actually performing the regulated activity, after checking exclusions, existing permissions and cross border routes.
+Source J:FR-PAYMENTS: Etablissement de paiement et prestataire de service information sur les comptes <https://acpr.banque-france.fr/en/node/26808>. Checked 2026-11-03. No publication date shown. ACPR route and Banque de France security opinion; simplified route limitations retained.
+
+sector_regulator | scope LU | legal: Luxembourg: CSSF authorisation or registration under the Law of 10 November 2009 depends on payment, electronic money or account information activity.
+Applies only: For the entity actually performing the regulated activity, after checking exclusions, existing permissions and cross border routes.
+Source J:LU-PAYMENTS: Authorisation procedure of a PI or EMI or registration of an AISP <https://www.cssf.lu/en/authorisation-procedure-payment-institution-or-electronic-money-institution-registration-aisp/>. Checked 2026-11-03. No publication date shown. Use actual activity; limited network exclusions can still require notification.
+
+sector_regulator | scope NL | legal: Netherlands: Payment service market access falls under the Wft; DNB handles authorisation and prudential supervision, with AFM conduct supervision.
+Applies only: For the entity actually performing the regulated activity, after checking exclusions, existing permissions and cross border routes.
+Source J:NL-PAYMENTS: Laws and regulations on market access of payment service providers <https://www.dnb.nl/en/sector-information/open-book-supervision/open-book-supervision-sectors/payment-institutions/licensing-requirement-for-payment-service-providers-overview/laws-and-regulations-on-the-market-access-of-payment-service-providers/>. Checked 2026-11-03. DNB current page identifies PSD2 basis. No claim that all payments software is regulated.
+
+sector_regulator | scope CH | legal: Switzerland: Distinguish a banking licence from the Article 1b Banking Act FinTech licence, which restricts investment of accepted deposits and payment of interest.
+Applies only: For the entity actually performing the regulated activity, after checking exclusions, existing permissions and cross border routes.
+Source J:CH-FINTECH-LICENCE: FinTech licence <https://www.finma.ch/en/authorisation/fintech/fintech-bewilligung/>. Checked 2026-11-03. No publication date shown. Does not establish that every payment software provider needs a licence.
+
+### core-banking | waiting_for_source | inherits fintech
 Use applicable parent notes and these additions only for their named countries and activities.
+Waiting for a source: core-banking: country specific source check incomplete for LI, MC, CH. Check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope AT | legal: Austria: the ECB lists Finanzmarktaufsicht as the national competent banking supervisor. Confirm the bank's supervisory route before assigning approval evidence.
 Applies only: For banking supervision in the Single Supervisory Mechanism; not an investment, insurance or general software regulator mapping.
@@ -1406,25 +1869,79 @@ sector_regulator | scope NL | legal: Netherlands: the ECB lists De Nederlandsche
 Applies only: For banking supervision in the Single Supervisory Mechanism; not an investment, insurance or general software regulator mapping.
 Source J:EU-BANK-SUPERVISORS: National supervisors <https://www.bankingsupervision.europa.eu/about/organisation/national-supervisors/html/index.en.html>. Checked 2026-11-03. Publication date not shown. Banking supervision only, not a list of every financial sector regulator.
 
-### lending | specific | inherits fintech
+sector_regulator | scope CH | legal: Switzerland: FINMA's Article 1a Banking Act assessment concerns the bank's deposit or refinancing activity; the core system supplier does not acquire a banking licence by supplying software.
+Applies only: For the relevant regulated institution and activity; establish the legal entity and permission before mapping platform controls.
+Source J:CH-BANK: Authorisation requirements for banks <https://www.finma.ch/en/authorisation/banks-and-securities-firms/getting-licensed/banks/>. Checked 2026-11-03. No publication date shown. Actual deposit or refinancing activity determines scope; no numerical threshold is reproduced.
+
+sector_regulator | scope LI | legal: Liechtenstein: Use the BankA framework effective from February 2025 for banks; investment firms have separate WPFG and WPDG requirements.
+Applies only: For the relevant regulated institution and activity; establish the legal entity and permission before mapping platform controls.
+Source J:LI-BANK-FRAMEWORK: New legal framework for the supervision of banks and investment firms <https://www.fma-li.li/en/news/neuer-rechtsrahmen-fuer-die-aufsicht-ueber-banken-und-wertpapierfirmen-1090>. Checked 2026-11-03. Do not substitute the former single Banking Act framework for the new split.
+
+sector_regulator | scope MC | legal: Monaco: Credit institution status involves ACPR authorisation. Keep the banking authorisation distinct from CCAF approval for enumerated investment activities.
+Applies only: For the relevant regulated institution and activity; establish the legal entity and permission before mapping platform controls.
+Source J:MC-CCAF: Formalities for carrying out a financial activity <https://ccaf.mc/en/authorised-firms/carrying-out-a-financial-activity/formalities/>. Checked 2026-11-03. Publication date not shown. CCAF financial activity scope, not a general licence for all insurance or payment services.
+
+### lending | waiting_for_source | inherits fintech
 Use applicable parent notes and these additions only for their named countries and activities.
+Waiting for a source: lending: country specific source check incomplete for AT, BE, FR, LI, LU, MC, NL, CH. Check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope DE | legal: Germany: the Bundesbank explains activity based authorisation under the Kreditwesengesetz. Determine whether the business conducts regulated banking or financial services before assigning a lending permission.
 Applies only: For the business's own regulated activity; technology support for a lender does not alone establish authorisation scope.
 Source J:DE-FINTECH: FinTech technology enabled financial innovation <https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/fintech-622840>. Checked 2026-11-03. Publication date not shown. Fintech is not a separate legal category and not all fintech is regulated.
 
-### wealth-investment | specific | inherits fintech
+### wealth-investment | waiting_for_source | inherits fintech
 Use applicable parent notes and these additions only for their named countries and activities.
+Waiting for a source: wealth-investment: country specific source check incomplete for LI, MC, CH. Check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified. Existing scoped notes remain valid only for their stated countries.
+
+sector_regulator | scope AT | legal: Austria: WAG 2018 Article 3 requires the relevant investment service licence from FMA.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:AT-WEALTH: Licences: Investment service providers <https://www.fma.gv.at/en/financial-service-providers/investment-service-providers/licences/>. Checked 2026-11-03. No publication date shown. General application information is under revision; current page still states licence route.
+
+sector_regulator | scope BE | legal: Belgium: Separate FSMA's portfolio management and investment advice category from NBB's stockbroking authorisation category.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:BE-WEALTH: Portfolio management and investment advice company <https://www.fsma.be/en/portfolio-management-and-investment-advice-company>. Checked 2026-11-03. Selected English guidance only; no legal detail borrowed from outdated 2013 consolidated law.
+Source J:BE-AUTH: Information on authorisations <https://www.nbb.be/en/financial-oversight/general/authorisation-information>. Checked 2026-11-03. No publication date shown. Does not give NBB every FSMA conduct or investment adviser function.
+
+sector_regulator | scope FR | legal: France: AMF authorises portfolio management companies; other investment services use ACPR authorisation after AMF programme approval.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:FR-WEALTH: Provide investment services in France <https://www.amf-france.org/en/professionals/investment-services-providers/my-relations-amf/provide-investment-services>. Checked 2026-11-03. Separate AMF asset management company route must not be conflated.
+Source J:FR-AMF-AUTH: Authorise <https://www.amf-france.org/en/amf/amf-regulation/authorise>. Checked 2026-11-03. No publication date captured. Different professional categories use different routes.
+
+sector_regulator | scope DE | legal: Germany: Separate investment services under WpIG from financial services under KWG before choosing the permission route.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:DE-WEALTH: Investment institutions and financial services institutions <https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/investment-institutions-and-financial-services-institutions>. Checked 2026-11-03. No publication date shown. Current article distinguishes regimes unlike older financial services summary.
+
+sector_regulator | scope LU | legal: Luxembourg: CSSF authorises investment firms under Articles 13 to 24-9 of the Law of 5 April 1993.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:LU-WEALTH: Legal requirements and authorisation procedure for investment firms <https://www.cssf.lu/en/legal-requirements-authorisation-procedure-investment-firms/>. Checked 2026-11-03. Updated 2026-03-04. Different requirements apply to particular activities and client asset permissions.
+
+sector_regulator | scope NL | legal: Netherlands: AFM issues investment firm authorisations. Do not use the DNB payments licence as evidence of investment permissions.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:NL-FINANCIAL-AUTH: Authorisation and supervision <https://www.afm.nl/en/sector/themas/over-het-toezicht-en-beleid-van-de-afm/authorisation-and-supervision>. Checked 2026-11-03. No publication date shown. Activity specific route, not universal AFM licensing.
+
+sector_regulator | scope CH | legal: Switzerland: Commercial portfolio managers require FINMA authorisation under FinIA and normally ongoing supervision by a supervisory organisation.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:CH-PORTFOLIO: Portfolio managers and trustees <https://www.finma.ch/en/authorisation/portfolio-managers-and-trustees/>. Checked 2026-11-03. No publication date shown. Group supervision exceptions apply.
+
+sector_regulator | scope LI | legal: Liechtenstein: Investment firms use the WPFG and investment services use the WPDG under the framework effective from February 2025.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:LI-BANK-FRAMEWORK: New legal framework for the supervision of banks and investment firms <https://www.fma-li.li/en/news/neuer-rechtsrahmen-fuer-die-aufsicht-ueber-banken-und-wertpapierfirmen-1090>. Checked 2026-11-03. Do not substitute the former single Banking Act framework for the new split.
+
+sector_regulator | scope MC | legal: Monaco: CCAF authorisation under amended Act No. 1.338 applies to the listed portfolio management and order reception or transmission activities.
+Applies only: For the specified investment entity and activity; check exemptions, group supervision and cross border permissions.
+Source J:MC-WEALTH: Management advisory services and reception transmission of orders <https://ccaf.mc/en/authorised-firms/financial-activities/management-advisory-services-and-reception-transmission-of-orders/>. Checked 2026-11-03. No publication date shown. Only enumerated regulated activities.
 
 proof | scope AT,BE,FR,DE,LU,NL | legal: For an EU investment firm, check the national register for the legal entity and authorised investment activities. ESMA's consolidated register points back to national authorities.
 Applies only: For regulated investment services; the evidence must match the actual entity and service offered.
 Source J:EU-INVEST: Is the firm regulated? <https://www.esma.europa.eu/investor-corner/is-the-firm-regulated>. Checked 2026-11-03. Publication date not shown. Check the actual legal entity and service; database inclusion does not replace licence scope review.
 
-### spend-expense | inherited | inherits fintech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### spend-expense | waiting_for_source | inherits fintech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: spend-expense: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### insurance | specific | inherits fintech
+### insurance | waiting_for_source | inherits fintech
 Use applicable parent notes and these additions only for their named countries and activities.
+Waiting for a source: insurance: country specific source check incomplete for LI, MC, CH. Check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope DE | legal: Germany: an insurtech carrying on insurance business needs the applicable authorisation under the Versicherungsaufsichtsgesetz. BaFin's guidance ties this to the insurance activity.
 Applies only: For conducting insurance business, not merely supplying insurance software.
@@ -1434,148 +1951,213 @@ sector_regulator | scope FR | legal: France: ACPR's authorisation routes disting
 Applies only: For institutions within ACPR's insurance authorisation remit; do not treat a software supplier as an insurer.
 Source J:FR-AUTH: Authorising undertakings <https://acpr.banque-france.fr/en/nos-missions/authorising-undertakings>. Checked 2026-11-03. Publication date not shown. Different routes by regulated activity; not all French finance is supervised solely by ACPR.
 
+sector_regulator | scope AT | legal: Austria: Insurer licensing is governed by Versicherungsaufsichtsgesetz 2016 through FMA, with the appropriate domestic or cross border route.
+Applies only: For carrying on insurance business; an intermediary or technology supplier is a different activity.
+Source J:AT-INSURANCE: Licence: insurance <https://www.fma.gv.at/en/insurance/licence/>. Checked 2026-11-03. No publication date shown. Check domestic, EEA passport or third country branch route.
+
+sector_regulator | scope BE | legal: Belgium: NBB's insurance and reinsurance authorisation category is separate from payment and stockbroking permissions.
+Applies only: For carrying on insurance business; an intermediary or technology supplier is a different activity.
+Source J:BE-AUTH: Information on authorisations <https://www.nbb.be/en/financial-oversight/general/authorisation-information>. Checked 2026-11-03. No publication date shown. Does not give NBB every FSMA conduct or investment adviser function.
+
+sector_regulator | scope NL | legal: Netherlands: DNB authorisation or a valid exemption is required for insurer activity under the Wft.
+Applies only: For carrying on insurance business; an intermediary or technology supplier is a different activity.
+Source J:NL-INSURANCE: Prohibition on operating as an insurer without authorisation <https://www.dnb.nl/en/sector-information/open-book-supervision/open-book-supervision-sectors/insurers/market-access-insurers/prohibition-on-operating-as-an-insurer-without-authorisation/>. Checked 2026-11-03. Not an insurance intermediary licence.
+
+sector_regulator | scope CH | legal: Switzerland: FINMA licenses insurers under the Insurance Supervision Act and approves relevant business plan changes.
+Applies only: For carrying on insurance business; an intermediary or technology supplier is a different activity.
+Source J:CH-INSURANCE: Licensing in the insurance sector <https://www.finma.ch/en/authorisation/insurers/>. Checked 2026-11-03. No publication date shown. Insurers, not ordinary insurance technology suppliers.
+
+sector_regulator | scope LI | legal: Liechtenstein: Article 11 VersAG requires the FMA licence before a supervised insurer starts business.
+Applies only: For carrying on insurance business; an intermediary or technology supplier is a different activity.
+Source J:LI-INSURANCE: FMA Instruction 2017/26 Formation of an insurance undertaking <https://www.fma-li.li/files/list/fma-wegleitung-grundung-eines-vu-en-final.pdf>. Checked 2026-11-03. Published 2017-12-29; amended 2024-02-14. Relevant legislation controls individual cases.
+
 proof | scope AT,BE,FR,DE,LU,NL | legal: For an EU insurance undertaking, verify authorisation with the relevant national authority. EIOPA states that national registers prevail over conflicting entries in its consolidated register.
 Applies only: For insurance undertakings; do not use the same register as proof of an intermediary's permission.
 Source J:EU-INSURANCE: Register of Insurance Undertakings <https://register.eiopa.europa.eu/registers/register-of-insurance-undertakings>. Checked 2026-11-03. Publication date not shown. Undertakings and intermediaries differ; national registers prevail.
 
-### customer-service | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### customer-service | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: customer-service: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### crm-marketing | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### crm-marketing | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: crm-marketing: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### collaboration | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### collaboration | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: collaboration: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### product-growth | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### product-growth | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: product-growth: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### construction | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### construction | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: construction: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### property-management | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### property-management | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: property-management: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### field-services | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### field-services | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: field-services: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### fmcg-retail-execution | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### fmcg-retail-execution | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: fmcg-retail-execution: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### industry-hr-payroll | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### industry-hr-payroll | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: industry-hr-payroll: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### hotel-lodging | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### hotel-lodging | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: hotel-lodging: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### retail-restaurant-ops | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### retail-restaurant-ops | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: retail-restaurant-ops: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### agents-copilots | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### agents-copilots | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: agents-copilots: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### voice-language-models | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### voice-language-models | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: voice-language-models: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### enterprise-search | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### enterprise-search | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: enterprise-search: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### it-services | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### it-services | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: it-services: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### bpo-cx | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### bpo-cx | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: bpo-cx: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### digital-engineering | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### digital-engineering | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: digital-engineering: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### data-services | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### data-services | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: data-services: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### operators-connectivity | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### operators-connectivity | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: operators-connectivity: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### cpaas-messaging | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### cpaas-messaging | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: cpaas-messaging: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### telecom-software | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### telecom-software | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: telecom-software: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### business-voice-ucaas | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### business-voice-ucaas | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: business-voice-ucaas: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### developer-platform | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### developer-platform | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: developer-platform: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### data-infrastructure | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### data-infrastructure | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: data-infrastructure: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### observability | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### observability | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: observability: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### testing | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### testing | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: testing: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### dev-tools | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### dev-tools | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: dev-tools: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### cloud-security | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### cloud-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: cloud-security: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### identity-security | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### identity-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: identity-security: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### email-security | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### email-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: email-security: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### awareness-training | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### awareness-training | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: awareness-training: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### appsec | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### appsec | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: appsec: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### mobile-appsec | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### mobile-appsec | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: mobile-appsec: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### soc-services | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### soc-services | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: soc-services: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### endpoint-network | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### endpoint-network | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: endpoint-network: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### document-ai | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### document-ai | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: document-ai: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### ai-video | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### ai-video | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: ai-video: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### engineering-talent | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### engineering-talent | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: engineering-talent: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### product-management | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### product-management | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: product-management: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### digital-adoption | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### digital-adoption | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: digital-adoption: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### pentest | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### pentest | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: pentest: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### attack-surface-dast | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### attack-surface-dast | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: attack-surface-dast: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### process-orchestration | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### process-orchestration | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: process-orchestration: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### open-source-support | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### open-source-support | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: open-source-support: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### iot-connectivity | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. Do not borrow another country's note.
+### iot-connectivity | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: iot-connectivity: check National sector authority and privacy authority for AT BE FR DE LI LU MC NL CH; EU law only where applicability is verified for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ## North America
 
-This draft covers the United States, Canada and Mexico. It is not one legal market. State, province, territory, buyer type and activity must be established where relevant. No US state rule is presented as national, and no US, Canadian or Mexican rule is borrowed by another country. Draft for owner review.
+This draft covers the United States, Canada and Mexico. It is not one legal market. State, province, territory, buyer type and activity must be established where relevant. No US state rule is presented as national, and no US, Canadian or Mexican rule is borrowed by another country. Draft for owner review. Depth review follows REGIONS-DEPTH.md. Waiting cells identify unfinished source checks and must not be counted as proven inheritance.
 Countries: US = United States; CA = Canada; MX = Mexico
 Clues, only in selling context: {"aliases":["North America"],"countries":[{"code":"US","name":"United States","aliases":["United States","United States of America","USA","U.S."],"cities":["New York","San Francisco","Boston","Chicago","Austin"],"currencies":["USD","US dollar"],"regulators":["Federal Deposit Insurance Corporation","Office of the Comptroller of the Currency","Federal Communications Commission","Securities and Exchange Commission","FinCEN"]},{"code":"CA","name":"Canada","aliases":["Canada"],"cities":["Toronto","Vancouver","Montreal","Ottawa"],"currencies":["CAD","Canadian dollar"],"regulators":["Office of the Superintendent of Financial Institutions","Bank of Canada","Canadian Radio-television and Telecommunications Commission"]},{"code":"MX","name":"Mexico","aliases":["Mexico","México"],"cities":["Mexico City","Ciudad de México","Monterrey","Guadalajara"],"currencies":["MXN","Mexican peso"],"regulators":["Comisión Nacional Bancaria y de Valores","Comisión Nacional de Seguros y Fianzas","Comisión Reguladora de Telecomunicaciones"]}]}
 
@@ -1639,8 +2221,9 @@ procurement_payment | scope US | legal: United States: align a bank buyer's evid
 Applies only: For banking organisations supervised by the issuing agencies; expectations depend on the arrangement's risk and complexity.
 Source J:US-BANK-THIRDPARTY: Interagency Guidance on Third Party Relationships: Risk Management <https://www.fdic.gov/news/financial-institution-letters/2023/fil23029.html>. Checked 2026-11-03. Supervisory guidance, not a new licence or a universal checklist for every nonbank.
 
-### vertical-saas | inherited | inherits defaults
-No validated sector addition beyond the country scoped defaults. Inherit only notes for the named country; this is not a complete regulatory inventory.
+### vertical-saas | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: vertical-saas: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### ai-native | specific | inherits defaults
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
@@ -1649,8 +2232,9 @@ proof | scope US | operating: United States: if the buyer uses the NIST AI Risk 
 Applies only: Use only as an agreed assurance framework; do not represent it as a general legal approval or claim it is uniquely applicable to the US.
 Source J:US-AI-RMF: AI Risk Management Framework <https://www.nist.gov/itl/ai-risk-management-framework>. Checked 2026-11-03. Webpage publication date not established. Framework release date 2023-01-26. Not a general legal mandate.
 
-### ites | inherited | inherits defaults
-No validated sector addition beyond the country scoped defaults. Inherit only notes for the named country; this is not a complete regulatory inventory.
+### ites | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: ites: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### telecom | specific | inherits defaults
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
@@ -1678,29 +2262,37 @@ proof | scope CA | operating: Canada: the Canadian Centre for Cyber Security's b
 Applies only: Recommended baseline guidance for small and medium organisations; confirm suitability for the buyer's risk rather than asserting certification.
 Source J:CA-CYBER: Baseline cyber security controls for small and medium organizations <https://www.cyber.gc.ca/en/guidance/baseline-cyber-security-controls-small-and-medium-organizations>. Checked 2026-11-03. Publication date not reliably established. Voluntary guidance targeted at smaller organisations, not a universal certification requirement.
 
-### software | inherited | inherits defaults
-No validated sector addition beyond the country scoped defaults. Inherit only notes for the named country; this is not a complete regulatory inventory.
+### software | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: software: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### saas | inherited | inherits defaults
-No validated sector addition beyond the country scoped defaults. Inherit only notes for the named country; this is not a complete regulatory inventory.
+### saas | waiting_for_source | inherits defaults
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: saas: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### freight-visibility | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### freight-visibility | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: freight-visibility: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### freight-marketplace | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### freight-marketplace | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: freight-marketplace: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### seller-shipping | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### seller-shipping | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: seller-shipping: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### last-mile | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### last-mile | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: last-mile: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### warehousing | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### warehousing | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: warehousing: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### transport-management | inherited | inherits logistics-tech
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### transport-management | waiting_for_source | inherits logistics-tech
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: transport-management: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
 ### payments-banking | specific | inherits fintech
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
@@ -1717,8 +2309,13 @@ proof | scope CA | legal: Canada: a payment service provider within the Retail P
 Applies only: For payment activities and providers within RPAA scope; determine whether funds are held and check exclusions.
 Source J:CA-RPAA: Retail payments supervisory framework <https://www.bankofcanada.ca/regulatory-oversight/retail-payments/supervisory-framework/>. Checked 2026-11-03. Publication date not shown. Apply only to payment service providers and activities in scope; check exclusions and funds handling.
 
-### core-banking | specific | inherits fintech
+### core-banking | waiting_for_source | inherits fintech
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
+Waiting for a source: core-banking: country specific source check incomplete for MX. Check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation. Existing scoped notes remain valid only for their stated countries.
+
+sector_regulator | scope MX | legal: Mexico: commercial bank authorisation under the Ley de Instituciones de Credito is granted through CNBV after its board agreement and a favourable Banco de Mexico opinion.
+Applies only: For organising and operating the bank, not licensing its core platform supplier.
+Source J:MX-BANK: Banks <https://www.cnbv.gob.mx/en/Supervised-Entities/Banks/Paginas/Banks.aspx>. Checked 2026-11-03. Official search text read; direct fetch timed out. CNBV authorisation requires board agreement and favourable Banco de Mexico opinion.
 
 proof | scope US | legal: United States: a bank's use of a third party does not remove its responsibility for safe operations and applicable law. Provide control and monitoring evidence for the bank's chosen supervisory review.
 Applies only: For a supervised bank relationship; a core banking platform supplier does not inherit the bank's charter.
@@ -1728,15 +2325,17 @@ proof | scope CA | legal: Canada: OSFI B-10 applies proportionate oversight to a
 Applies only: For institutions within B-10 scope; do not assume provincial institutions have the same supervisory route.
 Source J:CA-OSFI-B10: Third Party Risk Management Guideline B-10 <https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline>. Checked 2026-11-03. Guidance scope is federally regulated institutions and relevant branches, not every Canadian fintech or provincial insurer.
 
-### lending | specific | inherits fintech
+### lending | waiting_for_source | inherits fintech
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
+Waiting for a source: lending: country specific source check incomplete for CA, MX. Check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation. Existing scoped notes remain valid only for their stated countries.
 
 proof | scope US | legal: United States: under ECOA Regulation B, 12 CFR 1002.9, required adverse action reasons must identify the principal factors actually used. Demonstrate the explanation workflow for the creditor's applicable notice route.
 Applies only: For covered credit decisions and notices; check business credit, incomplete application and other exceptions rather than applying one notice process to every loan.
 Source J:US-REG-B: 12 CFR 1002.9 Notifications <https://www.consumerfinance.gov/rules-policy/regulations/1002/9/>. Checked 2026-11-03. No standalone publication date shown. Direct rule used instead of relying on an older circular. Business credit and other notification exceptions must be checked.
 
-### wealth-investment | specific | inherits fintech
+### wealth-investment | waiting_for_source | inherits fintech
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
+Waiting for a source: wealth-investment: country specific source check incomplete for MX. Check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope US | legal: United States: an investment adviser may be registered with the SEC or one or more state securities authorities. Verify the entity's actual registration and applicable exceptions before assigning an approval route.
 Applies only: Investment adviser registration only; not the registration regime for every broker, fund or software supplier.
@@ -1746,15 +2345,25 @@ sector_regulator | scope CA | legal: Canada: National Instrument 31-103 and rela
 Applies only: For covered securities businesses; the national search does not create a federal securities licence.
 Source J:CA-SECURITIES: Registration Information <https://www.securities-administrators.ca/industry-resources/registration-information/>. Checked 2026-11-03. Publication date not shown. Check exemptions, registration category and principal regulator; not a federal securities licence.
 
-### spend-expense | specific | inherits fintech
+sector_regulator | scope MX | legal: Mexico: Article 225 of the Ley del Mercado de Valores requires registration of covered investment advisers with CNBV.
+Applies only: For habitual professional portfolio administration or individualised investment advice within the statutory category.
+Source J:MX-ADVISER: Preguntas Frecuentes: Asesores en Inversiones <https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/ASESORES_EN_INVERSIONES/Paginas/PreguntasFrecuentes.aspx>. Checked 2026-11-03. Official search text read; direct fetch returned 502. Covers registered investment advisers rather than every wealth platform.
+
+proof | scope MX | legal: Mexico: demonstrate that adviser orders remain documented in the client's name and that the adviser workflow does not take prohibited custody of client money or securities.
+Applies only: For registered investment adviser activities; permitted remuneration is distinct from custody.
+Source J:MX-ADVISER: Preguntas Frecuentes: Asesores en Inversiones <https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/ASESORES_EN_INVERSIONES/Paginas/PreguntasFrecuentes.aspx>. Checked 2026-11-03. Official search text read; direct fetch returned 502. Covers registered investment advisers rather than every wealth platform.
+
+### spend-expense | waiting_for_source | inherits fintech
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
+Waiting for a source: spend-expense: country specific source check incomplete for US, MX. Check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope CA | legal: Canada: assess any actual retail payment function in an expense product against the Retail Payment Activities Act before promising a payment service.
 Applies only: Only if the service performs covered payment functions; expense record keeping alone does not establish RPAA scope.
 Source J:CA-RPAA: Retail payments supervisory framework <https://www.bankofcanada.ca/regulatory-oversight/retail-payments/supervisory-framework/>. Checked 2026-11-03. Publication date not shown. Apply only to payment service providers and activities in scope; check exclusions and funds handling.
 
-### insurance | specific | inherits fintech
+### insurance | waiting_for_source | inherits fintech
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
+Waiting for a source: insurance: country specific source check incomplete for CA. Check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation. Existing scoped notes remain valid only for their stated countries.
 
 sector_regulator | scope US | legal: United States: insurance regulation is primarily state based. NAIC supports state regulators but does not issue licences, and a model law is not automatically law in any state.
 Applies only: Identify the relevant state and adopted instrument before attaching a specific insurance or cyber obligation.
@@ -1764,145 +2373,194 @@ sector_regulator | scope MX | legal: Mexico: establishing an insurance instituti
 Applies only: For establishing an insurance institution; not every insurance intermediary or technology supplier.
 Source J:MX-INSURANCE: Autorización para constituir, organizar y funcionar como Institución de Seguros <https://www.gob.mx/cnsf/acciones-y-programas/autorizacion-para-constituir-organizar-y-funcionar-como-institucion-de-seguros>. Checked 2026-11-03. Applies to establishing an insurance institution, not every intermediary or software supplier.
 
+sector_regulator | scope CA | legal: Canada: federally incorporated insurers use the Insurance Companies Act route, with Ministerial incorporation and a separate Superintendent order to commence business.
+Applies only: Federal incorporation only. Provincial insurance permissions and foreign branch routes require separate checks.
+Source J:CA-INSURANCE-INC: Guide for Incorporating Federally Regulated Insurance Companies <https://www.osfi-bsif.gc.ca/en/data-forms/applications-approvals/transaction-instructions/guide-incorporating-federally-regulated-insurance-companies>. Checked 2026-11-03. Guide revised May 2013 and describes expectations at 2012 year end. Current Act index separately checked through 2026-09-30. No provincial requirements inferred.
+
 buyer_language | scope MX | legal: Mexico: the CNSF insurance institution application requires the specified documents in Spanish. Prepare the approval evidence in the required language.
 Applies only: Only for that authorisation application; this does not establish the language preference of every private buyer.
 Source J:MX-INSURANCE: Autorización para constituir, organizar y funcionar como Institución de Seguros <https://www.gob.mx/cnsf/acciones-y-programas/autorizacion-para-constituir-organizar-y-funcionar-como-institucion-de-seguros>. Checked 2026-11-03. Applies to establishing an insurance institution, not every intermediary or software supplier.
 
-### customer-service | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### customer-service | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: customer-service: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### crm-marketing | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### crm-marketing | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: crm-marketing: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### collaboration | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### collaboration | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: collaboration: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### product-growth | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### product-growth | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: product-growth: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### construction | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### construction | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: construction: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### property-management | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### property-management | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: property-management: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### field-services | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### field-services | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: field-services: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### fmcg-retail-execution | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### fmcg-retail-execution | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: fmcg-retail-execution: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### industry-hr-payroll | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### industry-hr-payroll | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: industry-hr-payroll: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### hotel-lodging | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### hotel-lodging | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: hotel-lodging: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### retail-restaurant-ops | inherited | inherits vertical-saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### retail-restaurant-ops | waiting_for_source | inherits vertical-saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: retail-restaurant-ops: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### agents-copilots | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### agents-copilots | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: agents-copilots: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### voice-language-models | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### voice-language-models | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: voice-language-models: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### enterprise-search | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### enterprise-search | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: enterprise-search: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### it-services | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### it-services | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: it-services: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### bpo-cx | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### bpo-cx | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: bpo-cx: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### digital-engineering | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### digital-engineering | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: digital-engineering: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### data-services | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### data-services | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: data-services: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### operators-connectivity | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### operators-connectivity | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: operators-connectivity: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### cpaas-messaging | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### cpaas-messaging | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: cpaas-messaging: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### telecom-software | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### telecom-software | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: telecom-software: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### business-voice-ucaas | specific | inherits telecom
+### business-voice-ucaas | waiting_for_source | inherits telecom
 Applicable parent notes remain. Add only the following country and activity scoped evidence.
+Waiting for a source: business-voice-ucaas: country specific source check incomplete for CA, MX. Check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation. Existing scoped notes remain valid only for their stated countries.
 
 proof | scope US | legal: United States: for a covered interconnected VoIP service, test emergency routing, location handling and the required subscriber notice of service limitations under 47 CFR 9.11.
 Applies only: Match fixed or nonfixed service requirements and the rule's geographic conditions.
 Source J:US-E911: 47 CFR 9.11 E911 Service <https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-9/subpart-D/section-9.11>. Checked 2026-11-03. Publication date omitted for continuously updated code; latest amendment shown 2026-01-14. Geographic service conditions and fixed versus nonfixed service matter.
 
-### developer-platform | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### developer-platform | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: developer-platform: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### data-infrastructure | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### data-infrastructure | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: data-infrastructure: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### observability | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### observability | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: observability: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### testing | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### testing | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: testing: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### dev-tools | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### dev-tools | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: dev-tools: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### cloud-security | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### cloud-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: cloud-security: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### identity-security | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### identity-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: identity-security: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### email-security | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### email-security | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: email-security: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### awareness-training | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### awareness-training | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: awareness-training: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### appsec | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### appsec | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: appsec: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### mobile-appsec | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### mobile-appsec | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: mobile-appsec: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### soc-services | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### soc-services | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: soc-services: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### endpoint-network | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### endpoint-network | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: endpoint-network: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### document-ai | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### document-ai | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: document-ai: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### ai-video | inherited | inherits ai-native
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### ai-video | waiting_for_source | inherits ai-native
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: ai-video: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### engineering-talent | inherited | inherits ites
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### engineering-talent | waiting_for_source | inherits ites
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: engineering-talent: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### product-management | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### product-management | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: product-management: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### digital-adoption | inherited | inherits saas
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### digital-adoption | waiting_for_source | inherits saas
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: digital-adoption: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### pentest | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### pentest | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: pentest: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### attack-surface-dast | inherited | inherits cybersecurity
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### attack-surface-dast | waiting_for_source | inherits cybersecurity
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: attack-surface-dast: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### process-orchestration | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### process-orchestration | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: process-orchestration: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### open-source-support | inherited | inherits software
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### open-source-support | waiting_for_source | inherits software
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: open-source-support: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
 
-### iot-connectivity | inherited | inherits telecom
-No validated subtype addition beyond the applicable country notes in the parent and defaults. State or provincial rules must not be inferred.
+### iot-connectivity | waiting_for_source | inherits telecom
+Previous inheritance has not passed the source check required by REGIONS-DEPTH.md. Retain only the applicable sourced parent and default notes while the specific check is unfinished.
+Waiting for a source: iot-connectivity: check US federal and applicable state regulator; Canadian federal and applicable provincial regulator; Mexican sector authority and current legislation for country specific obligations, approval roles and evidence. No sourced finding of equivalence is recorded.
