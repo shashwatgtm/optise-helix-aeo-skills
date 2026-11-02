@@ -17,6 +17,11 @@ metadata:
   version: "1.4.0"
 ---
 
+## Required region and industry context
+
+Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Use the user's own selling market, the matching country, vertical and subtype, with sourced conditions. Keep multiple markets separate. If the region or country is missing, ask the short question in that reference and omit unsupported jurisdiction advice. Never infer a market from a competitor, company name, quote or negated place. Preserve existing evidence limits, refusals and calculations.
+
+
 # Optise–Helix RACE™ Audit
 
 A skill that audits any B2B webpage against the proprietary Optise RACE™ framework and returns specific, ranked fixes to make the page evaluable by AI agents doing multi-step buyer workflows (not just cited by AI search engines).
