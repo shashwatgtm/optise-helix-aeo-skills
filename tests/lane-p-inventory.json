@@ -1,0 +1,73 @@
+{
+  "skills": [
+    {
+      "repo": "optise-helix-aeo-skills",
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-race-audit/SKILL.md",
+      "before_sha256": "eca4f851d175182e6d50381e70bf64aa4c7a0878ed6a3a8eda9f9aef8b10405c",
+      "after_sha256": "83140bb61e77dda27078eb7fedf2f5ddf7ba00b6f6c5c4357b119f4b0fccb38d",
+      "frontmatter_sha256": "770e8e5ba51b490a144885c0090f7d6b716ff9e394e7c38c9cfd995012b8d87a",
+      "reference_sha256": "48e5917aecb374a4dfd467a5a74a066c1061c275d6110cc51b36a4860fe0bd8e"
+    },
+    {
+      "repo": "optise-helix-aeo-skills",
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-prompt-pack-builder/SKILL.md",
+      "before_sha256": "b2f9c37e205f4ff6923314650816862a50d7e3b65bb022834b9beeae0c9b4d69",
+      "after_sha256": "50ce1cbf3ecf8d96f57e4d6fea2f7fb1e8ad72c6ccae2b507249fc2fccefceae",
+      "frontmatter_sha256": "fd059affdf166736a3922b75754d1bf36e2d5547ee6447d33912760d10974c44",
+      "reference_sha256": "48e5917aecb374a4dfd467a5a74a066c1061c275d6110cc51b36a4860fe0bd8e"
+    },
+    {
+      "repo": "optise-helix-aeo-skills",
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-fitq-audit/SKILL.md",
+      "before_sha256": "0f374cdfdb6f81cfe0a6e40c62f7e14710a0c344256dcbbab80d7e24afdde3c1",
+      "after_sha256": "5211c66eb0c892cd5ad4e2851de34da411d30ec16aa1d2df6c4b311eac81d915",
+      "frontmatter_sha256": "daecfb490e2b76733a18b9ac1687d1e4ae37d98f3698307f64bb102be26a850a",
+      "reference_sha256": "48e5917aecb374a4dfd467a5a74a066c1061c275d6110cc51b36a4860fe0bd8e"
+    },
+    {
+      "repo": "optise-helix-aeo-skills",
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-eu-trust-centre/SKILL.md",
+      "before_sha256": "f35bdddc596937f6f731f02389a22d08f31b3a13bebddaff1839794b7f21ed7d",
+      "after_sha256": "1b046f7fcb743dae1b8c3bcacb552ab95b2c4999d8fe02c7b74f6c297f6ca3fa",
+      "frontmatter_sha256": "0c90e60ec527e7dc10d07e93cf34cc99dcdbe52ccbff5606e074720206aa5532",
+      "reference_sha256": "48e5917aecb374a4dfd467a5a74a066c1061c275d6110cc51b36a4860fe0bd8e"
+    },
+    {
+      "repo": "optise-helix-aeo-skills",
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-aeo-tracker/SKILL.md",
+      "before_sha256": "86858a85799399d1ff44c29b48c17a42f857af5336feedc9a7ad52219f2703cc",
+      "after_sha256": "220d4c21fa000ac128903f5ab13ffd7893f905ea5b53bbf15cf0caff1e7af1cb",
+      "frontmatter_sha256": "d9273ffccfb5db13669f6b22edf3d4f7f0eb4b2358d34750a865e96457709a53",
+      "reference_sha256": "48e5917aecb374a4dfd467a5a74a066c1061c275d6110cc51b36a4860fe0bd8e"
+    },
+    {
+      "repo": "optise-helix-aeo-skills",
+      "path": "plugins/optise-helix-aeo-toolkit/skills/optise-helix-bluf-writer/SKILL.md",
+      "before_sha256": "66a4a25f6efef3af7946ca5ddf3e799e01219da6218001f3ff5c862b55fdcbf4",
+      "after_sha256": "1422d1b9b3bdb26d0b978c946877050bca31a17804748af96fc36cc96ec936c3",
+      "frontmatter_sha256": "bcf1008972671594fc344d3c598d23075d992e7d88bbbaacab0e76273dea7112",
+      "reference_sha256": "48e5917aecb374a4dfd467a5a74a066c1061c275d6110cc51b36a4860fe0bd8e"
+    }
+  ],
+  "tools": {
+    "alpha": [
+      "gtm_consultation",
+      "epic_audit",
+      "generate_roadmap"
+    ],
+    "revenue": [
+      "account_plan_builder",
+      "deal_strategy_coach",
+      "discovery_question_bank",
+      "roi_business_case_builder",
+      "mutual_action_plan_generator",
+      "win_loss_analyzer",
+      "proposal_section_writer",
+      "email_sequence_generator",
+      "demo_script_builder",
+      "pricing_negotiation_guide",
+      "champion_enablement_kit",
+      "competitive_trap_setter"
+    ]
+  }
+}

@@ -19,7 +19,8 @@ metadata:
 
 ## Required region and industry context
 
-Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Use the user's own selling market, the matching country, vertical and subtype, with sourced conditions. Keep multiple markets separate. If the region or country is missing, ask the short question in that reference and omit unsupported jurisdiction advice. Never infer a market from a competitor, company name, quote or negated place. Preserve existing evidence limits, refusals and calculations.
+Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Bind each affirmative seller offering and subtype to its own country. Ignore negated offerings and excluded markets. Transaction currency and receipt accounts do not establish markets. Keep countries separate. Preserve evidence limits, refusals, reviewed metadata and calculations. When the selling country or applicable source is missing, ask and omit unsupported jurisdiction advice.
+
 
 
 # Optise–Helix EU Trust Centre Generator
@@ -103,7 +104,7 @@ Detect persona using `references/personas.md`. Adapt output:
 
 **Tie-breakers:**
 1. **EU AI Act matters more in 2026.** As more EU AI Act obligations apply from August 2026, elevate Q7 from "lower priority" to "medium priority."
-2. **Regulated verticals change the order.** Health-tech adds BfArM/DiGA as Q8-adjacent. Fin-tech adds DORA as Q8-adjacent.
+2. **Regulated verticals change the order.** For a confirmed Germany digital health application seeking the relevant statutory reimbursement route, ask whether BfArM/DiGA is applicable. It is not a general health technology or EU requirement. For fintech, verify the named entity, activity, country and instrument before adding a DORA question.
 3. **Never skip a question.** Even if the answer is "not applicable" or "we don't use third-party AI", the question must be present so procurement reviewers see a complete list.
 
 ---
@@ -493,7 +494,7 @@ The inputs below are copied from the company's own public pages (https://trustce
 ### Context
 - **Normal:** Full 8-question page.
 - **Crisis / urgent:** 4 filter questions only.
-- **Regulated vertical (health-tech, fin-tech):** Add vertical-specific supplementary questions (BfArM/DiGA/MDR for health; DORA/MiCA/PSD2 for fin-tech).
+- **Regulated vertical (health-tech, fin-tech):** Add supplementary questions only for the confirmed country, regulated entity and activity. DiGA is a Germany reimbursement route check, not an EU health technology tie breaker; verify applicability before adding it.
 - **Startup pre-certification:** Write the page with "in progress" status on certifications. Don't hide that they're incomplete — honesty is the signal.
 - **Enterprise with existing Trust Centre:** Offer to audit the existing one instead of regenerating.
 
@@ -561,3 +562,5 @@ All 9 base rules from `references/anti-hallucination-base.md` apply. Additionall
 - User wants the published page audited → `optise-helix-fitq-audit`
 - User wants agent-readiness check on the Trust Centre → `optise-helix-race-audit`
 - User wants to track whether the Trust Centre gets cited → `optise-helix-aeo-tracker`
+
+Primary scope check: [BfArM DiGA guide](https://www.bfarm.de/SharedDocs/Downloads/EN/MedicalDevices/DiGA_Guide.pdf?__blob=publicationFile), checked 3 November 2026. Confirm the current version and the specific Germany reimbursement route before applying it.

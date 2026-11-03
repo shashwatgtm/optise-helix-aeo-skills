@@ -19,7 +19,8 @@ metadata:
 
 ## Required region and industry context
 
-Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Use the user's own selling market, the matching country, vertical and subtype, with sourced conditions. Keep multiple markets separate. If the region or country is missing, ask the short question in that reference and omit unsupported jurisdiction advice. Never infer a market from a competitor, company name, quote or negated place. Preserve existing evidence limits, refusals and calculations.
+Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Bind each affirmative seller offering and subtype to its own country. Ignore negated offerings and excluded markets. Transaction currency and receipt accounts do not establish markets. Keep countries separate. Preserve evidence limits, refusals, reviewed metadata and calculations. When the selling country or applicable source is missing, ask and omit unsupported jurisdiction advice.
+
 
 
 # Optise–Helix FITq™ Audit

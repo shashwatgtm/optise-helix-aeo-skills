@@ -19,7 +19,8 @@ metadata:
 
 ## Required region and industry context
 
-Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Use the user's own selling market, the matching country, vertical and subtype, with sourced conditions. Keep multiple markets separate. If the region or country is missing, ask the short question in that reference and omit unsupported jurisdiction advice. Never infer a market from a competitor, company name, quote or negated place. Preserve existing evidence limits, refusals and calculations.
+Before producing the answer, read [Region and industry reference](references/region-context.md) and apply its selection and output rules to every sector claim in this skill. Bind each affirmative seller offering and subtype to its own country. Ignore negated offerings and excluded markets. Transaction currency and receipt accounts do not establish markets. Keep countries separate. Preserve evidence limits, refusals, reviewed metadata and calculations. When the selling country or applicable source is missing, ask and omit unsupported jurisdiction advice.
+
 
 
 # Optise–Helix Prompt Pack Builder
@@ -271,14 +272,14 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 
 ### Example 2 — Partial data (founder, no markets specified)
 
-> I have your category and competitors but I need one more thing: which EU markets should I target?
+> I have your category and competitors but I need one more thing: which selling countries should I target?
 >
 > Pick 1-3 to start, or "all" for the broad pack:
-> - **DACH** (Germany, Austria, Switzerland) — most rigorous GDPR market, best for trust-led plays
-> - **Nordics** (SE, DK, NO, FI) — highest EU AI adoption, English-friendly
-> - **France** — French-language search dominates, sovereignty-conscious
-> - **Benelux** (NL, BE, LU) — multinational B2B, English-friendly
-> - **Southern Europe** (ES, IT, PT) — English prompts cover less of the intent here; price-sensitive
+> - DACH commercial cluster: confirm Germany, Austria and Switzerland separately; Switzerland is not an EU member.
+> - Nordic commercial cluster: confirm the actual countries; Norway is not an EU member.
+> - France: confirm the buyer language and actual selling scope.
+> - Benelux commercial cluster: confirm Netherlands, Belgium and Luxembourg separately.
+> - Spain, Italy or Portugal: confirm each country and buyer language separately.
 > - **All EU**
 >
 > Once I have this I'll build the pack in one shot.
@@ -319,10 +320,10 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 
 ### Example 3 — Edge case (rushed user, 10 mins to a call)
 
-> **Top 10 (rushed). You didn't name competitors, so they stay as placeholders (Domain rule 2: never invent competitor names). Default markets: DACH + Nordics. Reply with your competitors and I'll fill them in:**
+> **Top 10 (rushed). You didn't name competitors, so they stay as placeholders (Domain rule 2: never invent competitor names). Selling countries: unconfirmed. Ask for them before finalising national prompts. Reply with your competitors and I'll fill them in:**
 >
 > 1. [Competitor 1] vs [you] — Compare page — 5/5
-> 2. is [you] GDPR compliant in Germany — Trust Centre — 5/5 (DACH)
+> 2. is [you] GDPR compliant in [confirmed country] — Trust Centre — 5/5 ([confirmed countries])
 > 3. [Competitor 2] alternatives EU — Alternatives page — 5/5
 > 4. [you] EU data residency — Trust/Residency — 5/5
 > 5. [you] DPA download — Trust/DPA — 5/5
@@ -330,7 +331,7 @@ If the user already has a prompt pack and is refreshing → recommend `optise-he
 > 7. [you] vs [Competitor 1] vs [Competitor 2] — Comparison — 4/5
 > 8. how long to implement [you] — Implementation — 4/5
 > 9. does [you] integrate with HubSpot — Integration — 4/5
-> 10. [you] for RevOps in DACH — Role-based — 4/5
+> 10. [you] for RevOps in [confirmed countries] — Role-based — 4/5
 >
 > *Generated 12:34 GMT. Run again with full inputs after your call for the complete 25.*
 
@@ -392,7 +393,7 @@ All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. In
 
 **Domain rule 2 (skill-specific):** Never invent competitor names. If the user gives one competitor, generate prompts using just that competitor — do not infer "you probably also compete with X."
 
-**Domain rule 3 (skill-specific):** Never invent EU market presence. If the user says "DACH" but there's no signal they sell into Austria or Switzerland specifically, default to Germany only and ask: *"DACH usually means Germany + Austria + Switzerland. Are you actually selling into all three, or just Germany?"*
+**Domain rule 3 (skill-specific):** Ask for the actual selling countries. DACH and Nordics are commercial clusters, not EU membership lists. Do not default to Germany or infer any market presence. Switzerland and Norway are not EU members. Keep national and EU questions separate and confirm applicability.
 
 **Domain rule 4 (skill-specific):** Never generate a non-English prompt at v1 (Section 0 English-only rule). If the user asks for German, French, Dutch, Spanish, Italian, or other local-language prompts, decline and explain that multilingual prompts may ship in v2 with native-speaker review. Local regulatory acronyms that buyers type as-is (for example BSI C5) may appear inside an English prompt.
 
@@ -433,3 +434,5 @@ All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. In
 - If request mentions writing the page opening → defer to `optise-helix-bluf-writer`
 - If request mentions tracking what's working → defer to `optise-helix-aeo-tracker`
 - If request mentions agent-readiness or "not ideal for" → defer to `optise-helix-race-audit`
+
+Membership scope source: [Council of the European Union, EEA relations](https://www.consilium.europa.eu/en/policies/eu-eea-relations/), checked 3 November 2026. Commercial cluster names do not establish membership or seller presence.
