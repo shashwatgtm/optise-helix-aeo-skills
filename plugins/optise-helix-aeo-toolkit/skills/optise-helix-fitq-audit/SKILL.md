@@ -61,7 +61,7 @@ If a domain rule in Section 7 of this SKILL.md (or any other section) appears to
 
 ## Section 1 — Golden Rule
 
-**Never score a page that wasn't successfully fetched, and never invent fixes that aren't in the 12-failure-mode template library or that the user's actual page evidence doesn't justify.** A page that fails fetch gets a fetch-error report, not a fabricated score. A page that scores well gets honest credit, not manufactured fixes for padding.
+**For URL audits, never score a page that was not successfully fetched, and never invent fixes that aren't in the 12-failure-mode template library or that the user's actual page evidence doesn't justify.** A page that fails fetch gets a fetch-error report, not a fabricated score. A page that scores well gets honest credit, not manufactured fixes for padding.
 
 ---
 
@@ -71,7 +71,7 @@ Detect persona using `references/personas.md`. Adapt output as follows:
 
 | Persona | Output adaptation |
 |---|---|
-| **CEO / Founder** | One-page max. Lead with the grade band as a single statement ("F — invisible to AI engines"). Strip the "FITq" jargon — call it "the 4-signal scorecard." Skip the per-signal breakdown unless asked. Close with a CFO-grade ask: "To move from F to B, budget [N] weeks." |
+| **CEO / Founder** | One-page max. Lead with the grade band as a single statement ("F: low rubric score"). Strip the "FITq" jargon — call it "the 4-signal scorecard." Skip the per-signal breakdown unless asked. Close with a CFO-grade ask: "To move from F to B, budget [N] weeks." |
 | **Marketing / Growth Lead (default)** | Full scorecard + per-signal breakdown + top 5 fixes split by ship-this-week vs ship-this-month + before/after diff for fix #1 + "what's already strong" closing. Use Optise terminology (FITq, BLUF, RACE). |
 | **Web Team** | Same as Marketing but with URL slugs in handoff suggestions, raw HTML diffs (not prose descriptions of fixes), and explicit code blocks for every fix. Skip the marketing framing entirely. |
 | **RevOps / Sales Ops** | Add a "what to track in CRM" line per fix. Otherwise same as Marketing. |
@@ -92,14 +92,14 @@ Detect persona using `references/personas.md`. Adapt output as follows:
 
 When ranking fixes for the top 5, use this order:
 
-1. **Findability blockers (0/25 or near-zero)** — These cap all other signals. Always #1 if present. Fix: enable rendering, unblock crawlers, fix robots.txt.
+1. **Findability blockers (0/25 or near-zero)** — Assess other signals only where the available content supports them. Always #1 if present. Fix: enable rendering, unblock crawlers, fix robots.txt.
 2. **Intent Match gaps where the H1 doesn't mirror the buyer prompt** — Fix the H1 first; everything else cascades.
-3. **Trust gaps that are quick wins** — Last-updated date, byline. 30-minute fixes that move score 10+ points.
+3. **Trust gaps that are quick wins** — Last-updated date, byline. Estimate effort with the owner and calculate a conditional band change from the reference criteria.
 4. **Quoteability gaps** — Add tables, FAQ schema, restructure walls of text into answer blocks.
 5. **Trust gaps that require third-party work** — Source links to G2/Reddit/customer cases. Slower, lower priority.
 
 **Tie-breakers:**
-1. **Effort wins.** A 30-minute fix worth 10 points beats a 2-week fix worth 12 points.
+1. **Effort wins.** Compare effort only for fixes with supported conditional band changes; do not invent point gains.
 2. **Foundational fixes win.** Findability and BLUF unblock other signals — they belong above pure-Quoteability fixes even when raw scores are similar.
 3. **EU compliance wins in EU markets.** If the user is selling into EU and Trust includes a missing GDPR disclosure, that fix moves up the list.
 
@@ -135,61 +135,35 @@ Capture the JSON output. The schema you can rely on:
 
 | Field | Type | Used by which signal |
 |---|---|---|
-| `fetch_status` | "ok" / "failed" / "error" | All — halt if not "ok" |
-| `http_status` | int | Findability (200 = +5, 4xx/5xx = 0) |
-| `ttfb_ms` | int | Findability (<2000 = +5, 2000-5000 = +2, >5000 = 0) |
-| `html_size_bytes` | int | Findability (<1.5MB = +5, 1.5-3MB = +2, >3MB = 0) |
-| `title` | string | Intent Match (mirrors prompt = +5) |
-| `headings.h1` | list of strings | Intent Match (question-form = +5, brand-led = -10) |
-| `headings.h2` | list of strings | Quoteability (question-form H2s = +4) |
-| `canonical` | string or null | Findability (present = +5) |
-| `meta_robots` | string or null | Findability (noindex = 0) |
-| `last_updated.found` | bool | Trust (true within 90d = +8, true stale = +4, false ≤+0) |
-| `last_updated.raw_value` | string or null | Trust (parse for recency check) |
-| `schema_markup` | dict of {type: count} | Quoteability (FAQPage = +6, Article/Org = +4; see the Rule 4 note under Step 4) |
-| `js_gating.js_gated` | bool | Findability (true = cap at 5/25; other signals capped at "cannot score") |
-| `quoteability_features.tables` | int | Quoteability (≥2 = +4) |
-| `quoteability_features.uls + ols + dls` | int | Quoteability (≥5 = +4) |
-| `quoteability_features.paragraphs` | int | Quoteability (≤30 with ≥5 lists = healthy structure) |
-| `quoteability_features.h2` | int | Used together with `headings.h2` for question-form check |
+| `fetch_status` | "ok" / "failed" / "error" | Evidence only; see reference rubric |
+| `http_status` | int | Evidence only; see reference rubric |
+| `ttfb_ms` | int | Evidence only; see reference rubric |
+| `html_size_bytes` | int | Evidence only; see reference rubric |
+| `title` | string | Evidence only; see reference rubric |
+| `headings.h1` | list of strings | Evidence only; see reference rubric |
+| `headings.h2` | list of strings | Evidence only; see reference rubric |
+| `canonical` | string or null | Evidence only; see reference rubric |
+| `meta_robots` | string or null | Evidence only; see reference rubric |
+| `last_updated.found` | bool | Evidence only; see reference rubric |
+| `last_updated.raw_value` | string or null | Evidence only; see reference rubric |
+| `schema_markup` | dict of {type: count} | Evidence only; see reference rubric |
+| `js_gating.js_gated` | bool | Evidence only; see reference rubric |
+| `quoteability_features.tables` | int | Evidence only; see reference rubric |
+| `quoteability_features.uls + ols + dls` | int | Evidence only; see reference rubric |
+| `quoteability_features.paragraphs` | int | Evidence only; see reference rubric |
+| `quoteability_features.h2` | int | Evidence only; see reference rubric |
 
 If `fetch_status != "ok"`, halt the workflow and output the error per the Golden Rule.
 
 **Failure mode:** Fetch failed → output the error with the user-facing explanation from `references/anti-hallucination-base.md` rule 3. Never proceed to scoring.
 
-### Step 4: Score against the 4 FITq signals
+### Step 4: Apply the single reference scoring method
 
-Use `references/fitq-rubric.md`. For each signal, compute 0-25 based on the structured data from fetch_page.py:
+Read `references/fitq-rubric.md` and use method **FITQ bands 20261103**. That reference is the sole scoring algorithm. Its discrete band criteria replace the earlier additive checklist. Do not award individual feature points or combine the two methods. Each signal receives one supported band value from 0, 5, 10, 15, 20 or 25, following the reference selection and missing-measurement rules. Record the matched row, evidence and unknowns before calculating a total. No interpolation or inferred measurements.
 
-**Findability (0-25):**
-- HTTP 200 + content in raw HTML body + TTFB < 2000ms + canonical present + not blocked by robots → 25
-- One issue → -5
-- JS-gated body OR robots blocking → cap at 5
-- 4xx/5xx → 0
+Show the method identifier in every scorecard and JSON answer. If any signal cannot be scored, show the known signal results and the missing measurements, with total and grade unavailable. Supplied HTML is an explicit exception to the URL-fetch requirement; score only signals supported by it. HTML alone does not prove mobile load time, rendered layout, bot access or third-party consistency. A successful raw fetch is not a browser render test. A score is a rubric assessment, not proof of citations, recommendations or conversion.
 
-**Intent Match (0-25):**
-- H1 mirrors target prompt (or is question-form if no target prompt provided) → +10
-- BLUF in first 100 words of body → +10
-- Page stays on a single decision topic → +5
-- Generic brand H1 → -10
-- Off-topic body → -10
-
-**Trust (0-25):**
-- Visible last-updated date within 90 days → +8
-- Date present but stale (>90 days) → +4
-- Named author byline → +5
-- Quantitative claims sourced → +5
-- Schema.org Article/Organization markup → +4
-- E-E-A-T signals (author bio, expertise) → +3
-
-**Quoteability (0-25):**
-- 2+ tables OR 5+ structured lists → +8
-- FAQ schema present → +6
-- Average paragraph length ≤ 4 sentences → +5
-- H2 headings are question-form → +4
-- BLUF is extractable as a single quote → +2
-
-**Rule 4 note (FAQ schema):** the FAQ schema credit measures how easily AI parsers can extract question-and-answer pairs. It is not a claim about Google rich results: Google no longer shows FAQ rich results for most sites (operating-principles Rule 4). Whenever a fix recommends adding FAQPage, include the Rule 4 disclosure note, and offer the eligible substitute for the page type.
+Schema recommendations describe parsability only. They do not establish rich-result eligibility. Retain the required source verification and schema disclosures from the operating principles.
 
 ### Step 5: Rank top 5 fixes
 
@@ -199,7 +173,7 @@ Apply Priority Framework from Section 3. Each fix gets:
 - Effort estimate (ship-this-week / ship-this-month)
 - Template from `references/common-fixes.md` if it matches one of the 12 known failure modes
 
-**Failure mode:** If the page scores 90+, do NOT manufacture 5 fixes. Output "no critical fixes — page is citation-ready" and list optional improvements only.
+**Failure mode:** If the page scores 90+, do NOT manufacture 5 fixes. Output "no critical fixes under the scored rubric" and list optional improvements only.
 
 ### Step 6: Build the before/after diff for fix #1
 
@@ -211,7 +185,7 @@ For every signal scored 18+/25, name what's working. This prevents the user from
 
 ### Step 8: Format output per persona
 
-Use Section 5 format. Always include the score, breakdown, top fixes, before/after diff, and "what's already strong."
+Use Section 5 format. Include supported scores or explicit unavailable markers, the evidence breakdown, supported fixes and what is already strong. A before/after diff is needed only for an evidenced fix. The urgent one-finding mode remains an exception to the full format.
 
 ### Step 9: Hand off to next skill
 
@@ -230,6 +204,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 **Built for:** [persona]
 **URL audited:** [url]
 **Audit timestamp:** [ISO timestamp from fetch_page.py]
+**Scoring method:** FITQ bands 20261103
 
 ## FITq™ Score: [N]/100 — Grade [A-F]
 
@@ -242,7 +217,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 
 ## Top 5 fixes (ranked by impact)
 
-### Fix 1 — [name] [+N points] [ship this week]
+### Fix 1 — [name] [conditional change from row X to row Y, pending verification] [ship this week]
 [1-paragraph explanation]
 [before/after diff]
 
@@ -257,133 +232,15 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 [Hand off recommendation]
 ```
 
-### Example 1 — Happy path (Marketing lead, fictional site)
+### Method examples
 
-*[Brand] and www.example.com are placeholders, not real sites or companies. Every score and finding below is made up to show the output structure. A real audit reports only what fetch_page.py returned for the real URL (Plugin Rule 1).*
+These are synthetic arithmetic examples, not observations about a real page.
 
-> **Built for:** Marketing / Growth Lead
-> **URL audited:** https://www.example.com/features/site-audit/
-> **Audit timestamp:** 2026-04-12T11:23:47Z
->
-> ## FITq™ Score: 78/100 — Grade B
->
-> | Signal | Score | What's driving it |
-> |---|---|---|
-> | Findability | 23/25 | Renders fully in HTML, TTFB 240ms, canonical present, no bot blocks. -2 for 2.1MB page weight. |
-> | Intent Match | 18/25 | H1 is "Site Audit Tool" — descriptive but not question-form. BLUF present in first 80 words. Stays on topic. |
-> | Trust | 17/25 | Last-updated date present (2026-03-14, within 90 days). No named author byline (uses "[Brand] Team"). Stats sourced to internal [Brand] data only — no third-party corroboration. |
-> | Quoteability | 20/25 | 4 tables, 12 lists, FAQ schema present. -3 for paragraph length: avg 6.2 sentences (target ≤4). -2 for H2s being descriptive not question-form. |
->
-> ## Top 5 fixes (ranked by impact)
->
-> ### Fix 1 — Add a named author byline [+5 to Trust] [ship this week]
-> Currently the page is bylined "[Brand] Team" with no link. AI engines treat this as no byline at all. Replace with a real named person (e.g., your Director of SEO Research) and link to a bio page with their credentials.
->
-> **Before:**
-> ```html
-> <p class="byline">By the [Brand] Team</p>
-> ```
->
-> **After:**
-> ```html
-> <p class="byline">By <a href="/team/[real-name]" rel="author">[Real Name]</a>, Director of SEO Research at [Brand]. Last reviewed by [VP Product] on [YYYY-MM-DD].</p>
-> ```
->
-> ### Fix 2 — Restructure paragraphs into answer blocks [+5 to Quoteability] [ship this week]
-> Average paragraph length is 6.2 sentences. AI engines extract better from blocks of ≤4 sentences. Break each long paragraph at the first natural pause and convert the trailing sentences into a 2-3 bullet list under the same heading.
->
-> ### Fix 3 — Convert H2s to question-form [+3 to Intent Match, +2 to Quoteability] [ship this week]
-> Current H2s like "Key Features" → change to "What does Site Audit check for?" Current "Pricing" → "How much does Site Audit cost?" This single change adds extractable answer blocks for 4-6 buyer prompts.
->
-> ### Fix 4 — Add 2-3 third-party stats with source links [+3 to Trust] [ship this month]
-> All stats on this page link to [Brand]'s own research. Add at least 2 stats from independent sources (Forrester, Gartner, BrightEdge) with linked sources to break the "we're our own only source" pattern.
->
-> ### Fix 5 — Reduce page weight from 2.1MB to <1.5MB [+2 to Findability] [ship this month]
-> Compress the hero video, lazy-load images below the fold, defer non-critical JS bundles. Lighter pages crawl faster.
->
-> ## What's already strong (don't break these)
-> - Visible last-updated date in `<time datetime="">` format — keep updating it monthly
-> - FAQ schema is correctly implemented and matches visible content (helps AI parsers; not eligible for Google FAQ rich results, per Rule 4)
-> - 4 tables with comparison data — exactly the format AI engines extract
-> - Canonical tag present and self-referential
->
-> ## Suggested next step
-> Run `optise-helix-race-audit` on the same URL to check agent readiness — your FITq score is solid (B grade), but the RACE check will tell you whether procurement-stage AI agents can evaluate this page.
+If all four signals independently satisfy the 20 point reference row, the total is 20 + 20 + 20 + 20 = 80 and the grade is B. Show each row and its evidence. Do not award extra points for individual features already included in the row.
 
-### Example 2 — Edge case (URL fetch fails)
+If one signal is unscored because a required measurement is unavailable, report the other three signal results and the missing measurement. Total and grade are unavailable. Do not treat unknown as zero and do not rescale a partial sum to 100.
 
-> **URL audited:** https://www.example.net (fictional)
-> **Fetch status:** FAILED
->
-> ## ⚠️ Cannot score this page
->
-> `fetch_page.py` returned an error: `URLError on https://www.example.net after 3 retries: [Errno 110] Connection timed out`
->
-> Per the FITq audit anti-hallucination rule: I will not score a page I haven't actually fetched. Inventing a score from the URL string would be dishonest and harmful.
->
-> ## What to do instead
->
-> 1. **Verify the URL is reachable:** Try opening it in your browser. If it's down, that's itself a Findability finding (intermittent uptime = AI engines deprioritize the source).
-> 2. **Paste the rendered HTML** if you can access the page some other way (browser dev tools → Elements → Copy outer HTML). I can score from a paste with a partial Findability caveat.
-> 3. **Try a different URL** — perhaps a working sub-page on the same domain.
-> 4. **Send a screenshot** if all else fails. I can do a manual visual audit, though it's lower fidelity than a real fetch.
->
-> Reply with one of the above and I'll proceed.
-
-### Example 3 — Edge case (CEO persona, fictional site — assume successful fetch and weak score)
-
-> **Built for:** CEO / Founder
-> **URL audited:** https://www.example.net (fictional)
->
-> ## Your site scores 32/100 — Grade F (invisible)
->
-> This page is structurally hard for ChatGPT, Perplexity, and Gemini to read and quote. The reason isn't your product; it's how the page is built. (This audit measures page structure. It does not measure how often AI engines cite you today; run `optise-helix-aeo-tracker` for that.)
->
-> **The 3 things that are killing visibility:**
->
-> 1. **The page renders as a JavaScript shell.** AI crawlers see almost no content. This is the single biggest fixable item — and until it's fixed, nothing else matters.
-> 2. **No visible "last updated" date.** AI engines treat this as a freshness fail and downrank the page.
-> 3. **The H1 is your brand name, not a buyer question.** AI engines can't match your page to any specific search intent.
->
-> **What to budget:** Fixes 2 and 3 are usually 30-minute changes. Fix 1 usually needs 2-3 weeks of engineering work (server-side rendering or static pre-rendering); confirm the estimate with your web team. Re-run this audit after the fixes ship to see the new grade.
->
-> **Next step:** Run the same audit on your top 3 highest-value pages and ask me to compare. The pattern usually repeats — fixing 1 page is easy; fixing the template fixes them all.
-
-### Example 4 — Manual / API mode (JSON in, JSON out)
-
-**Input:**
-```json
-{
-  "url": "https://www.example.com/service-desk/",
-  "target_prompt": "best service desk software for German Mittelstand",
-  "mode": "manual"
-}
-```
-
-**Output:**
-```json
-{
-  "url": "https://www.example.com/service-desk/",
-  "example_note": "Fictional site and made-up scores, to show structure only.",
-  "fitq_total": 64,
-  "grade": "C",
-  "signals": {
-    "findability": {"score": 22, "notes": "renders in HTML, TTFB 380ms, canonical present"},
-    "intent_match": {"score": 11, "notes": "H1 is brand-led, no BLUF in first 100 words"},
-    "trust": {"score": 14, "notes": "no last-updated date, '[Brand] Team' byline, stats unsourced"},
-    "quoteability": {"score": 17, "notes": "2 tables, FAQ schema present, paragraphs 5.8 avg"}
-  },
-  "top_fixes": [
-    {"rank": 1, "fix": "add_bluf", "points": 8, "effort": "30min", "signal": "intent_match"},
-    {"rank": 2, "fix": "add_last_updated_date", "points": 8, "effort": "30min", "signal": "trust"},
-    {"rank": 3, "fix": "rewrite_h1_question_form", "points": 5, "effort": "10min", "signal": "intent_match"},
-    {"rank": 4, "fix": "add_named_author", "points": 5, "effort": "15min", "signal": "trust"},
-    {"rank": 5, "fix": "shorten_paragraphs", "points": 4, "effort": "1h", "signal": "quoteability"}
-  ],
-  "handoffs": ["optise-helix-bluf-writer (for fix 1)"],
-  "audit_timestamp": "2026-04-12T11:24:18Z"
-}
-```
+Use method FITQ bands 20261103 for both the before and after assessment. Estimate a possible score change only by naming the newly satisfied row, and label the change conditional until the fix is verified. Never promise a citation, AI recommendation or delivery date from this score.
 
 ---
 
@@ -399,11 +256,11 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 ### Data
 - **Full data (URL + target prompt + page type):** Highest-quality scoring. Run all 4 signals at full resolution.
 - **URL only:** Standard audit. Use page URL slug as a weak intent signal.
-- **HTML paste, no URL:** Score directly. Findability is capped at 15/25 — full credit requires a real fetch for TTFB measurement, robots.txt check, and canonical resolution. Note this cap explicitly in the output so the user knows they can lift it by providing a URL later.
+- **HTML paste, no URL:** Apply the reference missing-measurement rules. Do not assign a score or cap from absent measurements.
 - **Screenshot only:** Refuse to score. "I need either the URL or the HTML to score reliably. A screenshot can't tell me what AI crawlers actually see."
 - **fetch_page.py returns ok but JSON is malformed:** Halt. Log the error. Ask user to retry or paste HTML.
 - **fetch_page.py returns 4xx/5xx:** Output the error per Example 2.
-- **fetch_page.py returns ok but `js_gated=True`:** Findability scored 0-5/25. Other signals scored "cannot score — content not in HTML." Top fix is always SSR.
+- **JS gating:** Apply only the observed gating row in the reference. If raw content cannot support the other signals, mark those unscored.
 - **Conflicting data — large delta from prior audit:** When memory contains a prior FITq score for this URL and the current score differs by >20 points (in either direction), flag the delta explicitly. Output: *"Heads up: prior score was [X], current is [Y]. That's a [Z] point swing in [N] days. Re-running fetch_page.py once more to rule out a transient failure."* Re-run, compare, and if the second fetch matches the first, present both scores side-by-side and ask the user what changed (CMS migration, redirect, redesign, bot-blocking change). Never silently overwrite a prior score with a wildly different new one.
 
 ### Platform
@@ -414,7 +271,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 ### Context
 - **Normal:** Full scorecard.
 - **Crisis / urgent:** ONE finding only. Time-stamped.
-- **Regulated vertical:** Trust signal weights compliance disclosures heavily. Hand off to `optise-helix-eu-trust-centre` if Trust < 15.
+- **Regulated vertical:** Record applicable compliance evidence without adding scoring weights. Hand off to `optise-helix-eu-trust-centre` if Trust < 15.
 - **Non-EU page in EU pack:** Note that the page lacks EU-specific trust signals; still score the universal FITq signals.
 
 ### Composition rules (when 2+ contexts combine)
@@ -434,7 +291,7 @@ All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. In
 
 **Domain rule 1 (skill-specific):** When `fetch_page.py` returns an error, NEVER score the page. Output the error verbatim and ask for an alternative input. Inventing a score for an unfetched page is the worst possible failure mode for this skill.
 
-**Domain rule 2 (skill-specific):** Never invent fixes. Every fix must either come from the 12 known failure modes in `references/common-fixes.md` OR be derived from a specific finding in the fetch_page.py JSON. If neither applies, output "no fix recommended for this signal" rather than padding the list to 5.
+**Domain rule 2 (skill-specific):** Never invent fixes. Every fix must either come from the 12 known failure modes in `references/common-fixes.md` OR be derived from a specific finding in the fetch_page.py JSON or supplied HTML. If neither applies, output "no fix recommended for this signal" rather than padding the list to 5.
 
 **Domain rule 3 (skill-specific):** Never claim a competitor's page would score better/worse without auditing it. Comparative claims require actual fetches.
 

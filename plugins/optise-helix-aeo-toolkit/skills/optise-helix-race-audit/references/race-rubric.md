@@ -1,5 +1,18 @@
 # RACE™ Scoring Rubric
 
+## Authoritative method and evidence rules
+
+Method identifier: **RACE bands 20261103**. This file is the sole scoring algorithm. Use the band rows below, not an additive feature checklist from any earlier skill body or example. This method identifier is separate from the unchanged package version.
+
+For each signal, evaluate each row against observed evidence. All clauses joined by AND or listed as requirements must hold; an explicit OR requires at least one alternative. Do not infer a missing measurement. A specific observed failure described by a lower row caps the signal at that row, even when positive features match a higher row. If several failure rows apply, use the lowest cap. Otherwise use the highest row whose complete criteria are supported. If no complete row is supported, mark the signal unscored. If an unknown measurement could change the selected row or cap, mark the signal unscored and name that measurement. This resolves overlap without interpolation, feature addition or rounding. An observed absence is different from an unmeasured feature.
+
+Record a receipt for each signal: matched row, source excerpt or measurement, measurement date, unknowns, and any lower cap. Do not infer mobile load time from TTFB, rendered content or first-scroll position from raw HTML, robots access from HTTP 200 alone, or third-party consistency from the page's own claims. For a pasted HTML audit, score only supported signals. A failed fetch produces a fetch-error report with no score.
+
+Only when all four signals have supported scores, sum them directly. Each signal is in {0, 5, 10, 15, 20, 25}. Total is 0 through 100. Apply grades after summing: A at 90 through 100, B at 75 through 89, C at 60 through 74, D at 40 through 59, F at 0 through 39. Do not rescale a partial total, invent a missing value or round a total upward. If any signal is unscored, total and grade are unavailable. Preserve the individual receipts.
+
+The grade describes this rubric only. It is not a measured probability of citations, agent recommendations or sales. Historical scores from a different method are not comparable. Reassess the original page evidence under this method before reporting a change. Proposed fixes have conditional band changes until retested.
+
+
 **Used by:** `optise-helix-race-audit` (primary).
 **Source:** Optise EU AEO Playbook, Section 6 (RACE™ — AI Agent Readiness Without Risk).
 **Trademark:** RACE™ is an Optise framework. Always use the trademark on first mention.
@@ -127,15 +140,7 @@ Each signal scores 0-25, totaling 100. Same A/B/C/D/F grade bands as FITq.
 
 ## Total scoring and grade bands
 
-Same as FITq:
-
-| Total | Grade | Meaning |
-|---|---|---|
-| 90-100 | **A** | Agent-ready. AI agents doing buyer evaluation will recommend or shortlist this page reliably. |
-| 75-89 | **B** | Close. Usually 1-2 fixes (often Constraints + Evidence) away. |
-| 60-74 | **C** | Fixable in 1-2 weeks. Usually missing the "not ideal for" section and proof above the fold. |
-| 40-59 | **D** | Major gaps. Page reads as marketing, not evaluation material. |
-| 0-39 | **F** | Page is invisible to AI agents. They will filter it out for vagueness. |
+Use the aggregation and grade boundaries in the authoritative method above. A means the highest rubric band, B the next band, then C, D and F. These labels do not prove actual citation or recommendation behaviour. Unknown signals prevent a total and grade.
 
 ---
 
@@ -143,15 +148,15 @@ Same as FITq:
 
 1. **Search citation readiness.** That's FITq's job. RACE and FITq are complementary, not redundant.
 2. **Buyer experience quality.** A RACE-A page can still be ugly. RACE measures agent-readability, not human delight.
-3. **Sales conversion rate.** RACE predicts whether agents will recommend the page; whether the recommendation closes is downstream.
+3. **Sales conversion rate.** RACE records rubric evidence only; it does not predict recommendations or sales.
 
 ---
 
 ## Output format requirement
 
-Every RACE audit must produce:
+Every RACE audit must produce the following when evidence supports scoring. For missing measurements, replace the affected score, total and grade with unavailable and the missing evidence:
 1. **Total score and grade band**
 2. **Per-signal breakdown** (4 numbers, each with 1-line justification)
-3. **Top 5 fixes ranked by impact** (each with effort estimate)
+3. **Up to five evidenced fixes ranked by impact; fewer when fewer are supported** (each with effort estimate)
 4. **A "honest constraints" template** for fix #1 if Constraints scored ≤15 (most common gap)
 5. **A "what's already strong" section** so the user knows what NOT to break

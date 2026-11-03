@@ -1,5 +1,18 @@
 # FITq™ Scoring Rubric
 
+## Authoritative method and evidence rules
+
+Method identifier: **FITQ bands 20261103**. This file is the sole scoring algorithm. Use the band rows below, not an additive feature checklist from any earlier skill body or example. This method identifier is separate from the unchanged package version.
+
+For each signal, evaluate each row against observed evidence. All clauses joined by AND or listed as requirements must hold; an explicit OR requires at least one alternative. Do not infer a missing measurement. A specific observed failure described by a lower row caps the signal at that row, even when positive features match a higher row. If several failure rows apply, use the lowest cap. Otherwise use the highest row whose complete criteria are supported. If no complete row is supported, mark the signal unscored. If an unknown measurement could change the selected row or cap, mark the signal unscored and name that measurement. This resolves overlap without interpolation, feature addition or rounding. An observed absence is different from an unmeasured feature.
+
+Record a receipt for each signal: matched row, source excerpt or measurement, measurement date, unknowns, and any lower cap. Do not infer mobile load time from TTFB, rendered content or first-scroll position from raw HTML, robots access from HTTP 200 alone, or third-party consistency from the page's own claims. For a pasted HTML audit, score only supported signals. A failed fetch produces a fetch-error report with no score.
+
+Only when all four signals have supported scores, sum them directly. Each signal is in {0, 5, 10, 15, 20, 25}. Total is 0 through 100. Apply grades after summing: A at 90 through 100, B at 75 through 89, C at 60 through 74, D at 40 through 59, F at 0 through 39. Do not rescale a partial total, invent a missing value or round a total upward. If any signal is unscored, total and grade are unavailable. Preserve the individual receipts.
+
+The grade describes this rubric only. It is not a measured probability of citations, agent recommendations or sales. Historical scores from a different method are not comparable. Reassess the original page evidence under this method before reporting a change. Proposed fixes have conditional band changes until retested.
+
+
 **Used by:** `optise-helix-fitq-audit` (primary).
 **Source:** Optise EU AEO Playbook, Section 5 (FITq™ — How AI Search Selects Sources).
 **Trademark:** FITq™ is an Optise framework. Always use the trademark on first mention.
@@ -21,7 +34,7 @@ The FITq framework scores a webpage on 4 signals. Each signal is scored 0-25, to
 | **15** | Critical content (the BLUF, the answer block, the proof) is in HTML, but some supporting content (FAQs, comparison tables) requires JS to render. |
 | **10** | The page loads but key content is JS-gated. Crawlers see a shell. |
 | **5** | The page is heavily script-dependent. First-paint is empty. Crawlers see almost nothing. |
-| **0** | Page returns an error (4xx, 5xx), is behind auth/paywall, or robots.txt blocks bots. |
+| **0** | An otherwise successfully fetched public page has an observed robots.txt bot block. A failed fetch or inaccessible auth/paywall page gets no score, not zero. |
 
 ### What to detect (technical)
 - HTTP status (200 vs others)
@@ -134,22 +147,16 @@ The FITq framework scores a webpage on 4 signals. Each signal is scored 0-25, to
 
 ## Total scoring and grade bands
 
-| Total | Grade | Meaning |
-|---|---|---|
-| 90-100 | **A** | Citation-ready. Likely already being cited by ChatGPT, Perplexity, Gemini for relevant prompts. |
-| 75-89 | **B** | Close. Usually 1-2 fixes (often Trust + Quoteability) away from being cited. |
-| 60-74 | **C** | Fixable in 1-2 weeks. Usually missing BLUF, last-updated date, or schema. |
-| 40-59 | **D** | Major gaps. Likely needs structural rewrite. Probably not cited at all today. |
-| 0-39 | **F** | Page is invisible to AI engines. Often a JS-only render or off-topic content. |
+Use the aggregation and grade boundaries in the authoritative method above. A means the highest rubric band, B the next band, then C, D and F. These labels do not prove actual citation or recommendation behaviour. Unknown signals prevent a total and grade.
 
 ---
 
 ## Output format requirement
 
-Every FITq audit must produce:
+Every FITq audit must produce the following when evidence supports scoring. For missing measurements, replace the affected score, total and grade with unavailable and the missing evidence:
 1. **Total score and grade band**
 2. **Per-signal breakdown** (4 numbers, each with 1-line justification)
-3. **Top 5 fixes ranked by impact** (each with effort estimate: ship-this-week vs ship-this-month)
+3. **Up to five evidenced fixes ranked by impact; fewer when fewer are supported** (each with effort estimate: ship-this-week vs ship-this-month)
 4. **Before/after diff for the #1 fix** (show the actual HTML/copy change)
 5. **A "what's already strong" section** (so the user knows what NOT to break)
 

@@ -59,7 +59,7 @@ If a domain rule in Section 7 of this SKILL.md (or any other section) appears to
 
 ## Section 1 — Golden Rule
 
-**Never score a page that wasn't successfully fetched, and never output a "not ideal for" section that invents constraints on the company's behalf.** Template constraints are starting points for the user to customize, never published as-is.
+**For URL audits, never score a page that was not successfully fetched, and never output a "not ideal for" section that invents constraints on the company's behalf.** Template constraints are starting points for the user to customize, never published as-is.
 
 ---
 
@@ -91,7 +91,7 @@ Detect persona using `references/personas.md`. Adapt output:
 Rank fixes in this order:
 
 1. **Constraints gaps (most common, highest leverage)** — 80% of pages score ≤15 on Constraints. Fixing this single signal often moves the grade from C to B.
-2. **Requirements that are buried in prose** — Surfacing them is a 20-minute fix worth 5-10 points.
+2. **Requirements that are buried in prose** — Estimate effort and any conditional band change from the reference criteria.
 3. **Actions that lack time estimates or ownership** — Add the "who does what, how long" columns to any existing process list.
 4. **Evidence that's below the fold** — Move proof above the fold; don't change the proof itself.
 5. **Deep structural rewrites** — Lowest priority because they're the highest effort.
@@ -99,7 +99,7 @@ Rank fixes in this order:
 **Tie-breakers:**
 1. **Constraints wins ties.** Missing "not ideal for" is the most common B2B failure mode.
 2. **Foundational fixes win.** A missing Requirements section cascades — fix it before tuning Actions or Evidence.
-3. **Effort wins.** 30-minute fix worth 10 points beats 2-week fix worth 12 points.
+3. **Effort wins.** Compare effort for supported conditional band changes; do not invent point gains.
 
 ---
 
@@ -140,38 +140,13 @@ Uses the same schema as the FITq audit — see `optise-helix-fitq-audit/SKILL.md
 
 **Failure mode:** Fetch failed → halt and output error.
 
-### Step 4: Score against the 4 RACE signals
+### Step 4: Apply the single reference scoring method
 
-Use `references/race-rubric.md`.
+Read `references/race-rubric.md` and use method **RACE bands 20261103**. That reference is the sole scoring algorithm. Its discrete band criteria replace the earlier additive checklist. Do not award individual feature points or combine the two methods. Each signal receives one supported band value from 0, 5, 10, 15, 20 or 25, following the reference selection and missing-measurement rules. Record the matched row, evidence and unknowns before calculating a total. No interpolation or inferred measurements.
 
-**Requirements (0-25):**
-- Explicit "you need" / "requires" / "prerequisites" section → +10
-- Prerequisites in table or list form → +5
-- Schema.org `Product` or `SoftwareApplication` with requirements → +5
-- Time investment stated → +3
-- Roles needed stated → +2
+Show the method identifier in every scorecard and JSON answer. If any signal cannot be scored, show the known signal results and the missing measurements, with total and grade unavailable. Supplied HTML is an explicit exception to the URL-fetch requirement; score only signals supported by it. HTML alone does not prove mobile load time, rendered layout, bot access or third-party consistency. A successful raw fetch is not a browser render test. A score is a rubric assessment, not proof of citations, recommendations or conversion.
 
-**Actions (0-25):**
-- Numbered or sequenced process → +10
-- `HowTo` schema → +6
-- Time estimates per step → +4
-- Ownership (who does what) → +3
-- Definition of "done" → +2
-
-**Constraints (0-25):**
-- Explicit "not ideal for" section → +15 (this is the biggest single win)
-- 3+ specific constraints → +5
-- Linked alternatives per excluded segment → +3
-- No generic "works for everyone" language → +2
-
-**Evidence (0-25):**
-- Proof above the fold for major claims → +10
-- Named customer case studies linked → +5
-- Quantitative benchmarks with sources → +5
-- `Review` or `AggregateRating` schema → +3
-- Third-party consistency (matches G2/Reddit footprint) → +2
-
-**Rule 4 note (schema):** schema credit here measures how easily AI agents can parse the page. It is not a claim about Google rich results. Per operating-principles Rule 4, `HowTo` is not eligible for Google rich results for software or business processes, and `AggregateRating` is eligible only for first-party reviews. Whenever a fix recommends one of these types, include the Rule 4 disclosure note, and offer the eligible substitute (for example `Article` with `step` properties for a software workflow).
+Schema recommendations describe parsability only. They do not establish rich-result eligibility. Retain the required source verification and schema disclosures from the operating principles.
 
 ### Step 5: Rank top 5 fixes
 
@@ -214,6 +189,7 @@ Use Section 5 format.
 **Built for:** [persona]
 **URL audited:** [url]
 **Audit timestamp:** [ISO timestamp]
+**Scoring method:** RACE bands 20261103
 
 ## RACE™ Score: [N]/100 — Grade [A-F]
 
@@ -238,125 +214,15 @@ Use Section 5 format.
 [Handoff]
 ```
 
-### Example 1 — Happy path (Marketing lead, alternatives page)
+### Method examples
 
-> **Built for:** Marketing / Growth Lead
-> *([Brand], Tool Y and www.example.com are placeholders, not real companies or sites. Every score and finding below is made up to show the output structure; see Plugin Rule 1.)*
->
-> **URL audited:** https://www.example.com/compare/brand-vs-tool-y
-> **Audit timestamp:** 2026-04-12T11:45:00Z
->
-> ## RACE™ Score: 62/100 — Grade C
->
-> | Signal | Score | What's driving it |
-> |---|---|---|
-> | Requirements | 18/25 | [Brand] lists what you need (paid plan, domain access) but the list is buried in prose. No schema markup. |
-> | Actions | 16/25 | Has a 3-step "how to switch" section but no time estimates or ownership. |
-> | Constraints | 8/25 | No "not ideal for" section. Page has universal positive framing. Biggest gap. |
-> | Evidence | 20/25 | 3 linked case studies above the fold, customer logos named. Strong. |
->
-> ## Top 5 fixes
->
-> ### Fix 1 — Add a "not ideal for" section [+15 to Constraints] [ship this week]
->
-> This is your single highest-leverage fix. See the starter template below.
->
-> ### Fix 2 — Add `SoftwareApplication` schema with `requirements` field [+5 to Requirements]
->
-> ### Fix 3 — Add time estimates to the 3-step process [+4 to Actions]
->
-> ### Fix 4 — Add "who does what" ownership column [+3 to Actions]
->
-> ### Fix 5 — Pull the prerequisites out of prose into a bullet list [+5 to Requirements]
->
-> ## "Not ideal for" starter template
->
-> ```markdown
-> ## Who [Brand] is not ideal for
->
-> [Brand] is built for mid-market B2B SEO and content teams with [User to add: ICP size]. We're not the right fit if:
->
-> - **You're a solo SEO consultant with fewer than [User to add: number] client domains.** [User to add: the honest pricing reason]. For solo consultants, [User to add: competitor for this segment] may be a better fit.
-> - **You need primarily link-building / backlink analysis.** [User to add: what [Brand] does and does not cover here]. Pair us with [User to add: backlink-focused alternative] if backlinks are your main use case.
-> - **You're focused on paid search only.** Our core strength is SEO + content. For paid-only, see [User to add: paid search alternative].
-> - **You need white-labeling for agency client reports.** [User to add: the honest limit]. [User to add: agency-focused alternative] may suit you better.
->
-> **Not sure if [Brand] is right for you?** [User to add: link to fit assessment or sales]
-> ```
->
-> **Customize this:** Replace every `[User to add: ...]` with real values. Don't publish the placeholders. This template is starter text — the audit doesn't know your exact ICP, so you fill that in. Never add a claim about a named competitor (for example that its index, pricing, or features are better or worse) unless it is `[VERIFIED · source]` from a Tier 1 to 3 source (Plugin Rule 1).
->
-> ## What's already strong
-> - 3 named case studies above the fold with linked detail pages
-> - Customer logos with attribution
-> - Page stays on topic (doesn't drift into unrelated product features)
->
-> ## Suggested next step
-> Ship Fix 1 first — it's the single biggest score mover. After publishing, run `optise-helix-aeo-tracker` for 2 weeks to see if AI agent recommendations improve.
+These are synthetic arithmetic examples, not observations about a real page.
 
-### Example 2 — Fetch failure
+If all four signals independently satisfy the 20 point reference row, the total is 20 + 20 + 20 + 20 = 80 and the grade is B. Show each row and its evidence. Do not award extra points for individual features already included in the row.
 
-> **URL audited:** https://www.example.net/compare (fictional)
-> **Fetch status:** FAILED
->
-> ## Cannot score this page
->
-> `fetch_page.py` returned an error: `HTTPError 404: Not Found`
->
-> Per the RACE audit anti-hallucination rule: I will not score a page that wasn't fetched. The URL may not exist, or the slug may have changed.
->
-> **What to do:** Verify the URL is correct. If the page moved, send me the new URL. If the page doesn't exist yet, that's itself a finding — comparison pages are high-RACE-leverage pages to build.
+If one signal is unscored because a required measurement is unavailable, report the other three signal results and the missing measurement. Total and grade are unavailable. Do not treat unknown as zero and do not rescale a partial sum to 100.
 
-### Example 3 — CEO persona, weak score
-
-> **Built for:** CEO / Founder
-> **URL audited:** https://www.example.net/ (fictional)
->
-> ## Your site scores 34/100 — Grade F on agent readiness
->
-> This page gives AI agents doing buyer evaluation very little to work with. The reason: it reads as marketing, not as evaluation material. Agents need evidence, constraints, and process clarity — this page has none of them visible.
->
-> **The 3 things killing it:**
->
-> 1. **No "not ideal for" section.** Agents distrust pages that claim universal fit.
-> 2. **Proof is buried below the fold.** Case studies and customer logos exist but agents see marketing copy first.
-> 3. **No process for evaluating the product.** "Get started" is a CTA, not a process.
->
-> **Budget:** Fixes 1 and 2 usually take about 2 weeks. Fix 3 usually takes about 1 week if a product manager writes it. Confirm with your team; re-run this audit after they ship.
->
-> **Next step:** Run the same audit on your top comparison page and compare. The pattern usually repeats.
-
-### Example 4 — Manual / JSON mode
-
-**Input:**
-```json
-{"url": "https://www.example.com/implementation", "mode": "manual"}
-```
-
-**Output:**
-```json
-{
-  "url": "https://www.example.com/implementation",
-  "example_note": "Fictional site and made-up scores, to show structure only.",
-  "race_total": 58,
-  "grade": "D",
-  "signals": {
-    "requirements": {"score": 16, "notes": "prerequisites listed but in prose, no schema"},
-    "actions": {"score": 18, "notes": "4-step process, time estimates present, no ownership column"},
-    "constraints": {"score": 10, "notes": "no 'not ideal for' section"},
-    "evidence": {"score": 14, "notes": "2 case studies but both below the fold"}
-  },
-  "top_fixes": [
-    {"rank": 1, "fix": "add_not_ideal_for_section", "points": 15, "signal": "constraints", "effort": "30min", "template_id": "template_1_b2b_saas_mid_market"},
-    {"rank": 2, "fix": "move_case_studies_above_fold", "points": 8, "signal": "evidence", "effort": "20min"},
-    {"rank": 3, "fix": "add_ownership_column_to_process", "points": 5, "signal": "actions", "effort": "15min"},
-    {"rank": 4, "fix": "convert_prerequisites_to_list", "points": 5, "signal": "requirements", "effort": "15min"},
-    {"rank": 5, "fix": "add_howto_schema", "points": 6, "signal": "actions", "effort": "30min", "rule_4_note": "HowTo is not eligible for Google rich results for software workflows; included for AI-agent parsing. Eligible substitute: Article with step properties."}
-  ],
-  "handoffs": [],
-  "audit_timestamp": "2026-04-12T11:46:30Z"
-}
-```
+Use method RACE bands 20261103 for both the before and after assessment. Estimate a possible score change only by naming the newly satisfied row, and label the change conditional until the fix is verified. Never promise a citation, AI recommendation or delivery date from this score.
 
 ---
 
@@ -387,7 +253,7 @@ Use Section 5 format.
 ### Context
 - **Normal:** Full scorecard.
 - **Crisis / urgent:** ONE finding only.
-- **Regulated vertical:** Requirements signal weights regulatory prerequisites. Add a "regulatory prerequisites" sub-check.
+- **Regulated vertical:** Record applicable regulatory prerequisites as evidence without adding scoring weights.
 - **EU market:** If Evidence is weak AND user is in EU → hand off to Trust Centre.
 
 ### Composition rules
@@ -403,7 +269,7 @@ Use Section 5 format.
 
 All 9 base rules from `references/anti-hallucination-base.md` apply. Additionally:
 
-**Domain rule 1:** Never score a page that wasn't fetched successfully. Halt on fetch failure.
+**Domain rule 1:** For URL audits, require a successful fetch and halt on failure. Supplied HTML is a separate permitted input; apply the reference missing-measurement rules.
 
 **Domain rule 2:** Never publish a "not ideal for" template as if it were the user's actual constraints. Always present it as starter text with `[User to add: ...]` placeholders, and always include the Rules for adapting instruction.
 
@@ -411,7 +277,7 @@ All 9 base rules from `references/anti-hallucination-base.md` apply. Additionall
 
 **Domain rule 4:** Never inflate Evidence score for a page that has customer logos in a slider without attribution. Unnamed logos = 0 Evidence credit.
 
-**Domain rule 5:** Never claim a page is RACE-A without at least 3 specific constraints in the "not ideal for" section. Universal-fit claims cap Constraints at 10.
+**Domain rule 5:** Apply the reference Constraints row, including its lower failure caps. Assign the overall grade from the four-signal sum only; do not add a separate grade gate.
 
 **Domain rule 6:** Never round up grade bands.
 
