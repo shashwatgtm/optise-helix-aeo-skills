@@ -128,7 +128,7 @@ Use `references/personas.md`. Confirm at top of output. Skip in manual mode.
 python scripts/fetch_page.py <URL>
 ```
 
-Uses the same schema as the FITq audit — see `optise-helix-fitq-audit/SKILL.md` Step 3 for the full field list. RACE uses:
+Uses the same schema as the FITq audit — see `../optise-helix-fitq-audit/SKILL.md` Step 3 for the full field list. RACE uses:
 
 | Field | Used by which signal |
 |---|---|
