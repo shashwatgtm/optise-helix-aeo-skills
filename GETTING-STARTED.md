@@ -74,6 +74,6 @@ What you should see:
 
 **Read the Verification Log.** Every skill output ends with one. Claims tagged `[USER-CONFIRMED · awaiting input]` are the highest-priority items to address before publishing.
 
-**Always cross-check before publication.** These skills are directionally correct around 75% of the time. Cross-check cited sources for currency (M&A activity, regulatory dates, schema deprecations), competitor claims against company announcements, and legal citations against primary sources.
+**Always cross-check before publication.** These skills use AI and can make mistakes. Cross-check cited sources for currency (M&A activity, regulatory dates, schema deprecations), competitor claims against company announcements, and legal citations against primary sources.
 
 **Start a fresh session.** Each skill runs best in a clean session. The Rule 0 preflight will prompt you to `/clear` if the session context is already loaded with unrelated work.

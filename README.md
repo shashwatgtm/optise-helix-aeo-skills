@@ -78,7 +78,7 @@ plugins/optise-helix-aeo-toolkit/
 
 ## What to expect from outputs (Claude Code / Cowork)
 
-When running through the plugin architecture, these skills are AI-assisted and **directionally correct around 75% of the time**. Every skill output ends with:
+When running through the plugin architecture, these skills use AI and can make mistakes. Every skill output ends with:
 
 - **A mandatory disclaimer** — reminding you that outputs need verification before publication
 - **A Verification Log appendix** — showing which facts were web-verified, which were inferred from public sources, and which still need your confirmation
