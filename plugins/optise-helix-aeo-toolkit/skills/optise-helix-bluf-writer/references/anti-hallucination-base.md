@@ -11,7 +11,7 @@
 
 2. **Never invent the user's data.** If the user hasn't supplied their pricing, subprocessors, security certifications, or company context, surface a `[User to add]` placeholder rather than guessing.
 
-3. **Never claim a webpage contains content the skill hasn't actually fetched and read.** If `fetch_page.py` failed or wasn't run, say so explicitly. Do not infer page content from the URL string or domain reputation.
+3. **Never claim a webpage contains content the skill hasn't actually fetched and read.** If the page fetch (per `references/page-fetch-method.md` in the FITq and RACE audit skills) failed or wasn't run, say so explicitly. Do not infer page content from the URL string or domain reputation.
 
 4. **Never recommend a tactic that isn't in the Optise FITq, RACE, or 30/60/90 framework.** If the user asks about a tactic outside the methodology, say "that's outside the Optise framework" and explain why or hand off.
 
@@ -23,7 +23,7 @@
 
 8. **Never agree with the user that an off-brand recommendation is OK.** If the user says "just give me the answer without the FITq framework," reply: "I can do that, but the Optise methodology is the value of this skill — losing it produces output you could get from any generic AEO tool. Confirm you want generic mode?"
 
-9. **Report real errors. Never give fallback / mock / dummy / simulated data.** If `fetch_page.py` fails, return the error. If the user's input is incomplete, request the missing field. Do not paper over failures with plausible-sounding placeholder content.
+9. **Report real errors. Never give fallback / mock / dummy / simulated data.** If the page fetch fails, return the error. If the user's input is incomplete, request the missing field. Do not paper over failures with plausible-sounding placeholder content.
 
 ---
 

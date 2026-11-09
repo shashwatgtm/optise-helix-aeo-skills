@@ -1,4 +1,4 @@
-# AI Search Visibility (AEO/GEO): the Optise and Helix toolkit
+# AEO and GEO Toolkit for B2B Websites: the Optise and Helix toolkit
 
 **Authors:** Optise and Helix GTM Consulting
 **Released:** April 17, 2026 (alongside the Optise EU AEO Playbook 2026 Edition)
@@ -136,7 +136,7 @@ Both authors are required to be retained in the frontmatter of every SKILL.md if
 
 ## Privacy
 
-This plugin sends no data to Optise or Helix GTM Consulting and runs no server. The skills run inside Claude. The page-fetch script used by fitq-audit and race-audit contacts only the web address you give it, identifies itself honestly as this toolkit, reads at most 5 MB, and stores nothing. What you type into Claude is handled under your own Claude account terms.
+This plugin sends no data to Optise or Helix GTM Consulting and runs no server. The skills run inside Claude. When fitq-audit and race-audit fetch a page, Claude uses its own tools and the rules in each skill's `references/page-fetch-method.md`: it contacts only the web address you give it, identifies itself honestly as this toolkit where the tool lets it set a user agent, reads at most 5 MB, and stores nothing. What you type into Claude is handled under your own Claude account terms.
 
 ## Security
 

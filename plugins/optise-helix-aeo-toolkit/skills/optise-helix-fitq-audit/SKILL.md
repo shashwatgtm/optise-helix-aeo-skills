@@ -23,7 +23,7 @@ A skill that audits any B2B webpage against the proprietary Optise FITq™ frame
 
 FITq™ stands for Findability, Intent match, Trust, and Quoteability — the four signals AI engines use to select sources. Each signal scores 0-25 for a 100-point total, mapped to A/B/C/D/F grade bands. Full scoring rubric is in `references/fitq-rubric.md`.
 
-This skill is the headline FITq audit in the Optise-Helix AEO toolkit. It depends on `scripts/fetch_page.py` for URL fetching and structural analysis.
+This skill is the headline FITq audit in the Optise-Helix AEO toolkit. It fetches the page and measures its structure per `references/page-fetch-method.md`.
 
 ---
 
@@ -107,7 +107,7 @@ When ranking fixes for the top 5, use this order:
 Detect whether this is:
 - **URL audit** (default) — user supplied a URL → fetch + score
 - **HTML paste audit** — user pasted HTML → skip fetch, score directly with a note about partial Findability scoring
-- **Re-audit** — user asks "did my fix work" → fetch the same URL, compare the new fetch_page output against memory, report deltas
+- **Re-audit** — user asks "did my fix work" → fetch the same URL, compare the new page fetch against memory, report deltas
 
 ### Step 1: Capture inputs
 
@@ -120,13 +120,9 @@ Detect whether this is:
 
 Use `references/personas.md`. Confirm at top of output: *"Built for: [persona]."* Skip in manual mode.
 
-### Step 3: Run fetch_page.py
+### Step 3: Fetch the page
 
-```bash
-python scripts/fetch_page.py <URL>
-```
-
-Capture the JSON output. The schema you can rely on:
+Fetch the page per `references/page-fetch-method.md`: the code route first, the web fetch route when no code tool has network access, and the HTML paste route when both fail. Record the fields below. A field the route cannot see is reported as "cannot check from this fetch", never guessed. The fields you can rely on:
 
 | Field | Type | Used by which signal |
 |---|---|---|
@@ -154,7 +150,7 @@ If `fetch_status != "ok"`, halt the workflow and output the error per the Golden
 
 ### Step 4: Score against the 4 FITq signals
 
-Use `references/fitq-rubric.md`. For each signal, compute 0-25 based on the structured data from fetch_page.py:
+Use `references/fitq-rubric.md`. For each signal, compute 0-25 based on the fields from the page fetch:
 
 **Findability (0-25):**
 - HTTP 200 + content in raw HTML body + TTFB < 2000ms + canonical present + not blocked by robots → 25
@@ -224,7 +220,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 ```markdown
 **Built for:** [persona]
 **URL audited:** [url]
-**Audit timestamp:** [ISO timestamp from fetch_page.py]
+**Audit timestamp:** [ISO timestamp from the page fetch]
 
 ## FITq™ Score: [N]/100 — Grade [A-F]
 
@@ -254,7 +250,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 
 ### Example 1 — Happy path (Marketing lead, fictional site)
 
-*[Brand] and www.example.com are placeholders, not real sites or companies. Every score and finding below is made up to show the output structure. A real audit reports only what fetch_page.py returned for the real URL (Plugin Rule 1).*
+*[Brand] and www.example.com are placeholders, not real sites or companies. Every score and finding below is made up to show the output structure. A real audit reports only what the page fetch showed for the real URL (Plugin Rule 1).*
 
 > **Built for:** Marketing / Growth Lead
 > **URL audited:** https://www.example.com/features/site-audit/
@@ -312,7 +308,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 >
 > ## ⚠️ Cannot score this page
 >
-> `fetch_page.py` returned an error: `URLError on https://www.example.net after 3 retries: [Errno 110] Connection timed out`
+> The page fetch returned an error: `URLError on https://www.example.net after 3 retries: [Errno 110] Connection timed out`
 >
 > Per the FITq audit anti-hallucination rule: I will not score a page I haven't actually fetched. Inventing a score from the URL string would be dishonest and harmful.
 >
@@ -388,7 +384,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 - **First-time user:** Brief explanation of what FITq is in 2 sentences, then ask for the URL. Don't lecture.
 - **Returning user:** Reference the prior audit if in memory. "Last audit you ran on this URL scored X. Want me to compare?"
 - **Rushed user:** Return ONE finding only (lowest-scored signal's top fix). Time-stamp.
-- **Frustrated user:** Re-run fetch_page.py to verify the prior fix actually shipped (most "it didn't work" cases are JS-gated rendering of the fix). If verified, find the new bottleneck.
+- **Frustrated user:** Fetch the page again per `references/page-fetch-method.md` to verify the prior fix actually shipped (most "it didn't work" cases are JS-gated rendering of the fix). If verified, find the new bottleneck.
 - **Out-of-scope:** If user asks for traditional Google SEO ranking advice → redirect to an SEO tool. If user asks to fix the page directly → say "I audit, I don't ship code — but here's the exact diff for your dev team."
 
 ### Data
@@ -396,10 +392,10 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 - **URL only:** Standard audit. Use page URL slug as a weak intent signal.
 - **HTML paste, no URL:** Score directly. Findability is capped at 15/25 — full credit requires a real fetch for TTFB measurement, robots.txt check, and canonical resolution. Note this cap explicitly in the output so the user knows they can lift it by providing a URL later.
 - **Screenshot only:** Refuse to score. "I need either the URL or the HTML to score reliably. A screenshot can't tell me what AI crawlers actually see."
-- **fetch_page.py returns ok but JSON is malformed:** Halt. Log the error. Ask user to retry or paste HTML.
-- **fetch_page.py returns 4xx/5xx:** Output the error per Example 2.
-- **fetch_page.py returns ok but `js_gated=True`:** Findability scored 0-5/25. Other signals scored "cannot score — content not in HTML." Top fix is always SSR.
-- **Conflicting data — large delta from prior audit:** When memory contains a prior FITq score for this URL and the current score differs by >20 points (in either direction), flag the delta explicitly. Output: *"Heads up: prior score was [X], current is [Y]. That's a [Z] point swing in [N] days. Re-running fetch_page.py once more to rule out a transient failure."* Re-run, compare, and if the second fetch matches the first, present both scores side-by-side and ask the user what changed (CMS migration, redirect, redesign, bot-blocking change). Never silently overwrite a prior score with a wildly different new one.
+- **The page fetch shows ok but its fields are malformed:** Halt. Log the error. Ask user to retry or paste HTML.
+- **The page fetch returns 4xx/5xx:** Output the error per Example 2.
+- **The page fetch shows ok but `js_gated=True`:** Findability scored 0-5/25. Other signals scored "cannot score — content not in HTML." Top fix is always SSR.
+- **Conflicting data — large delta from prior audit:** When memory contains a prior FITq score for this URL and the current score differs by >20 points (in either direction), flag the delta explicitly. Output: *"Heads up: prior score was [X], current is [Y]. That's a [Z] point swing in [N] days. Fetching the page once more to rule out a transient failure."* Re-run, compare, and if the second fetch matches the first, present both scores side-by-side and ask the user what changed (CMS migration, redirect, redesign, bot-blocking change). Never silently overwrite a prior score with a wildly different new one.
 
 ### Platform
 - **Connected mode:** Use memory if it has prior audit context for this URL.
@@ -414,7 +410,7 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 
 ### Composition rules (when 2+ contexts combine)
 
-- **Rushed + Frustrated:** Frustration wins. Re-run fetch_page.py and report what changed since the prior audit.
+- **Rushed + Frustrated:** Frustration wins. Fetch the page again and report what changed since the prior audit.
 - **Rushed + Failed fetch:** Output the fetch error tightly (no full clarification dialogue), one line, suggest one alternative.
 - **Returning user + Same URL:** Always re-fetch. Never reuse old fetch data — pages change.
 - **CEO + Failed fetch:** Single sentence: "Couldn't reach the page. Verify it's live and try again — or paste HTML if you have it."
@@ -427,9 +423,9 @@ Use Section 5 format. Always include the score, breakdown, top fixes, before/aft
 
 All 9 base rules from `references/anti-hallucination-base.md` apply verbatim. In addition:
 
-**Domain rule 1 (skill-specific):** When `fetch_page.py` returns an error, NEVER score the page. Output the error verbatim and ask for an alternative input. Inventing a score for an unfetched page is the worst possible failure mode for this skill.
+**Domain rule 1 (skill-specific):** When the page fetch returns an error, NEVER score the page. Output the error verbatim and ask for an alternative input. Inventing a score for an unfetched page is the worst possible failure mode for this skill.
 
-**Domain rule 2 (skill-specific):** Never invent fixes. Every fix must either come from the 12 known failure modes in `references/common-fixes.md` OR be derived from a specific finding in the fetch_page.py JSON. If neither applies, output "no fix recommended for this signal" rather than padding the list to 5.
+**Domain rule 2 (skill-specific):** Never invent fixes. Every fix must either come from the 12 known failure modes in `references/common-fixes.md` OR be derived from a specific finding in the page fetch fields. If neither applies, output "no fix recommended for this signal" rather than padding the list to 5.
 
 **Domain rule 3 (skill-specific):** Never claim a competitor's page would score better/worse without auditing it. Comparative claims require actual fetches.
 

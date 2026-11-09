@@ -23,7 +23,7 @@
 
 ## Failure 1 — No visible last-updated date
 
-**Detection:** `fetch_page.py` returns `last_updated.found = False`
+**Detection:** the page fetch shows `last_updated.found = False`
 **Trust score impact:** -10 to -15 points
 **Effort:** 30 minutes (one-time, then automate via CMS)
 
@@ -48,7 +48,7 @@ For dynamic CMS injection (preferred), use the CMS's "last modified" field and s
 
 ## Failure 2 — Page is JS-gated
 
-**Detection:** `fetch_page.py` returns `js_gating.js_gated = True`
+**Detection:** the page fetch shows `js_gating.js_gated = True`
 **Findability score impact:** Capped at 5/25
 **Effort:** 1-4 weeks (engineering work)
 
@@ -66,7 +66,7 @@ This is a structural fix, not a content fix. The page must render in raw HTML on
 
 ## Failure 3 — H1 doesn't mirror a real buyer prompt
 
-**Detection:** `fetch_page.py` returns H1 text. The skill compares against the target prompt (if provided) or against the page's URL slug. Generic H1s like "Welcome to [Brand]" or "[Brand] Service Desk" fail this check.
+**Detection:** the page fetch shows the H1 text. The skill compares against the target prompt (if provided) or against the page's URL slug. Generic H1s like "Welcome to [Brand]" or "[Brand] Service Desk" fail this check.
 **Intent Match score impact:** -5 to -15 points
 **Effort:** 10 minutes per page
 
@@ -127,7 +127,7 @@ The BLUF must:
 
 ## Failure 5 — Wall-of-text body
 
-**Detection:** `fetch_page.py` reports paragraphs >> headings/tables/lists. Specifically: paragraph count > 30 AND (table count + list count) < 5.
+**Detection:** the page fetch shows paragraphs >> headings/tables/lists. Specifically: paragraph count > 30 AND (table count + list count) < 5.
 **Quoteability score impact:** -10 to -15 points
 **Effort:** 1-2 hours per page
 
@@ -215,7 +215,7 @@ If the source is internal, link to a named methodology page. If the source is ex
 
 ## Failure 8 — No FAQ schema markup
 
-**Detection:** `fetch_page.py` returns `schema_markup` without a `FAQPage` entry, but the page contains 3+ Q&A-style headings.
+**Detection:** the page fetch shows `schema_markup` without a `FAQPage` entry, but the page contains 3+ Q&A-style headings. If the fetch route cannot check schema (`references/page-fetch-method.md` Section 5), report this failure as not checked.
 **Quoteability score impact:** -5 to -10 points
 **Effort:** 30 minutes (one-time per page template)
 
@@ -319,7 +319,7 @@ Honest constraints are a trust signal. AI engines and procurement teams trust pr
 
 ## Failure 12 — Bot-blocking via robots.txt or Cloudflare
 
-**Detection:** `fetch_page.py` returns 401, 403 or 429 for its own honest user agent (a possible sign of bot blocking; the script never impersonates AI crawlers, so confirm by reading robots.txt and asking the user), OR robots.txt blocks GPTBot/ClaudeBot/PerplexityBot.
+**Detection:** the page fetch returns 401, 403 or 429 for its own honest user agent (a possible sign of bot blocking; the page fetch never impersonates AI crawlers, so confirm by reading robots.txt and asking the user), OR robots.txt blocks GPTBot/ClaudeBot/PerplexityBot.
 **Findability score impact:** 0/25 — page is invisible
 **Effort:** 5 minutes (robots.txt) to a few hours (Cloudflare config)
 

@@ -117,11 +117,9 @@ Rank fixes in this order:
 
 Use `references/personas.md`. Confirm at top of output. Skip in manual mode.
 
-### Step 3: Run fetch_page.py
+### Step 3: Fetch the page
 
-```bash
-python scripts/fetch_page.py <URL>
-```
+Fetch the page per `references/page-fetch-method.md`: the code route first, the web fetch route when no code tool has network access, and the HTML paste route when both fail. A field the route cannot see is reported as "cannot check from this fetch", never guessed.
 
 Uses the same schema as the FITq audit — see `optise-helix-fitq-audit/SKILL.md` Step 3 for the full field list. RACE uses:
 
@@ -197,7 +195,7 @@ Use Section 5 format.
 - If user wants prompt research → `optise-helix-prompt-pack-builder`
 - If user wants to track whether the fix worked → `optise-helix-aeo-tracker`
 
-**If user asks for both RACE and FITq:** Run FITq first (same fetch_page.py call is reused — no need to fetch twice). Merge the two scorecards into a combined view. Dedupe fixes where the same underlying issue appears in both rubrics (e.g., "add schema markup" appears as a Quoteability fix in FITq and an Actions fix in RACE — combine into one fix crediting both signals).
+**If user asks for both RACE and FITq:** Run FITq first (reuse the same page fetch; there is no need to fetch twice). Merge the two scorecards into a combined view. Dedupe fixes where the same underlying issue appears in both rubrics (e.g., "add schema markup" appears as a Quoteability fix in FITq and an Actions fix in RACE — combine into one fix crediting both signals).
 
 ---
 
@@ -296,7 +294,7 @@ Use Section 5 format.
 >
 > ## Cannot score this page
 >
-> `fetch_page.py` returned an error: `HTTPError 404: Not Found`
+> The page fetch returned an error: `HTTPError 404: Not Found`
 >
 > Per the RACE audit anti-hallucination rule: I will not score a page that wasn't fetched. The URL may not exist, or the slug may have changed.
 >
@@ -369,7 +367,7 @@ Use Section 5 format.
 - **URL only:** Standard audit.
 - **HTML paste:** Skip fetch. Note in output.
 - **Screenshot only:** Refuse. Need URL or HTML.
-- **fetch_page.py fails:** Halt, output error.
+- **The page fetch fails:** Halt, output error.
 - **Page is a pricing page:** RACE is weaker here. Ask user whether to proceed or switch to FITq.
 - **Page is a blog post:** Same — RACE isn't the right audit for blog content. Offer FITq instead.
 - **Page has 0 quoteability features:** Requirements/Actions likely very low. Lead with structural rewrite recommendation.
@@ -389,7 +387,7 @@ Use Section 5 format.
 - **Rushed + Frustrated + Returning user with prior fix:** Re-fetch immediately. In ≤7 lines: name what changed, verify fix shipped in HTML, name current bottleneck, recommend one fix, close with "want the full re-audit later?"
 - **CEO + Failed fetch:** Single sentence.
 - **Web team + No "not ideal for":** Lead with the template immediately. Don't bury it.
-- **Web team + Wrong page type (pricing / blog / homepage):** Single-line response: "RACE is weak for [page type]. Switch to FITq, or confirm you want RACE anyway?" Don't run fetch_page.py until the user confirms. This prevents burning cycles on the wrong audit.
+- **Web team + Wrong page type (pricing / blog / homepage):** Single-line response: "RACE is weak for [page type]. Switch to FITq, or confirm you want RACE anyway?" Don't fetch the page until the user confirms. This prevents burning cycles on the wrong audit.
 - **Manual mode + any persona:** Manual wins. Structured output.
 
 ---
