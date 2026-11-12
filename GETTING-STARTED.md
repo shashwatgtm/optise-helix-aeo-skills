@@ -1,4 +1,8 @@
-# Getting Started with the Optise and Helix AEO and GEO Toolkit
+# Getting started with the AEO and GEO Toolkit for B2B Websites
+
+By Optise and Helix GTM Consulting.
+
+**Try:** "Audit https://yourcompany.com/pricing for AI search. Why isn't ChatGPT citing it?"
 
 The toolkit is designed for English-language websites: the page you audit and the buyer prompts should be in English.
 

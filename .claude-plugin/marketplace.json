@@ -5,27 +5,34 @@
     "email": "shashwat@gtmhelix.com",
     "url": "https://gtmhelix.com"
   },
-  "description": "AI search visibility (AEO and GEO) skills for B2B websites, by Optise and Helix GTM Consulting: page audits, answer blocks, buyer prompt packs, an EU trust page and citation tracking.",
+  "description": "AEO and GEO Toolkit for B2B Websites, by Optise and Helix GTM Consulting: find out why ChatGPT, Perplexity, Gemini and Google AI Overviews do not cite your site, and get the fixes.",
   "plugins": [
     {
       "name": "optise-helix-aeo-toolkit",
       "source": "./plugins/optise-helix-aeo-toolkit",
       "category": "marketing-and-seo",
       "tags": [
-        "ai-search",
+        "ai-search-visibility",
         "aeo",
         "geo",
-        "ai-visibility",
+        "aeo-audit",
+        "geo-audit",
         "llm-seo",
-        "seo",
+        "ai-seo",
         "answer-engine-optimization",
+        "generative-engine-optimization",
+        "chatgpt-citations",
+        "perplexity",
+        "ai-overviews",
+        "ai-citation-readiness",
         "citation-tracking",
+        "seo",
         "trust-centre",
         "gdpr"
       ],
       "strict": true,
       "displayName": "AEO and GEO Toolkit for B2B Websites",
-      "description": "Get your B2B website found, quoted and recommended by ChatGPT, Perplexity, Gemini and Claude: page audits, answer blocks, buyer prompt packs, an EU trust page and citation tracking. By Optise and Helix."
+      "description": "Find out why ChatGPT, Perplexity, Gemini and Google AI Overviews do not cite your B2B website, and get the fixes. AI search visibility audits (AEO audit, GEO audit, LLM SEO), answer blocks AI engines can quote, buyer prompt packs and weekly AI citation tracking. Extra for EU sellers: a Trust Centre page. Try: \"Audit https://yourcompany.com/pricing for AI search.\" By Optise and Helix GTM Consulting."
     }
   ]
 }

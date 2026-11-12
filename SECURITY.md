@@ -1,4 +1,4 @@
-# Security policy: Optise and Helix AEO and GEO Toolkit
+# Security policy: AEO and GEO Toolkit for B2B Websites
 
 Please report security problems privately by email to shashwat@gtmhelix.com with the subject "Security report: optise-helix-aeo-toolkit". Include the file and line, what could go wrong, and how to reproduce it. We aim to reply within 5 working days.
 

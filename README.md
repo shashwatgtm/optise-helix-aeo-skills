@@ -1,13 +1,40 @@
-# AEO and GEO Toolkit for B2B Websites: the Optise and Helix toolkit
+# AEO and GEO Toolkit for B2B Websites
+
+By Optise and Helix GTM Consulting.
+
+Find out why ChatGPT, Perplexity, Gemini and Google AI Overviews do not cite your B2B website, and get the fixes. Six Claude skills for AI search visibility: an AEO and GEO page audit, an AI agent audit, answer blocks AI engines can quote, buyer prompt packs and weekly AI citation tracking. Extra for EU sellers: a Trust Centre page that answers the 8 questions European buyers ask.
+
+**Try:** "Audit https://yourcompany.com/pricing for AI search. Why isn't ChatGPT citing it?"
+
+## Worked example on a real public page
+
+Page: https://gtmhelix.com/fractional-cmo/, the Helix GTM Consulting fractional CMO page. Fetched on 12 Nov 2026. We used our own page so that no outside company is named. The facts below were measured on that page on that date.
+
+**1. Page audit.** Prompt: "Audit https://gtmhelix.com/fractional-cmo/ for AI search, for the prompt 'how much does a fractional CMO cost'." What the fetch measured:
+
+- HTTP 200, text/html, 39 KB, with the content in the raw HTML and a canonical tag. Time to first byte was 1.8 seconds on this fetch.
+- robots.txt allows GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot and PerplexityBot by name.
+- One JSON-LD block with Organization, Person, WebPage, BreadcrumbList and FAQPage (12 questions). The page shows a byline and "Published 6 November 2026", and the schema has a matching dateModified.
+- The first sentence defines a fractional CMO in 29 words, short of a 40 to 60 word answer block.
+- The price is first reached at word 893 of 2,223, in the tier cards, and again in the FAQ at word 1,958. It is not in the opening.
+
+The gaps become ranked fixes: put a short price answer near the top for the pricing prompt, and grow the opening definition into a 40 to 60 word answer block. The full run adds a score for each of the four FITq signals, the top 5 fixes and a before and after for fix 1.
+
+**2. Answer block.** Prompt: "Write an answer block for https://gtmhelix.com/fractional-cmo/ for 'how much does a fractional CMO from Helix cost'."
+
+- Before: the price sits in three tier cards and in an FAQ answer near the end of the page. The FAQ answer opens with "Mentor or Advisor, 6 to 10 hours a week", so lifted on its own it does not say whose price it is.
+- After (the longest of the three variants at 57 words, built only from facts on the page): "A fractional CMO from Helix GTM Consulting starts from $3,100 or INR 2.49 lakh a month for Mentor or Advisor, 6 to 10 hours a week. Micro CMO, 8 to 12 hours, starts from $4,100 or INR 3.49 lakh. Fractional CMO, 15 to 20 hours, starts from $5,250 or INR 4.49 lakh. INR bills carry 18% GST."
+
+The full run also gives the shorter variants.
+
+---
+
+Plugin page with install steps for Claude Code and Cowork: https://tools.gtmhelix.com/plugins/optise-helix-aeo-toolkit/
 
 **Authors:** Optise and Helix GTM Consulting
 **Released:** April 17, 2026 (alongside the Optise EU AEO Playbook 2026 Edition)
 **License:** Proprietary, free to use (see LICENSE)
-**Version:** 1.5 (skills and plugin manifest; the shared operating principles are v1.3)
-
-Plugin page with install steps for Claude Code and Cowork: https://tools.gtmhelix.com/plugins/optise-helix-aeo-toolkit/
-
-A toolkit of 6 Claude Skills for AEO and GEO (answer engine optimisation and generative engine optimisation). It helps B2B teams selling into Europe make their websites visible, citable, and evaluable to AI search engines (ChatGPT, Perplexity, Gemini, Claude) and AI agents doing buyer evaluation.
+**Version:** 1.6 (skills and plugin manifest; the shared operating principles are v1.3)
 
 **Designed for English-language websites.** The audits, scores and rewrites assume the page and the buyer prompts are in English.
 
@@ -67,7 +94,7 @@ plugins/optise-helix-aeo-toolkit/
 
 | Skill | Purpose | When to use it |
 |---|---|---|
-| **prompt-pack-builder** | Generates 25 AEO prompts across 6 Optise categories, ranked by "decides deals" 1-5 | Start here when you need to know what European B2B buyers actually ask AI engines about your category |
+| **prompt-pack-builder** | Generates 25 AEO prompts across 6 Optise categories, ranked by "decides deals" 1-5 | Start here when you need to know what B2B buyers ask AI engines about your category (prompts use European market buyer language) |
 | **fitq-audit** | Scores a webpage on Findability, Intent match, Trust, Quoteability (FITq) for AI search citation readiness | When you need to know why ChatGPT, Perplexity, or Gemini isn't citing your page |
 | **race-audit** | Scores a webpage on Requirements, Actions, Constraints, Evidence (RACE) for AI agent evaluation readiness | When you need to know if AI agents doing buyer evaluation will recommend your page |
 | **bluf-writer** | Writes 40-60 word answer blocks (BLUFs) using 6 proprietary Optise patterns | When the FITq audit says "no BLUF in first 100 words" and you need the actual replacement text |
