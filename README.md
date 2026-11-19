@@ -1,6 +1,6 @@
 # AEO and GEO Toolkit for B2B Websites
 
-By Optise and Helix GTM Consulting.
+By Optise and Helix GTM Consulting (https://gtmhelix.com); the Helix side is built by Shashwat Ghosh, Co-Founder and Fractional CMO.
 
 Find out why ChatGPT, Perplexity, Gemini and Google AI Overviews do not cite your B2B website, and get the fixes. Six Claude skills for AI search visibility: an AEO and GEO page audit, an AI agent audit, answer blocks AI engines can quote, buyer prompt packs and weekly AI citation tracking. Extra for EU sellers: a Trust Centre page that answers the 8 questions European buyers ask.
 
